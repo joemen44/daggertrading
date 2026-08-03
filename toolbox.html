@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Dagger Trading Trader's Toolbox with automatically updating market headlines, market overview, and U.S. economic calendar.">
+  <title>Trader's Toolbox | Dagger Trading</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .toolbox-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .toolbox-panel {
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .toolbox-panel-wide {
+      grid-column: 1 / -1;
+    }
+
+    .toolbox-heading {
+      padding: 23px 25px 17px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .toolbox-heading h2 {
+      margin: 0 0 7px;
+      font-size: 1.45rem;
+    }
+
+    .toolbox-heading p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .94rem;
+    }
+
+    .widget-frame {
+      min-height: 550px;
+      background: #070d16;
+    }
+
+    .widget-frame-overview {
+      min-height: 500px;
+    }
+
+    .toolbox-note {
+      margin-top: 22px;
+      padding: 18px 20px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      color: var(--muted);
+      background: rgba(47, 140, 255, .07);
+      font-size: .9rem;
+    }
+
+    @media (max-width: 900px) {
+      .toolbox-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .toolbox-panel-wide {
+        grid-column: auto;
+      }
+
+      .widget-frame {
+        min-height: 500px;
+      }
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container navbar">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">🗡️</span>
+      <span>DAGGER <strong>TRADING</strong></span>
+    </a>
+
+    <button class="menu-button" type="button" aria-label="Open menu">Menu</button>
+
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="market-notes.html">Market Notes</a>
+      <a href="comics.html">Comics</a>
+      <a href="resources.html">Resources</a>
+      <a href="toolbox.html">Trader's Toolbox</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://x.com/DaggerTrading" target="_blank" rel="noopener noreferrer">X / Twitter</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">Automatically Updated</p>
+      <h1>Trader's Toolbox</h1>
+      <p>
+        A low-maintenance dashboard for major markets, financial headlines, and upcoming
+        U.S. economic events. The information below updates automatically.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="toolbox-grid">
+        <article class="card toolbox-panel toolbox-panel-wide">
+          <div class="toolbox-heading">
+            <h2>Major Markets</h2>
+            <p>Quick context for broad indices, leading ETFs, volatility, crypto, gold, and oil.</p>
+          </div>
+
+          <div class="widget-frame widget-frame-overview">
+            <div class="tradingview-widget-container" style="height:500px;width:100%">
+              <div class="tradingview-widget-container__widget" style="height:100%;width:100%"></div>
+              <script type="text/javascript"
+                      src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js"
+                      async>
+              {
+                "colorTheme": "dark",
+                "dateRange": "1D",
+                "showChart": true,
+                "locale": "en",
+                "width": "100%",
+                "height": 500,
+                "isTransparent": true,
+                "showSymbolLogo": true,
+                "showFloatingTooltip": false,
+                "tabs": [
+                  {
+                    "title": "ETFs & Volatility",
+                    "symbols": [
+                      {"s": "AMEX:SPY", "d": "S&P 500 ETF"},
+                      {"s": "NASDAQ:QQQ", "d": "Nasdaq 100 ETF"},
+                      {"s": "AMEX:DIA", "d": "Dow ETF"},
+                      {"s": "AMEX:IWM", "d": "Russell 2000 ETF"},
+                      {"s": "CBOE:VIX", "d": "Volatility Index"}
+                    ]
+                  },
+                  {
+                    "title": "Other Markets",
+                    "symbols": [
+                      {"s": "BITSTAMP:BTCUSD", "d": "Bitcoin"},
+                      {"s": "TVC:GOLD", "d": "Gold"},
+                      {"s": "TVC:USOIL", "d": "Crude Oil"},
+                      {"s": "TVC:DXY", "d": "U.S. Dollar Index"},
+                      {"s": "TVC:US10Y", "d": "U.S. 10-Year Yield"}
+                    ]
+                  }
+                ]
+              }
+              </script>
+            </div>
+          </div>
+        </article>
+
+        <article class="card toolbox-panel">
+          <div class="toolbox-heading">
+            <h2>Top Market Stories</h2>
+            <p>Automatically refreshed financial and market headlines.</p>
+          </div>
+
+          <div class="widget-frame">
+            <div class="tradingview-widget-container" style="height:550px;width:100%">
+              <div class="tradingview-widget-container__widget" style="height:100%;width:100%"></div>
+              <script type="text/javascript"
+                      src="https://s3.tradingview.com/external-embedding/embed-widget-timeline.js"
+                      async>
+              {
+                "feedMode": "all_symbols",
+                "isTransparent": true,
+                "displayMode": "regular",
+                "width": "100%",
+                "height": 550,
+                "colorTheme": "dark",
+                "locale": "en"
+              }
+              </script>
+            </div>
+          </div>
+        </article>
+
+        <article class="card toolbox-panel">
+          <div class="toolbox-heading">
+            <h2>U.S. Economic Calendar</h2>
+            <p>Inflation, jobs data, Fed decisions, and other scheduled releases.</p>
+          </div>
+
+          <div class="widget-frame">
+            <div class="tradingview-widget-container" style="height:550px;width:100%">
+              <div class="tradingview-widget-container__widget" style="height:100%;width:100%"></div>
+              <script type="text/javascript"
+                      src="https://s3.tradingview.com/external-embedding/embed-widget-events.js"
+                      async>
+              {
+                "colorTheme": "dark",
+                "isTransparent": true,
+                "width": "100%",
+                "height": 550,
+                "locale": "en",
+                "importanceFilter": "-1,0,1",
+                "countryFilter": "us"
+              }
+              </script>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <p class="toolbox-note">
+        Market data, headlines, and calendar information are supplied by TradingView and may be
+        delayed. This page is for general information only and is not financial advice.
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <strong>Dagger Trading</strong><br>
+    Market Psychology • Patience • Risk Management
+
+    <p class="disclaimer">
+      Content is for educational and entertainment purposes only and is not financial advice.
+      Trading and investing involve risk, including the possible loss of principal.
+    </p>
+
+    <p>© <span data-year></span> Dagger Trading.</p>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
