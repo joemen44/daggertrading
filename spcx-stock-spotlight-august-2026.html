@@ -124,6 +124,21 @@
       .quick-facts-grid,.rating-grid,.timeline,.watch-grid { grid-template-columns:1fr; }
     }
 
+  
+    .continue-exploring{margin-top:54px;padding-top:34px;border-top:1px solid var(--line)}
+    .continue-intro{max-width:720px;margin-bottom:24px}
+    .continue-intro p:last-child{color:var(--muted)}
+    .continue-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .continue-card{display:flex;gap:16px;padding:20px;border:1px solid var(--line);border-radius:14px;background:rgba(47,140,255,.045);transition:.18s}
+    .continue-card:hover{transform:translateY(-2px);border-color:rgba(104,181,255,.5);background:rgba(47,140,255,.08)}
+    .continue-icon{font-size:1.65rem;line-height:1;margin-top:4px}
+    .continue-card h3{margin:4px 0 8px}
+    .continue-card p:not(.eyebrow){color:var(--muted);margin-bottom:16px}
+    .continue-footer{margin-top:24px;padding:20px;text-align:center;border:1px solid var(--line);border-radius:14px;background:rgba(47,140,255,.07)}
+    .continue-footer a{font-weight:700}
+    .continue-footer p{margin:10px 0 0;color:var(--text)}
+    @media(max-width:760px){.continue-grid{grid-template-columns:1fr}}
+
   </style>
 </head>
 <body>
@@ -351,6 +366,62 @@
         ATH and ATL values are based on Dagger Trading's Thinkorswim chart data. This article is
         educational and informational only and is not financial advice.
       </p>
+
+      <section class="continue-exploring" aria-labelledby="continue-title">
+        <div class="continue-intro">
+          <p class="eyebrow">Continue Exploring</p>
+          <h2 id="continue-title">More from Dagger Trading</h2>
+          <p>Thanks for reading the SPCX Stock Spotlight. Explore more original content focused on trading psychology, market preparation, patience, and risk management.</p>
+        </div>
+
+        <div class="continue-grid">
+          <article class="continue-card">
+            <span class="continue-icon" aria-hidden="true">😂</span>
+            <div>
+              <p class="eyebrow">Original Content</p>
+              <h3>Trading Comics</h3>
+              <p>Humor and hard-earned market lessons covering FOMO, overtrading, momentum, patience, and risk.</p>
+              <a class="button button-secondary" href="comics.html">View Trading Comics</a>
+            </div>
+          </article>
+
+          <article class="continue-card">
+            <span class="continue-icon" aria-hidden="true">📚</span>
+            <div>
+              <p class="eyebrow">Tools &amp; Education</p>
+              <h3>Trading Resources</h3>
+              <p>Explore platforms, research tools, free market resources, and recommended trading books.</p>
+              <a class="button button-secondary" href="resources.html">Explore Resources</a>
+            </div>
+          </article>
+
+          <article class="continue-card">
+            <span class="continue-icon" aria-hidden="true">📊</span>
+            <div>
+              <p class="eyebrow">Live Market Tools</p>
+              <h3>Market Center</h3>
+              <p>Check major index quotes, market news, earnings dates, and useful links for preparing your next trade.</p>
+              <a class="button button-secondary" href="toolbox.html">Open Market Center</a>
+            </div>
+          </article>
+
+          <article class="continue-card">
+            <span class="continue-icon" aria-hidden="true">𝕏</span>
+            <div>
+              <p class="eyebrow">Follow Along</p>
+              <h3>@DaggerTrading</h3>
+              <p>Follow for new Stock Spotlights, market notes, trading psychology, charts, and original comics.</p>
+              <a class="button button-primary" href="https://x.com/DaggerTrading" target="_blank" rel="noopener noreferrer">Follow on X</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="continue-footer">
+          <a href="index.html">Return to the Dagger Trading homepage</a>
+          <p>🗡️ <strong>Wait for Confirmation, Not Assumption.</strong></p>
+        </div>
+      </section>
+
     </article>
   </section>
 </main>
