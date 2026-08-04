@@ -139,6 +139,12 @@
     .continue-footer p{margin:10px 0 0;color:var(--text)}
     @media(max-width:760px){.continue-grid{grid-template-columns:1fr}}
 
+  
+    .featured-resource-card {
+      background: linear-gradient(135deg, rgba(47,140,255,.09), rgba(47,140,255,.035));
+      border-color: rgba(104,181,255,.32);
+    }
+
   </style>
 </head>
 <body>
@@ -385,13 +391,18 @@
             </div>
           </article>
 
-          <article class="continue-card">
-            <span class="continue-icon" aria-hidden="true">📚</span>
+          <article class="continue-card featured-resource-card">
+            <span class="continue-icon" aria-hidden="true">📘</span>
             <div>
-              <p class="eyebrow">Tools &amp; Education</p>
-              <h3>Trading Resources</h3>
-              <p>Explore platforms, research tools, free market resources, and recommended trading books.</p>
-              <a class="button button-secondary" href="resources.html">Explore Resources</a>
+              <p class="eyebrow">Featured Resource</p>
+              <h3>Trading in the Zone</h3>
+              <p>
+                Mark Douglas's classic book on probabilities, discipline, emotional control,
+                and developing a more consistent trading mindset.
+              </p>
+              <a class="button button-secondary" href="resources.html#recommended-books">
+                Explore Recommended Books
+              </a>
             </div>
           </article>
 
