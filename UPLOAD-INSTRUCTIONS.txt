@@ -1,13 +1,15 @@
-DAGGER TRADING - LEARN UPDATE
+DAGGER TRADING - LEARN VISUALS UPDATE
 
-Upload/replace these files in the root of your GitHub repository:
+This is a cumulative update. It keeps the latest Earnings comic and the Learn section,
+and adds a responsive instructional visual to every Learn lesson.
+
+Upload/replace in your GitHub repository:
 - index.html
 - comics.html
 - learn.html
 
-Also upload:
+Also make sure this existing image remains at:
 - images/comics/earnings-day-reaction.png
 
-This is a cumulative update: it preserves the new Earnings comic update and adds the new Learn section.
-
-No CSS or JavaScript files need to be replaced.
+No CSS or JavaScript files need to be replaced. The Learn-page visuals are inline SVG,
+so they stay sharp on desktop/mobile and do not require 15 separate image files.
