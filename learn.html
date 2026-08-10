@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Learn trading basics and risk management with simple explanations of candlesticks, float, market cap, volume, relative strength, VWAP, moving averages, RSI, MACD, position sizing, stop losses, scaling, risk/reward, daily loss limits, and when not to trade.">
+  <title>Learn Trading Basics | Dagger Trading</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/v2.css">
+  <link rel="stylesheet" href="css/resources-v3.css">
+  <style>
+    html { scroll-behavior: smooth; }
+    .learn-shell { max-width: 980px; }
+    .learn-intro { max-width: 820px; }
+    .learn-jumps {
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:22px;
+    }
+    .learn-jumps a {
+      display:inline-flex;
+      align-items:center;
+      min-height:40px;
+      padding:8px 13px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      color:var(--text);
+      text-decoration:none;
+      background:rgba(47,140,255,.045);
+      font-size:.92rem;
+    }
+    .learn-jumps a:hover {
+      border-color:var(--accent);
+      background:rgba(47,140,255,.10);
+    }
+    .learn-section-head {
+      margin:48px 0 20px;
+      padding-bottom:14px;
+      border-bottom:1px solid var(--line);
+    }
+    .lesson {
+      margin:0 0 22px;
+      padding:24px;
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:rgba(47,140,255,.035);
+      scroll-margin-top:90px;
+    }
+    .lesson h3 { margin-top:0; font-size:1.45rem; }
+    .lesson p, .lesson li { color:var(--muted); line-height:1.72; }
+    .lesson ul { padding-left:1.25rem; }
+    .lesson-label {
+      display:inline-block;
+      margin:10px 0 4px;
+      color:var(--text);
+      font-weight:700;
+    }
+    .common-mistake {
+      margin-top:15px;
+      padding:14px 16px;
+      border-left:3px solid #f0b35a;
+      border-radius:8px;
+      background:rgba(240,179,90,.08);
+    }
+    .dagger-takeaway {
+      margin-top:15px;
+      padding:14px 16px;
+      border-left:3px solid var(--accent);
+      border-radius:8px;
+      background:rgba(47,140,255,.09);
+      color:var(--text);
+    }
+    .formula-box {
+      margin:12px 0;
+      padding:12px 15px;
+      border:1px solid var(--line);
+      border-radius:10px;
+      background:rgba(255,255,255,.025);
+      color:var(--text);
+      font-weight:700;
+    }
+    .learn-note {
+      margin-top:34px;
+      padding:22px;
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:rgba(47,140,255,.06);
+    }
+    .back-top {
+      display:inline-block;
+      margin-top:14px;
+      font-size:.92rem;
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container navbar">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">🗡️</span>
+      <span>DAGGER <strong>TRADING</strong></span>
+    </a>
+    <button class="menu-button" type="button" aria-label="Open menu">Menu</button>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="market-notes.html">Market Notes</a>
+      <a href="comics.html">Comics</a>
+      <a href="learn.html">Learn</a>
+      <a href="resources.html">Trading Resources</a>
+      <a href="toolbox.html">Market Center</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://x.com/DaggerTrading" target="_blank" rel="noopener noreferrer">X / Twitter</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="page-hero">
+    <div class="container learn-shell learn-intro">
+      <p class="eyebrow">Learn</p>
+      <h1>Trading basics without the unnecessary jargon.</h1>
+      <p>
+        A simple starting point for understanding the market, reading charts, and managing risk.
+        These lessons are intentionally short. Learn the concept, understand why traders care,
+        recognize the common mistake, and move on.
+      </p>
+      <div class="learn-jumps" aria-label="Quick lesson navigation">
+        <a href="#candlesticks">Candlesticks</a>
+        <a href="#float">Float</a>
+        <a href="#market-cap">Market Cap</a>
+        <a href="#volume">Volume</a>
+        <a href="#relative-strength">Relative Strength</a>
+        <a href="#vwap">VWAP</a>
+        <a href="#moving-averages">Moving Averages</a>
+        <a href="#rsi">RSI</a>
+        <a href="#macd">MACD</a>
+        <a href="#position-sizing">Position Sizing</a>
+        <a href="#stop-losses">Stop Losses</a>
+        <a href="#scaling">Scaling</a>
+        <a href="#risk-reward">Risk / Reward</a>
+        <a href="#max-daily-loss">Maximum Daily Loss</a>
+        <a href="#when-not-to-trade">When Not to Trade</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container learn-shell">
+
+      <div class="learn-section-head">
+        <p class="eyebrow">Trading Basics</p>
+        <h2>Understand what you are looking at.</h2>
+        <p>Indicators and market statistics provide information. None of them can predict the future by themselves.</p>
+      </div>
+
+      <article class="lesson" id="candlesticks">
+        <h3>Candlesticks</h3>
+        <p>
+          Candlesticks show how price moved during a specific period. A one-minute candle summarizes one minute
+          of trading; a daily candle summarizes one trading day. Each candle contains four prices:
+          the open, high, low, and close.
+        </p>
+        <p>
+          The body shows the distance between the open and close. The wicks show how far price traveled beyond
+          the body before buyers or sellers pushed it back. A large candle can show strong momentum, while a candle
+          with long wicks may show rejection or indecision.
+        </p>
+        <span class="lesson-label">Why traders care</span>
+        <p>
+          Candles help traders see the battle between buyers and sellers. They become more useful when viewed around
+          support, resistance, VWAP, moving averages, prior highs and lows, or other meaningful levels.
+        </p>
+        <div class="common-mistake"><strong>Common mistake:</strong> Treating one candle pattern as a guaranteed signal. A bullish-looking candle in a strong downtrend can still fail.</div>
+        <div class="dagger-takeaway"><strong>🗡️ Dagger Takeaway:</strong> Read the candle in context. Location and momentum matter more than the candle's name.</div>
+      </article>
+
+      <article class="lesson" id="float">
+        <h3>Float</h3>
+        <p>
+          A stock's float is the number of shares generally available for public trading. It is different from
+          shares outstanding because some shares may be closely held, restricted, or otherwise not readily available
+          in the public market.
+        </p>
+        <p>
+          Lower-float stocks can move quickly because fewer shares are available to absorb buying or selling pressure.
+          Higher-float stocks usually require more volume and capital to produce the same percentage move.
+        </p>
+        <span class="lesson-label">Why traders care</span>
+        <p>
+          Float can help explain a stock's personality. A thinly traded low-float stock may spike rapidly, halt,
+          reverse violently, or experience wider spreads.
+        </p>
+        <div class="common-mistake"><strong>Common mistake:</strong> Assuming low float automatically means bullish. Low float can accelerate moves in both directions.</div>
+        <div class="dagger-takeaway"><strong>🗡️ Dagger Takeaway:</strong> Lower float can create opportunity, but it also increases volatility and execution risk.</div>
+      </article>
+
+      <article class="lesson" id="market-cap">
+        <h3>Market Cap</h3>
+        <p>
+          Market capitalization is a simple estimate of a public company's equity value based on its current stock price.
+          It is calculated by multiplying the share price by the number of shares outstanding.
+        </p>
+        <div class="formula-box">Market Cap = Share Price × Shares Outstanding</div>
+        <p>
+          Market cap helps traders compare the size of different companies. A $10 stock is not automatically
+          "cheaper" than a $200 stock—the number of shares matters.
+        </p>
+        <span class="lesson-label">Why traders care</span>
+        <p>
+          Smaller companies can be more volatile and less liquid. Larger companies often have deeper liquidity,
+          more institutional ownership, and heavier analyst coverage.
+        </p>
+        <div class="common-mistake"><strong>Common mistake:</strong> Judging a company's size from its share price alone.</div>
+        <div class="dagger-takeaway"><strong>🗡️ Dagger Takeaway:</strong> Price tells you what one share costs. Market cap gives you a better sense of the company's overall market value.</div>
+      </article>
+
+      <article class="lesson" id="volume">
+        <h3>Volume</h3>
+        <p>
+          Volume measures how many shares changed hands during a period. Traders often compare current volume
+          with normal or average volume to judge how much participation is behind a move.
+        </p>
+        <p>
+          A breakout occurring with unusually strong volume can attract more attention than the same breakout
+          occurring with little participation. Volume can also increase during sharp selloffs, news events,
+          earnings reports, or major technical breaks.
+        </p>
+        <span class="lesson-label">Why traders care</span>
+        <p>
+          Volume helps answer an important question: is anyone participating in this move? It can provide context
+          for momentum and liquidity, but it does not tell you whether buyers or sellers will win next.
+        </p>
+        <div class="common-mistake"><strong>Common mistake:</strong> Assuming high volume is always bullish. Heavy volume can represent aggressive selling just as easily as aggressive buying.</div>
+        <div class="dagger-takeaway"><strong>🗡️ Dagger Takeaway:</strong> Price tells you what happened. Volume helps show how much participation was behind it.</div>
+      </article>
+
+      <article class="lesson" id="relative-strength">
+        <h3>Relative Strength</h3>
+        <p>
+          Relative strength compares how a stock is behaving against another benchmark, often the S&amp;P 500,
+          Nasdaq, a sector ETF, or similar stocks. This is different from RSI, despite the similar name.
+        </p>
+        <p>
+          If the broader market is falling while a stock remains near its highs, that stock is showing relative
+          strength. If the market is rallying and a stock cannot participate, it may be showing relative weakness.
+        </p>
+        <span class="lesson-label">Why traders care</span>
+        <p>
+          Traders often look for strong stocks during strong markets and stocks that hold up well during temporary
+          market weakness. Relative strength can help narrow a large watchlist to names attracting real demand.
+        </p>
+        <div class="common-mistake"><strong>Common mistake:</strong> Confusing relative strength with RSI. They are related to momentum conceptually, but they are not the same tool.</div>
+        <div class="dagger-takeaway"><strong>🗡️ Dagger Takeaway:</strong> Pay attention to what refuses to go down when the market is weak—and what refuses to go up when the market is strong.</div>
+      </article>
+
+      <article class="lesson" id="vwap">
+        <h3>VWAP</h3>
+        <p>
+          VWAP stands for Volume-Weighted Average Price. It estimates the average price traded during the session,
+          while giving more weight to prices where more volume occurred.
+        </p>
+        <p>
+          Intraday traders often watch whether price is above, below, reclaiming, or rejecting VWAP. Because many
+          professional traders and institutions monitor it, VWAP can become an important reference point during the session.
+        </p>
+        <span class="lesson-label">Why traders care</span>
+        <p>
+          A stock holding above VWAP may be showing stronger intraday demand, while repeated rejection below it
+          can indicate weakness. VWAP can also act like support or resistance—but not every touch matters.
+        </p>
+        <div class="common-mistake"><strong>Common mistake:</strong> Buying simply because price touches VWAP or shorting simply because it falls below it.</div>
+        <div class="dagger-takeaway"><strong>🗡️ Dagger Takeaway:</strong> VWAP is a reference point, not a magic line. Watch the reaction and the momentum around it.</div>
+      </article>
+
+      <article class="lesson" id="moving-averages">
+        <h3>Moving Averages</h3>
+        <p>
+          Moving averages smooth price data to make the underlying trend easier to see. A 50-day moving average,
+          for example, uses recent daily prices to create a constantly updating average.
+        </p>
+        <p>
+          Common examples include the 9 EMA, 20 EMA, 50 SMA, 100 SMA, and 200 SMA. Shorter averages react faster
+          to price changes. Longer averages move more slowly and are often used to judge the broader trend.
+        </p>
+        <span class="lesson-label">Why traders care</span>
+        <p>
+          Moving averages can help identify trend direction, dynamic support and resistance, and areas where momentum
+          may change. Different traders use different settings, so no single average is universally "correct."
+        </p>
+        <div class="common-mistake"><strong>Common mistake:</strong> Assuming a crossover guarantees a new trend. Moving averages are based on past prices and can whipsaw badly in sideways markets.</div>
+        <div class="dagger-takeaway"><strong>🗡️ Dagger Takeaway:</strong> Use moving averages to organize the trend—not to replace price action.</div>
+      </article>
+
+      <article class="lesson" id="rsi">
+        <h3>RSI</h3>
+        <p>
+          RSI, or Relative Strength Index, is a momentum oscillator that moves between 0 and 100. A traditional
+          interpretation considers readings above 70 overbought and readings below 30 oversold.
+        </p>
+        <p>
+          Those labels can be misleading if taken literally. A powerful stock can remain above 70 for a long time,
+          while a weak stock can remain oversold and continue falling. Traders also watch trend behavior, divergences,
+          and how RSI behaves when price reaches important levels.
+        </p>
+        <span class="lesson-label">Why traders care</span>
+        <p>
+          RSI can help show whether momentum is strengthening, weakening, or becoming stretched. It works best
+          as supporting evidence rather than as a stand-alone entry signal.
+        </p>
+        <div class="common-mistake"><strong>Common mistake:</strong> Shorting every stock with RSI above 70 or buying every stock below 30.</div>
+        <div class="dagger-takeaway"><strong>🗡️ Dagger Takeaway:</strong> Overbought can stay overbought. Momentum deserves respect until price proves otherwise.</div>
+      </article>
+
+      <article class="lesson" id="macd">
+        <h3>MACD</h3>
+        <p>
+          MACD stands for Moving Average Convergence Divergence. It is a trend-and-momentum indicator built from
+          exponential moving averages. Traders commonly watch the MACD line, signal line, and histogram.
+        </p>
+        <p>
+          A bullish crossover occurs when the MACD line moves above the signal line; a bearish crossover occurs
+          when it moves below. The histogram helps visualize how the distance between the two lines is expanding
+          or contracting.
+        </p>
+        <span class="lesson-label">Why traders care</span>
+        <p>
+          MACD can help identify changes in momentum across different time frames. It can be particularly useful
+          when a crossover agrees with price structure, support or resistance, and the broader trend.
+        </p>
+        <div class="common-mistake"><strong>Common mistake:</strong> Treating every MACD crossover as an entry. Crossovers can occur late and can repeatedly fail during chop.</div>
+        <div class="dagger-takeaway"><strong>🗡️ Dagger Takeaway:</strong> MACD can confirm momentum. Let price action tell you whether that momentum actually matters.</div>
+      </article>
+
+      <div class="learn-section-head">
+        <p class="eyebrow">Risk Management</p>
+        <h2>Staying in the game matters more than one trade.</h2>
+        <p>Good analysis cannot protect an account if position size and risk are out of control.</p>
+      </div>
+
+      <article class="lesson" id="position-sizing">
+        <h3>Position Sizing</h3>
+        <p>
+          Position sizing is deciding how many shares to trade based on the amount of money you are willing to lose
+          if the trade fails. The trade's stop distance should help determine the share size—not the other way around.
+        </p>
+        <div class="formula-box">Position Size ≈ Maximum Planned Loss ÷ Risk Per Share</div>
+        <p>
+          Example: if you are willing to risk $50 and your planned entry is $20 with a stop at $19.50,
+          the risk is $0.50 per share. A theoretical position size would be 100 shares before considering
+          slippage, gaps, fees, liquidity, and other execution risks.
+        </p>
+        <div class="common-mistake"><strong>Common mistake:</strong> Choosing a large share size first and then placing a stop wherever the dollar loss feels acceptable.</div>
+        <div class="dagger-takeaway"><strong>🗡️ Dagger Takeaway:</strong> Define the risk first. Let the setup determine the size.</div>
+      </article>
+
+      <article class="lesson" id="stop-losses">
+        <h3>Stop Losses</h3>
+        <p>
+          A stop loss is a predefined point where you intend to exit because the trade no longer fits your plan.
+          It can be based on a price level, chart structure, volatility, or another objective condition.
+        </p>
+        <p>
+          Stops help remove some emotion from the decision, but they are not guarantees. Fast markets, gaps,
+          halts, and thin liquidity can cause an execution to occur at a worse price than expected.
+        </p>
+        <span class="lesson-label">Why traders care</span>
+        <p>
+          A planned loss is easier to manage than an improvised one. The purpose of a stop is not to prove you were wrong;
+          it is to prevent one trade from becoming much larger than planned.
+        </p>
+        <div class="common-mistake"><strong>Common mistake:</strong> Moving the stop farther away simply because you do not want to take the loss.</div>
+        <div class="dagger-takeaway"><strong>🗡️ Dagger Takeaway:</strong> Know where the trade is invalid before you enter. Hope is not a stop-loss strategy.</div>
+      </article>
+
+      <article class="lesson" id="scaling">
+        <h3>Scaling In and Out</h3>
+        <p>
+          Scaling means entering or exiting a position in pieces instead of all at once. A trader might begin with
+          a smaller position and add only if the setup confirms, or sell part of a winning position while leaving
+          some shares for a larger move.
+        </p>
+        <p>
+          Scaling can reduce the pressure of trying to identify the perfect entry or exit. It can also help traders
+          adjust exposure as a setup becomes stronger or weaker.
+        </p>
+        <div class="common-mistake"><strong>Common mistake:</strong> Calling repeated averaging down "scaling in" when the original trade is already failing. Adding should be planned—not an emotional attempt to rescue the position.</div>
+        <div class="dagger-takeaway"><strong>🗡️ Dagger Takeaway:</strong> Scale according to a plan. Adding because the stock is cheaper is not the same as adding because the trade is confirming.</div>
+      </article>
+
+      <article class="lesson" id="risk-reward">
+        <h3>Risk / Reward</h3>
+        <p>
+          Risk/reward compares the amount you could reasonably lose with the amount you could reasonably gain if the
+          trade works. A trader risking $1 to potentially make $2 is looking at a theoretical 2-to-1 reward-to-risk setup.
+        </p>
+        <p>
+          The important word is realistic. A distant profit target does not create good risk/reward if the chart provides
+          no logical reason for price to reach it.
+        </p>
+        <span class="lesson-label">Why traders care</span>
+        <p>
+          You do not need to win every trade if your winners are meaningfully larger than your losers. At the same time,
+          reward-to-risk by itself says nothing about the probability of reaching the target.
+        </p>
+        <div class="common-mistake"><strong>Common mistake:</strong> Inventing a huge upside target just to make a poor setup look like 3-to-1 or 5-to-1.</div>
+        <div class="dagger-takeaway"><strong>🗡️ Dagger Takeaway:</strong> Good risk/reward comes from logical levels—not wishful targets.</div>
+      </article>
+
+      <article class="lesson" id="max-daily-loss">
+        <h3>Maximum Daily Loss</h3>
+        <p>
+          A maximum daily loss is a personal limit that tells you when trading for the day is finished. The exact amount
+          varies by trader, account size, strategy, and tolerance for risk.
+        </p>
+        <p>
+          The purpose is to prevent a normal losing session from turning into a destructive one. After several losses,
+          frustration can lead to larger size, lower-quality setups, revenge trading, and attempts to immediately
+          "make it back."
+        </p>
+        <span class="lesson-label">Why traders care</span>
+        <p>
+          A daily limit creates a circuit breaker before emotion takes control. Once reached, the job changes from
+          making money to protecting tomorrow's capital.
+        </p>
+        <div class="common-mistake"><strong>Common mistake:</strong> Increasing the loss limit during the session because the next trade "looks too good to miss."</div>
+        <div class="dagger-takeaway"><strong>🗡️ Dagger Takeaway:</strong> There will be another trading day. Protect the account from the version of yourself that wants one more trade.</div>
+      </article>
+
+      <article class="lesson" id="when-not-to-trade">
+        <h3>When Not to Trade</h3>
+        <p>
+          Not every market environment fits every strategy. Sometimes price is choppy, volume is weak, spreads are wide,
+          or the setup simply is not there. Other times the market may be fine, but the trader is tired, angry,
+          distracted, or trying to recover a loss.
+        </p>
+        <p>
+          Choosing not to trade is still a decision. Cash does not require you to predict the next move,
+          and missing one opportunity does less damage than forcing a bad trade.
+        </p>
+        <span class="lesson-label">Good reasons to stay out</span>
+        <ul>
+          <li>No clear setup or invalidation level.</li>
+          <li>Choppy price action that does not fit your strategy.</li>
+          <li>Poor liquidity or unusually wide spreads.</li>
+          <li>Trading mainly because you are bored or afraid of missing out.</li>
+          <li>Trying to win back money after a frustrating loss.</li>
+          <li>You are not mentally focused enough to follow your plan.</li>
+        </ul>
+        <div class="common-mistake"><strong>Common mistake:</strong> Believing that being a trader means you must trade every day.</div>
+        <div class="dagger-takeaway"><strong>🗡️ Dagger Takeaway:</strong> Sometimes the highest-quality trade is no trade at all. Wait for confirmation, not assumption.</div>
+      </article>
+
+      <div class="learn-note">
+        <p class="eyebrow">One Final Reminder</p>
+        <h2>Indicators provide information. They do not predict the future.</h2>
+        <p>
+          Candlesticks, VWAP, RSI, MACD, moving averages, volume, and every other tool are pieces of information.
+          None of them removes uncertainty. The goal is to combine context, momentum, price action, and disciplined
+          risk management to make better decisions—not to find a perfect signal.
+        </p>
+        <p><strong>🗡️ Wait for confirmation, not assumption.</strong></p>
+        <a class="back-top" href="#top">↑ Back to top</a>
+      </div>
+
+      <p class="disclaimer" style="margin-top:28px;">
+        This page is for educational and informational purposes only. It is not financial advice or a recommendation
+        to buy or sell any security. Trading and investing involve risk, including the possible loss of principal.
+        Stop orders and other risk controls may not execute at the intended price in fast or illiquid markets.
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <strong>Dagger Trading</strong>
+        <p class="footer-slogan">“Wait for confirmation, not assumption.”</p>
+        <p>Market Psychology • Patience • Risk Management</p>
+      </div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="comics.html">Comics</a>
+        <a href="learn.html">Learn</a>
+        <a href="market-notes.html">Market Notes</a>
+        <a href="toolbox.html">Market Center</a>
+        <a href="resources.html">Trading Resources</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="https://x.com/DaggerTrading" target="_blank" rel="noopener noreferrer">X / Twitter</a>
+      </nav>
+    </div>
+    <p class="disclaimer">
+      Content is provided for educational and informational purposes only and should not
+      be considered financial advice. Trading and investing involve risk, including the
+      possible loss of principal.
+    </p>
+    <p class="copyright">© <span data-year></span> Dagger Trading. All Rights Reserved.</p>
+  </div>
+</footer>
+<script src="js/script.js"></script>
+</body>
+</html>

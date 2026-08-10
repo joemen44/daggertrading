@@ -1,0 +1,13 @@
+DAGGER TRADING - LEARN UPDATE
+
+Upload/replace these files in the root of your GitHub repository:
+- index.html
+- comics.html
+- learn.html
+
+Also upload:
+- images/comics/earnings-day-reaction.png
+
+This is a cumulative update: it preserves the new Earnings comic update and adds the new Learn section.
+
+No CSS or JavaScript files need to be replaced.
