@@ -1,6 +1,68 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Dagger Trading — market psychology, patience, discipline, momentum, and risk management."><title>Index | Dagger Trading</title><link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/v2.css">
-  <link rel="stylesheet" href="css/resources-v3.css"></head><body><header class="site-header"><div class="container navbar"><a class="brand" href="index.html"><span class="brand-mark">🗡️</span><span>DAGGER <strong>TRADING</strong></span></a><button class="menu-button">Menu</button><nav class="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="market-notes.html">Market Notes</a><a href="comics.html">Comics</a><a href="learn.html">Learn</a><a href="dagger-check.html">Dagger Check</a><a href="resources.html">Trading Resources</a><a href="toolbox.html">Market Center</a><a href="contact.html">Contact</a><a href="https://x.com/DaggerTrading" target="_blank">X / Twitter</a></nav></div></header><main>
+  <link rel="stylesheet" href="css/resources-v3.css">
+  <style>
+    .nav-more { position: relative; }
+    .nav-more-button {
+      border: 0;
+      background: transparent;
+      color: inherit;
+      font: inherit;
+      cursor: pointer;
+      padding: 0;
+    }
+    .nav-more-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 12px);
+      right: 0;
+      min-width: 210px;
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #0d1118;
+      box-shadow: 0 16px 40px rgba(0,0,0,.28);
+      z-index: 50;
+    }
+    .nav-more.open .nav-more-menu { display: grid; gap: 4px; }
+    .nav-more-menu a {
+      display: block;
+      padding: 10px 12px;
+      border-radius: 8px;
+      white-space: nowrap;
+    }
+    .nav-more-menu a:hover { background: rgba(47,140,255,.10); }
+    @media (max-width: 900px) {
+      .nav-more { position: static; }
+      .nav-more-button { display: none; }
+      .nav-more-menu {
+        display: contents;
+        position: static;
+        min-width: 0;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head><body><header class="site-header"><div class="container navbar"><a class="brand" href="index.html"><span class="brand-mark">🗡️</span><span>DAGGER <strong>TRADING</strong></span></a><button class="menu-button">Menu</button><nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="learn.html">Learn</a>
+      <a href="dagger-check.html">Dagger Check</a>
+      <a href="market-notes.html">Market Notes</a>
+      <div class="nav-more">
+        <button class="nav-more-button" type="button" aria-expanded="false">More ▾</button>
+        <div class="nav-more-menu">
+          <a href="about.html">About</a>
+          <a href="comics.html">Comics</a>
+          <a href="resources.html">Trading Resources</a>
+          <a href="toolbox.html">Market Center</a>
+          <a href="contact.html">Contact</a>
+          <a href="https://x.com/DaggerTrading" target="_blank" rel="noopener noreferrer">X / Twitter</a>
+        </div>
+      </div>
+    </nav></div></header><main>
 <section class="hero"><div class="container"><div class="hero-banner"><div class="hero-content"><p class="eyebrow">Market Psychology • Discipline • Risk Management</p><h1>Dagger <span>Trading</span></h1><p class="hero-copy">Straightforward market commentary built around patience, preparation, momentum, and protecting capital. No hype.
 No pretending to know the future.</p><div class="actions"><a class="button button-primary" href="https://x.com/DaggerTrading" target="_blank">Follow @DaggerTrading</a><a class="button button-secondary" href="about.html">Learn More</a></div></div></div></div></section>
 <section><div class="container"><div class="section-title"><p class="eyebrow">The Process</p><h2>Control what you can.</h2><p>Markets change every day.
@@ -72,4 +134,21 @@ One bad trade should never do lasting damage.</p></article></div></div></section
     </p>
     <p class="copyright">© <span data-year></span> Dagger Trading. All Rights Reserved.</p>
   </div>
-</footer><script src="js/script.js"></script></body></html>
+</footer><script src="js/script.js"></script>
+<script>
+(function(){
+  const more = document.querySelector('.nav-more');
+  if (!more) return;
+  const btn = more.querySelector('.nav-more-button');
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    const open = more.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  document.addEventListener('click', function(){
+    more.classList.remove('open');
+    btn.setAttribute('aria-expanded','false');
+  });
+})();
+</script>
+</body></html>

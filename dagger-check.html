@@ -14,9 +14,71 @@
 .score{font-size:2.3rem;font-weight:800;margin:6px 0 4px}.result p,.missing{color:var(--muted);line-height:1.65}.missing{margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}
 .process-note{margin-top:24px;padding:18px;border-left:3px solid var(--accent);border-radius:10px;background:rgba(47,140,255,.07)}
 .mini-rule{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:22px}.mini-rule div{padding:14px;border:1px solid var(--line);border-radius:12px;background:rgba(47,140,255,.03)}.mini-rule strong{display:block;margin-bottom:5px}@media(max-width:700px){.mini-rule{grid-template-columns:1fr}}
-</style></head>
+</style>
+  <style>
+    .nav-more { position: relative; }
+    .nav-more-button {
+      border: 0;
+      background: transparent;
+      color: inherit;
+      font: inherit;
+      cursor: pointer;
+      padding: 0;
+    }
+    .nav-more-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 12px);
+      right: 0;
+      min-width: 210px;
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #0d1118;
+      box-shadow: 0 16px 40px rgba(0,0,0,.28);
+      z-index: 50;
+    }
+    .nav-more.open .nav-more-menu { display: grid; gap: 4px; }
+    .nav-more-menu a {
+      display: block;
+      padding: 10px 12px;
+      border-radius: 8px;
+      white-space: nowrap;
+    }
+    .nav-more-menu a:hover { background: rgba(47,140,255,.10); }
+    @media (max-width: 900px) {
+      .nav-more { position: static; }
+      .nav-more-button { display: none; }
+      .nav-more-menu {
+        display: contents;
+        position: static;
+        min-width: 0;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
 <body>
-<header class="site-header"><div class="container navbar"><a class="brand" href="index.html"><span class="brand-mark">🗡️</span><span>DAGGER <strong>TRADING</strong></span></a><button class="menu-button" type="button" aria-label="Open menu">Menu</button><nav class="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="market-notes.html">Market Notes</a><a href="comics.html">Comics</a><a href="learn.html">Learn</a><a href="dagger-check.html">Dagger Check</a><a href="resources.html">Trading Resources</a><a href="toolbox.html">Market Center</a><a href="contact.html">Contact</a><a href="https://x.com/DaggerTrading" target="_blank" rel="noopener noreferrer">X / Twitter</a></nav></div></header>
+<header class="site-header"><div class="container navbar"><a class="brand" href="index.html"><span class="brand-mark">🗡️</span><span>DAGGER <strong>TRADING</strong></span></a><button class="menu-button" type="button" aria-label="Open menu">Menu</button><nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="learn.html">Learn</a>
+      <a href="dagger-check.html">Dagger Check</a>
+      <a href="market-notes.html">Market Notes</a>
+      <div class="nav-more">
+        <button class="nav-more-button" type="button" aria-expanded="false">More ▾</button>
+        <div class="nav-more-menu">
+          <a href="about.html">About</a>
+          <a href="comics.html">Comics</a>
+          <a href="resources.html">Trading Resources</a>
+          <a href="toolbox.html">Market Center</a>
+          <a href="contact.html">Contact</a>
+          <a href="https://x.com/DaggerTrading" target="_blank" rel="noopener noreferrer">X / Twitter</a>
+        </div>
+      </div>
+    </nav></div></header>
 <main><section class="page-hero"><div class="container check-shell"><p class="eyebrow">Before You Trade</p><h1>🗡️ The Dagger Trading Decision Check</h1><p>Six quick questions to test your process before entering a trade. It does not tell you what to buy or sell—it helps you define the setup, risk, and whether emotion is getting involved.</p></div></section>
 <section><div class="container check-shell">
 <div class="mini-rule"><div><strong>🧠 Process first</strong><span>Judge the decision—not the eventual P&amp;L.</span></div><div><strong>🛡️ Risk defined</strong><span>Know where the trade is wrong before capital goes in.</span></div><div><strong>⏳ No rush</strong><span>Missing a trade is cheaper than forcing one.</span></div></div>
@@ -44,4 +106,21 @@ let s=a.reduce((x,y)=>x+y,0);scoreEl.textContent=s+' / 6';result.className='resu
 let m=a.map((v,i)=>v===0?labels[i]:null).filter(Boolean);missingEl.innerHTML=m.length?'<strong>Missing pieces:</strong><ul>'+m.map(x=>'<li>'+x+'</li>').join('')+'</ul>':'<strong>All six process checks passed.</strong>';result.scrollIntoView({behavior:'smooth',block:'nearest'});});
 document.getElementById('resetCheck').addEventListener('click',function(){form.reset();result.className='result';});
 })();
-</script></body></html>
+</script>
+<script>
+(function(){
+  const more = document.querySelector('.nav-more');
+  if (!more) return;
+  const btn = more.querySelector('.nav-more-button');
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    const open = more.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  document.addEventListener('click', function(){
+    more.classList.remove('open');
+    btn.setAttribute('aria-expanded','false');
+  });
+})();
+</script>
+</body></html>

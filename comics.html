@@ -8,6 +8,52 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/v2.css">
   <link rel="stylesheet" href="css/resources-v3.css">
+
+  <style>
+    .nav-more { position: relative; }
+    .nav-more-button {
+      border: 0;
+      background: transparent;
+      color: inherit;
+      font: inherit;
+      cursor: pointer;
+      padding: 0;
+    }
+    .nav-more-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 12px);
+      right: 0;
+      min-width: 210px;
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #0d1118;
+      box-shadow: 0 16px 40px rgba(0,0,0,.28);
+      z-index: 50;
+    }
+    .nav-more.open .nav-more-menu { display: grid; gap: 4px; }
+    .nav-more-menu a {
+      display: block;
+      padding: 10px 12px;
+      border-radius: 8px;
+      white-space: nowrap;
+    }
+    .nav-more-menu a:hover { background: rgba(47,140,255,.10); }
+    @media (max-width: 900px) {
+      .nav-more { position: static; }
+      .nav-more-button { display: none; }
+      .nav-more-menu {
+        display: contents;
+        position: static;
+        min-width: 0;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        box-shadow: none;
+      }
+    }
+  </style>
 </head>
 <body>
 <header class="site-header">
@@ -19,12 +65,20 @@
     <button class="menu-button" type="button" aria-label="Open menu">Menu</button>
     <nav class="nav-links">
       <a href="index.html">Home</a>
-      <a href="about.html">About</a>
+      <a href="learn.html">Learn</a>
+      <a href="dagger-check.html">Dagger Check</a>
       <a href="market-notes.html">Market Notes</a>
-      <a href="comics.html">Comics</a>
-      <a href="resources.html">Trading Resources</a><a href="toolbox.html">Market Center</a>
-      <a href="contact.html">Contact</a>
-      <a href="https://x.com/DaggerTrading" target="_blank" rel="noopener noreferrer">X / Twitter</a>
+      <div class="nav-more">
+        <button class="nav-more-button" type="button" aria-expanded="false">More ▾</button>
+        <div class="nav-more-menu">
+          <a href="about.html">About</a>
+          <a href="comics.html">Comics</a>
+          <a href="resources.html">Trading Resources</a>
+          <a href="toolbox.html">Market Center</a>
+          <a href="contact.html">Contact</a>
+          <a href="https://x.com/DaggerTrading" target="_blank" rel="noopener noreferrer">X / Twitter</a>
+        </div>
+      </div>
     </nav>
   </div>
 </header>
@@ -214,5 +268,22 @@
   </div>
 </footer>
 <script src="js/script.js"></script>
+
+<script>
+(function(){
+  const more = document.querySelector('.nav-more');
+  if (!more) return;
+  const btn = more.querySelector('.nav-more-button');
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    const open = more.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  document.addEventListener('click', function(){
+    more.classList.remove('open');
+    btn.setAttribute('aria-expanded','false');
+  });
+})();
+</script>
 </body>
 </html>

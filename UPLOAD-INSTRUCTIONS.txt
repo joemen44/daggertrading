@@ -1,6 +1,24 @@
-DAGGER TRADING - DAGGER CHECK UPDATE
+DAGGER TRADING - NAVIGATION CLEANUP
 
-This cumulative update preserves the current Learn section, visuals, and latest Earnings comic.
+This cumulative update keeps:
+- Dagger Check
+- Learn section + visuals
+- Latest Earnings comic
+
+Navigation change:
+Desktop:
+Home | Learn | Dagger Check | Market Notes | More ▾
+
+The More dropdown contains:
+- About
+- Comics
+- Trading Resources
+- Market Center
+- Contact
+- X / Twitter
+
+Mobile:
+The existing Menu button still reveals the full navigation.
 
 Upload/replace:
 - index.html
@@ -8,7 +26,5 @@ Upload/replace:
 - learn.html
 - dagger-check.html
 
-Keep the existing image at:
-- images/comics/earnings-day-reaction.png
-
-No CSS or JS files need to be replaced. The Dagger Check styling and scoring logic are built into dagger-check.html.
+No CSS or JS files need to be replaced.
+The dropdown styling and behavior are embedded in the updated HTML files.
