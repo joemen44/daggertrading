@@ -1,9 +1,9 @@
-COPY EVERYTHING IN THIS FOLDER INTO:
-C:\Users\Joe\Documents\GitHub\daggertrading
+CSCO Spotlight site update — August 12, 2026
 
-Keep index.html, the other HTML files, and the css, js, and images folders together.
+Upload/replace:
+1. csco-stock-spotlight-august-2026.html — NEW
+2. market-notes.html — REPLACE existing Market Notes page
 
-Then open GitHub Desktop:
-1. Summary: Initial Dagger Trading website
-2. Click Commit to main
-3. Click Push origin
+The updated Market Notes page makes CSCO the current Stock Spotlight and keeps SPCX as the previous spotlight.
+
+No CSS/JS files need to be replaced.
