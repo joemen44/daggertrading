@@ -1,7 +1,14 @@
-FIXED HOMEPAGE
+CORRECTED HOMEPAGE UPDATE
 
-Replace the current index.html with this index.html.
-This restores a compact More dropdown while keeping the new CSCO Stock Spotlight.
+Source: your August 11 navigation cleanup update.
+This preserves:
+- Learn
+- Dagger Check in the top navigation
+- Market Notes
+- More dropdown
+- Existing Dagger Check homepage section
+- Featured Comic and all other homepage content
 
-Visible navigation: Home, Market Notes, Comics, Market Center, More
-More contains: Learn, Trading Resources, About, Contact, X / Twitter
+Only change: adds the CSCO Stock Spotlight section above Featured Comic.
+
+Upload/replace index.html only.
