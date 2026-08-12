@@ -1,9 +1,7 @@
-CSCO Spotlight site update — August 12, 2026
+FIXED HOMEPAGE
 
-Upload/replace:
-1. csco-stock-spotlight-august-2026.html — NEW
-2. market-notes.html — REPLACE existing Market Notes page
+Replace the current index.html with this index.html.
+This restores a compact More dropdown while keeping the new CSCO Stock Spotlight.
 
-The updated Market Notes page makes CSCO the current Stock Spotlight and keeps SPCX as the previous spotlight.
-
-No CSS/JS files need to be replaced.
+Visible navigation: Home, Market Notes, Comics, Market Center, More
+More contains: Learn, Trading Resources, About, Contact, X / Twitter
