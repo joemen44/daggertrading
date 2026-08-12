@@ -1,15 +1,14 @@
-DAGGER TRADING - LEARN VISUALS UPDATE
+DAGGER TRADING - DAGGER CHECK UPDATE
 
-This is a cumulative update. It keeps the latest Earnings comic and the Learn section,
-and adds a responsive instructional visual to every Learn lesson.
+This cumulative update preserves the current Learn section, visuals, and latest Earnings comic.
 
-Upload/replace in your GitHub repository:
+Upload/replace:
 - index.html
 - comics.html
 - learn.html
+- dagger-check.html
 
-Also make sure this existing image remains at:
+Keep the existing image at:
 - images/comics/earnings-day-reaction.png
 
-No CSS or JavaScript files need to be replaced. The Learn-page visuals are inline SVG,
-so they stay sharp on desktop/mobile and do not require 15 separate image files.
+No CSS or JS files need to be replaced. The Dagger Check styling and scoring logic are built into dagger-check.html.
