@@ -1,14 +1,13 @@
-CORRECTED HOMEPAGE UPDATE
+MORE MENU ORDER FIX
 
-Source: your August 11 navigation cleanup update.
-This preserves:
-- Learn
-- Dagger Check in the top navigation
-- Market Notes
-- More dropdown
-- Existing Dagger Check homepage section
-- Featured Comic and all other homepage content
+Replace index.html only.
 
-Only change: adds the CSCO Stock Spotlight section above Featured Comic.
+More dropdown order:
+1. Comics
+2. Market Center
+3. Trading Resources
+4. About
+5. Contact
+6. X / Twitter
 
-Upload/replace index.html only.
+No other homepage content was intentionally changed.
