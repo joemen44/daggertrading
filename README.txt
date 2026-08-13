@@ -1,12 +1,6 @@
-COMICS NAVIGATION FIX ONLY
+MARKET CENTER NAVIGATION FIX ONLY
 
-Replace comics.html only.
+Replace toolbox.html only.
 
-Top navigation is now:
-Home | Learn | Trader Tools ▾ | Market Notes | More ▾
-
-Trader Tools contains:
-- Dagger Check
-- Dagger Setup Score
-
-Comic content was not intentionally changed.
+Navigation: Home | Learn | Trader Tools ▾ | Market Notes | More ▾
+Market Center content/widgets were not intentionally changed.
