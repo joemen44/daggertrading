@@ -1,13 +1,10 @@
-MORE MENU ORDER FIX
+CSCO SPOTLIGHT TECHNICAL LEVEL UPDATE
 
-Replace index.html only.
+Replace csco-stock-spotlight-august-2026.html only.
 
-More dropdown order:
-1. Comics
-2. Market Center
-3. Trading Resources
-4. About
-5. Contact
-6. X / Twitter
+Added the current daily 50-day SMA level of approximately $118.01 in:
+- The Technical Setup
+- The Dagger Trading Take
+- What I'm Watching Next
 
-No other homepage content was intentionally changed.
+The article says 'currently around' because the moving average changes over time.
