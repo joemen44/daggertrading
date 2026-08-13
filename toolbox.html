@@ -73,26 +73,91 @@
       }
     }
   </style>
+
+
+
+<style id="dagger-unified-nav">
+  .site-header .navbar{position:relative}
+  .site-header .nav-links{display:flex;align-items:center;gap:22px}
+  .site-header .nav-dropdown{position:relative;display:flex;align-items:center}
+  .site-header .nav-dropdown-button{
+    appearance:none;
+    border:0;
+    background:transparent;
+    color:inherit;
+    font:inherit;
+    line-height:inherit;
+    cursor:pointer;
+    padding:0;
+  }
+  .site-header .nav-dropdown-menu{
+    display:none;
+    position:absolute;
+    top:calc(100% + 12px);
+    min-width:220px;
+    padding:10px;
+    border:1px solid var(--line);
+    border-radius:12px;
+    background:#0d1118;
+    box-shadow:0 16px 40px rgba(0,0,0,.30);
+    z-index:999;
+  }
+  .site-header .nav-tools .nav-dropdown-menu{left:0}
+  .site-header .nav-more .nav-dropdown-menu{right:0}
+  .site-header .nav-dropdown.open .nav-dropdown-menu{display:grid;gap:4px}
+  .site-header .nav-dropdown-menu a{
+    display:block;
+    padding:10px 12px;
+    border-radius:8px;
+    white-space:nowrap;
+  }
+  .site-header .nav-dropdown-menu a:hover{background:rgba(47,140,255,.10)}
+
+  @media (max-width:900px){
+    .site-header .nav-dropdown{display:contents}
+    .site-header .nav-dropdown-button{display:none}
+    .site-header .nav-dropdown-menu{
+      display:contents !important;
+      position:static;
+      min-width:0;
+      padding:0;
+      border:0;
+      background:transparent;
+      box-shadow:none;
+    }
+  }
+</style>
 </head>
 <body>
 <header class="site-header">
   <div class="container navbar">
-    <a class="brand" href="index.html">
-      <span class="brand-mark">🗡️</span>
-      <span>DAGGER <strong>TRADING</strong></span>
-    </a>
-
-    <button class="menu-button" type="button" aria-label="Open menu">Menu</button>
-
+    <a class="brand" href="index.html"><span class="brand-mark">🗡️</span><span>DAGGER <strong>TRADING</strong></span></a>
+    <button class="menu-button" type="button" aria-expanded="false">Menu</button>
     <nav class="nav-links">
       <a href="index.html">Home</a>
-      <a href="about.html">About</a>
+      <a href="learn.html">Learn</a>
+
+      <div class="nav-dropdown nav-tools">
+        <button class="nav-dropdown-button" type="button" aria-expanded="false">Trader Tools ▾</button>
+        <div class="nav-dropdown-menu">
+          <a href="dagger-check.html">Dagger Check</a>
+          <a href="dagger-setup-score.html">Dagger Setup Score</a>
+        </div>
+      </div>
+
       <a href="market-notes.html">Market Notes</a>
-      <a href="comics.html">Comics</a>
-      <a href="resources.html">Trading Resources</a>
-      <a href="toolbox.html">Market Center</a>
-      <a href="contact.html">Contact</a>
-      <a href="https://x.com/DaggerTrading" target="_blank" rel="noopener noreferrer">X / Twitter</a>
+
+      <div class="nav-dropdown nav-more">
+        <button class="nav-dropdown-button" type="button" aria-expanded="false">More ▾</button>
+        <div class="nav-dropdown-menu">
+          <a href="comics.html">Comics</a>
+          <a href="toolbox.html">Market Center</a>
+          <a href="resources.html">Trading Resources</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="https://x.com/DaggerTrading" target="_blank" rel="noopener noreferrer">X / Twitter</a>
+        </div>
+      </div>
     </nav>
   </div>
 </header>
@@ -259,5 +324,75 @@
 </footer>
 
 <script src="js/script.js"></script>
+
+
+
+<script id="dagger-unified-nav-js">
+(function(){
+  const header = document.querySelector('.site-header');
+  if(!header) return;
+
+  const menuButton = header.querySelector('.menu-button');
+  const nav = header.querySelector('.nav-links');
+  if(menuButton && nav){
+    menuButton.addEventListener('click', function(e){
+      e.stopPropagation();
+      const isOpen = nav.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  }
+
+  const dropdowns = header.querySelectorAll('.nav-dropdown');
+  dropdowns.forEach(function(dropdown){
+    const button = dropdown.querySelector('.nav-dropdown-button');
+    if(!button) return;
+
+    button.addEventListener('click', function(e){
+      e.stopPropagation();
+
+      dropdowns.forEach(function(other){
+        if(other !== dropdown){
+          other.classList.remove('open');
+          const otherButton = other.querySelector('.nav-dropdown-button');
+          if(otherButton) otherButton.setAttribute('aria-expanded','false');
+        }
+      });
+
+      const isOpen = dropdown.classList.toggle('open');
+      button.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  });
+
+  document.addEventListener('click', function(e){
+    if(header.contains(e.target)) return;
+
+    dropdowns.forEach(function(dropdown){
+      dropdown.classList.remove('open');
+      const button = dropdown.querySelector('.nav-dropdown-button');
+      if(button) button.setAttribute('aria-expanded','false');
+    });
+
+    if(nav && menuButton){
+      nav.classList.remove('open');
+      menuButton.setAttribute('aria-expanded','false');
+    }
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key !== 'Escape') return;
+
+    dropdowns.forEach(function(dropdown){
+      dropdown.classList.remove('open');
+      const button = dropdown.querySelector('.nav-dropdown-button');
+      if(button) button.setAttribute('aria-expanded','false');
+    });
+
+    if(nav && menuButton){
+      nav.classList.remove('open');
+      menuButton.setAttribute('aria-expanded','false');
+    }
+  });
+})();
+</script>
 </body>
 </html>

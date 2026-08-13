@@ -8,171 +8,84 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/v2.css">
   <link rel="stylesheet" href="css/resources-v3.css">
-  <style>
-
-    .nav-tools { position: relative; }
-    .nav-tools-button {
-      border: 0;
-      background: transparent;
-      color: inherit;
-      font: inherit;
-      cursor: pointer;
-      padding: 0;
-    }
-    .nav-tools-menu {
-      display: none;
-      position: absolute;
-      top: calc(100% + 12px);
-      left: 0;
-      min-width: 210px;
-      padding: 10px;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background: #0d1118;
-      box-shadow: 0 16px 40px rgba(0,0,0,.28);
-      z-index: 50;
-    }
-    .nav-tools.open .nav-tools-menu { display: grid; gap: 4px; }
-    .nav-tools-menu a {
-      display: block;
-      padding: 10px 12px;
-      border-radius: 8px;
-      white-space: nowrap;
-    }
-    .nav-tools-menu a:hover { background: rgba(47,140,255,.10); }
-    @media (max-width: 900px) {
-      .nav-tools { position: static; }
-      .nav-tools-button { display: none; }
-      .nav-tools-menu {
-        display: contents;
-        position: static;
-        min-width: 0;
-        padding: 0;
-        border: 0;
-        background: transparent;
-        box-shadow: none;
-      }
-    }
-
-
-    .setup-wrap{
-      --bg:#0b1017; --panel:#111923; --panel2:#0e151e; --text:#eef5ff;
-      --muted:#9eacbd; --line:#263443; --accent:#4d9dff; --good:#53c78b;
-      --warn:#e4b85b; --bad:#e66b6b;
-    }
-    *{box-sizing:border-box}
-            .setup-wrap{max-width:900px;margin:auto;padding:20px 0 70px}
-    .brand{display:flex;align-items:center;gap:9px;font-weight:800;letter-spacing:.04em;margin-bottom:34px}
-    .brand span:last-child{color:var(--accent)}
-    .hero{padding:24px 0 18px}
-    .eyebrow{text-transform:uppercase;letter-spacing:.13em;font-size:.76rem;font-weight:800;color:var(--accent)}
-    h1{font-size:clamp(2.1rem,5vw,4rem);line-height:1.02;margin:9px 0 14px}
-    h2{margin:0 0 8px}
-    p{color:var(--muted);line-height:1.65}
-    .note,.result,.question{border:1px solid var(--line);border-radius:16px;background:rgba(17,25,35,.92)}
-    .note{padding:18px 20px;margin:18px 0 28px;border-left:4px solid var(--accent)}
-    .ticker-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0 28px}
-    label.small{display:block;color:var(--muted);font-size:.83rem;margin-bottom:6px}
-    input[type=text]{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:10px;
-      background:#0b121a;color:var(--text);font:inherit}
-    .question{padding:20px;margin:14px 0}
-    .question h3{margin:0 0 6px;font-size:1.05rem}
-    .question p{margin:0 0 14px;font-size:.92rem}
-    details.help{margin-top:12px;border-top:1px solid var(--line);padding-top:11px}
-    details.help summary{cursor:pointer;color:var(--accent);font-weight:750;font-size:.86rem;list-style:none}
-    details.help summary::-webkit-details-marker{display:none}
-    details.help p{font-size:.84rem;margin:8px 0 0;color:var(--muted)}
-    .review-list{display:grid;gap:9px;margin-top:14px}
-    .review-row{padding:12px 13px;border:1px solid var(--line);border-radius:10px;background:#0d151e}
-    .review-row strong{display:block;margin-bottom:3px}
-    .review-row small{color:var(--muted)}
-    .result-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
-    .choices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
-    .choice input{position:absolute;opacity:0;pointer-events:none}
-    .choice label{display:block;padding:12px 11px;border:1px solid var(--line);border-radius:10px;text-align:center;
-      cursor:pointer;background:#0d151e;color:var(--muted);font-weight:700;font-size:.9rem;transition:.15s}
-    .choice input:checked + label{border-color:var(--accent);background:rgba(77,157,255,.13);color:var(--text)}
-    .actions{display:flex;gap:10px;flex-wrap:wrap;margin:24px 0}
-    button{border:0;border-radius:10px;padding:13px 18px;font:inherit;font-weight:800;cursor:pointer}
-    .primary{background:var(--accent);color:#06111e}.secondary{background:#172230;color:var(--text);border:1px solid var(--line)}
-    .result{display:none;padding:26px;margin-top:24px}
-    .score{font-size:3.4rem;font-weight:900;line-height:1;margin:8px 0}
-    .label{font-size:1.25rem;font-weight:800;margin-bottom:10px}
-    .meter{height:12px;background:#0b121a;border:1px solid var(--line);border-radius:999px;overflow:hidden;margin:18px 0}
-    .meter span{display:block;height:100%;width:0;background:var(--accent);transition:.35s}
-    .breakdown{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:18px}
-    .item{padding:13px;border:1px solid var(--line);border-radius:10px;background:#0d151e}
-    .item strong{display:block;margin-bottom:4px}.item small{color:var(--muted)}
-    .warning{margin-top:20px;padding:16px;border-radius:12px;background:rgba(230,107,107,.08);border:1px solid rgba(230,107,107,.35)}
-    .warning strong{color:#ffb2b2}
-    .signature{margin-top:22px;font-weight:800;color:var(--text)}
-    .foot{font-size:.85rem;color:var(--muted);margin-top:34px;padding-top:22px;border-top:1px solid var(--line)}
-    @media(max-width:700px){.ticker-row,.choices,.breakdown{grid-template-columns:1fr}}
   
-  .nav-more { position: relative; }
-    .nav-more-button {
-      border: 0;
-      background: transparent;
-      color: inherit;
-      font: inherit;
-      cursor: pointer;
-      padding: 0;
+
+
+
+<style id="dagger-unified-nav">
+  .site-header .navbar{position:relative}
+  .site-header .nav-links{display:flex;align-items:center;gap:22px}
+  .site-header .nav-dropdown{position:relative;display:flex;align-items:center}
+  .site-header .nav-dropdown-button{
+    appearance:none;
+    border:0;
+    background:transparent;
+    color:inherit;
+    font:inherit;
+    line-height:inherit;
+    cursor:pointer;
+    padding:0;
+  }
+  .site-header .nav-dropdown-menu{
+    display:none;
+    position:absolute;
+    top:calc(100% + 12px);
+    min-width:220px;
+    padding:10px;
+    border:1px solid var(--line);
+    border-radius:12px;
+    background:#0d1118;
+    box-shadow:0 16px 40px rgba(0,0,0,.30);
+    z-index:999;
+  }
+  .site-header .nav-tools .nav-dropdown-menu{left:0}
+  .site-header .nav-more .nav-dropdown-menu{right:0}
+  .site-header .nav-dropdown.open .nav-dropdown-menu{display:grid;gap:4px}
+  .site-header .nav-dropdown-menu a{
+    display:block;
+    padding:10px 12px;
+    border-radius:8px;
+    white-space:nowrap;
+  }
+  .site-header .nav-dropdown-menu a:hover{background:rgba(47,140,255,.10)}
+
+  @media (max-width:900px){
+    .site-header .nav-dropdown{display:contents}
+    .site-header .nav-dropdown-button{display:none}
+    .site-header .nav-dropdown-menu{
+      display:contents !important;
+      position:static;
+      min-width:0;
+      padding:0;
+      border:0;
+      background:transparent;
+      box-shadow:none;
     }
-    .nav-more-menu {
-      display: none;
-      position: absolute;
-      top: calc(100% + 12px);
-      right: 0;
-      min-width: 210px;
-      padding: 10px;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background: #0d1118;
-      box-shadow: 0 16px 40px rgba(0,0,0,.28);
-      z-index: 50;
-    }
-    .nav-more.open .nav-more-menu { display: grid; gap: 4px; }
-    .nav-more-menu a {
-      display: block;
-      padding: 10px 12px;
-      border-radius: 8px;
-      white-space: nowrap;
-    }
-    .nav-more-menu a:hover { background: rgba(47,140,255,.10); }
-    @media (max-width: 900px) {
-      .nav-more { position: static; }
-      .nav-more-button { display: none; }
-      .nav-more-menu {
-        display: contents;
-        position: static;
-        min-width: 0;
-        padding: 0;
-        border: 0;
-        background: transparent;
-        box-shadow: none;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
 <header class="site-header">
   <div class="container navbar">
     <a class="brand" href="index.html"><span class="brand-mark">🗡️</span><span>DAGGER <strong>TRADING</strong></span></a>
-    <button class="menu-button">Menu</button>
+    <button class="menu-button" type="button" aria-expanded="false">Menu</button>
     <nav class="nav-links">
       <a href="index.html">Home</a>
       <a href="learn.html">Learn</a>
-      <div class="nav-tools">
-        <button class="nav-tools-button" type="button" aria-expanded="false">Trader Tools ▾</button>
-        <div class="nav-tools-menu">
+
+      <div class="nav-dropdown nav-tools">
+        <button class="nav-dropdown-button" type="button" aria-expanded="false">Trader Tools ▾</button>
+        <div class="nav-dropdown-menu">
           <a href="dagger-check.html">Dagger Check</a>
           <a href="dagger-setup-score.html">Dagger Setup Score</a>
         </div>
       </div>
+
       <a href="market-notes.html">Market Notes</a>
-      <div class="nav-more">
-        <button class="nav-more-button" type="button" aria-expanded="false">More ▾</button>
-        <div class="nav-more-menu">
+
+      <div class="nav-dropdown nav-more">
+        <button class="nav-dropdown-button" type="button" aria-expanded="false">More ▾</button>
+        <div class="nav-dropdown-menu">
           <a href="comics.html">Comics</a>
           <a href="toolbox.html">Market Center</a>
           <a href="resources.html">Trading Resources</a>
@@ -548,6 +461,76 @@ document.getElementById("resetBtn").addEventListener("click", function(){
   document.addEventListener('click', function(){
     more.classList.remove('open');
     btn.setAttribute('aria-expanded','false');
+  });
+})();
+</script>
+
+
+
+<script id="dagger-unified-nav-js">
+(function(){
+  const header = document.querySelector('.site-header');
+  if(!header) return;
+
+  const menuButton = header.querySelector('.menu-button');
+  const nav = header.querySelector('.nav-links');
+  if(menuButton && nav){
+    menuButton.addEventListener('click', function(e){
+      e.stopPropagation();
+      const isOpen = nav.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  }
+
+  const dropdowns = header.querySelectorAll('.nav-dropdown');
+  dropdowns.forEach(function(dropdown){
+    const button = dropdown.querySelector('.nav-dropdown-button');
+    if(!button) return;
+
+    button.addEventListener('click', function(e){
+      e.stopPropagation();
+
+      dropdowns.forEach(function(other){
+        if(other !== dropdown){
+          other.classList.remove('open');
+          const otherButton = other.querySelector('.nav-dropdown-button');
+          if(otherButton) otherButton.setAttribute('aria-expanded','false');
+        }
+      });
+
+      const isOpen = dropdown.classList.toggle('open');
+      button.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  });
+
+  document.addEventListener('click', function(e){
+    if(header.contains(e.target)) return;
+
+    dropdowns.forEach(function(dropdown){
+      dropdown.classList.remove('open');
+      const button = dropdown.querySelector('.nav-dropdown-button');
+      if(button) button.setAttribute('aria-expanded','false');
+    });
+
+    if(nav && menuButton){
+      nav.classList.remove('open');
+      menuButton.setAttribute('aria-expanded','false');
+    }
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key !== 'Escape') return;
+
+    dropdowns.forEach(function(dropdown){
+      dropdown.classList.remove('open');
+      const button = dropdown.querySelector('.nav-dropdown-button');
+      if(button) button.setAttribute('aria-expanded','false');
+    });
+
+    if(nav && menuButton){
+      nav.classList.remove('open');
+      menuButton.setAttribute('aria-expanded','false');
+    }
   });
 })();
 </script>
