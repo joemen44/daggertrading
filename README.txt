@@ -1,8 +1,22 @@
-DAGGER SETUP SCORE — DUPLICATE TITLE FIX
+DAGGER TRADING — NAVIGATION CONSISTENCY FIX
 
-Replace only dagger-setup-score.html.
+Replace:
+1. learn.html
+2. market-notes.html
 
-Fixed:
-- Removed the second internal Process Tool / Dagger Setup Score heading block.
-- Kept the large main page title at the top.
-- No scoring, questions, navigation, or other site content was changed.
+Both pages now use the same top navigation as the homepage:
+Home | Learn | Trader Tools ▾ | Market Notes | More ▾
+
+Trader Tools:
+- Dagger Check
+- Dagger Setup Score
+
+More:
+- Comics
+- Market Center
+- Trading Resources
+- About
+- Contact
+- X / Twitter
+
+No other page content was intentionally changed.
