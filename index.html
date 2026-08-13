@@ -45,11 +45,62 @@
         box-shadow: none;
       }
     }
+  
+    .nav-tools { position: relative; }
+    .nav-tools-button {
+      border: 0;
+      background: transparent;
+      color: inherit;
+      font: inherit;
+      cursor: pointer;
+      padding: 0;
+    }
+    .nav-tools-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 12px);
+      left: 0;
+      min-width: 210px;
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #0d1118;
+      box-shadow: 0 16px 40px rgba(0,0,0,.28);
+      z-index: 50;
+    }
+    .nav-tools.open .nav-tools-menu { display: grid; gap: 4px; }
+    .nav-tools-menu a {
+      display: block;
+      padding: 10px 12px;
+      border-radius: 8px;
+      white-space: nowrap;
+    }
+    .nav-tools-menu a:hover { background: rgba(47,140,255,.10); }
+    @media (max-width: 900px) {
+      .nav-tools { position: static; }
+      .nav-tools-button { display: none; }
+      .nav-tools-menu {
+        display: contents;
+        position: static;
+        min-width: 0;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        box-shadow: none;
+      }
+    }
+
   </style>
 </head><body><header class="site-header"><div class="container navbar"><a class="brand" href="index.html"><span class="brand-mark">🗡️</span><span>DAGGER <strong>TRADING</strong></span></a><button class="menu-button">Menu</button><nav class="nav-links">
       <a href="index.html">Home</a>
       <a href="learn.html">Learn</a>
-      <a href="dagger-check.html">Dagger Check</a>
+      <div class="nav-tools">
+        <button class="nav-tools-button" type="button" aria-expanded="false">Trader Tools ▾</button>
+        <div class="nav-tools-menu">
+          <a href="dagger-check.html">Dagger Check</a>
+          <a href="dagger-setup-score.html">Dagger Setup Score</a>
+        </div>
+      </div>
       <a href="market-notes.html">Market Notes</a>
       <div class="nav-more">
         <button class="nav-more-button" type="button" aria-expanded="false">More ▾</button>
@@ -126,7 +177,7 @@ One bad trade should never do lasting damage.</p></article></div></div></section
     </article>
   </div>
 </section>
-<section><div class="container"><div class="section-title"><p class="eyebrow">Signature Tool</p><h2>Run the Dagger Check before you trade.</h2><p>Six quick questions to test whether you have a plan—or whether emotion is making the decision.</p></div><article class="card latest-feature"><div class="latest-feature-copy"><span class="tag">Free • No Signup</span><h2>🗡️ The Dagger Trading Decision Check</h2><p>Check the setup, momentum, invalidation, risk/reward, chasing, and emotional state before putting capital at risk. The score measures process—not whether the trade eventually wins or loses.</p><div class="actions"><a class="button button-primary" href="dagger-check.html">Run the Dagger Check</a></div></div></article></div></section><section><div class="container"><div class="quote"><p>“Wait for <strong>confirmation</strong>, not assumption.”</p></div></div></section>
+<section><div class="container"><div class="section-title"><p class="eyebrow">Trader Tools</p><h2>Check the decision. Score the setup.</h2><p>Two quick, free tools built around preparation, discipline, and process—not predictions.</p></div><div class="grid-2"><article class="card"><span class="tag">Decision Tool</span><h3>🗡️ Dagger Check</h3><p>Six quick questions to test whether you have a plan—or whether emotion is making the decision.</p><div class="actions"><a class="button button-primary" href="dagger-check.html">Run Dagger Check</a></div></article><article class="card"><span class="tag">New • Process Tool</span><h3>🗡️ Dagger Setup Score</h3><p>Evaluate trend, momentum, key levels, invalidation, risk/reward, entry quality, and catalyst risk before entering a planned swing or day trade.</p><div class="actions"><a class="button button-primary" href="dagger-setup-score.html">Score My Setup</a></div></article></div></div></section><section><div class="container"><div class="quote"><p>“Wait for <strong>confirmation</strong>, not assumption.”</p></div></div></section>
 <section><div class="container"><div class="section-title"><p class="eyebrow">What You'll Find</p><h2>Built for traders who value process.</h2></div><div class="grid-3"><article class="card"><span class="tag">Market Notes</span><h3>Clear market observations</h3><p>Short commentary on momentum, levels, earnings, and developing setups.</p></article><article class="card"><span class="tag">Educational Comics</span><h3>Trading lessons with personality</h3><p>The old man and his dog take on dip buying, overtrading, discipline, and psychology.</p></article><article class="card"><span class="tag">Learn</span><h3>Trading basics without the jargon</h3><p>Candlesticks, VWAP, RSI, MACD, position sizing, stop losses, risk management, and more.</p><p style="margin-top:14px;"><a class="button button-secondary" href="learn.html">Start Learning</a></p></article></div></div></section>
 </main><footer class="site-footer">
   <div class="container">
@@ -170,6 +221,24 @@ One bad trade should never do lasting damage.</p></article></div></div></section
   document.addEventListener('click', function(){
     more.classList.remove('open');
     btn.setAttribute('aria-expanded','false');
+  });
+})();
+</script>
+<script>
+(function(){
+  const tools = document.querySelector('.nav-tools');
+  if (!tools) return;
+  const btn = tools.querySelector('.nav-tools-button');
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    const open = tools.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  document.addEventListener('click', function(e){
+    if (!tools.contains(e.target)) {
+      tools.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+    }
   });
 })();
 </script>
