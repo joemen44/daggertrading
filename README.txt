@@ -1,14 +1,10 @@
-SPCX STOCK SPOTLIGHT — AUGUST 12 FOLLOW-THROUGH UPDATE
+SPCX AUGUST 12 MOMENTUM WORDING FIX
 
 Replace spcx-stock-spotlight-august-2026.html only.
 
-Added a new August 12 update ABOVE the August 6 lockup update covering:
-- Continued run from the $109.20 August 6 support area
-- Roughly 37% move from $109.20 toward $150
-- Reclaim of the $135 IPO price
-- $150 as the current psychological area
-- $135 as an important area to watch on a future pullback
-- The next scheduled lockup tranche around August 20
-- A caution against chasing after the fast move
+Changed the August 12 Momentum note so it accurately reflects the chart:
+- SPCX has consolidated along the way rather than moving straight up.
+- Momentum remains bullish.
+- Chasing after the roughly 37% run carries additional risk.
 
-The August 6 update and earlier analysis remain preserved for context.
+No other article content was intentionally changed.
