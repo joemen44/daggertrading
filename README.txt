@@ -1,8 +1,12 @@
-LIVE HOMEPAGE — SPCX FOLLOW-UP ONLY
+COMICS NAVIGATION FIX ONLY
 
-Replace index.html only.
+Replace comics.html only.
 
-Added beneath the CSCO Spotlight:
-Also Updated: SPCX — Nearly 37% from the Aug. 6 Support Area →
+Top navigation is now:
+Home | Learn | Trader Tools ▾ | Market Notes | More ▾
 
-Current Trader Tools navigation and all other homepage content were preserved.
+Trader Tools contains:
+- Dagger Check
+- Dagger Setup Score
+
+Comic content was not intentionally changed.
