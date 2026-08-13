@@ -1,22 +1,9 @@
-DAGGER TRADING — NAVIGATION CONSISTENCY FIX
+HOMEPAGE SPCX FOLLOW-UP
 
-Replace:
-1. learn.html
-2. market-notes.html
+Replace index.html only.
 
-Both pages now use the same top navigation as the homepage:
-Home | Learn | Trader Tools ▾ | Market Notes | More ▾
+CSCO remains the main Stock Spotlight.
+Added one secondary link below it:
+Also Updated: SPCX — Nearly 37% from the Aug. 6 Support Area →
 
-Trader Tools:
-- Dagger Check
-- Dagger Setup Score
-
-More:
-- Comics
-- Market Center
-- Trading Resources
-- About
-- Contact
-- X / Twitter
-
-No other page content was intentionally changed.
+The existing navigation, More dropdown, Dagger Check, Featured Comic, and other homepage sections were preserved.
