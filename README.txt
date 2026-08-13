@@ -1,11 +1,19 @@
-DAGGER SETUP SCORE — ALL REVIEW AREAS UPDATE
+DAGGER TRADING — SETUP SCORE LIVE UPDATE
 
-Changed the result logic so it no longer shows only the three weakest areas.
+Upload/replace these files:
+1. index.html — REPLACE current homepage
+2. dagger-check.html — REPLACE current Dagger Check page
+3. dagger-setup-score.html — NEW page
 
-- Every 0-point area is shown as 'Needs attention.'
-- Every 1-point area is shown as 'Worth another look.'
-- 0-point areas appear first.
-- A 0/100 score will therefore show all seven areas.
-- A fully defined 100/100 result shows 'No obvious weak areas.'
+What changed:
+- Added Dagger Setup Score as a live-site page.
+- Changed the top navigation from direct "Dagger Check" to "Trader Tools ▾".
+- Trader Tools contains:
+  • Dagger Check
+  • Dagger Setup Score
+- Homepage Trader Tools section now features both tools.
+- Setup Score keeps Swing/Day Trade modes, beginner-friendly "Why this matters" help,
+  process scoring, score-specific explanations, all review areas, and scalping disclaimer.
+- Formspark/feedback was NOT added yet.
 
-No scoring formula or question wording was changed.
+No CSS or JS files need to be replaced.

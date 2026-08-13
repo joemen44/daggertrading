@@ -60,12 +60,63 @@
       }
     }
   </style>
+<style>
+    .nav-tools { position: relative; }
+    .nav-tools-button {
+      border: 0;
+      background: transparent;
+      color: inherit;
+      font: inherit;
+      cursor: pointer;
+      padding: 0;
+    }
+    .nav-tools-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 12px);
+      left: 0;
+      min-width: 210px;
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #0d1118;
+      box-shadow: 0 16px 40px rgba(0,0,0,.28);
+      z-index: 50;
+    }
+    .nav-tools.open .nav-tools-menu { display: grid; gap: 4px; }
+    .nav-tools-menu a {
+      display: block;
+      padding: 10px 12px;
+      border-radius: 8px;
+      white-space: nowrap;
+    }
+    .nav-tools-menu a:hover { background: rgba(47,140,255,.10); }
+    @media (max-width: 900px) {
+      .nav-tools { position: static; }
+      .nav-tools-button { display: none; }
+      .nav-tools-menu {
+        display: contents;
+        position: static;
+        min-width: 0;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        box-shadow: none;
+      }
+    }
+</style>
 </head>
 <body>
 <header class="site-header"><div class="container navbar"><a class="brand" href="index.html"><span class="brand-mark">🗡️</span><span>DAGGER <strong>TRADING</strong></span></a><button class="menu-button" type="button" aria-label="Open menu">Menu</button><nav class="nav-links">
       <a href="index.html">Home</a>
       <a href="learn.html">Learn</a>
-      <a href="dagger-check.html">Dagger Check</a>
+      <div class="nav-tools">
+        <button class="nav-tools-button" type="button" aria-expanded="false">Trader Tools ▾</button>
+        <div class="nav-tools-menu">
+          <a href="dagger-check.html">Dagger Check</a>
+          <a href="dagger-setup-score.html">Dagger Setup Score</a>
+        </div>
+      </div>
       <a href="market-notes.html">Market Notes</a>
       <div class="nav-more">
         <button class="nav-more-button" type="button" aria-expanded="false">More ▾</button>
@@ -120,6 +171,24 @@ document.getElementById('resetCheck').addEventListener('click',function(){form.r
   document.addEventListener('click', function(){
     more.classList.remove('open');
     btn.setAttribute('aria-expanded','false');
+  });
+})();
+</script>
+<script>
+(function(){
+  const tools = document.querySelector('.nav-tools');
+  if (!tools) return;
+  const btn = tools.querySelector('.nav-tools-button');
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    const open = tools.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  document.addEventListener('click', function(e){
+    if (!tools.contains(e.target)) {
+      tools.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+    }
   });
 })();
 </script>
