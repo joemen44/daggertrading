@@ -1,10 +1,9 @@
-SPCX AUGUST 12 MOMENTUM WORDING FIX
+HOMEPAGE SPCX FOLLOW-UP
 
-Replace spcx-stock-spotlight-august-2026.html only.
+Replace index.html only.
 
-Changed the August 12 Momentum note so it accurately reflects the chart:
-- SPCX has consolidated along the way rather than moving straight up.
-- Momentum remains bullish.
-- Chasing after the roughly 37% run carries additional risk.
+CSCO remains the main Stock Spotlight.
+Added one secondary link below it:
+Also Updated: SPCX — Nearly 37% from the Aug. 6 Support Area →
 
-No other article content was intentionally changed.
+The existing navigation, More dropdown, Dagger Check, Featured Comic, and other homepage sections were preserved.
