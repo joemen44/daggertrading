@@ -1,5 +1,5 @@
-ABOUT NAVIGATION FIX ONLY
+CONTACT NAVIGATION FIX ONLY
 
-Replace about.html only.
+Replace contact.html only.
 Navigation: Home | Learn | Trader Tools ▾ | Market Notes | More ▾
-About page content was not intentionally changed.
+Contact page content was not intentionally changed.
