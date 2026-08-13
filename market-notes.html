@@ -74,6 +74,21 @@
       }
     }
 </style>
+
+<style id="dagger-nav-dropdowns">
+.nav-tools,.nav-more{position:relative}
+.nav-tools-button,.nav-more-button{border:0;background:transparent;color:inherit;font:inherit;cursor:pointer;padding:0}
+.nav-tools-menu,.nav-more-menu{display:none;position:absolute;top:calc(100% + 12px);min-width:210px;padding:10px;border:1px solid var(--line);border-radius:12px;background:#0d1118;box-shadow:0 16px 40px rgba(0,0,0,.28);z-index:100}
+.nav-tools-menu{left:0}.nav-more-menu{right:0}
+.nav-tools.open .nav-tools-menu,.nav-more.open .nav-more-menu{display:grid;gap:4px}
+.nav-tools-menu a,.nav-more-menu a{display:block;padding:10px 12px;border-radius:8px;white-space:nowrap}
+.nav-tools-menu a:hover,.nav-more-menu a:hover{background:rgba(47,140,255,.10)}
+@media(max-width:900px){
+ .nav-tools,.nav-more{position:static}
+ .nav-tools-button,.nav-more-button{display:none}
+ .nav-tools-menu,.nav-more-menu{display:contents;position:static;min-width:0;padding:0;border:0;background:transparent;box-shadow:none}
+}
+</style>
 </head><body><header class="site-header"><div class="container navbar"><a class="brand" href="index.html"><span class="brand-mark">🗡️</span><span>DAGGER <strong>TRADING</strong></span></a><button class="menu-button">Menu</button><nav class="nav-links">
       <a href="index.html">Home</a>
       <a href="learn.html">Learn</a>
@@ -102,28 +117,38 @@
 <article class="card latest-feature"><div class="latest-feature-copy"><span class="tag">CSCO • August 12, 2026</span><h2>Strong report. Sharp reversal. Now let price confirm the next move.</h2><p>Cisco reported adjusted EPS of <strong>$1.22</strong> on approximately <strong>$17.25B</strong> in revenue, with FY2026 AI infrastructure orders reaching <strong>$9.3B</strong>. The focus now shifts to whether the daily 50-day SMA holds as support.</p><div class="actions"><a class="button button-primary" href="csco-stock-spotlight-august-2026.html">Read Stock Spotlight</a><a class="button button-secondary" href="https://x.com/DaggerTrading" target="_blank" rel="noopener noreferrer">Follow on X</a></div></div></article>
 <div class="grid-3" style="margin-top:30px;"><article class="card"><span class="tag">Previous Spotlight</span><h3>SPCX</h3><p>Earnings, lockup expirations, price discovery, and the key technical levels traders are watching.</p><a class="button button-secondary" href="spcx-stock-spotlight-august-2026.html">Read SPCX Spotlight</a></article><article class="card"><span class="tag">Coming Soon</span><h3>Weekly Market Preparation</h3><p>Important index levels, major earnings, economic events, themes, and catalysts for the week ahead.</p></article><article class="card"><span class="tag">Coming Soon</span><h3>Trading Psychology Notes</h3><p>Lessons on hesitation, overtrading, revenge trading, patience, discipline, and consistency.</p></article></div></div></section></main>
 <footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><strong>Dagger Trading</strong><p class="footer-slogan">“Wait for confirmation, not assumption.”</p><p>Market Psychology • Patience • Risk Management</p></div><nav class="footer-links" aria-label="Footer navigation"><a href="index.html">Home</a><a href="learn.html">Learn</a><a href="dagger-check.html">Dagger Check</a><a href="dagger-setup-score.html">Dagger Setup Score</a><a href="comics.html">Comics</a><a href="market-notes.html">Market Notes</a><a href="toolbox.html">Market Center</a><a href="resources.html">Resources</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="https://x.com/DaggerTrading" target="_blank" rel="noopener noreferrer">X / Twitter</a></nav></div><p class="disclaimer">Content is provided for educational and informational purposes only and should not be considered financial advice. Trading and investing involve risk, including the possible loss of principal.</p><p class="copyright">© <span data-year></span> Dagger Trading. All Rights Reserved.</p></div></footer><script src="js/script.js"></script>
-<script>
+
+
+
+<script id="dagger-nav-dropdowns-js">
 (function(){
-  function setupDropdown(rootSelector, buttonSelector) {
-    const root = document.querySelector(rootSelector);
-    if (!root) return;
-    const btn = root.querySelector(buttonSelector);
-    if (!btn) return;
-    btn.addEventListener('click', function(e){
+  function setupDropdown(rootSelector, buttonSelector){
+    const root=document.querySelector(rootSelector);
+    if(!root)return;
+    const btn=root.querySelector(buttonSelector);
+    if(!btn)return;
+    btn.addEventListener('click',function(e){
       e.stopPropagation();
-      const open = root.classList.toggle('open');
-      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-    document.addEventListener('click', function(e){
-      if (!root.contains(e.target)) {
-        root.classList.remove('open');
-        btn.setAttribute('aria-expanded','false');
-      }
+      document.querySelectorAll('.nav-tools.open,.nav-more.open').forEach(function(el){
+        if(el!==root){
+          el.classList.remove('open');
+          const b=el.querySelector('button');
+          if(b)b.setAttribute('aria-expanded','false');
+        }
+      });
+      const open=root.classList.toggle('open');
+      btn.setAttribute('aria-expanded',open?'true':'false');
     });
   }
-  setupDropdown('.nav-tools', '.nav-tools-button');
-  setupDropdown('.nav-more', '.nav-more-button');
+  setupDropdown('.nav-tools','.nav-tools-button');
+  setupDropdown('.nav-more','.nav-more-button');
+  document.addEventListener('click',function(){
+    document.querySelectorAll('.nav-tools.open,.nav-more.open').forEach(function(el){
+      el.classList.remove('open');
+      const b=el.querySelector('button');
+      if(b)b.setAttribute('aria-expanded','false');
+    });
+  });
 })();
 </script>
-
 </body></html>

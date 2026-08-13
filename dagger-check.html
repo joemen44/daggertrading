@@ -105,6 +105,21 @@
       }
     }
 </style>
+
+<style id="dagger-nav-dropdowns">
+.nav-tools,.nav-more{position:relative}
+.nav-tools-button,.nav-more-button{border:0;background:transparent;color:inherit;font:inherit;cursor:pointer;padding:0}
+.nav-tools-menu,.nav-more-menu{display:none;position:absolute;top:calc(100% + 12px);min-width:210px;padding:10px;border:1px solid var(--line);border-radius:12px;background:#0d1118;box-shadow:0 16px 40px rgba(0,0,0,.28);z-index:100}
+.nav-tools-menu{left:0}.nav-more-menu{right:0}
+.nav-tools.open .nav-tools-menu,.nav-more.open .nav-more-menu{display:grid;gap:4px}
+.nav-tools-menu a,.nav-more-menu a{display:block;padding:10px 12px;border-radius:8px;white-space:nowrap}
+.nav-tools-menu a:hover,.nav-more-menu a:hover{background:rgba(47,140,255,.10)}
+@media(max-width:900px){
+ .nav-tools,.nav-more{position:static}
+ .nav-tools-button,.nav-more-button{display:none}
+ .nav-tools-menu,.nav-more-menu{display:contents;position:static;min-width:0;padding:0;border:0;background:transparent;box-shadow:none}
+}
+</style>
 </head>
 <body>
 <header class="site-header"><div class="container navbar"><a class="brand" href="index.html"><span class="brand-mark">🗡️</span><span>DAGGER <strong>TRADING</strong></span></a><button class="menu-button" type="button" aria-label="Open menu">Menu</button><nav class="nav-links">
@@ -121,10 +136,10 @@
       <div class="nav-more">
         <button class="nav-more-button" type="button" aria-expanded="false">More ▾</button>
         <div class="nav-more-menu">
-          <a href="about.html">About</a>
           <a href="comics.html">Comics</a>
-          <a href="resources.html">Trading Resources</a>
           <a href="toolbox.html">Market Center</a>
+          <a href="resources.html">Trading Resources</a>
+          <a href="about.html">About</a>
           <a href="contact.html">Contact</a>
           <a href="https://x.com/DaggerTrading" target="_blank" rel="noopener noreferrer">X / Twitter</a>
         </div>
@@ -158,22 +173,7 @@ let m=a.map((v,i)=>v===0?labels[i]:null).filter(Boolean);missingEl.innerHTML=m.l
 document.getElementById('resetCheck').addEventListener('click',function(){form.reset();result.className='result';});
 })();
 </script>
-<script>
-(function(){
-  const more = document.querySelector('.nav-more');
-  if (!more) return;
-  const btn = more.querySelector('.nav-more-button');
-  btn.addEventListener('click', function(e){
-    e.stopPropagation();
-    const open = more.classList.toggle('open');
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-  document.addEventListener('click', function(){
-    more.classList.remove('open');
-    btn.setAttribute('aria-expanded','false');
-  });
-})();
-</script>
+
 <script>
 (function(){
   const tools = document.querySelector('.nav-tools');
@@ -189,6 +189,38 @@ document.getElementById('resetCheck').addEventListener('click',function(){form.r
       tools.classList.remove('open');
       btn.setAttribute('aria-expanded','false');
     }
+  });
+})();
+</script>
+
+<script id="dagger-nav-dropdowns-js">
+(function(){
+  function setupDropdown(rootSelector, buttonSelector){
+    const root=document.querySelector(rootSelector);
+    if(!root)return;
+    const btn=root.querySelector(buttonSelector);
+    if(!btn)return;
+    btn.addEventListener('click',function(e){
+      e.stopPropagation();
+      document.querySelectorAll('.nav-tools.open,.nav-more.open').forEach(function(el){
+        if(el!==root){
+          el.classList.remove('open');
+          const b=el.querySelector('button');
+          if(b)b.setAttribute('aria-expanded','false');
+        }
+      });
+      const open=root.classList.toggle('open');
+      btn.setAttribute('aria-expanded',open?'true':'false');
+    });
+  }
+  setupDropdown('.nav-tools','.nav-tools-button');
+  setupDropdown('.nav-more','.nav-more-button');
+  document.addEventListener('click',function(){
+    document.querySelectorAll('.nav-tools.open,.nav-more.open').forEach(function(el){
+      el.classList.remove('open');
+      const b=el.querySelector('button');
+      if(b)b.setAttribute('aria-expanded','false');
+    });
   });
 })();
 </script>
