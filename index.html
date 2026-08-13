@@ -3,6 +3,7 @@
   <link rel="stylesheet" href="css/resources-v3.css">
   
 
+<<<<<<< HEAD
 
 
 <style id="dagger-unified-nav">
@@ -61,6 +62,25 @@
     <a class="brand" href="index.html"><span class="brand-mark">🗡️</span><span>DAGGER <strong>TRADING</strong></span></a>
     <button class="menu-button" type="button" aria-expanded="false">Menu</button>
     <nav class="nav-links">
+=======
+  </style>
+
+<style id="dagger-nav-dropdowns">
+.nav-tools,.nav-more{position:relative}
+.nav-tools-button,.nav-more-button{border:0;background:transparent;color:inherit;font:inherit;cursor:pointer;padding:0}
+.nav-tools-menu,.nav-more-menu{display:none;position:absolute;top:calc(100% + 12px);min-width:210px;padding:10px;border:1px solid var(--line);border-radius:12px;background:#0d1118;box-shadow:0 16px 40px rgba(0,0,0,.28);z-index:100}
+.nav-tools-menu{left:0}.nav-more-menu{right:0}
+.nav-tools.open .nav-tools-menu,.nav-more.open .nav-more-menu{display:grid;gap:4px}
+.nav-tools-menu a,.nav-more-menu a{display:block;padding:10px 12px;border-radius:8px;white-space:nowrap}
+.nav-tools-menu a:hover,.nav-more-menu a:hover{background:rgba(47,140,255,.10)}
+@media(max-width:900px){
+ .nav-tools,.nav-more{position:static}
+ .nav-tools-button,.nav-more-button{display:none}
+ .nav-tools-menu,.nav-more-menu{display:contents;position:static;min-width:0;padding:0;border:0;background:transparent;box-shadow:none}
+}
+</style>
+</head><body><header class="site-header"><div class="container navbar"><a class="brand" href="index.html"><span class="brand-mark">🗡️</span><span>DAGGER <strong>TRADING</strong></span></a><button class="menu-button">Menu</button><nav class="nav-links">
+>>>>>>> 705dedddad45acdfcff99d4ef0a4c658518012ea
       <a href="index.html">Home</a>
       <a href="learn.html">Learn</a>
 
@@ -182,6 +202,7 @@ One bad trade should never do lasting damage.</p></article></div></div></section
   </div>
 </footer><script src="js/script.js"></script>
 
+<<<<<<< HEAD
 
 
 
@@ -220,6 +241,17 @@ One bad trade should never do lasting damage.</p></article></div></div></section
       const isOpen = dropdown.classList.toggle('open');
       button.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
+=======
+<script>
+(function(){
+  const tools = document.querySelector('.nav-tools');
+  if (!tools) return;
+  const btn = tools.querySelector('.nav-tools-button');
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    const open = tools.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+>>>>>>> 705dedddad45acdfcff99d4ef0a4c658518012ea
   });
 
   document.addEventListener('click', function(e){
@@ -250,6 +282,38 @@ One bad trade should never do lasting damage.</p></article></div></div></section
       nav.classList.remove('open');
       menuButton.setAttribute('aria-expanded','false');
     }
+  });
+})();
+</script>
+
+<script id="dagger-nav-dropdowns-js">
+(function(){
+  function setupDropdown(rootSelector, buttonSelector){
+    const root=document.querySelector(rootSelector);
+    if(!root)return;
+    const btn=root.querySelector(buttonSelector);
+    if(!btn)return;
+    btn.addEventListener('click',function(e){
+      e.stopPropagation();
+      document.querySelectorAll('.nav-tools.open,.nav-more.open').forEach(function(el){
+        if(el!==root){
+          el.classList.remove('open');
+          const b=el.querySelector('button');
+          if(b)b.setAttribute('aria-expanded','false');
+        }
+      });
+      const open=root.classList.toggle('open');
+      btn.setAttribute('aria-expanded',open?'true':'false');
+    });
+  }
+  setupDropdown('.nav-tools','.nav-tools-button');
+  setupDropdown('.nav-more','.nav-more-button');
+  document.addEventListener('click',function(){
+    document.querySelectorAll('.nav-tools.open,.nav-more.open').forEach(function(el){
+      el.classList.remove('open');
+      const b=el.querySelector('button');
+      if(b)b.setAttribute('aria-expanded','false');
+    });
   });
 })();
 </script>
