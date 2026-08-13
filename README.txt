@@ -1,6 +1,5 @@
-RESOURCES NAVIGATION FIX ONLY
+ABOUT NAVIGATION FIX ONLY
 
-Replace resources.html only.
-
+Replace about.html only.
 Navigation: Home | Learn | Trader Tools ▾ | Market Notes | More ▾
-Resources page content was not intentionally changed.
+About page content was not intentionally changed.
