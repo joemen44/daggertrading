@@ -1,13 +1,7 @@
-CORRECTED HOMEPAGE CSCO FOLLOW-UP
+CSCO FOLLOW-UP VISIBILITY FIX
 
-Replace index.html only.
+Replace csco-stock-spotlight-august-2026.html only.
 
-Homepage Stock Spotlight now clearly shows:
-- Latest Follow-Up • CSCO • August 13, 2026
-- 50-Day SMA Fails — 100-Day SMA Comes Into Focus
-- possible 50-SMA resistance retest
-- 100-SMA near $106.37
-- button links to the combined CSCO Spotlight page
-- SPCX follow-up remains visible underneath
-
-No other homepage sections were intentionally changed.
+The Aug. 13 follow-up is now placed directly beneath the page hero,
+before the original Aug. 12 article, so clicking the homepage follow-up
+shows the newest update immediately.
