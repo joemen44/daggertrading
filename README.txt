@@ -1,11 +1,5 @@
-DAGGER TRADING — LEARN HUB UPDATE
+Dagger Trading Learn visual redesign
 
-Changes:
-- Learn is now a hub page instead of immediately showing Trading Basics.
-- Added Trading Basics landing/page: learn-trading-basics.html
-- Added Trading Psychology landing/page: learn-trading-psychology.html
-- Existing psychology lesson pages remain separate.
-- Navigation/header/footer on the psychology pages was normalized to match the current site.
-- sitemap.xml updated for the two new Learn category pages.
-
-Upload/replace only the files in this ZIP.
+Built from the current GitHub ZIP.
+Upload/replace these files while preserving the rest of the repository.
+The real site navigation is retained; the Learn body now closely follows the approved mockup.

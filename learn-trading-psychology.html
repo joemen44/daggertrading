@@ -1,297 +1,48 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Learn trading psychology with practical lessons on FOMO, overtrading, revenge trading, emotional decisions, discipline, and consistency.">
-  <title>Trading Psychology | Dagger Trading</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/v2.css">
-  <link rel="stylesheet" href="css/resources-v3.css">
-  <style>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Practical trading psychology lessons on FOMO, overtrading, revenge trading, emotional decisions, discipline, and consistency."><title>Trading Psychology | Dagger Trading</title><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/v2.css"><link rel="stylesheet" href="css/resources-v3.css">
+<style>
+  .learn-modern{background:#f6f7f9;color:#131821;min-height:60vh}
+  .learn-modern a{text-decoration:none}
+  .learn-modern .learn-hero{background:#fff;border-bottom:1px solid #e5e7eb}
+  .learn-modern .learn-hero-grid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr 1.15fr;min-height:225px}
+  .learn-modern .learn-hero-copy{padding:38px 34px 34px 0;align-self:center}
+  .learn-modern .learn-hero-copy h1{font-size:clamp(3rem,6vw,5rem);line-height:.95;color:#10151d;margin:0 0 18px}
+  .learn-modern .learn-hero-copy p{color:#394150;font-size:1.08rem;line-height:1.55;max-width:560px}
+  .learn-modern .learn-hero-art{min-height:225px;background:url('images/learn/learn-hero.png') center/cover no-repeat}
+  .learn-modern .learn-content{max-width:1180px;margin:0 auto;padding:22px 0 18px}
+  .learn-modern .learn-heading{text-align:center;margin:8px 0 16px;color:#121821;font-size:1.65rem}
+  .learn-modern .learn-heading:after{content:'';display:block;width:38px;height:3px;background:#d8372d;margin:8px auto 0;border-radius:4px}
+  .learn-modern .path-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin:0 auto 12px;max-width:980px}
+  .learn-modern .path-card{display:grid;grid-template-columns:105px 1fr;gap:18px;align-items:center;background:white;border:1px solid #dfe3e8;border-radius:12px;padding:18px 22px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+  .learn-modern .path-icon{width:88px;height:88px;border-radius:50%;display:grid;place-items:center;background:#07111d;color:#fff;font-size:2.25rem;border:1px solid #1e2c3d}
+  .learn-modern .path-card h2{font-size:1.32rem;margin:0 0 7px;color:#111820}
+  .learn-modern .path-card p{margin:0 0 12px;color:#4b5563;line-height:1.45}
+  .learn-modern .learn-red-btn{display:inline-flex;align-items:center;gap:8px;background:#d7352b;color:#fff!important;font-weight:800;padding:10px 15px;border-radius:4px;font-size:.92rem}
+  .learn-modern .lesson-section{padding-top:2px}
+  .learn-modern .lesson-sub{text-align:center;color:#555f6d;margin:-10px 0 14px}
+  .learn-modern .lesson-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .learn-modern .psych-card{background:#fff;border:1px solid #dce1e7;border-radius:10px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.06);display:flex;flex-direction:column}
+  .learn-modern .psych-card img{display:block;width:100%;aspect-ratio:1.72/1;object-fit:cover;background:#0a111b}
+  .learn-modern .psych-copy{padding:13px 15px 15px;display:flex;flex-direction:column;flex:1}
+  .learn-modern .psych-title{display:flex;align-items:flex-start;gap:9px;color:#10151d;font-weight:800;font-size:1.05rem;line-height:1.2;margin-bottom:8px}
+  .learn-modern .number{flex:0 0 21px;height:21px;border-radius:4px;background:#d7352b;color:white;display:grid;place-items:center;font-size:.76rem}
+  .learn-modern .psych-copy p{color:#4f5967;line-height:1.45;margin:0 0 12px;font-size:.93rem}
+  .learn-modern .read-link{margin-top:auto;color:#d7352b!important;font-weight:800;font-size:.92rem}
+  .learn-modern .learn-note-light{max-width:900px;margin:24px auto 12px;padding:18px 20px;background:#fff;border:1px solid #dfe3e8;border-radius:10px;color:#4b5563;text-align:center}
+  @media(max-width:900px){
+    .learn-modern .learn-hero-grid{grid-template-columns:1fr}.learn-modern .learn-hero-copy{padding:34px 22px}.learn-modern .learn-hero-art{min-height:190px}
+    .learn-modern .path-grid{grid-template-columns:1fr;padding:0 16px}.learn-modern .lesson-grid{grid-template-columns:repeat(2,1fr);padding:0 16px}.learn-modern .learn-content{padding-top:18px}
+  }
+  @media(max-width:600px){.learn-modern .lesson-grid{grid-template-columns:1fr}.learn-modern .path-card{grid-template-columns:72px 1fr}.learn-modern .path-icon{width:64px;height:64px;font-size:1.7rem}}
 
-    html { scroll-behavior: smooth; }
-    .learn-shell { max-width: 980px; }
-    .learn-intro { max-width: 820px; }
-    .learn-jumps {
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:22px;
-    }
-    .learn-jumps a {
-      display:inline-flex;
-      align-items:center;
-      min-height:40px;
-      padding:8px 13px;
-      border:1px solid var(--line);
-      border-radius:999px;
-      color:var(--text);
-      text-decoration:none;
-      background:rgba(47,140,255,.045);
-      font-size:.92rem;
-    }
-    .learn-jumps a:hover {
-      border-color:var(--accent);
-      background:rgba(47,140,255,.10);
-    }
-    .learn-section-head {
-      margin:48px 0 20px;
-      padding-bottom:14px;
-      border-bottom:1px solid var(--line);
-    }
-    .lesson {
-      margin:0 0 22px;
-      padding:24px;
-      border:1px solid var(--line);
-      border-radius:16px;
-      background:rgba(47,140,255,.035);
-      scroll-margin-top:90px;
-    }
-    .lesson h3 { margin-top:0; font-size:1.45rem; }
-    .lesson p, .lesson li { color:var(--muted); line-height:1.72; }
-    .lesson ul { padding-left:1.25rem; }
-    .lesson-label {
-      display:inline-block;
-      margin:10px 0 4px;
-      color:var(--text);
-      font-weight:700;
-    }
-    .common-mistake {
-      margin-top:15px;
-      padding:14px 16px;
-      border-left:3px solid #f0b35a;
-      border-radius:8px;
-      background:rgba(240,179,90,.08);
-    }
-    .dagger-takeaway {
-      margin-top:15px;
-      padding:14px 16px;
-      border-left:3px solid var(--accent);
-      border-radius:8px;
-      background:rgba(47,140,255,.09);
-      color:var(--text);
-    }
-    .formula-box {
-      margin:12px 0;
-      padding:12px 15px;
-      border:1px solid var(--line);
-      border-radius:10px;
-      background:rgba(255,255,255,.025);
-      color:var(--text);
-      font-weight:700;
-    }
-    .learn-note {
-      margin-top:34px;
-      padding:22px;
-      border:1px solid var(--line);
-      border-radius:16px;
-      background:rgba(47,140,255,.06);
-    }
-    .back-top {
-      display:inline-block;
-      margin-top:14px;
-      font-size:.92rem;
-    }
-
-    .lesson-visual {
-      margin: 14px 0 20px;
-      padding: 14px;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      background: rgba(47,140,255,.025);
-      overflow: hidden;
-    }
-    .lesson-visual svg {
-      display: block;
-      width: 100%;
-      height: auto;
-      max-height: 250px;
-    }
-    .lesson-visual .axis,
-    .lesson-visual .guide {
-      stroke: var(--line);
-      stroke-width: 2;
-    }
-    .lesson-visual .price {
-      fill: none;
-      stroke: var(--accent);
-      stroke-width: 5;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-    .lesson-visual .price-secondary {
-      fill: none;
-      stroke: var(--muted);
-      stroke-width: 4;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-    .lesson-visual .signal {
-      fill: none;
-      stroke: var(--text);
-      stroke-width: 3;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-    .lesson-visual .bar-primary { fill: var(--accent); opacity: .85; }
-    .lesson-visual .bar-secondary { fill: var(--muted); opacity: .65; }
-    .lesson-visual .fill-soft { fill: rgba(47,140,255,.12); }
-    .lesson-visual .fill-muted { fill: rgba(255,255,255,.055); }
-    .lesson-visual .stroke-accent { stroke: var(--accent); }
-    .lesson-visual .stroke-text { stroke: var(--text); }
-    .lesson-visual .stroke-muted { stroke: var(--muted); }
-    .lesson-visual text {
-      fill: var(--muted);
-      font-size: 18px;
-      font-family: Arial, sans-serif;
-    }
-    .lesson-visual .label {
-      fill: var(--text);
-      font-size: 18px;
-      font-weight: 700;
-    }
-    .lesson-visual .small { font-size: 15px; }
-    .lesson-visual .big {
-      fill: var(--text);
-      font-size: 28px;
-      font-weight: 800;
-    }
-    .visual-caption {
-      margin: 8px 0 0 !important;
-      font-size: .9rem;
-      color: var(--muted) !important;
-    }
-
-  
-    .nav-tools { position: relative; }
-    .nav-tools-button {
-      border: 0;
-      background: transparent;
-      color: inherit;
-      font: inherit;
-      cursor: pointer;
-      padding: 0;
-    }
-    .nav-tools-menu {
-      display: none;
-      position: absolute;
-      top: calc(100% + 12px);
-      left: 0;
-      min-width: 210px;
-      padding: 10px;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background: #0d1118;
-      box-shadow: 0 16px 40px rgba(0,0,0,.28);
-      z-index: 50;
-    }
-    .nav-tools.open .nav-tools-menu { display: grid; gap: 4px; }
-    .nav-tools-menu a {
-      display: block;
-      padding: 10px 12px;
-      border-radius: 8px;
-      white-space: nowrap;
-    }
-    .nav-tools-menu a:hover { background: rgba(47,140,255,.10); }
-
-    .nav-more { position: relative; }
-    .nav-more-button {
-      border: 0;
-      background: transparent;
-      color: inherit;
-      font: inherit;
-      cursor: pointer;
-      padding: 0;
-    }
-    .nav-more-menu {
-      display: none;
-      position: absolute;
-      top: calc(100% + 12px);
-      right: 0;
-      min-width: 210px;
-      padding: 10px;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background: #0d1118;
-      box-shadow: 0 16px 40px rgba(0,0,0,.28);
-      z-index: 50;
-    }
-    .nav-more.open .nav-more-menu { display: grid; gap: 4px; }
-    .nav-more-menu a {
-      display: block;
-      padding: 10px 12px;
-      border-radius: 8px;
-      white-space: nowrap;
-    }
-    .nav-more-menu a:hover { background: rgba(47,140,255,.10); }
-    @media (max-width: 900px) {
-      .nav-tools, .nav-more { position: static; }
-      .nav-tools-button, .nav-more-button { display: none; }
-      .nav-tools-menu, .nav-more-menu {
-        display: contents;
-        position: static;
-        min-width: 0;
-        padding: 0;
-        border: 0;
-        background: transparent;
-        box-shadow: none;
-      }
-    }
-
-
-
-    .nav-more { position: relative; }
-    .nav-more-button {
-      border: 0;
-      background: transparent;
-      color: inherit;
-      font: inherit;
-      cursor: pointer;
-      padding: 0;
-    }
-    .nav-more-menu {
-      display: none;
-      position: absolute;
-      top: calc(100% + 12px);
-      right: 0;
-      min-width: 210px;
-      padding: 10px;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background: #0d1118;
-      box-shadow: 0 16px 40px rgba(0,0,0,.28);
-      z-index: 50;
-    }
-    .nav-more.open .nav-more-menu { display: grid; gap: 4px; }
-    .nav-more-menu a {
-      display: block;
-      padding: 10px 12px;
-      border-radius: 8px;
-      white-space: nowrap;
-    }
-    .nav-more-menu a:hover { background: rgba(47,140,255,.10); }
-    @media (max-width: 900px) {
-      .nav-more { position: static; }
-      .nav-more-button { display: none; }
-      .nav-more-menu {
-        display: contents;
-        position: static;
-        min-width: 0;
-        padding: 0;
-        border: 0;
-        background: transparent;
-        box-shadow: none;
-      }
-    }
-  
-
-  
-    .psychology-lesson-image{display:block;width:100%;height:auto;margin:0 0 18px;border-radius:14px;border:1px solid var(--line);}
-</style>
-</head>
-<body>
-<header class="site-header"><div class="container navbar"><a class="brand" href="index.html"><span class="brand-mark">🗡️</span><span>DAGGER <strong>TRADING</strong></span></a><button class="menu-button">Menu</button><nav class="nav-links">
+  /* Current site dropdowns retained on Learn pages */
+  .nav-tools,.nav-more{position:relative}
+  .nav-tools-button,.nav-more-button{border:0;background:transparent;color:inherit;font:inherit;cursor:pointer;padding:0}
+  .nav-tools-menu,.nav-more-menu{display:none;position:absolute;top:calc(100% + 12px);min-width:210px;padding:10px;border:1px solid var(--line);border-radius:12px;background:#0d1118;box-shadow:0 16px 40px rgba(0,0,0,.28);z-index:50}
+  .nav-tools-menu{left:0}.nav-more-menu{right:0}.nav-tools.open .nav-tools-menu,.nav-more.open .nav-more-menu{display:grid;gap:4px}
+  .nav-tools-menu a,.nav-more-menu a{display:block;padding:10px 12px;border-radius:8px;white-space:nowrap}
+  .nav-tools-menu a:hover,.nav-more-menu a:hover{background:rgba(47,140,255,.10)}
+  @media(max-width:900px){.nav-tools,.nav-more{position:static}.nav-tools-button,.nav-more-button{display:none}.nav-tools-menu,.nav-more-menu{display:contents;position:static;min-width:0;padding:0;border:0;background:transparent;box-shadow:none}}
+</style></head><body><header class="site-header"><div class="container navbar"><a class="brand" href="index.html"><span class="brand-mark">🗡️</span><span>DAGGER <strong>TRADING</strong></span></a><button class="menu-button">Menu</button><nav class="nav-links">
       <a href="index.html">Home</a>
       <a href="learn.html">Learn</a>
       <div class="nav-tools">
@@ -313,56 +64,13 @@
           <a href="https://x.com/DaggerTrading" target="_blank" rel="noopener noreferrer">X / Twitter</a>
         </div>
       </div>
-    </nav></div></header>
-<main id="top">
-
-  <section class="page-hero">
-    <div class="container learn-shell learn-intro">
-      <p class="eyebrow">Learn • Trading Psychology</p>
-      <h1>Manage the trader, not just the trade.</h1>
-      <p>Practical lessons on FOMO, overtrading, revenge trading, and discipline. Learn how emotion can affect decision-making—and how a defined process can help.</p>
-    </div>
-  </section>
-  <section>
-    <div class="container learn-shell">
-      <article class="lesson">
-        <a href="trading-psychology.html" aria-label="Open lesson"><img class="psychology-lesson-image" src="images/learn/trading-psychology-fomo.png" alt="Trading psychology illustration about FOMO, fear, patience, and planning." loading="lazy"></a>
-        <h3><a href="trading-psychology.html">Trading Psychology: Control FOMO, Overtrading &amp; Emotional Decisions</a></h3>
-        <p>Learn how emotion can change the way traders see risk—and how to return to a defined process before acting.</p>
-        <a class="button button-secondary" href="trading-psychology.html">Read Lesson</a>
-      </article>
-
-      <article class="lesson">
-        <a href="why-traders-overtrade.html" aria-label="Open lesson"><img class="psychology-lesson-image" src="images/learn/why-traders-overtrade.png" alt="Illustration about overtrading and choosing quality over quantity." loading="lazy"></a>
-        <h3><a href="why-traders-overtrade.html">Why Traders Overtrade — And How to Break the Cycle</a></h3>
-        <p>Understand how boredom, FOMO, losses, and overconfidence can turn activity into unnecessary trading.</p>
-        <a class="button button-secondary" href="why-traders-overtrade.html">Read Lesson</a>
-      </article>
-
-      <article class="lesson">
-        <a href="revenge-trading.html" aria-label="Open lesson"><img class="psychology-lesson-image" src="images/learn/revenge-trading.png" alt="Illustration about stopping revenge trading after a loss." loading="lazy"></a>
-        <h3><a href="revenge-trading.html">Revenge Trading: How to Stop Chasing Your Losses</a></h3>
-        <p>Recognize when the next trade is about recovering money instead of executing a valid setup.</p>
-        <a class="button button-secondary" href="revenge-trading.html">Read Lesson</a>
-      </article>
-
-      <article class="lesson">
-        <a href="trading-discipline.html" aria-label="Open lesson"><img class="psychology-lesson-image" src="images/learn/trading-discipline.png" alt="Illustration about discipline, confirmation, and defined risk." loading="lazy"></a>
-        <h3><a href="trading-discipline.html">Trading Discipline: Building Consistency One Trade at a Time</a></h3>
-        <p>Build repeatable habits around confirmation, invalidation, position risk, and post-trade review.</p>
-        <a class="button button-secondary" href="trading-discipline.html">Read Lesson</a>
-      </article>
-
-      <div class="learn-note">
-        <strong>Prefer the technical basics?</strong>
-        <p>Candlesticks, VWAP, moving averages, RSI, MACD, risk/reward, position sizing, and more are in Trading Basics.</p>
-        <p style="margin-top:14px;"><a class="button button-secondary" href="learn-trading-basics.html">Go to Trading Basics</a></p>
-      </div>
-    </div>
-  </section>
-
-</main>
-<footer class="site-footer">
+    </nav></div></header><main class="learn-modern"><section class="learn-hero"><div class="learn-hero-grid"><div class="learn-hero-copy"><p class="eyebrow" style="color:#d7352b">Learn • Trading Psychology</p><h1 style="font-size:clamp(2.4rem,5vw,4.2rem)">Trading Psychology</h1><p>Learn how FOMO, overtrading, revenge trading, and discipline can affect decisions—and how to keep your process in control.</p></div><div class="learn-hero-art" role="img" aria-label="Trading psychology books and written risk management plan"></div></div></section><section class="learn-content"><h2 class="learn-heading">Trading Psychology Lessons</h2><p class="lesson-sub">Choose the behavior you want to understand or improve.</p>
+<div class="lesson-grid">
+  <article class="psych-card"><img src="images/learn/trading-psychology.png" alt="Trader balancing FOMO, fear, patience and a written trading plan"><div class="psych-copy"><div class="psych-title"><span class="number">1</span><span>Trading Psychology</span></div><p>How to control FOMO, overtrading &amp; emotional decisions.</p><a class="read-link" href="trading-psychology.html">Read Lesson →</a></div></article>
+  <article class="psych-card"><img src="images/learn/overtrading.png" alt="Trader surrounded by many trade screens illustrating overtrading"><div class="psych-copy"><div class="psych-title"><span class="number">2</span><span>Why Traders Overtrade</span></div><p>Why too much activity can become a problem—and how to break the cycle.</p><a class="read-link" href="why-traders-overtrade.html">Read Lesson →</a></div></article>
+  <article class="psych-card"><img src="images/learn/revenge-trading.png" alt="Frustrated trader trying to win back a loss while being reminded to pause"><div class="psych-copy"><div class="psych-title"><span class="number">3</span><span>Revenge Trading</span></div><p>How to stop chasing your losses and reset the next decision.</p><a class="read-link" href="revenge-trading.html">Read Lesson →</a></div></article>
+  <article class="psych-card"><img src="images/learn/trading-discipline.png" alt="Calm trader following written rules for entry stop and target"><div class="psych-copy"><div class="psych-title"><span class="number">4</span><span>Trading Discipline</span></div><p>Building consistency one trade at a time.</p><a class="read-link" href="trading-discipline.html">Read Lesson →</a></div></article>
+</div><div class="learn-note-light"><a class="learn-red-btn" href="learn-trading-basics.html">Explore Trading Basics →</a></div></section></main><footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
@@ -390,41 +98,4 @@
     </p>
     <p class="copyright">© <span data-year></span> Dagger Trading. All Rights Reserved.</p>
   </div>
-</footer>
-<script src="js/script.js"></script>
-<script>
-(function(){
-  const more = document.querySelector('.nav-more');
-  if (!more) return;
-  const btn = more.querySelector('.nav-more-button');
-  btn.addEventListener('click', function(e){
-    e.stopPropagation();
-    const open = more.classList.toggle('open');
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-  document.addEventListener('click', function(){
-    more.classList.remove('open');
-    btn.setAttribute('aria-expanded','false');
-  });
-})();
-</script>
-<script>
-(function(){
-  const tools = document.querySelector('.nav-tools');
-  if (!tools) return;
-  const btn = tools.querySelector('.nav-tools-button');
-  btn.addEventListener('click', function(e){
-    e.stopPropagation();
-    const open = tools.classList.toggle('open');
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-  document.addEventListener('click', function(e){
-    if (!tools.contains(e.target)) {
-      tools.classList.remove('open');
-      btn.setAttribute('aria-expanded','false');
-    }
-  });
-})();
-</script>
-</body>
-</html>
+</footer><script src="js/script.js"></script><script>(function(){function d(s,b){const m=document.querySelector(s);if(!m)return;const x=m.querySelector(b);if(!x)return;x.addEventListener('click',e=>{e.stopPropagation();m.classList.toggle('open');x.setAttribute('aria-expanded',m.classList.contains('open')?'true':'false')});document.addEventListener('click',()=>{m.classList.remove('open');x.setAttribute('aria-expanded','false')})}d('.nav-tools','.nav-tools-button');d('.nav-more','.nav-more-button')})();</script></body></html>
