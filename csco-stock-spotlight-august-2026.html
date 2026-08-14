@@ -27,7 +27,56 @@
     .continue-card{display:flex;gap:16px;padding:20px;border:1px solid var(--line);border-radius:14px;background:rgba(47,140,255,.045)}
     .continue-icon{font-size:1.65rem;line-height:1;margin-top:4px}.continue-card p:not(.eyebrow){color:var(--muted)}
     @media(max-width:760px){.quick-facts-grid,.watch-grid,.continue-grid{grid-template-columns:1fr}}
-  </style>
+  
+    .update-badge-row{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color:var(--muted);
+      font-size:.9rem;
+      margin-bottom:14px;
+    }
+    .update-badge{
+      display:inline-flex;
+      padding:5px 9px;
+      border-radius:999px;
+      background:rgba(83,199,139,.18);
+      color:#53c78b;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      font-size:.72rem;
+    }
+    .followthrough-update{
+      margin:24px 0 34px;
+      padding:26px;
+      border:1px solid rgba(83,199,139,.42);
+      border-left:4px solid #53c78b;
+      border-radius:16px;
+      background:linear-gradient(135deg,rgba(83,199,139,.10),rgba(47,140,255,.045));
+    }
+    .followthrough-update h2{margin-top:8px}
+    .followthrough-update h3{margin-top:26px}
+    .followthrough-badge{color:#53c78b;background:rgba(83,199,139,.18)}
+    .callout-box{
+      margin:18px 0 24px;
+      padding:16px 18px;
+      border-left:3px solid var(--accent);
+      border-radius:10px;
+      background:rgba(47,140,255,.08);
+      color:var(--muted);
+    }
+    .callout-box strong{color:var(--text);display:block;margin-bottom:5px}
+    .original-analysis-divider{
+      margin:46px 0 26px;
+      padding:22px;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      text-align:center;
+    }
+    .original-analysis-divider h2{margin-top:5px}
+    .original-analysis-divider p:last-child{color:var(--muted)}
+</style>
 <style id="home-nav-style">
 
     .nav-more { position: relative; }
@@ -145,21 +194,37 @@
         </div>
       </div>
     </nav></div></header>
-<main>
-<section class="page-hero"><div class="container article-shell">
-  <p class="eyebrow">Dagger Trading Stock Spotlight</p>
-  <h1>CSCO: Strong Earnings, AI Growth &amp; a Key Technical Test</h1>
-  <p class="article-meta">Published August 12, 2026 • Post-Earnings Spotlight</p>
-</div></section>
 
-<section class="spotlight-update">
-  <div class="container">
-    <article class="card latest-feature">
-      <div class="latest-feature-copy">
-        <span class="tag">Follow-Up • August 13, 2026</span>
-        <h2>50-Day SMA Fails — 100-Day SMA Comes Into Focus</h2>
+<main>
+  <section class="page-hero">
+    <div class="container article-shell">
+      <p class="eyebrow">Dagger Trading Stock Spotlight</p>
+      <h1>CSCO: Earnings, AI Growth &amp; Technical Updates</h1>
+      <p class="article-meta">Originally Published August 12, 2026 • Updated August 13, 2026</p>
+    </div>
+  </section>
+
+  <section>
+    <article class="container article-shell article-body">
+
+      <!-- August 13 Follow-Up Update -->
+      <section class="followthrough-update" aria-labelledby="csco-followthrough-title">
+        <div class="update-badge-row">
+          <span class="update-badge followthrough-badge">Follow-Up Update</span>
+          <span>August 13, 2026 • Market Close</span>
+        </div>
+
+        <p class="eyebrow">Post-Earnings Price Action</p>
+        <h2 id="csco-followthrough-title">50-Day SMA Fails — 100-Day SMA Comes Into Focus</h2>
 
         <p>Cisco delivered strong earnings and guidance, but the stock still sold off sharply. CSCO closed Thursday at <strong>$113.47</strong>, failing to hold the daily 50-SMA that was highlighted as the key technical test in the original Spotlight.</p>
+
+        <div class="quick-facts-grid">
+          <div class="fact-card"><span>Aug. 13 Close</span><strong>$113.47</strong><small>Sharp post-earnings selloff</small></div>
+          <div class="fact-card"><span>50-Day SMA</span><strong>Failed</strong><small>Former support now becomes a retest area</small></div>
+          <div class="fact-card"><span>Upside Test</span><strong>50-SMA</strong><small>Watch for reclaim or rejection</small></div>
+          <div class="fact-card"><span>Next Support</span><strong>~$106.37</strong><small>Daily 100-SMA area</small></div>
+        </div>
 
         <h3>Strong numbers, weak reaction</h3>
         <p>Cisco reported roughly <strong>$17.25 billion</strong> in fiscal fourth-quarter revenue, up about <strong>18% year over year</strong>. Management guided fiscal 2027 revenue to <strong>$72.2 billion–$73.4 billion</strong>, above Wall Street expectations cited in post-earnings coverage.</p>
@@ -169,21 +234,35 @@
         <h3>Analysts stayed constructive</h3>
         <p>Several analysts remained positive after the report. Rosenblatt reiterated Buy and raised its price target from <strong>$150 to $165</strong>. KeyBanc maintained Overweight and raised its target from <strong>$130 to $135</strong>, while BofA maintained Buy with a <strong>$150</strong> target.</p>
 
-        <h3>The 50-SMA now becomes the first upside test</h3>
-        <p>With CSCO closing below the daily 50-SMA, a bounce could bring that moving average back into play as potential resistance. A strong reclaim and hold would improve the short-term technical picture. A rejection from underneath would suggest the former support level is beginning to act as resistance.</p>
+        <div class="callout-box">
+          <strong>Strong fundamentals did not prevent technical damage</strong>
+          The earnings report and analyst reaction remained constructive, but price still broke the level that mattered technically. That is why the market's reaction can be just as important as the headline.
+        </div>
 
-        <h3>Next downside area: daily 100-SMA near $106.37</h3>
-        <p>If weakness continues, attention shifts toward the daily <strong>100-SMA near $106.37</strong>. That level is not a prediction or a guaranteed bounce point. It is simply the next major technical area where buyers may have an opportunity to show themselves.</p>
+        <h3>What I'm watching now</h3>
+        <ul>
+          <li><strong>Daily 50-SMA:</strong> A bounce could retest the broken moving average from underneath. A strong reclaim would improve the short-term picture; rejection could confirm it as resistance.</li>
+          <li><strong>Daily 100-SMA near $106.37:</strong> If weakness continues, this becomes the next major support area to watch.</li>
+          <li><strong>$113.47 close:</strong> The stock is now trading between the failed 50-SMA and the next major moving-average support zone.</li>
+          <li><strong>Market reaction:</strong> Continued selling despite strong guidance would keep the technical picture under pressure.</li>
+        </ul>
 
-        <p><strong>Wait for confirmation, not assumption.</strong></p>
+        <div class="callout-box">
+          <strong>Dagger Trading Take</strong>
+          The original Spotlight identified the daily 50-SMA as the key support test. That test failed, so the roadmap changes.
+          <br><br>
+          The first upside question is whether CSCO can reclaim the broken 50-SMA. If it cannot and selling resumes, the daily 100-SMA near $106.37 becomes increasingly important.
+        </div>
+
+        <p><strong>🗡️ Wait for Confirmation, Not Assumption.</strong></p>
+      </section>
+
+      <div class="original-analysis-divider">
+        <p class="eyebrow">Original Spotlight</p>
+        <h2>August 12, 2026</h2>
+        <p>The original post-earnings analysis is preserved below so you can see how the setup developed and how the key 50-SMA test ultimately played out.</p>
       </div>
-    </article>
-  </div>
-</section>
 
-
-<section>
-<article class="container article-shell article-body">
   <div class="spotlight-summary">
     <p class="eyebrow">30-Second Summary</p><h2>What matters most</h2>
     <ul>
@@ -271,11 +350,11 @@
       <article class="continue-card"><span class="continue-icon">📊</span><div><h3>Market Center</h3><p>Quotes, market news, earnings dates, and useful links.</p><a class="button button-secondary" href="toolbox.html">Open Market Center</a></div></article>
     </div>
   </section>
-</article></section>
 
-
-
+    </article>
+  </section>
 </main>
+
 <footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><strong>Dagger Trading</strong><p class="footer-slogan">“Wait for confirmation, not assumption.”</p><p>Market Psychology • Patience • Risk Management</p></div><nav class="footer-links" aria-label="Footer navigation"><a href="index.html">Home</a><a href="comics.html">Comics</a><a href="market-notes.html">Market Notes</a><a href="toolbox.html">Market Center</a><a href="resources.html">Resources</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="https://x.com/DaggerTrading" target="_blank" rel="noopener noreferrer">X / Twitter</a></nav></div><p class="disclaimer">Content is provided for educational and informational purposes only and should not be considered financial advice. Trading and investing involve risk, including the possible loss of principal.</p><p class="copyright">© <span data-year></span> Dagger Trading. All Rights Reserved.</p></div></footer>
 <script src="js/script.js"></script>
 </body></html>

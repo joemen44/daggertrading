@@ -1,7 +1,14 @@
-CSCO FOLLOW-UP VISIBILITY FIX
+CSCO SPOTLIGHT — SPCX-STYLE LAYOUT
 
 Replace csco-stock-spotlight-august-2026.html only.
 
-The Aug. 13 follow-up is now placed directly beneath the page hero,
-before the original Aug. 12 article, so clicking the homepage follow-up
-shows the newest update immediately.
+Changed layout only:
+- CSCO now follows the same 'living Spotlight' structure as SPCX.
+- Hero shows Originally Published + Updated date.
+- Latest follow-up is inside the main article container.
+- Green follow-through update card matches SPCX styling.
+- Added four quick-fact cards.
+- Added Dagger callout boxes.
+- Added a clear Original Spotlight divider.
+- Original Aug. 12 analysis remains preserved below the update.
+- Existing CSCO analysis and technical levels were retained.
