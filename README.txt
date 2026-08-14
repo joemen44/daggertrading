@@ -1,5 +1,14 @@
-Dagger Trading Learn visual redesign
+PSYCHOLOGY LESSON MENU FIX
 
-Built from the current GitHub ZIP.
-Upload/replace these files while preserving the rest of the repository.
-The real site navigation is retained; the Learn body now closely follows the approved mockup.
+Replace only these 4 files:
+- trading-psychology.html
+- why-traders-overtrade.html
+- revenge-trading.html
+- trading-discipline.html
+
+Cause fixed:
+The lesson pages already had the same header HTML as Home, but were missing
+Home's inline Trader Tools / More dropdown CSS.
+
+This update copies the exact Home navigation styling into each lesson page.
+No lesson content was changed.
