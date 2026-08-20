@@ -263,6 +263,61 @@
 }
 </style>
 
+
+<style id="dagger-mobile-touch-flash-fix">
+/* Touch devices: keep desktop hover behavior off so a finger swipe does not
+   briefly trigger the card's desktop hover animation/highlight. */
+@media (max-width: 900px), (hover: none), (pointer: coarse) {
+  a,
+  .card a,
+  .content-card a,
+  .latest-feature a,
+  .content-card-image,
+  .latest-feature-image,
+  .free-tool-link {
+    -webkit-tap-highlight-color: transparent !important;
+  }
+
+  .content-card,
+  .content-card-image img,
+  .free-tool-link .card {
+    transition: none !important;
+  }
+
+  .content-card:hover,
+  .content-card:active,
+  .content-card:focus,
+  .content-card:focus-within {
+    transform: none !important;
+    border-color: var(--line) !important;
+  }
+
+  .content-card:hover .content-card-image img,
+  .content-card:active .content-card-image img,
+  .content-card:focus .content-card-image img,
+  .content-card:focus-within .content-card-image img {
+    transform: none !important;
+  }
+
+  .free-tool-link:hover .card,
+  .free-tool-link:active .card,
+  .free-tool-link:focus .card {
+    transform: none !important;
+    border-color: var(--line) !important;
+  }
+
+  /* Explicitly favor vertical panning on large linked card/image areas. */
+  .card a:not(.button),
+  .content-card a:not(.button),
+  .latest-feature a:not(.button),
+  .content-card-image,
+  .latest-feature-image,
+  .free-tool-link {
+    touch-action: pan-y manipulation;
+  }
+}
+</style>
+
 </head><body><header class="site-header"><div class="container navbar"><a class="brand" href="index.html"><span class="brand-mark">🗡️</span><span>DAGGER <strong>TRADING</strong></span></a><button class="menu-button">Menu</button><nav class="nav-links">
       <a href="index.html">Home</a>
 
