@@ -176,6 +176,25 @@
     }
   }
 </style>
+<style id="dagger-market-dropdown-nav">
+.nav-market{position:relative}.nav-market-button{border:0;background:transparent;color:inherit;font:inherit;cursor:pointer;padding:0}
+.nav-market-menu{display:none;position:absolute;top:calc(100% + 12px);left:0;min-width:220px;padding:10px;border:1px solid var(--line);border-radius:12px;background:#0d1118;box-shadow:0 16px 40px rgba(0,0,0,.28);z-index:100}
+.nav-market.open .nav-market-menu{display:grid;gap:4px}.nav-market-menu a{display:block;padding:10px 12px;border-radius:8px;white-space:nowrap}.nav-market-menu a:hover{background:rgba(47,140,255,.10)}
+@media(max-width:900px){.nav-market{position:static}.nav-market-button{display:none}.nav-market-menu{display:contents;position:static;min-width:0;padding:0;border:0;background:transparent;box-shadow:none}}
+</style>
+<style id="dagger-resources-dropdown-nav">
+.nav-resources{position:relative}
+.nav-resources-button{border:0;background:transparent;color:inherit;font:inherit;cursor:pointer;padding:0}
+.nav-resources-menu{display:none;position:absolute;top:calc(100% + 12px);right:0;min-width:230px;padding:10px;border:1px solid var(--line);border-radius:12px;background:#0d1118;box-shadow:0 16px 40px rgba(0,0,0,.28);z-index:100}
+.nav-resources.open .nav-resources-menu{display:grid;gap:4px}
+.nav-resources-menu a{display:block;padding:10px 12px;border-radius:8px;white-space:nowrap}
+.nav-resources-menu a:hover{background:rgba(47,140,255,.10)}
+@media(max-width:900px){
+  .nav-resources{position:static}
+  .nav-resources-button{display:none}
+  .nav-resources-menu{display:contents;position:static;min-width:0;padding:0;border:0;background:transparent;box-shadow:none}
+}
+</style>
 </head>
 <body>
 <header class="site-header"><div class="container navbar"><a class="brand" href="index.html"><span class="brand-mark">🗡️</span><span>DAGGER <strong>TRADING</strong></span></a><button class="menu-button">Menu</button><nav class="nav-links">
@@ -198,14 +217,23 @@
         </div>
       </div>
 
-      <a href="market-notes.html">Market Notes</a>
+      <div class="nav-market"><button class="nav-market-button" type="button" aria-expanded="false">Market Notes ▾</button><div class="nav-market-menu"><a href="market-notes.html">Market Notes Home</a><a href="week-ahead-august-17-21-2026.html">Latest Week Ahead</a><a href="weekly-market-wrap-august-14-2026.html">Latest Market Wrap</a><a href="stock-spotlights.html">Stock Spotlights</a></div></div>
 
-      <div class="nav-more">
+      <div class="nav-resources">
+  <button class="nav-resources-button" type="button" aria-expanded="false">Trading Resources ▾</button>
+  <div class="nav-resources-menu">
+    <a href="resources.html">Resources Home</a>
+    <a href="resources.html#platforms">Trading Platforms</a>
+    <a href="resources.html#market-tools">Market Tools &amp; Research</a>
+    <a href="resources.html#official-sources">Official Market Sources</a>
+    <a href="resources.html#books">Books &amp; Amazon Picks</a>
+  </div>
+</div>
+<div class="nav-more">
         <button class="nav-more-button" type="button" aria-expanded="false">More ▾</button>
         <div class="nav-more-menu">
           <a href="comics.html">Comics</a>
           <a href="toolbox.html">Market Center</a>
-          <a href="resources.html">Trading Resources</a>
           <a href="about.html">About</a>
           <a href="contact.html">Contact</a>
           <a href="https://x.com/DaggerTrading" target="_blank" rel="noopener noreferrer">X / Twitter</a>
@@ -306,42 +334,51 @@
 
 
 
-<script id="dagger-dropdown-nav-js">
+
+
+
+<script id="dagger-unified-dropdown-nav">
 (function(){
-  const groups = [
+  const defs = [
     ['.nav-learn', '.nav-learn-button'],
     ['.nav-tools', '.nav-tools-button'],
+    ['.nav-market', '.nav-market-button'],
+    ['.nav-resources', '.nav-resources-button'],
     ['.nav-more', '.nav-more-button']
   ];
 
-  const dropdowns = [];
-
-  groups.forEach(function(pair){
+  const items = defs.map(function(pair){
     const root = document.querySelector(pair[0]);
-    if (!root) return;
+    if (!root) return null;
     const btn = root.querySelector(pair[1]);
-    if (!btn) return;
+    if (!btn) return null;
+    return { root: root, btn: btn };
+  }).filter(Boolean);
 
-    dropdowns.push({root: root, btn: btn});
+  function closeAll(exceptRoot){
+    items.forEach(function(item){
+      if (item.root !== exceptRoot) {
+        item.root.classList.remove('open');
+        item.btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
 
-    btn.addEventListener('click', function(e){
+  items.forEach(function(item){
+    item.btn.addEventListener('click', function(e){
       e.preventDefault();
       e.stopPropagation();
 
-      dropdowns.forEach(function(item){
-        if (item.root !== root) {
-          item.root.classList.remove('open');
-          item.btn.setAttribute('aria-expanded', 'false');
-        }
-      });
+      const wasOpen = item.root.classList.contains('open');
+      closeAll(item.root);
 
-      const isOpen = root.classList.toggle('open');
-      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      item.root.classList.toggle('open', !wasOpen);
+      item.btn.setAttribute('aria-expanded', !wasOpen ? 'true' : 'false');
     });
   });
 
   document.addEventListener('click', function(e){
-    dropdowns.forEach(function(item){
+    items.forEach(function(item){
       if (!item.root.contains(e.target)) {
         item.root.classList.remove('open');
         item.btn.setAttribute('aria-expanded', 'false');
@@ -351,10 +388,7 @@
 
   document.addEventListener('keydown', function(e){
     if (e.key === 'Escape') {
-      dropdowns.forEach(function(item){
-        item.root.classList.remove('open');
-        item.btn.setAttribute('aria-expanded', 'false');
-      });
+      closeAll(null);
     }
   });
 })();
