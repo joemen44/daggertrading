@@ -180,6 +180,20 @@
   .nav-resources-menu{display:contents;position:static;min-width:0;padding:0;border:0;background:transparent;box-shadow:none}
 }
 </style>
+
+<style id="dagger-mobile-card-scroll-fix">
+@media (max-width: 900px) {
+  /* Prevent the brief tap flash on large card links while preserving button taps. */
+  .card a:not(.button),
+  .content-card a:not(.button),
+  .latest-feature a:not(.button),
+  .content-card-image,
+  .latest-feature-image {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+</style>
+
 </head>
 <body>
 <header class="site-header">
@@ -250,6 +264,20 @@
         <p>New releases are added here with the most recent comic first.</p>
       </div>
       <div class="content-grid">
+
+        <article class="card content-card" id="chess-trading">
+          <div class="chess-comic-full" style="background:#03070d;border-bottom:1px solid var(--line);padding:16px;text-align:center;">
+            <img src="images/comics/chess-trading-play-the-long-game.png" alt="Dagger Trading comic comparing chess strategy with trading discipline and decision-making" style="display:block;width:100%;height:auto;max-width:980px;margin:0 auto;">
+          </div>
+          <div class="content-card-body">
+            <span class="tag">Trading Psychology • Strategy</span>
+            <h2>Play the Long Game: Chess &amp; Trading</h2>
+            <p><strong>Added:</strong> August 20, 2026</p>
+            <p>Chess and trading reward many of the same habits: think ahead, consider multiple scenarios, protect your position, stay patient, control emotion, and adapt when conditions change. You don't need to make every move—just the ones that make sense.</p>
+            <div class="content-card-actions"><a class="button button-primary" href="images/comics/chess-trading-play-the-long-game.png" target="_blank" rel="noopener noreferrer">View Comic</a><a class="button button-secondary" href="https://x.com/DaggerTrading/status/2090333577942647162" target="_blank" rel="noopener noreferrer">View on X</a></div>
+            <p style="margin-top:16px;color:var(--muted);"><strong>Keep scrolling</strong> to explore more Dagger Trading comics.</p>
+          </div>
+        </article>
 
         <article class="card content-card">
           <a class="content-card-image" href="images/comics/earnings-day-reaction.png" target="_blank" rel="noopener noreferrer">
@@ -487,5 +515,48 @@
   });
 })();
 </script>
+
+<script id="dagger-mobile-card-scroll-fix-js">
+(function () {
+  const mq = window.matchMedia('(max-width: 900px)');
+  if (!mq.matches) return;
+
+  const candidates = document.querySelectorAll(
+    '.card a:not(.button), .content-card a:not(.button), .latest-feature a:not(.button), .content-card-image, .latest-feature-image'
+  );
+
+  candidates.forEach(function (link) {
+    if (!link || link.tagName !== 'A') return;
+
+    let startX = 0;
+    let startY = 0;
+    let moved = false;
+
+    link.addEventListener('touchstart', function (e) {
+      const t = e.touches && e.touches[0];
+      if (!t) return;
+      startX = t.clientX;
+      startY = t.clientY;
+      moved = false;
+    }, { passive: true });
+
+    link.addEventListener('touchmove', function (e) {
+      const t = e.touches && e.touches[0];
+      if (!t) return;
+      if (Math.abs(t.clientX - startX) > 8 || Math.abs(t.clientY - startY) > 8) {
+        moved = true;
+      }
+    }, { passive: true });
+
+    link.addEventListener('click', function (e) {
+      if (moved) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    }, true);
+  });
+})();
+</script>
+
 </body>
 </html>

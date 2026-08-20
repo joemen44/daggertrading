@@ -200,6 +200,20 @@
   .nav-resources-menu{display:contents;position:static;min-width:0;padding:0;border:0;background:transparent;box-shadow:none}
 }
 </style>
+
+<style id="dagger-mobile-card-scroll-fix">
+@media (max-width: 900px) {
+  /* Prevent the brief tap flash on large card links while preserving button taps. */
+  .card a:not(.button),
+  .content-card a:not(.button),
+  .latest-feature a:not(.button),
+  .content-card-image,
+  .latest-feature-image {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+</style>
+
 </head>
 <body>
 <header class="site-header">
@@ -484,5 +498,48 @@
   });
 })();
 </script>
+
+<script id="dagger-mobile-card-scroll-fix-js">
+(function () {
+  const mq = window.matchMedia('(max-width: 900px)');
+  if (!mq.matches) return;
+
+  const candidates = document.querySelectorAll(
+    '.card a:not(.button), .content-card a:not(.button), .latest-feature a:not(.button), .content-card-image, .latest-feature-image'
+  );
+
+  candidates.forEach(function (link) {
+    if (!link || link.tagName !== 'A') return;
+
+    let startX = 0;
+    let startY = 0;
+    let moved = false;
+
+    link.addEventListener('touchstart', function (e) {
+      const t = e.touches && e.touches[0];
+      if (!t) return;
+      startX = t.clientX;
+      startY = t.clientY;
+      moved = false;
+    }, { passive: true });
+
+    link.addEventListener('touchmove', function (e) {
+      const t = e.touches && e.touches[0];
+      if (!t) return;
+      if (Math.abs(t.clientX - startX) > 8 || Math.abs(t.clientY - startY) > 8) {
+        moved = true;
+      }
+    }, { passive: true });
+
+    link.addEventListener('click', function (e) {
+      if (moved) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    }, true);
+  });
+})();
+</script>
+
 </body>
 </html>
