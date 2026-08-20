@@ -153,7 +153,84 @@
     }
   }
 </style>
-</head><body><header class="site-header"><div class="container navbar"><a class="brand" href="index.html"><span class="brand-mark">🗡️</span><span>DAGGER <strong>TRADING</strong></span></a><button class="menu-button">Menu</button><nav class="nav-links">
+
+<style id="homepage-quick-access-concept">
+.quick-access{padding:34px 0 64px}
+.quick-access-head{display:flex;justify-content:space-between;align-items:end;gap:26px;margin-bottom:22px}
+.quick-access-head h2{margin:0;font-size:clamp(2.1rem,4.5vw,3.35rem)}
+.quick-access-head p{max-width:560px;margin:0;color:var(--muted)}
+.quick-feature{position:relative;display:block;min-height:300px;padding:34px;border:1px solid rgba(104,181,255,.35);border-radius:22px;overflow:hidden;text-decoration:none;background:radial-gradient(circle at 82% 22%,rgba(47,140,255,.42),transparent 22%),linear-gradient(120deg,#08111d,#12345b 55%,#050912);transition:.2s ease}
+.quick-feature:hover,.quick-card:hover{transform:translateY(-4px);border-color:rgba(104,181,255,.68)}
+.quick-feature-inner{max-width:700px;position:relative;z-index:2}
+.quick-feature .ticker{font-size:clamp(4rem,8vw,7rem);font-weight:900;letter-spacing:-4px;line-height:.9;margin:12px 0}
+.quick-feature h3{font-size:clamp(1.7rem,3.3vw,2.7rem);margin:0 0 10px}
+.quick-feature p{color:#b7c5d8;max-width:650px}
+.quick-arrow{display:inline-block;margin-top:10px;font-weight:900;color:#fff}
+.quick-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:16px}
+.quick-card{position:relative;display:block;min-height:225px;padding:25px;border:1px solid var(--line);border-radius:18px;text-decoration:none;overflow:hidden;background:linear-gradient(145deg,rgba(16,27,43,.96),rgba(7,14,24,.98));transition:.2s ease}
+.quick-card:before{content:"";position:absolute;width:150px;height:150px;border-radius:50%;right:-45px;top:-60px;background:rgba(47,140,255,.12)}
+.quick-icon{font-size:2.3rem;margin-bottom:28px}
+.quick-card small{display:block;color:var(--accent2);font-weight:900;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:7px}
+.quick-card h3{font-size:1.35rem;margin:0 0 8px}
+.quick-card p{color:var(--muted);font-size:.9rem;line-height:1.48;margin:0}
+.quick-card .quick-arrow{font-size:.86rem;margin-top:14px}
+@media(max-width:900px){.quick-grid{grid-template-columns:1fr 1fr}.quick-access-head{display:block}.quick-access-head p{margin-top:10px}}
+@media(max-width:620px){.quick-grid{grid-template-columns:1fr}.quick-feature{min-height:280px;padding:27px}.quick-card{min-height:205px}}
+</style>
+
+<style id="market-coverage-review">
+.market-coverage-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-bottom:16px}
+.market-coverage-card{position:relative;display:flex;flex-direction:column;min-height:300px;padding:28px;border:1px solid var(--line);border-radius:20px;text-decoration:none;overflow:hidden;background:linear-gradient(145deg,rgba(16,27,43,.97),rgba(7,14,24,.98));transition:transform .2s ease,border-color .2s ease}
+.market-coverage-card:before{content:"";position:absolute;width:190px;height:190px;border-radius:50%;right:-70px;top:-80px;background:rgba(47,140,255,.11)}
+.market-coverage-card:hover{transform:translateY(-4px);border-color:rgba(104,181,255,.68)}
+.market-coverage-card h3{font-size:1.65rem;margin:14px 0 10px}
+.market-coverage-card p{color:var(--muted);line-height:1.55;margin:0}
+.market-coverage-card .quick-arrow{margin-top:auto;padding-top:20px}
+.market-coverage-latest{border-color:rgba(104,181,255,.42);background:radial-gradient(circle at 82% 18%,rgba(47,140,255,.34),transparent 23%),linear-gradient(145deg,#0a1728,#0d2848 55%,#07101c)}
+.market-ticker{font-size:clamp(3.4rem,5.8vw,5.5rem);font-weight:900;letter-spacing:-3px;line-height:.9;margin:12px 0 4px}
+@media(max-width:900px){.market-coverage-grid{grid-template-columns:1fr}.market-coverage-card{min-height:240px}}
+</style>
+
+
+
+<style id="spotlight-date-style">
+.spotlight-date{
+  margin:7px 0 8px;
+  color:var(--accent2);
+  font-size:.78rem;
+  font-weight:900;
+  letter-spacing:1.2px;
+  text-transform:uppercase;
+}
+</style>
+<style id="previous-spotlights-style">
+.previous-spotlights{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:8px;margin:2px 2px 20px;color:var(--muted);font-size:.86rem}
+.previous-label{font-weight:800;color:#aebbd0}.previous-spotlights a{color:var(--accent2);font-weight:900;text-decoration:none}.previous-spotlights a:hover{text-decoration:underline}.previous-spotlights .view-all-spotlights{color:#fff;margin-left:3px}
+@media(max-width:620px){.previous-spotlights{justify-content:flex-start;line-height:1.8}.previous-label{width:100%}}
+</style><style id="more-spotlights-style">
+.more-spotlights{margin:0 0 22px;padding:18px 20px;border:1px solid rgba(104,181,255,.24);border-radius:16px;background:linear-gradient(135deg,rgba(16,27,43,.86),rgba(8,17,29,.94))}
+.more-spotlights-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:13px}
+.more-spotlights-head .eyebrow{display:block;margin:0 0 3px;font-size:.68rem}
+.more-spotlights-head strong{font-size:1rem}
+.more-view-all{font-size:.82rem;font-weight:900;color:#fff;text-decoration:none}
+.spotlight-pills{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.spotlight-pills a{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:rgba(7,14,24,.78);text-decoration:none;transition:.18s ease}
+.spotlight-pills a:hover{border-color:rgba(104,181,255,.62);transform:translateY(-2px)}
+.spotlight-pills strong{font-size:1rem;color:var(--accent2)}
+.spotlight-pills span{font-size:.82rem;color:var(--muted)}
+.spotlight-pills b{color:#fff}
+@media(max-width:760px){.spotlight-pills{grid-template-columns:1fr}.more-spotlights-head{align-items:flex-start;flex-direction:column}.more-view-all{margin-top:2px}}
+</style><style id="market-coverage-reason-style">
+.market-coverage-reason{
+  margin:7px 0 0;
+  color:var(--muted);
+  font-size:.88rem;
+  line-height:1.5;
+}
+</style><style id="quick-access-heading-cleanup">
+.quick-access-head{display:block}
+.quick-access-head > div{max-width:760px}
+</style></head><body><header class="site-header"><div class="container navbar"><a class="brand" href="index.html"><span class="brand-mark">🗡️</span><span>DAGGER <strong>TRADING</strong></span></a><button class="menu-button">Menu</button><nav class="nav-links">
       <a href="index.html">Home</a>
 
       <div class="nav-learn">
@@ -188,38 +265,70 @@
     </nav></div></header><main>
 <section class="hero"><div class="container"><div class="hero-banner"><div class="hero-content"><p class="eyebrow">Market Psychology • Discipline • Risk Management</p><h1>Dagger <span>Trading</span></h1><p class="hero-copy">Straightforward market commentary built around patience, preparation, momentum, and protecting capital. No hype.
 No pretending to know the future.</p><div class="actions"><a class="button button-primary" href="https://x.com/DaggerTrading" target="_blank">Follow @DaggerTrading</a><a class="button button-secondary" href="about.html">Learn More</a></div></div></div></div></section>
-<section><div class="container"><div class="section-title"><p class="eyebrow">The Process</p><h2>Control what you can.</h2><p>Markets change every day.
-A disciplined process should not.</p></div><div class="grid-4"><article class="card"><div class="icon">🧠</div><h3>Market Psychology</h3><p>Understand momentum, fear, greed, and reactions around key levels.</p></article><article class="card"><div class="icon">⏳</div><h3>Patience</h3><p>Let the setup come to you instead of forcing trades.</p></article><article class="card"><div class="icon">🎯</div><h3>Discipline</h3><p>Make a plan and avoid changing the rules in the heat of the moment.</p></article><article class="card"><div class="icon">🛡️</div><h3>Risk Management</h3><p>Protect capital first.
-One bad trade should never do lasting damage.</p></article></div></div></section>
-<section><div class="container"><div class="section-title"><p class="eyebrow">New • Week Ahead</p><h2>August 17-21: The levels and catalysts that matter.</h2><p>SPY and QQQ key levels, clues on interest rates from the Fed, major retail earnings, NVDA's short-term setup, and SPCX's August 20 lockup expiration.</p></div><article class="card latest-feature"><div class="latest-feature-copy"><span class="tag">Week Ahead • August 17-21, 2026</span><h2>Don't predict the week. Prepare for it.</h2><p>The broader trend remains constructive, but several important technical levels and scheduled catalysts could determine the next move.</p><div class="actions"><a class="button button-primary" href="week-ahead-august-17-21-2026.html">Read the Week Ahead</a><a class="button button-secondary" href="market-notes.html">View Market Notes</a></div></div></article></div></section>
 
-<section>
-  <div class="container">
-    <div class="section-title">
-      <p class="eyebrow">Stock Spotlight</p>
-      <h2>MRNA: Cancer Vaccine Breakthrough Sends Shares Soaring</h2>
-      <p>Moderna surged 177% after positive Phase 3 results for its personalized mRNA cancer treatment. Now the focus shifts to whether the stock can hold momentum around the key levels ahead.</p>
-    </div>
-
-    <article class="card latest-feature">
-      <div class="latest-feature-copy">
-        <span class="tag">MRNA • AUGUST 19, 2026</span>
-        <h2>Latest Stock Spotlight</h2>
-        <p>MRNA's historic move came with more than 25 times normal volume. I'm watching $184.63 and, most importantly, $193.61 for what comes next.</p>
-
-        <div class="actions">
-          <a class="button button-primary" href="mrna-stock-spotlight-august-2026.html">Read MRNA Spotlight</a>
-          <a class="button button-secondary" href="market-notes.html">View Market Notes</a>
-        </div>
-
-        <p style="margin-top:18px;">
-          <strong>Also Updated:</strong>
-          <a href="mu-stock-spotlight-august-2026.html">MU — Buyers Respond Near Support, but Resistance Remains →</a>
-        </p>
-      </div>
-    </article>
+<section class="quick-access" aria-labelledby="quick-access-title">
+<div class="container">
+  <div class="quick-access-head">
+    <div><p class="eyebrow">Explore Dagger Trading</p><h2 id="quick-access-title">See what Dagger Trading offers.</h2></div>
+    
   </div>
+
+  
+  <div style="margin:4px 0 12px">
+    <span class="eyebrow" style="margin:0">Latest Market Coverage</span>
+    <p class="market-coverage-reason">Fresh market analysis, evolving Stock Spotlights, practical trader tools and trading education.</p>
+  </div>
+  <div class="market-coverage-grid">
+    <a class="market-coverage-card" href="week-ahead-august-17-21-2026.html">
+      <span class="tag">Recent Market Coverage</span>
+      <h3>Latest Week Ahead</h3>
+      <p><strong>Aug. 17–21:</strong> SPY and QQQ levels, Fed minutes, major retail earnings, NVDA and SPCX.</p>
+      <span class="quick-arrow">Read Market Coverage →</span>
+    </a>
+
+    <a class="market-coverage-card" href="weekly-market-wrap-august-14-2026.html">
+      <span class="tag">Recent Market Coverage</span>
+      <h3>Latest Market Wrap</h3>
+      <p><strong>Aug. 10–14:</strong> Inflation, record highs, retail sales, CSCO and SPCX — the key developments from the week.</p>
+      <span class="quick-arrow">Read Market Coverage →</span>
+    </a>
+
+    <a class="market-coverage-card market-coverage-latest" href="mrna-stock-spotlight-august-2026.html">
+      <span class="tag">Latest • Stock Spotlight</span>
+      <div class="market-ticker">MRNA</div>
+      <div class="spotlight-date">Aug. 19, 2026</div>
+      <h3>Cancer Vaccine Breakthrough Sends Shares Soaring</h3>
+      <p>Positive Phase 3 results triggered a historic move. See the catalyst, key levels and what I'm watching next.</p>
+      <span class="quick-arrow">Read MRNA Spotlight →</span>
+    </a>
+  </div>
+<div class="more-spotlights">
+  <div class="more-spotlights-head">
+    <div><span class="eyebrow">More Stock Spotlights</span><strong>Previous analysis</strong></div>
+    <a class="more-view-all" href="stock-spotlights.html">View All Stock Spotlights →</a>
+  </div>
+  <div class="spotlight-pills">
+    <a href="mu-stock-spotlight-august-2026.html"><strong>MU</strong><span>Micron Technology</span><b>→</b></a>
+    <a href="csco-stock-spotlight-august-2026.html"><strong>CSCO</strong><span>Cisco Systems</span><b>→</b></a>
+    <a href="spcx-stock-spotlight-august-2026.html"><strong>SPCX</strong><span>Stock Spotlight</span><b>→</b></a>
+  </div>
+</div>
+
+<div class="quick-grid">
+    <a class="quick-card" href="dagger-check.html"><div class="quick-icon">🗡️</div><small>Trader Tools</small><h3>Check the Trade</h3><p>Dagger Check and Setup Score help you slow down and evaluate the setup before committing.</p><span class="quick-arrow">Open Trader Tools →</span></a>
+    <a class="quick-card" href="learn-trading-basics.html"><div class="quick-icon">📚</div><small>Learn</small><h3>Trading Basics</h3><p>Candlesticks, volume, VWAP, moving averages, RSI, MACD and the building blocks of chart reading.</p><span class="quick-arrow">Learn the Basics →</span></a>
+    <a class="quick-card" href="learn-trading-psychology.html"><div class="quick-icon">🧠</div><small>Mindset</small><h3>Trading Psychology</h3><p>FOMO, overtrading, revenge trading, discipline and making better decisions under pressure.</p><span class="quick-arrow">Explore Psychology →</span></a>
+    <a class="quick-card" href="toolbox.html"><div class="quick-icon">📊</div><small>Market Center</small><h3>Prepare for the Market</h3><p>Major indexes, earnings, market news and useful links collected in one place.</p><span class="quick-arrow">Open Market Center →</span></a>
+    <a class="quick-card" href="resources.html"><div class="quick-icon">🧰</div><small>Resources</small><h3>Trading Resources</h3><p>Platforms, useful tools, books and other resources for traders.</p><span class="quick-arrow">Browse Resources →</span></a>
+    <a class="quick-card" href="comics.html"><div class="quick-icon">💬</div><small>Original Content</small><h3>Trading Comics</h3><p>Trading psychology and market habits told from a lighter perspective.</p><span class="quick-arrow">Browse Comics →</span></a>
+  </div>
+</div>
 </section>
+
+
+
+
+
 
 <section>
   <div class="container">
@@ -278,9 +387,12 @@ One bad trade should never do lasting damage.</p></article></div></div></section
   </div>
 </section>
 
-<section><div class="container"><div class="section-title"><p class="eyebrow">Trader Tools</p><h2>Check the decision. Score the setup.</h2><p>Two quick, free tools built around preparation, discipline, and process—not predictions.</p></div><div class="grid-2"><article class="card"><span class="tag">Decision Tool</span><h3>🗡️ Dagger Check</h3><p>Six quick questions to test whether you have a plan—or whether emotion is making the decision.</p><div class="actions"><a class="button button-primary" href="dagger-check.html">Run Dagger Check</a></div></article><article class="card"><span class="tag">New • Process Tool</span><h3>🗡️ Dagger Setup Score</h3><p>Evaluate trend, momentum, key levels, invalidation, risk/reward, entry quality, and catalyst risk before entering a planned swing or day trade.</p><div class="actions"><a class="button button-primary" href="dagger-setup-score.html">Score My Setup</a></div></article></div></div></section>
+
+<section><div class="container"><div class="section-title"><p class="eyebrow">The Process</p><h2>Control what you can.</h2><p>Markets change every day.
+A disciplined process should not.</p></div><div class="grid-4"><article class="card"><div class="icon">🧠</div><h3>Market Psychology</h3><p>Understand momentum, fear, greed, and reactions around key levels.</p></article><article class="card"><div class="icon">⏳</div><h3>Patience</h3><p>Let the setup come to you instead of forcing trades.</p></article><article class="card"><div class="icon">🎯</div><h3>Discipline</h3><p>Make a plan and avoid changing the rules in the heat of the moment.</p></article><article class="card"><div class="icon">🛡️</div><h3>Risk Management</h3><p>Protect capital first.
+One bad trade should never do lasting damage.</p></article></div></div></section>
 <section><div class="container"><div class="quote"><p>“Wait for <strong>confirmation</strong>, not assumption.”</p></div></div></section>
-<section><div class="container"><div class="section-title"><p class="eyebrow">What You'll Find</p><h2>Built for traders who value process.</h2></div><div class="grid-3"><article class="card"><span class="tag">Market Notes</span><h3>Clear market observations</h3><p>Weekly market preparation, recaps, stock spotlights, and key levels worth watching.</p><p style="margin-top:14px;"><a class="button button-secondary" href="market-notes.html">View Market Notes</a></p></article><article class="card"><span class="tag">Educational Comics</span><h3>Trading lessons with personality</h3><p>The old man and his dog take on dip buying, overtrading, discipline, and psychology.</p><p style="margin-top:14px;"><a class="button button-secondary" href="comics.html">View Comics</a></p></article><article class="card"><span class="tag">Learn</span><h3>Trading knowledge + psychology</h3><p>Learn chart basics, indicators, and risk management—then explore FOMO, overtrading, revenge trading, discipline, and better decision-making.</p><p style="margin-top:14px;"><a class="button button-secondary" href="learn.html">Explore Learn</a></p></article></div></div></section>
+
 </main><footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
