@@ -234,75 +234,6 @@
   .nav-resources-menu{display:contents;position:static;min-width:0;padding:0;border:0;background:transparent;box-shadow:none}
 }
 </style>
-
-<style id="dagger-mobile-card-scroll-fix">
-@media (max-width: 900px) {
-  /* Prevent the brief tap flash on large card links while preserving button taps. */
-  .card a:not(.button),
-  .content-card a:not(.button),
-  .latest-feature a:not(.button),
-  .content-card-image,
-  .latest-feature-image {
-    -webkit-tap-highlight-color: transparent;
-  }
-}
-</style>
-
-
-<style id="dagger-mobile-touch-flash-fix">
-/* Touch devices: keep desktop hover behavior off so a finger swipe does not
-   briefly trigger the card's desktop hover animation/highlight. */
-@media (max-width: 900px), (hover: none), (pointer: coarse) {
-  a,
-  .card a,
-  .content-card a,
-  .latest-feature a,
-  .content-card-image,
-  .latest-feature-image,
-  .free-tool-link {
-    -webkit-tap-highlight-color: transparent !important;
-  }
-
-  .content-card,
-  .content-card-image img,
-  .free-tool-link .card {
-    transition: none !important;
-  }
-
-  .content-card:hover,
-  .content-card:active,
-  .content-card:focus,
-  .content-card:focus-within {
-    transform: none !important;
-    border-color: var(--line) !important;
-  }
-
-  .content-card:hover .content-card-image img,
-  .content-card:active .content-card-image img,
-  .content-card:focus .content-card-image img,
-  .content-card:focus-within .content-card-image img {
-    transform: none !important;
-  }
-
-  .free-tool-link:hover .card,
-  .free-tool-link:active .card,
-  .free-tool-link:focus .card {
-    transform: none !important;
-    border-color: var(--line) !important;
-  }
-
-  /* Explicitly favor vertical panning on large linked card/image areas. */
-  .card a:not(.button),
-  .content-card a:not(.button),
-  .latest-feature a:not(.button),
-  .content-card-image,
-  .latest-feature-image,
-  .free-tool-link {
-    touch-action: pan-y manipulation;
-  }
-}
-</style>
-
 </head>
 <body>
 <header class="site-header">
@@ -783,48 +714,5 @@ document.getElementById("resetBtn").addEventListener("click", function(){
   });
 })();
 </script>
-
-<script id="dagger-mobile-card-scroll-fix-js">
-(function () {
-  const mq = window.matchMedia('(max-width: 900px)');
-  if (!mq.matches) return;
-
-  const candidates = document.querySelectorAll(
-    '.card a:not(.button), .content-card a:not(.button), .latest-feature a:not(.button), .content-card-image, .latest-feature-image'
-  );
-
-  candidates.forEach(function (link) {
-    if (!link || link.tagName !== 'A') return;
-
-    let startX = 0;
-    let startY = 0;
-    let moved = false;
-
-    link.addEventListener('touchstart', function (e) {
-      const t = e.touches && e.touches[0];
-      if (!t) return;
-      startX = t.clientX;
-      startY = t.clientY;
-      moved = false;
-    }, { passive: true });
-
-    link.addEventListener('touchmove', function (e) {
-      const t = e.touches && e.touches[0];
-      if (!t) return;
-      if (Math.abs(t.clientX - startX) > 8 || Math.abs(t.clientY - startY) > 8) {
-        moved = true;
-      }
-    }, { passive: true });
-
-    link.addEventListener('click', function (e) {
-      if (moved) {
-        e.preventDefault();
-        e.stopPropagation();
-      }
-    }, true);
-  });
-})();
-</script>
-
 </body>
 </html>
