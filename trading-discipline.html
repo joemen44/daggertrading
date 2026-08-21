@@ -264,6 +264,58 @@
 }
 </style>
 
+<style id="trading-gambling-visual-lesson">
+  .tg-wrap{max-width:1180px;margin:0 auto;padding:28px 20px 54px}
+  .tg-hero{border-radius:18px;overflow:hidden;border:1px solid var(--line);background:#070a0d;box-shadow:0 18px 45px rgba(0,0,0,.22)}
+  .tg-hero img{display:block;width:100%;height:auto}
+  .tg-board{margin-top:22px;background:#f8f8f5;color:#17191c;border-radius:18px;padding:30px;box-shadow:0 18px 45px rgba(0,0,0,.20)}
+  .tg-board *{box-sizing:border-box}
+  .tg-intro{text-align:center;max-width:930px;margin:0 auto 24px;font-size:1.08rem;line-height:1.65;color:#34383d}
+  .tg-intro strong{color:#111}
+  .tg-rule{height:3px;width:220px;margin:12px auto 0;background:linear-gradient(90deg,transparent,#76a943,transparent);border:0}
+  .tg-section{margin-top:30px}
+  .tg-heading{display:flex;align-items:center;gap:10px;margin:0 0 14px;font-size:clamp(1.35rem,2vw,1.8rem);line-height:1.15;color:#111;font-weight:900;text-transform:uppercase;letter-spacing:-.02em}
+  .tg-num{color:#69a33d}
+  .tg-slope{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+  .tg-step{border:1px solid #c9ccd0;border-radius:10px;background:white;padding:15px 12px;text-align:center;min-height:210px;display:flex;flex-direction:column;align-items:center}
+  .tg-step .label{font-weight:900;text-transform:uppercase;font-size:.88rem;line-height:1.2;margin-bottom:12px}
+  .tg-step:nth-child(1) .label{color:#4f8e2f}.tg-step:nth-child(2) .label,.tg-step:nth-child(4) .label,.tg-step:nth-child(5) .label,.tg-step:nth-child(6) .label{color:#c9342e}.tg-step:nth-child(3) .label{color:#d97918}
+  .tg-icon{font-size:2.7rem;line-height:1;margin:6px 0 15px}
+  .tg-step p{font-size:.92rem;line-height:1.42;color:#2d3135;margin:auto 0 0}
+  .tg-strip{margin:14px auto 0;max-width:900px;padding:10px 16px;border-radius:999px;background:#121417;color:#fff;text-align:center;font-weight:800;font-style:italic}
+  .tg-grid2{display:grid;grid-template-columns:1.55fr .85fr;gap:18px}
+  .tg-panel{border:1px solid #ced1d4;background:#fff;border-radius:12px;padding:18px}
+  .tg-panel h3{margin:0 0 12px;color:#111;font-size:1.08rem;text-transform:uppercase}
+  .tg-compare{width:100%;border-collapse:collapse;font-size:.91rem}
+  .tg-compare th,.tg-compare td{padding:9px 10px;border-bottom:1px solid #e0e2e4;vertical-align:top;text-align:left}
+  .tg-compare th{font-size:.85rem;text-transform:uppercase}
+  .tg-compare th:nth-child(2){background:#e9f3e2;color:#32731a}.tg-compare th:nth-child(3){background:#f9e7e5;color:#a52521}
+  .tg-yes{color:#2d8122;font-weight:800}.tg-no{color:#b72e29;font-weight:800}
+  .tg-research-list{margin:0;padding-left:1.15rem;color:#333}.tg-research-list li{margin:0 0 14px;line-height:1.45}.tg-research-list strong{color:#111}
+  .tg-bottom-line{margin-top:12px;padding:12px 14px;border-radius:9px;background:#e4efd9;border:1px solid #c5d9b2;font-weight:800;color:#26351d}
+  .tg-midgrid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
+  .tg-decision-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .tg-decision{padding:17px;border-radius:10px;border:1px solid #d9dcdf;text-align:center;background:#fff}
+  .tg-decision.good{border-top:4px solid #65a33a}.tg-decision.bad{border-top:4px solid #d43b32}
+  .tg-decision strong{display:block;margin-bottom:10px;text-transform:uppercase}.tg-decision.good strong{color:#48852b}.tg-decision.bad strong{color:#b8302b}
+  .tg-decision .flow{font-size:2.05rem;letter-spacing:.08em;margin:12px 0}.tg-decision p{margin:0;color:#333;line-height:1.45}
+  .tg-focus{text-align:center;margin-top:13px;font-weight:900;padding:10px;background:#f1f1ef;border-radius:8px}
+  .tg-warning{background:#131518;color:white;border-color:#131518}.tg-warning h3{color:white}.tg-warning ul{padding-left:1.15rem;margin:0}.tg-warning li{margin:8px 0;line-height:1.35}.tg-warning li::marker{color:#e1483f}.tg-warning-note{margin-top:14px;color:#ff655c;font-weight:800;text-align:center}
+  .tg-takeaway{display:grid;grid-template-columns:auto 1fr 1fr;gap:18px;align-items:center;background:#111417;color:#fff;border-radius:12px;padding:20px 22px}
+  .tg-dagger{font-size:2.8rem}.tg-takeaway h3{margin:0 0 4px;color:#85b952;text-transform:uppercase}.tg-takeaway p{margin:0;line-height:1.45;color:#e8e8e8}.tg-quote{font-size:1.42rem;font-style:italic;border-left:2px solid #72a842;padding-left:18px}
+  .tg-deeper{margin-top:22px;border:1px solid #cfd3d6;border-radius:12px;background:#fff;overflow:hidden}
+  .tg-deeper summary{cursor:pointer;list-style:none;padding:18px 20px;font-size:1.15rem;font-weight:900;color:#111;display:flex;align-items:center;justify-content:space-between;gap:14px}
+  .tg-deeper summary::-webkit-details-marker{display:none}.tg-deeper summary:after{content:'+';font-size:1.5rem;color:#609637}.tg-deeper[open] summary:after{content:'–'}
+  .tg-deeper-body{padding:0 20px 20px;color:#34383d;line-height:1.7}.tg-deeper-body h3{margin:22px 0 8px;color:#111}.tg-deeper-body p{margin:0 0 14px}.tg-deeper-body ul{padding-left:1.2rem}.tg-deeper-body a{color:#406f22;text-decoration:underline}
+  .tg-return{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+  .tg-return .dagger-check-btn{background:#84c943 !important;color:#111 !important;border-color:#76b83b !important;font-weight:800}
+  .tg-return .dagger-check-btn:hover,.tg-return .dagger-check-btn:focus{background:#75b63a !important;color:#111 !important;border-color:#679f34 !important}
+  .tg-return .setup-score-btn{background:#f4b942 !important;color:#111 !important;border-color:#dca52f !important;font-weight:800}
+  .tg-return .setup-score-btn:hover,.tg-return .setup-score-btn:focus{background:#e1a72f !important;color:#111 !important;border-color:#c79024 !important}
+  .tg-mobile-title{display:none}
+  @media(max-width:980px){.tg-slope{grid-template-columns:repeat(3,1fr)}.tg-grid2,.tg-midgrid{grid-template-columns:1fr}.tg-takeaway{grid-template-columns:auto 1fr}.tg-quote{grid-column:1/-1}}
+  @media(max-width:640px){.tg-wrap{padding:18px 12px 40px}.tg-board{padding:18px 14px;border-radius:14px}.tg-slope{grid-template-columns:1fr 1fr}.tg-step{min-height:190px}.tg-decision-grid{grid-template-columns:1fr}.tg-compare{font-size:.79rem}.tg-compare th,.tg-compare td{padding:7px 6px}.tg-heading{font-size:1.2rem}.tg-intro{font-size:.98rem}.tg-strip{border-radius:12px}.tg-takeaway{grid-template-columns:1fr;text-align:center}.tg-quote{border-left:0;border-top:2px solid #72a842;padding:14px 0 0}.tg-hero{display:none}.tg-mobile-title{display:block;margin-bottom:16px;color:#fff}.tg-mobile-title .eyebrow{color:#8ab85f}.tg-mobile-title h1{font-size:clamp(2rem,11vw,3rem);line-height:1.02;margin:5px 0 10px}.tg-mobile-title p{color:#cdd3da;line-height:1.5}}
+</style>
 </head>
 <body>
 <header class="site-header"><div class="container navbar"><a class="brand" href="index.html"><span class="brand-mark">🗡️</span><span>DAGGER <strong>TRADING</strong></span></a><button class="menu-button">Menu</button><nav class="nav-links">
@@ -309,65 +361,16 @@
         </div>
       </div>
     </nav></div></header>
-<main>
-  <section class="page-hero">
-    <div class="container article-shell article-hero">
-      <p class="eyebrow">Trading Psychology</p>
-      <h1>Trading Discipline: Building Consistency One Trade at a Time</h1>
-      <p>Simple, practical trading education focused on process, risk and better decision-making.</p>
-    </div>
-  </section><div class="container"><div class="psych-article-visual"><img src="images/learn/trading-discipline.png" alt="Disciplined trader following entry stop and target rules"></div></div>
-  <section>
-    <div class="container article-shell article-body">
-      
-<p>Trading discipline is often described as following your rules, but that can sound easier than it is. Rules are simple when the market is closed. They become harder when a stock is moving quickly, you have just taken a loss, or you are watching a move happen without you.</p>
-<p>Discipline is the ability to keep your decision-making connected to a process even when emotion gives you a reason to abandon it.</p>
-
-<h2>Define the trade before the trade defines you</h2>
-<p>Before entering, a trader should be able to identify the reason for the trade, the area that invalidates the idea, and the amount of capital at risk. A target or expected reward can also help determine whether the opportunity makes sense.</p>
-<p>If those decisions are made only after the position moves against you, emotion has already entered the planning process.</p>
-
-<h2>Confirmation can reduce assumption</h2>
-<p>A setup can look promising without being ready. Waiting for confirmation might mean a level holds as support, resistance breaks with strength, volume appears, or momentum aligns with the idea. The exact confirmation depends on the setup.</p>
-<p>Waiting does not eliminate losing trades. It simply gives the market an opportunity to provide evidence before you commit capital.</p>
-
-<h2>Consistency is not the same as winning every day</h2>
-<p>A disciplined trader can have a losing day. An undisciplined trader can have a winning day. Short-term results contain randomness, which is why one outcome cannot tell you whether the decision was good.</p>
-<p>A better question after the trade is: Did I execute the plan I had before entering?</p>
-
-<h2>Make risk boring</h2>
-<p>Risk decisions should not depend on how confident or excited you feel. Define a maximum acceptable loss for the trade and choose position size around that amount. If the proper size feels too small to be interesting, that is not a reason to increase it.</p>
-<p>Survival and consistency matter more than making one trade meaningful.</p>
-
-<h2>Build rules around your weak moments</h2>
-<p>The best trading rules are often personal. If you tend to overtrade after a strong start, create a rule for protecting good days. If losses make you increase size, create a rule that prevents size increases after losses. If certain times of day produce poor decisions, require a stronger setup during those periods or avoid them.</p>
-<p>A rule is most useful when it addresses behavior you have actually observed.</p>
-
-<h2>Review execution separately from outcome</h2>
-<ul>
-<li>Was the setup clearly defined?</li>
-<li>Did I wait for the condition I wanted?</li>
-<li>Was my risk known before entry?</li>
-<li>Did I respect the invalidation?</li>
-<li>Would I take the same setup again under similar conditions?</li>
-</ul>
-<p>This kind of review turns trading into a process that can be improved rather than a daily judgment based entirely on money.</p>
-
-<div class="dagger-box"><strong>🗡️ Dagger Takeaway:</strong> Discipline is not predicting correctly. It is repeatedly making decisions you can explain, size and review. Wait for confirmation, not assumption.</div>
-
-      <div class="tool-links">
-        <a class="button button-primary" href="dagger-check.html">Try Dagger Check</a>
-        <a class="button button-secondary" href="dagger-setup-score.html">Try Dagger Setup Score</a>
-      </div>
-      <div class="article-nav">
-        <a href="learn.html">← Back to Learn</a>
-      </div>
-      <div class="learn-note" style="margin-top:28px">
-        <strong>Educational only.</strong> Dagger Trading tools and lessons are designed to help traders think through process and risk. They do not predict outcomes or provide personalized financial advice.
-      </div>
-    </div>
-  </section>
-</main>
+<main><div class="tg-wrap">
+<div class="tg-mobile-title"><p class="eyebrow">Trading Psychology</p><h1>Trading Discipline: Build Consistency One Trade at a Time</h1><p>Consistency beats intensity.</p></div>
+<section class="tg-hero"><img src="images/learn/trading-discipline.png" alt="Disciplined trader following entry stop and target rules"></section>
+<section class="tg-board"><div class="tg-intro">Discipline is not predicting correctly. It is doing what you said you would do—even when waiting, losing or missing a move feels uncomfortable.<div><strong>Consistency beats intensity.</strong></div><hr class="tg-rule"></div>
+<section class="tg-section"><h2 class="tg-heading"><span class="tg-num">1.</span> How the Pattern Develops</h2><div class="tg-slope"><div class="tg-step"><div class="label">1. Plan</div><div class="tg-icon">📝</div><p>Define the setup, risk and invalidation.</p></div><div class="tg-step"><div class="label">2. Wait</div><div class="tg-icon">⏳</div><p>Let the market come to your level.</p></div><div class="tg-step"><div class="label">3. Confirm</div><div class="tg-icon">🔎</div><p>Require the evidence your setup needs.</p></div><div class="tg-step"><div class="label">4. Execute</div><div class="tg-icon">🎯</div><p>Take the trade you planned.</p></div><div class="tg-step"><div class="label">5. Accept</div><div class="tg-icon">⚖️</div><p>Let the outcome be uncertain.</p></div><div class="tg-step"><div class="label">6. Review</div><div class="tg-icon">📋</div><p>Grade the decision and repeat the process.</p></div></div><div class="tg-strip">Small decisions become habits. Protect the process early.</div></section>
+<section class="tg-section tg-grid2"><div><h2 class="tg-heading"><span class="tg-num">2.</span> Process vs. Emotion</h2><div class="tg-panel"><table class="tg-compare"><thead><tr><th></th><th>Disciplined Process</th><th>Emotional Process</th></tr></thead><tbody><tr><td><strong>Setup</strong></td><td><span class="tg-yes">✓</span> Defined before action</td><td><span class="tg-no">✕</span> Invented in the moment</td></tr><tr><td><strong>Entry</strong></td><td><span class="tg-yes">✓</span> Waits for confirmation</td><td><span class="tg-no">✕</span> Anticipates from impatience</td></tr><tr><td><strong>Risk</strong></td><td><span class="tg-yes">✓</span> Known and consistent</td><td><span class="tg-no">✕</span> Changes with emotion</td></tr><tr><td><strong>Stop</strong></td><td><span class="tg-yes">✓</span> Part of the plan</td><td><span class="tg-no">✕</span> Negotiated after entry</td></tr><tr><td><strong>Missed trade</strong></td><td><span class="tg-yes">✓</span> Accepted</td><td><span class="tg-no">✕</span> Chased</td></tr><tr><td><strong>Success</strong></td><td><span class="tg-yes">✓</span> Following process</td><td><span class="tg-no">✕</span> Being right today</td></tr></tbody></table></div></div><div><h2 class="tg-heading"><span class="tg-num">3.</span> Quick Reset</h2><div class="tg-panel"><ul class="tg-research-list"><li><strong>Pause:</strong> Is this trade actually in the plan?</li><li><strong>Risk:</strong> Is size defined before entry?</li><li><strong>Evidence:</strong> What confirms the setup?</li><li><strong>Invalidation:</strong> Where am I wrong?</li><li><strong>Choice:</strong> Can I comfortably skip this trade?</li></ul><div class="tg-bottom-line">If you cannot answer those questions clearly, waiting is a valid decision.</div></div></div></section>
+<section class="tg-section tg-midgrid"><div><h2 class="tg-heading"><span class="tg-num">4.</span> Outcome ≠ Decision Quality</h2><div class="tg-decision-grid"><div class="tg-decision good"><strong>Follow Plan + Lose = Discipline</strong><div class="flow">📝 → 📉 → ✅</div><p>A disciplined loss is part of trading. You executed what you could control.</p></div><div class="tg-decision bad"><strong>Break Rules + Win = Not Discipline</strong><div class="flow">⚡ → 📈 → ❌</div><p>A profitable rule-break can be more dangerous than a clean loss because it rewards inconsistency.</p></div></div><div class="tg-focus">Grade the decision first. Grade the outcome second.</div></div><div><h2 class="tg-heading"><span class="tg-num">5.</span> Warning Signs</h2><div class="tg-panel tg-warning"><ul><li>Entering early because waiting feels difficult</li><li>Moving stops without new evidence</li><li>Changing size based on recent wins or losses</li><li>Chasing a move you already missed</li><li>Breaking rules because this trade feels different</li><li>Judging discipline only by daily P&L</li></ul><div class="tg-warning-note">When emotion changes the plan, reduce risk and reset.</div></div></div></section>
+<section class="tg-section tg-takeaway"><div class="tg-dagger">🗡️</div><div><h3>6. Key Takeaway</h3><p>Your edge needs rules around it. The goal is not perfect execution—it is noticing when you drift and returning to the process.</p></div><div class="tg-quote">“Consistency beats intensity.”</div></section>
+<details class="tg-deeper"><summary><span>7. Go Deeper <small style="font-weight:600;color:#666">(optional reading)</small></span></summary><div class="tg-deeper-body"><h3>The deeper lesson</h3><p>Discipline becomes easier when the rules are concrete. Define what qualifies as a setup, what confirms it, where the idea is invalid, how much you will risk and what makes you stop trading. Then review whether you followed those rules. Consistency is built by repeating controllable behaviors, not by demanding a particular result from the market.</p><h3>A simple practice</h3><p>Before the next order, write down the setup, confirmation, invalidation and risk. After the trade, review whether you followed them. That keeps the review focused on behavior you can actually control.</p><p><small>Educational content only. This lesson is designed to improve trading process and risk awareness; it does not predict outcomes or provide personalized financial advice.</small></p></div></details>
+<div class="tg-return"><a class="button button-primary" href="learn-trading-psychology.html">← Back to Psychology Lessons</a><a class="button button-secondary dagger-check-btn" href="dagger-check.html">Try Dagger Check</a><a class="button button-secondary setup-score-btn" href="dagger-setup-score.html">Score Your Setup</a></div></section></div></main>
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">

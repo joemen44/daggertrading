@@ -65,6 +65,22 @@
     .brand{display:flex;align-items:center;gap:9px;font-weight:800;letter-spacing:.04em;margin-bottom:34px}
     .brand span:last-child{color:var(--accent)}
     .hero{padding:24px 0 18px}
+    /* Setup Score hero: keep the subtitle visually attached to the title and
+       remove the oversized gap before the tool begins. */
+    .page-hero.setup-score-hero{padding:64px 0 22px}
+    .setup-hero-title{display:flex;align-items:center;gap:24px}
+    .setup-hero-icon{font-size:4.4rem;line-height:1;flex:0 0 auto}
+    .setup-hero-copy h1{margin:0 0 12px}
+    .setup-hero-copy p{margin:0;max-width:760px;font-size:1.02rem}
+    .setup-score-section{padding:26px 0 72px}
+    .setup-score-section .setup-wrap{padding-top:0}
+    @media(max-width:700px){
+      .page-hero.setup-score-hero{padding:44px 0 18px}
+      .setup-hero-title{gap:14px;align-items:flex-start}
+      .setup-hero-icon{font-size:3rem;margin-top:4px}
+      .setup-hero-copy h1{font-size:clamp(2.2rem,12vw,3.4rem);letter-spacing:-2px}
+      .setup-score-section{padding-top:18px}
+    }
     .eyebrow{text-transform:uppercase;letter-spacing:.13em;font-size:.76rem;font-weight:800;color:var(--accent)}
     h1{font-size:clamp(2.1rem,5vw,4rem);line-height:1.02;margin:9px 0 14px}
     h2{margin:0 0 8px}
@@ -356,14 +372,19 @@
 </header>
 
 <main>
-  <section class="page-hero">
+  <section class="page-hero setup-score-hero">
     <div class="container">
       <p class="eyebrow">Trader Tools</p>
-      <h1>🗡️ Dagger Setup Score</h1>
-      <p>Score how clearly your trade setup is defined before you put capital at risk.</p>
+      <div class="setup-hero-title">
+        <div class="setup-hero-icon" aria-hidden="true">🗡️</div>
+        <div class="setup-hero-copy">
+          <h1>Dagger Setup Score</h1>
+          <p>Score how clearly your trade setup is defined before you put capital at risk.</p>
+        </div>
+      </div>
     </div>
   </section>
-  <section>
+  <section class="setup-score-section">
     <div class="container setup-wrap">
 
 <div class="note">
