@@ -1,0 +1,55 @@
+
+/* Dagger Trading Version 2 polish */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 36px;
+  align-items: start;
+  text-align: left;
+}
+.footer-brand strong { color: var(--text); font-size: 1.15rem; }
+.footer-brand p { margin: 6px 0 0; }
+.footer-slogan { color: var(--accent2); font-weight: 800; }
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(120px, 1fr));
+  gap: 8px 24px;
+}
+.footer-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 700;
+}
+.footer-links a:hover { color: var(--accent2); }
+.copyright { margin-top: 16px; }
+.resource-feature {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 22px;
+  margin-bottom: 22px;
+}
+.resource-callout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 260px;
+}
+.resource-callout h2 {
+  margin: 0 0 10px;
+  font-size: clamp(1.8rem, 4vw, 2.7rem);
+}
+.resource-list { display: grid; gap: 14px; }
+.resource-item {
+  padding: 16px 18px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: rgba(47,140,255,.06);
+}
+.resource-item strong { display: block; margin-bottom: 4px; }
+@media (max-width: 800px) {
+  .footer-grid, .resource-feature { grid-template-columns: 1fr; }
+  .footer-links { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 500px) {
+  .footer-links { grid-template-columns: 1fr; }
+}

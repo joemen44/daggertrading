@@ -1,0 +1,14 @@
+Dagger Trading navigation menu fix — August 21, 2026
+
+Problem found:
+Several full HTML pages included the Menu button/navigation markup but did not load js/script.js. On mobile, the Menu button therefore had no click handler and did nothing.
+
+Pages fixed:
+- revenge-trading.html
+- self-sabotage-in-trading.html
+- trading-discipline.html
+- trading-psychology.html
+- trading-vs-gambling.html
+- why-traders-overtrade.html
+
+The shared navigation JavaScript was restored on those pages. No article/page content was changed.

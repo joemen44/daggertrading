@@ -115,7 +115,7 @@
 <section class="archive"><div class="container">
 <div class="archive-head"><div><p class="eyebrow">Browse Market Notes</p><h2>Find the analysis you're looking for.</h2></div></div>
 <div class="notes-filters" role="group" aria-label="Filter Market Notes">
-<button class="notes-filter-btn active" type="button" data-filter="all" onclick="filterMarketNotes('all', this)">All</button><button class="notes-filter-btn" type="button" data-filter="week-ahead" onclick="filterMarketNotes('week-ahead', this)">Week Ahead</button><button class="notes-filter-btn" type="button" data-filter="weekly-wrap" onclick="filterMarketNotes('weekly-wrap', this)">Weekly Wrap</button><button class="notes-filter-btn" type="button" data-filter="spotlight" onclick="filterMarketNotes('spotlight', this)">Stock Spotlights</button>
+<button class="notes-filter-btn active" type="button" data-filter="all">All</button><button class="notes-filter-btn" type="button" data-filter="week-ahead">Week Ahead</button><button class="notes-filter-btn" type="button" data-filter="weekly-wrap">Weekly Wrap</button><button class="notes-filter-btn" type="button" data-filter="spotlight">Stock Spotlights</button>
 </div>
 <div class="notes-list" id="market-notes-list">
 <article class="card note-card" data-category="week-ahead"><span class="tag">Week Ahead • August 17–21, 2026</span><h3>SPY, QQQ, Fed Minutes, Retail Earnings, NVDA &amp; SPCX</h3><p>A focused look at the week's major catalysts, important market levels and stocks worth watching.</p><div class="actions"><a class="button button-secondary" href="week-ahead-august-17-21-2026.html">Read Week Ahead</a></div></article>
@@ -189,21 +189,26 @@
 </script>
 
 <script id="market-notes-filter">
-function filterMarketNotes(filter, clickedButton) {
-  var buttons = document.querySelectorAll('.notes-filter-btn');
-  var cards = document.querySelectorAll('#market-notes-list .note-card');
+(function(){
+  const buttons = Array.from(document.querySelectorAll('.notes-filter-btn'));
+  const cards = Array.from(document.querySelectorAll('#market-notes-list .note-card'));
+  if (!buttons.length || !cards.length) return;
 
-  for (var i = 0; i < buttons.length; i++) {
-    var active = buttons[i] === clickedButton;
-    if (active) buttons[i].classList.add('active');
-    else buttons[i].classList.remove('active');
-    buttons[i].setAttribute('aria-pressed', active ? 'true' : 'false');
-  }
+  buttons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      const filter = btn.getAttribute('data-filter') || 'all';
 
-  for (var j = 0; j < cards.length; j++) {
-    var category = cards[j].getAttribute('data-category');
-    cards[j].hidden = !(filter === 'all' || category === filter);
-  }
-}
+      buttons.forEach(function(b){
+        b.classList.toggle('active', b === btn);
+        b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
+      });
+
+      cards.forEach(function(card){
+        const show = filter === 'all' || card.getAttribute('data-category') === filter;
+        card.style.display = show ? '' : 'none';
+      });
+    });
+  });
+})();
 </script>
 </body></html>
