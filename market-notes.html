@@ -131,17 +131,7 @@
 
 <footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><strong>Dagger Trading</strong><p class="footer-slogan">“Wait for confirmation, not assumption.”</p><p>Market Psychology • Patience • Risk Management</p></div><nav class="footer-links" aria-label="Footer navigation"><a href="index.html">Home</a><a href="comics.html">Comics</a><a href="learn.html">Learn</a><a href="trader-tools.html">Trader Tools</a><a href="market-notes.html">Market Notes</a><a href="toolbox.html">Market Center</a><a href="resources.html">Trading Resources</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="https://x.com/DaggerTrading" target="_blank" rel="noopener noreferrer">X / Twitter</a></nav></div><p class="disclaimer">Content is provided for educational and informational purposes only and should not be considered financial advice. Trading and investing involve risk, including the possible loss of principal.</p><p class="copyright">© <span data-year></span> Dagger Trading. All Rights Reserved.</p></div></footer>
 <script src="js/script.js"></script>
-<script>
-(function(){
-const groups=[['.nav-learn','.nav-learn-button'],['.nav-tools','.nav-tools-button'],['.nav-market','.nav-market-button'],['.nav-resources','.nav-resources-button'],['.nav-more','.nav-more-button']],items=[];
-groups.forEach(([s,b])=>{const root=document.querySelector(s);if(!root)return;const btn=root.querySelector(b);if(!btn)return;items.push({root,btn});btn.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();items.forEach(x=>{if(x.root!==root){x.root.classList.remove('open');x.btn.setAttribute('aria-expanded','false')}});const open=root.classList.toggle('open');btn.setAttribute('aria-expanded',open?'true':'false')})});
-document.addEventListener('click',()=>items.forEach(x=>{x.root.classList.remove('open');x.btn.setAttribute('aria-expanded','false')}));
-})();
-(function(){
-const buttons=[...document.querySelectorAll('.notes-filter-btn')],cards=[...document.querySelectorAll('.note-card')];
-buttons.forEach(btn=>btn.addEventListener('click',()=>{const f=btn.dataset.filter;buttons.forEach(b=>b.classList.toggle('active',b===btn));cards.forEach(c=>c.hidden=!(f==='all'||c.dataset.category===f))}));
-})();
-</script><script id="dagger-unified-dropdown-nav">
+<script id="dagger-unified-dropdown-nav">
 (function(){
   const defs = [
     ['.nav-learn', '.nav-learn-button'],
