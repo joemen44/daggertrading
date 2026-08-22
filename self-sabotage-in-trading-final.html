@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Self-Sabotage in Trading | Dagger Trading</title>
+<meta name="description" content="A Dagger Trading psychology lesson on self-sabotage, automatic behavior, overtrading, the disposition effect, reinforcement, and how to interrupt destructive trading patterns.">
+<style>
+:root{
+  --navy:#061a2b; --red:#d92a1d; --ink:#101820; --line:#aebdca;
+  --green:#1f7a3b; --paper:#eef2f5; --white:#fff;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--paper);
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  color:var(--ink);
+}
+.page{max-width:1040px;margin:28px auto;padding:0 14px 40px}
+.card-shell{
+  background:#fff;
+  border:2px solid var(--navy);
+  border-radius:22px;
+  overflow:hidden;
+  box-shadow:0 16px 44px rgba(0,0,0,.10);
+}
+.main-card{display:block;width:100%;height:auto}
+.deep{
+  margin:0;
+  border-top:2px solid var(--navy);
+  background:#fff;
+}
+.deep summary{
+  list-style:none;
+  cursor:pointer;
+  background:var(--navy);
+  color:#fff;
+  padding:14px 18px;
+  font-size:20px;
+  font-weight:900;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+.deep summary::-webkit-details-marker{display:none}
+.deep summary .right{
+  font-size:12px;
+  letter-spacing:.7px;
+  white-space:nowrap;
+}
+.deep summary .right::after{content:"  ▾"}
+.deep[open] summary .right::after{content:"  ▴"}
+.deep-grid{
+  display:grid;
+  grid-template-columns:1fr 1.18fr .95fr 1fr;
+  border-top:1px solid var(--line);
+}
+.col{
+  padding:18px 16px;
+  border-right:1px solid var(--line);
+}
+.col:last-child{border-right:0}
+.col h3{
+  color:var(--red);
+  margin:0 0 8px;
+  font-size:15px;
+  text-transform:uppercase;
+}
+.col p,.col li{font-size:14px;line-height:1.35}
+.col ul{padding-left:18px;margin:8px 0}
+.sab{margin:5px 0}
+.sab b{color:var(--red)}
+.exercise{counter-reset:n;list-style:none;padding:0;margin:8px 0}
+.exercise li{
+  counter-increment:n;
+  position:relative;
+  padding-left:30px;
+  margin:9px 0;
+}
+.exercise li::before{
+  content:counter(n);
+  position:absolute;
+  left:0; top:0;
+  width:21px;height:21px;border-radius:50%;
+  background:var(--red);color:#fff;
+  text-align:center;font-weight:900;line-height:21px;
+}
+.find{color:var(--green);font-weight:900}
+.sources{
+  border-top:1px solid var(--line);
+  padding:14px 18px;
+  font-size:12.5px;
+  color:#435462;
+  line-height:1.4;
+}
+.footer{
+  background:var(--navy);
+  color:#fff;
+  padding:14px 20px;
+  display:flex;
+  justify-content:space-between;
+  gap:18px;
+  align-items:center;
+}
+.brand{font-size:20px;font-weight:900}
+.fine{font-size:12px;color:#d6e0e7;max-width:520px}
+@media(max-width:760px){
+  .page{padding:0;margin:0 auto}
+  .card-shell{border-radius:0;border-left:0;border-right:0}
+  .deep-grid{grid-template-columns:1fr}
+  .col{border-right:0;border-bottom:1px solid var(--line)}
+  .deep summary{font-size:17px}
+  .deep summary .right{font-size:11px}
+  .footer{display:block}
+  .fine{margin-top:8px}
+}
+</style>
+</head>
+<body>
+<main class="page">
+  <article class="card-shell">
+    <img class="main-card" src="self-sabotage-card-main.png" alt="Self-Sabotage in Trading lesson card">
+
+    <details class="deep">
+      <summary>
+        <span>📖 GO DEEPER — OPTIONAL READING &amp; PRACTICE</span>
+        <span class="right">CLICK TO EXPAND</span>
+      </summary>
+
+      <div class="deep-grid">
+        <section class="col">
+          <h3>The Subconscious Side</h3>
+          <p>Our brains create automatic patterns—habits and learned associations—that may once have protected us but can later work against us.</p>
+          <ul>
+            <li>We seek immediate relief.</li>
+            <li>We avoid discomfort.</li>
+            <li>We repeat what was rewarded.</li>
+          </ul>
+          <p><strong>Awareness comes before change.</strong></p>
+        </section>
+
+        <section class="col">
+          <h3>The “Inner Saboteurs”</h3>
+          <p><em>Adapted from Shirzad Chamine’s <strong>Positive Intelligence</strong> framework and discussed by Tony Robbins.</em></p>
+          <p class="sab"><b>HYPER-VIGILANT:</b> Expects danger → can’t hold winners.</p>
+          <p class="sab"><b>RESTLESS:</b> Needs stimulation → overtrades.</p>
+          <p class="sab"><b>CONTROLLER:</b> Needs certainty → struggles to accept risk or losses.</p>
+          <p class="sab"><b>AVOIDER:</b> Avoids pain → moves stops or refuses to take losses.</p>
+          <p class="sab"><b>HYPER-ACHIEVER:</b> Never enough → keeps trading, always wants more.</p>
+          <p class="sab"><b>JUDGE:</b> Harsh self-criticism → can trigger emotional decisions.</p>
+        </section>
+
+        <section class="col">
+          <h3>Practical Exercise</h3>
+          <p>When you break a rule, record these four things:</p>
+          <ol class="exercise">
+            <li>What happened immediately before it?</li>
+            <li>What were you feeling?</li>
+            <li>What did you do?</li>
+            <li>What did that action give you immediately?</li>
+          </ol>
+          <p class="find">Find the pattern.<br>Build a rule around the trigger.</p>
+        </section>
+
+        <section class="col">
+          <h3>Interrupt the Pattern</h3>
+          <p>Design rules that protect you when your triggers fire.</p>
+          <ul>
+            <li>Cooldown after a loss.</li>
+            <li>Predetermine risk and size.</li>
+            <li>Define invalidation before entry.</li>
+            <li>Use daily loss / profit limits.</li>
+            <li>Trade only your setups.</li>
+            <li>Reduce size when emotions are high.</li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="sources">
+        <strong>Research / further reading:</strong>
+        Barber &amp; Odean, <em>Trading Is Hazardous to Your Wealth</em> ·
+        Shefrin &amp; Statman, <em>The Disposition to Sell Winners Too Early and Ride Losers Too Long</em> ·
+        B. F. Skinner / operant-conditioning principles ·
+        Shirzad Chamine, <em>Positive Intelligence</em> ·
+        Tony Robbins, discussion of mental “saboteurs.”
+      </div>
+    </details>
+
+    <footer class="footer">
+      <div class="brand">🗡️ DAGGER TRADING</div>
+      <div class="fine">Educational content only. This lesson discusses trading behavior and published research; it is not financial or psychological advice.</div>
+    </footer>
+  </article>
+</main>
+</body>
+</html>
