@@ -249,6 +249,50 @@
   .nav-resources-menu{display:contents;position:static;min-width:0;padding:0;border:0;background:transparent;box-shadow:none}
 }
 </style>
+
+<style id="homepage-psychology-preview">
+.psych-feature{
+  display:grid;
+  grid-template-columns:minmax(0,1.12fr) minmax(360px,.88fr);
+  padding:0;
+  overflow:hidden;
+  border-radius:18px;
+  background:linear-gradient(135deg,#0c1a2a 0%,#0a1624 55%,#07111d 100%);
+}
+.psych-feature .latest-feature-copy{padding:38px 38px 34px;min-width:0}
+.psych-feature .latest-feature-copy>h2{font-size:clamp(2rem,3.7vw,3.35rem);line-height:1.04;margin:16px 0 20px;max-width:620px}
+.psych-feature .latest-feature-copy>p{max-width:650px;color:#9fb4cd;line-height:1.6;margin:0}
+.psych-preview{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:28px 0 26px}
+.psych-preview a{display:flex;flex-direction:column;min-height:182px;padding:18px 15px 15px;border:1px solid rgba(104,181,255,.28);border-radius:13px;background:rgba(5,13,23,.68);text-decoration:none;transition:transform .18s ease,border-color .18s ease,background .18s ease}
+.psych-preview a:hover{border-color:rgba(104,181,255,.72);background:rgba(10,28,48,.9);transform:translateY(-3px)}
+.psych-preview .psych-icon{display:grid;place-items:center;width:48px;height:48px;margin-bottom:16px;border:1px solid rgba(47,140,255,.38);border-radius:50%;color:#2f8cff;font-size:1.45rem;box-shadow:0 0 18px rgba(47,140,255,.12)}
+.psych-preview small{color:var(--accent2);font-size:.72rem;font-weight:900;letter-spacing:.8px;line-height:1.3}
+.psych-preview strong{margin-top:9px;font-size:.92rem;line-height:1.3;color:#fff}
+.psych-preview .psych-arrow{margin-top:auto;padding-top:14px;color:var(--accent2);font-weight:900;font-size:1.15rem}
+.psych-feature .actions{margin-top:0}
+.psych-feature-image{position:relative;min-height:548px;border-left:1px solid rgba(104,181,255,.2);background:#03070d;overflow:hidden}
+.psych-feature-image:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,17,29,.34),transparent 18%);pointer-events:none}
+.psych-feature-image img{width:100%;height:100%;object-fit:cover;object-position:center center;display:block}
+@media(max-width:1050px){
+  .psych-feature{grid-template-columns:1fr .72fr}
+  .psych-preview{grid-template-columns:1fr 1fr}
+  .psych-preview a{min-height:150px}
+}
+@media(max-width:820px){
+  .psych-feature{grid-template-columns:1fr}
+  .psych-feature .latest-feature-copy{padding:30px 24px 28px}
+  .psych-feature-image{min-height:360px;border-left:0;border-top:1px solid rgba(104,181,255,.2)}
+  .psych-feature-image img{object-position:center 42%}
+}
+@media(max-width:560px){
+  .psych-preview{grid-template-columns:1fr 1fr;gap:9px;margin:22px 0}
+  .psych-preview a{min-height:156px;padding:14px 12px}
+  .psych-preview .psych-icon{width:40px;height:40px;font-size:1.15rem;margin-bottom:12px}
+  .psych-feature-image{min-height:290px}
+  .psych-feature .actions{display:grid;grid-template-columns:1fr;gap:10px}
+  .psych-feature .actions .button{text-align:center;width:100%}
+}
+</style>
 </head><body><header class="site-header"><div class="container navbar"><a class="brand" href="index.html"><span class="brand-mark">🗡️</span><span>DAGGER <strong>TRADING</strong></span></a><button class="menu-button">Menu</button><nav class="nav-links">
       <a href="index.html">Home</a>
 
@@ -393,15 +437,24 @@ No pretending to know the future.</p><div class="actions"><a class="button butto
       <h2>Your biggest edge isn't always on the chart.</h2>
       <p>FOMO, overtrading, revenge trading, discipline, and emotional decision-making can shape a trade just as much as the setup itself.</p>
     </div>
-    <article class="card latest-feature">
+    <article class="card latest-feature psych-feature">
       <div class="latest-feature-copy">
         <span class="tag">Learn • Psychology</span>
         <h2>Manage the trader, not just the trade.</h2>
         <p>Explore practical lessons on controlling FOMO, breaking the overtrading cycle, avoiding revenge trading, and building more consistent decision-making.</p>
+        <div class="psych-preview" aria-label="Featured trading psychology lessons">
+          <a href="trading-psychology.html"><span class="psych-icon" aria-hidden="true">🧠</span><small>FOMO</small><strong>Stop Chasing the Trade</strong><span class="psych-arrow">→</span></a>
+          <a href="why-traders-overtrade.html"><span class="psych-icon" aria-hidden="true">↻</span><small>OVERTRADING</small><strong>Break the Trading Loop</strong><span class="psych-arrow">→</span></a>
+          <a href="revenge-trading.html"><span class="psych-icon" aria-hidden="true">🔥</span><small>REVENGE TRADING</small><strong>Don't Trade the Emotion</strong><span class="psych-arrow">→</span></a>
+          <a href="self-sabotage-in-trading-final.html"><span class="psych-icon" aria-hidden="true">✓</span><small>SELF-SABOTAGE</small><strong>Recognize the Pattern</strong><span class="psych-arrow">→</span></a>
+        </div>
         <div class="actions">
           <a class="button button-primary" href="learn-trading-psychology.html">Explore Trading Psychology</a>
           <a class="button button-secondary" href="learn.html">View All Learn</a>
         </div>
+      </div>
+      <div class="psych-feature-image" aria-hidden="true">
+        <img src="images/trading-psychology-feature.png" alt="">
       </div>
     </article>
   </div>
