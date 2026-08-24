@@ -32,6 +32,16 @@
 .tools-closing h2{margin:0 0 10px}
 .tools-closing p{margin:0;color:var(--muted)}
 @media(max-width:800px){.tools-grid,.tools-intro-strip{grid-template-columns:1fr}}
+
+.deep-tool-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:12px}
+.deep-tool-links a{display:block;padding:12px 14px;border:1px solid var(--line);border-radius:10px;text-decoration:none;background:rgba(255,255,255,.025)}
+.deep-tool-links a:hover{border-color:var(--accent);background:rgba(77,157,255,.08)}
+.deep-tool-links b{display:block;color:var(--text);margin-bottom:4px}
+.deep-tool-links span{display:block;color:var(--muted);font-size:.9rem;line-height:1.4}
+#clearChecklist{color:var(--text)!important;border-color:#48617d!important;background:#132235!important;font-weight:800}
+#clearChecklist:hover{background:#1a3049!important;border-color:var(--accent)!important}
+@media(max-width:760px){.deep-tool-links{grid-template-columns:1fr}}
+
 </style>
 <style id="dagger-dropdown-nav">
 .nav-learn,.nav-tools,.nav-more{position:relative}
@@ -111,16 +121,23 @@
 </style>
 
 <style>
-.checklist-link-button{
-  color:#f4f8ff !important;
-  background:#132235 !important;
-  border-color:#48617d !important;
-  font-weight:800;
-}
-.checklist-link-button:hover{
-  background:#1a3049 !important;
-  border-color:var(--accent) !important;
-}
+.checklist-hero{padding:72px 0 34px;text-align:center}
+.checklist-hero .eyebrow{font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-size:.82rem}
+.checklist-hero h1{margin:8px 0 14px;font-size:clamp(2rem,5vw,3.5rem)}
+.checklist-hero p{max-width:760px;margin:0 auto;color:var(--muted);line-height:1.7}
+.checklist-wrap{padding:22px 0 76px}
+.checklist-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.checklist-card{border:1px solid var(--line);border-radius:16px;padding:22px;background:var(--panel)}
+.checklist-card h2{margin:0 0 8px;font-size:1.25rem}
+.checklist-card>p{margin:0 0 16px;color:var(--muted)}
+.check-row{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-top:1px solid var(--line);cursor:pointer}
+.check-row:first-of-type{border-top:0}
+.check-row input{margin-top:4px;width:18px;height:18px;accent-color:var(--accent);flex:0 0 auto}
+.check-row span{line-height:1.45}
+.reference-note{margin-top:20px;padding:18px;border:1px solid var(--line);border-radius:14px;background:rgba(77,157,255,.07)}
+.reference-note strong{display:block;margin-bottom:5px}
+.checklist-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+@media(max-width:760px){.checklist-grid{grid-template-columns:1fr}.checklist-hero{padding-top:48px}}
 </style>
 
 </head>
@@ -166,93 +183,71 @@
 </div>
 </div>
 </nav></div></header>
-<main>
-<section class="tools-hero">
-<div class="container tools-shell">
-<p class="eyebrow">Trader Tools</p>
-<h1>Check yourself.<br/>Score the setup. Decide the trade.</h1>
-<p class="tools-hero-copy">Free tools built around preparation, discipline and process. Not predictions. Use them to check yourself, evaluate the setup and make a clearer decision before you trade.</p>
-<div class="tools-intro-strip">
-<div><strong>🧠 Check Yourself</strong><span>Make sure emotion isn't driving the decision.</span></div>
-<div><strong>📊 Score the Setup</strong><span>Evaluate the structure before risking capital.</span></div>
-<div><strong>🗡️ Check the Trade</strong><span>Review the actual decision before you execute.</span></div>
-</div>
-</div>
-</section>
-<section>
-<div class="container tools-shell">
-<div class="section-title">
-<p class="eyebrow">Choose a Tool</p>
-<h2>Built to improve the process.</h2>
-<p>Each tool focuses on a different part of the decision-making process.</p>
-</div>
-<div class="tools-grid">
-<article class="tool-feature">
-<span class="tag">Mindset Tool</span>
-<h2>🗡️ Dagger Check</h2>
-<p>Check yourself before you check the trade. Six quick questions to spot emotions that can interfere with your decision.</p>
-<ul>
-<li>Check whether you're calm and thinking clearly.</li>
-<li>Catch FOMO and revenge trading.</li>
-<li>Recognize boredom or the urge for action.</li>
-<li>Make sure you're ready to follow your rules.</li>
-</ul>
-<div class="actions">
-<a class="button button-primary" href="dagger-check.html">Run Dagger Check</a>
-</div>
-</article>
-<article class="tool-feature">
-<span class="tag">Setup Tool</span>
-<h2>🗡️ Dagger Setup Score</h2>
-<p>Score the quality of the setup. Evaluate how clearly your planned trade is defined before putting capital at risk.</p>
-<ul>
-<li>Trend and momentum.</li>
-<li>Key levels and invalidation.</li>
-<li>Risk/reward and entry quality.</li>
-<li>Catalyst and event risk.</li>
-</ul>
-<div class="actions">
-<a class="button button-primary" href="dagger-setup-score.html">Score My Setup</a>
-</div>
-</article>
-<article class="tool-feature">
-<span class="tag">Execution Tool</span>
-<h2>🗡️ Should I Take This Trade?</h2>
-<p>Check the actual decision before you enter. Walk through the trade you're considering right now and catch problems before you execute.</p>
-<ul>
-<li>Check your planned entry and stop.</li>
-<li>Define a realistic target.</li>
-<li>Look for confirmation instead of anticipation.</li>
-<li>Catch chasing or repeated entries.</li>
-</ul>
-<div class="actions">
-<a class="button button-primary" href="should-i-take-this-trade.html">Check This Trade</a>
-</div>
-</article>
-</div>
-<div class="tools-closing">
-<p class="eyebrow">Dagger Trading</p>
-<h2>Better decisions before the trade.</h2>
-<p>The goal isn't to predict every move. It's to enter with a clearer plan, defined risk, and a reason for being in the trade.</p>
-</div>
-</div>
-</section>
 
-<section style="padding:8px 0 70px">
+<main>
+<section class="checklist-hero">
   <div class="container">
-    <div style="border-top:1px solid var(--line);padding-top:30px">
-      <p class="eyebrow">Quick Reference</p>
-      <div class="tool-card" style="margin-top:14px">
-        <span class="tag">Reference Tool</span>
-        <h2>☑️ Dagger Trading Checklist</h2>
-        <p>Keep the essentials in front of you before a trade. Review levels, momentum, risk, confirmation and execution without running another scored tool.</p>
-        <p style="color:var(--muted);font-size:.92rem">This checklist does not replace Dagger Check, Dagger Setup Score or the Execution Check.</p>
-        <div class="actions"><a class="button button-secondary checklist-link-button" href="dagger-trading-checklist.html">☑ View Checklist</a></div>
-      </div>
-    </div>
+    <p class="eyebrow">Quick Reference</p>
+    <h1>☑️ Dagger Trading Checklist</h1>
+    <p>Keep the essentials in front of you before a trade. This checklist is a quick reference for preparation and execution. It does not score your setup, check your mindset or decide whether you should take the trade.</p>
   </div>
 </section>
 
+<section class="checklist-wrap">
+<div class="container">
+  <div class="checklist-grid">
+    <section class="checklist-card">
+      <h2>1. Market &amp; Setup</h2>
+      <p>Know what you're trading and where price is.</p>
+      <label class="check-row"><input type="checkbox"><span>News, catalyst or important event checked.</span></label>
+      <label class="check-row"><input type="checkbox"><span>Key support, resistance and important levels marked.</span></label>
+      <label class="check-row"><input type="checkbox"><span>Broader trend and current price structure checked.</span></label>
+      <label class="check-row"><input type="checkbox"><span>Momentum and volume checked for the trading style I'm using.</span></label>
+    </section>
+
+    <section class="checklist-card">
+      <h2>2. Trade Plan</h2>
+      <p>Define the trade before capital goes in.</p>
+      <label class="check-row"><input type="checkbox"><span>Entry area or trigger identified.</span></label>
+      <label class="check-row"><input type="checkbox"><span>Invalidation or stop area identified.</span></label>
+      <label class="check-row"><input type="checkbox"><span>Realistic target area identified.</span></label>
+      <label class="check-row"><input type="checkbox"><span>Position size and potential loss are acceptable.</span></label>
+    </section>
+
+    <section class="checklist-card">
+      <h2>3. Execution</h2>
+      <p>Make sure the plan still makes sense when it's time to act.</p>
+      <label class="check-row"><input type="checkbox"><span>I'm not chasing an extended move.</span></label>
+      <label class="check-row"><input type="checkbox"><span>I'm waiting for my trigger or confirmation instead of anticipating it.</span></label>
+      <label class="check-row"><input type="checkbox"><span>I know what would make me abandon the trade idea.</span></label>
+      <label class="check-row"><input type="checkbox"><span>The entry still offers enough room before the next support, resistance or other key level.</span></label>
+    </section>
+
+    <section class="checklist-card">
+      <h2>4. Final Reminder</h2>
+      <p>A checklist helps you remember the plan. It does not make the decision for you.</p>
+      <label class="check-row"><input type="checkbox"><span>I understand why I'm entering this trade.</span></label>
+      <label class="check-row"><input type="checkbox"><span>I know where I'm wrong if the trade does not behave as expected.</span></label>
+      <label class="check-row"><input type="checkbox"><span>I'm willing to follow the plan after I enter.</span></label>
+      <label class="check-row"><input type="checkbox"><span>I'm comfortable doing nothing if the trade is not ready.</span></label>
+    </section>
+  </div>
+
+  <div class="reference-note">
+    <strong>Use the deeper tools when you need them.</strong>
+    <div class="deep-tool-links">
+      <a href="dagger-check.html"><b>🧠 Dagger Check</b><span>Check your mindset before the trade.</span></a>
+      <a href="dagger-setup-score.html"><b>📊 Dagger Setup Score</b><span>Evaluate how clearly the setup is defined.</span></a>
+      <a href="should-i-take-this-trade.html"><b>🗡️ Should I Take This Trade?</b><span>Review the actual execution decision.</span></a>
+    </div>
+  </div>
+
+  <div class="checklist-actions">
+    <button class="button button-secondary" type="button" id="clearChecklist">↻ Clear Checklist</button>
+    <a class="button button-primary" href="trader-tools.html">← Back to Trader Tools</a>
+  </div>
+</div>
+</section>
 </main>
 <footer class="site-footer">
 <div class="container">
@@ -283,6 +278,18 @@
 <p class="copyright">© <span data-year=""></span> Dagger Trading. All Rights Reserved.</p>
 </div>
 </footer>
+
+<script>
+(function(){
+  const clear = document.getElementById('clearChecklist');
+  if(!clear) return;
+  clear.addEventListener('click', function(){
+    document.querySelectorAll('.checklist-card input[type="checkbox"]').forEach(function(box){ box.checked=false; });
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+})();
+</script>
+
 <script src="js/script.js"></script>
 
 <script id="dagger-unified-dropdown-nav">

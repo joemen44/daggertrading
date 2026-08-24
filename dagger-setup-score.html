@@ -319,6 +319,10 @@
 }
 </style>
 
+
+<style id="setup-score-stepper-v1">
+.setup-progress-wrap{margin:22px 0 10px}.setup-progress-label{display:flex;justify-content:space-between;gap:12px;color:var(--muted);font-size:.82rem;font-weight:700;margin-bottom:8px}.setup-progress{height:5px;background:#182533;border-radius:999px;overflow:hidden}.setup-progress span{display:block;height:100%;width:0;background:var(--accent);transition:width .2s ease}.setup-step-note{margin:0 0 12px;color:var(--muted);font-size:.9rem}.setup-score-section #scoreForm .question{display:none;min-height:330px;padding:28px}.setup-score-section #scoreForm .question.active{display:block;animation:setupStepIn .18s ease}.setup-score-section #scoreForm .actions{display:none}.step-nav{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:14px}.step-nav button{border:1px solid var(--line);border-radius:10px;padding:10px 14px;background:transparent;color:var(--text);font-weight:700;cursor:pointer}.step-nav button:disabled{opacity:.3;cursor:default}.step-tap-note{color:var(--muted);font-size:.78rem}.setup-score-section .choices label{cursor:pointer}.setup-score-section .choice input:checked+label{box-shadow:0 0 0 1px var(--accent) inset}.beginner-inline{font-size:.82rem;color:var(--muted);margin-top:10px}@keyframes setupStepIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}@media(max-width:700px){.setup-score-section #scoreForm .question{min-height:390px;padding:22px 18px}.setup-score-section .choices{grid-template-columns:1fr!important}.setup-progress-label{font-size:.78rem}}
+</style>
 </head>
 <body>
 <header class="site-header">
@@ -342,10 +346,12 @@
           <a href="trader-tools.html">Trader Tools Home</a>
           <a href="dagger-check.html">Dagger Check</a>
           <a href="dagger-setup-score.html">Dagger Setup Score</a>
+          <a href="should-i-take-this-trade.html">Should I Take This Trade?</a>
+<a href="dagger-trading-checklist.html">Dagger Trading Checklist</a>
         </div>
       </div>
 
-      <div class="nav-market"><button class="nav-market-button" type="button" aria-expanded="false">Market Notes ▾</button><div class="nav-market-menu"><a href="market-notes.html">Market Notes Home</a><a href="week-ahead-august-17-21-2026.html">Latest Week Ahead</a><a href="weekly-market-wrap-august-21-2026.html">Latest Market Wrap</a><a href="stock-spotlights.html">Stock Spotlights</a></div></div>
+      <div class="nav-market"><button class="nav-market-button" type="button" aria-expanded="false">Market Notes ▾</button><div class="nav-market-menu"><a href="market-notes.html">Market Notes Home</a><a href="week-ahead-august-24-28-2026.html">Latest Week Ahead</a><a href="weekly-market-wrap-august-21-2026.html">Latest Market Wrap</a><a href="stock-spotlights.html">Stock Spotlights</a></div></div>
 
       <div class="nav-resources">
   <button class="nav-resources-button" type="button" aria-expanded="false">Trading Resources ▾</button>
@@ -397,7 +403,7 @@
     <div>
       <label class="small" for="ticker">Ticker (optional)</label>
       <input id="ticker" type="text" maxlength="10" placeholder="e.g. CSCO">
-      <p style="font-size:.8rem;margin:7px 0 0">Optional — the ticker is only a label for your result and does not affect your score.</p>
+      <p style="font-size:.8rem;margin:7px 0 0">Optional. The ticker is only a label for your result and does not affect your score.</p>
     </div>
   </div>
 
@@ -411,39 +417,44 @@
     <p style="font-size:.82rem;margin-top:12px"><strong style="color:var(--text)">Scalping?</strong> This tool is designed for trades where you have time to define and evaluate a setup before entering. It is not intended for rapid-fire or split-second scalping.</p>
   </section>
 
+  <div class="setup-progress-wrap" id="setupProgressWrap">
+    <div class="setup-progress-label"><span id="setupStepLabel">Question 1 of 7</span><span>Tap an answer to continue</span></div>
+    <div class="setup-progress"><span id="setupProgressBar"></span></div>
+  </div>
+  <p class="setup-step-note">One question at a time. Answer what is actually true about the setup, not what gives you the highest score.</p>
   <form id="scoreForm">
     <section class="question">
       <h3>1. Trend Alignment</h3>
-      <p>Is the stock generally moving in the same direction as the trade you're considering?</p>
+      <p>Is the stock generally moving in the same direction as the trade you're considering?</p><p class="beginner-inline"><strong style="color:var(--text)">Newer trader?</strong> Trend is simply the stock's broader direction, generally up, down, or sideways.</p>
       <details class="help"><summary>ⓘ Why this matters</summary><p>Trading with the broader direction can make a setup easier to define. Trading against it may require stronger evidence and tighter risk control.</p></details>
       <div class="choices">
-        <div class="choice"><input id="q1a" type="radio" name="q1" value="0"><label for="q1a">No / Fighting Trend</label></div>
-        <div class="choice"><input id="q1b" type="radio" name="q1" value="1"><label for="q1b">Mixed / Unclear</label></div>
         <div class="choice"><input id="q1c" type="radio" name="q1" value="2"><label for="q1c">Yes / Aligned</label></div>
-      </div>
+      <div class="choice"><input id="q1b" type="radio" name="q1" value="1"><label for="q1b">Mixed / Unclear</label></div>
+        <div class="choice"><input id="q1a" type="radio" name="q1" value="0"><label for="q1a">No / Fighting Trend</label></div>
+        </div>
     </section>
 
     <section class="question">
       <h3>2. Momentum</h3>
-      <p id="momentumHelp">Is recent price action showing strength in the direction you want to trade?</p>
+      <p id="momentumHelp">Is recent price action showing strength in the direction you want to trade?</p><p class="beginner-inline"><strong style="color:var(--text)">Newer trader?</strong> Momentum means how strongly price is currently moving in one direction.</p>
       <details class="help"><summary>ⓘ Why this matters</summary><p>A trade idea can look good while recent price action is moving the other way. Momentum helps you check whether buyers or sellers are actually supporting your idea.</p></details>
       <div class="choices">
-        <div class="choice"><input id="q2a" type="radio" name="q2" value="0"><label for="q2a">Against Me</label></div>
-        <div class="choice"><input id="q2b" type="radio" name="q2" value="1"><label for="q2b">Neutral / Turning</label></div>
         <div class="choice"><input id="q2c" type="radio" name="q2" value="2"><label for="q2c">Supporting Setup</label></div>
-      </div>
+      <div class="choice"><input id="q2b" type="radio" name="q2" value="1"><label for="q2b">Neutral / Turning</label></div>
+        <div class="choice"><input id="q2a" type="radio" name="q2" value="0"><label for="q2a">Against Me</label></div>
+        </div>
     </section>
 
     <section class="question">
       <h3>3. Key Level</h3>
-      <p id="keyLevelHelp">Is your trade idea based around a clear price area—such as support, resistance, a breakout level, VWAP, or a moving average?</p>
+      <p id="keyLevelHelp">Is your trade idea based around a clear price area, such as support, resistance, a breakout level, VWAP, or a moving average?</p>
       <p style="font-size:.82rem;margin-top:-6px"><strong style="color:var(--text)">Newer trader?</strong> A key level is simply a price area you believe matters to the setup.</p>
       <details class="help"><summary>ⓘ Why this matters</summary><p>A clear level gives your trade structure. It can help define where you want to enter, what you are watching for, and where the idea may stop making sense.</p></details>
       <div class="choices">
-        <div class="choice"><input id="q3a" type="radio" name="q3" value="0"><label for="q3a">No Clear Level</label></div>
-        <div class="choice"><input id="q3b" type="radio" name="q3" value="1"><label for="q3b">Loose / Approximate</label></div>
         <div class="choice"><input id="q3c" type="radio" name="q3" value="2"><label for="q3c">Clearly Defined</label></div>
-      </div>
+      <div class="choice"><input id="q3b" type="radio" name="q3" value="1"><label for="q3b">Loose / Approximate</label></div>
+        <div class="choice"><input id="q3a" type="radio" name="q3" value="0"><label for="q3a">No Clear Level</label></div>
+        </div>
     </section>
 
     <section class="question">
@@ -452,21 +463,21 @@
       <p style="font-size:.82rem;margin-top:-6px"><strong style="color:var(--text)">In plain English:</strong> What would have to happen for you to say, “My original idea is no longer valid”?</p>
       <details class="help"><summary>ⓘ Why this matters</summary><p>Knowing where you are wrong before entering can help prevent a planned trade from turning into an emotional hold.</p></details>
       <div class="choices">
-        <div class="choice"><input id="q4a" type="radio" name="q4" value="0"><label for="q4a">No</label></div>
-        <div class="choice"><input id="q4b" type="radio" name="q4" value="1"><label for="q4b">Roughly</label></div>
         <div class="choice"><input id="q4c" type="radio" name="q4" value="2"><label for="q4c">Yes, Clearly</label></div>
-      </div>
+      <div class="choice"><input id="q4b" type="radio" name="q4" value="1"><label for="q4b">Roughly</label></div>
+        <div class="choice"><input id="q4a" type="radio" name="q4" value="0"><label for="q4a">No</label></div>
+        </div>
     </section>
 
     <section class="question">
       <h3>5. Risk / Reward</h3>
-      <p>Have you compared how much you're willing to lose if you're wrong with how much you could reasonably make if you're right?</p>
+      <p>Have you compared how much you're willing to lose if you're wrong with how much you could reasonably make if you're right?</p><p class="beginner-inline"><strong style="color:var(--text)">Newer trader?</strong> This is your risk versus reward: planned downside compared with realistic upside.</p>
       <details class="help"><summary>ⓘ Why this matters</summary><p>A setup should have a defined downside and a realistic upside. Comparing the two helps you understand what you are risking before you enter.</p></details>
       <div class="choices">
-        <div class="choice"><input id="q5a" type="radio" name="q5" value="0"><label for="q5a">Poor / Unknown</label></div>
-        <div class="choice"><input id="q5b" type="radio" name="q5" value="1"><label for="q5b">Acceptable</label></div>
         <div class="choice"><input id="q5c" type="radio" name="q5" value="2"><label for="q5c">Well Defined</label></div>
-      </div>
+      <div class="choice"><input id="q5b" type="radio" name="q5" value="1"><label for="q5b">Acceptable</label></div>
+        <div class="choice"><input id="q5a" type="radio" name="q5" value="0"><label for="q5a">Poor / Unknown</label></div>
+        </div>
     </section>
 
     <section class="question">
@@ -474,24 +485,28 @@
       <p>Are you entering near a planned area instead of chasing because the stock is already moving?</p>
       <details class="help"><summary>ⓘ Why this matters</summary><p>A good setup can still offer a poor entry. Chasing after a large move can increase risk and make it harder to define where you are wrong.</p></details>
       <div class="choices">
-        <div class="choice"><input id="q6a" type="radio" name="q6" value="0"><label for="q6a">I'm Chasing</label></div>
-        <div class="choice"><input id="q6b" type="radio" name="q6" value="1"><label for="q6b">A Little Extended</label></div>
         <div class="choice"><input id="q6c" type="radio" name="q6" value="2"><label for="q6c">Near Planned Entry</label></div>
-      </div>
+      <div class="choice"><input id="q6b" type="radio" name="q6" value="1"><label for="q6b">A Little Extended</label></div>
+        <div class="choice"><input id="q6a" type="radio" name="q6" value="0"><label for="q6a">I'm Chasing</label></div>
+        </div>
     </section>
 
     <section class="question">
       <h3>7. Upcoming Events / Catalyst Risk</h3>
-      <p id="catalystHelp">Is there an upcoming event—such as earnings, economic data, a lockup expiration, or major company news—that could suddenly affect the stock?</p>
+      <p id="catalystHelp">Is there an upcoming event, such as earnings, economic data, a lockup expiration, or major company news that could suddenly affect the stock?</p>
       <p style="font-size:.82rem;margin-top:-6px"><strong style="color:var(--text)">Catalyst:</strong> An event or piece of news that can cause a significant price reaction.</p>
       <details class="help"><summary>ⓘ Why this matters</summary><p>Scheduled events and unexpected news can quickly change price behavior. Knowing what is ahead helps you avoid being surprised by a risk you could have identified.</p></details>
       <div class="choices">
-        <div class="choice"><input id="q7a" type="radio" name="q7" value="0"><label for="q7a">No / Unknown</label></div>
-        <div class="choice"><input id="q7b" type="radio" name="q7" value="1"><label for="q7b">Aware, Not Planned</label></div>
         <div class="choice"><input id="q7c" type="radio" name="q7" value="2"><label for="q7c">Accounted For</label></div>
-      </div>
+      <div class="choice"><input id="q7b" type="radio" name="q7" value="1"><label for="q7b">Aware, Not Planned</label></div>
+        <div class="choice"><input id="q7a" type="radio" name="q7" value="0"><label for="q7a">No / Unknown</label></div>
+        </div>
     </section>
 
+    <div class="step-nav" id="setupStepNav">
+      <button type="button" id="setupPrev">← Previous</button>
+      <span class="step-tap-note">Your final answer reveals the score.</span>
+    </div>
     <div class="actions">
       <button class="primary" type="submit">Calculate Setup Score</button>
       <button class="secondary" type="button" id="resetBtn">Reset</button>
@@ -515,10 +530,15 @@
 
     <div style="margin-top:22px">
       <h3 style="margin-bottom:6px">Areas to review</h3>
-      <p style="margin-top:0">Start with the lowest-scoring parts of your plan.</p>
+      <p style="margin-top:0">Start with the weakest parts of your plan. We’ll show up to three so the result stays focused.</p>
       <div class="review-list" id="reviewList"></div>
     </div>
 
+    <div id="executionNextStep" style="display:none;margin-top:22px;padding:18px;border:1px solid var(--line);border-radius:12px;background:rgba(77,157,255,.07)">
+      <strong style="display:block;font-size:1.05rem;margin-bottom:6px">Setup scored. Now check the decision.</strong>
+      <p style="margin:0 0 14px">The setup has enough structure to move on to the execution check. That still does not mean you should take the trade.</p>
+      <a class="button button-primary" href="should-i-take-this-trade.html">🗡️ Should I Take This Trade?</a>
+    </div>
     <div class="result-actions">
       <button class="secondary" type="button" id="reviewBtn">↻ Review My Setup</button>
     </div>
@@ -584,12 +604,12 @@ function updateStyleCopy(){
 
   if(style === "Day Trade"){
     momentum.textContent = "Is intraday price action and momentum supporting the direction of your trade?";
-    key.textContent = "Is your day trade built around a clear intraday reference—such as VWAP, support/resistance, a breakout level, or a moving average?";
-    catalyst.textContent = "Have you accounted for anything that could suddenly affect the session—such as economic data, earnings, news, or a scheduled company event?";
+    key.textContent = "Is your day trade built around a clear intraday reference, such as VWAP, support/resistance, a breakout level, or a moving average?";
+    catalyst.textContent = "Have you accounted for anything that could suddenly affect the session, such as economic data, earnings, news, or a scheduled company event?";
   } else {
     momentum.textContent = "Is recent price action showing strength in the direction you want to trade?";
-    key.textContent = "Is your trade idea based around a clear price area—such as support, resistance, a breakout level, VWAP, or a moving average?";
-    catalyst.textContent = "Is there an upcoming event—such as earnings, economic data, a lockup expiration, or major company news—that could suddenly affect the stock?";
+    key.textContent = "Is your trade idea based around a clear price area, such as support, resistance, a breakout level, VWAP, or a moving average?";
+    catalyst.textContent = "Is there an upcoming event, such as earnings, economic data, a lockup expiration, or major company news that could suddenly affect the stock?";
   }
 }
 
@@ -598,15 +618,23 @@ document.querySelectorAll('input[name="style"]').forEach(el=>{
 });
 updateStyleCopy();
 
-document.getElementById("scoreForm").addEventListener("submit", function(e){
-  e.preventDefault();
+const scoreForm = document.getElementById("scoreForm");
+const setupQuestions = Array.from(scoreForm.querySelectorAll(".question"));
+let setupStep = 0;
+
+function showSetupStep(index){
+  setupStep = Math.max(0, Math.min(index, setupQuestions.length-1));
+  setupQuestions.forEach((q,i)=>q.classList.toggle("active", i===setupStep));
+  document.getElementById("setupStepLabel").textContent = "Question " + (setupStep+1) + " of " + setupQuestions.length;
+  document.getElementById("setupProgressBar").style.width = ((setupStep/setupQuestions.length)*100) + "%";
+  document.getElementById("setupPrev").disabled = setupStep===0;
+}
+
+function calculateSetupScore(){
   let values = [];
   for(let i=1;i<=7;i++){
     const checked = document.querySelector('input[name="q'+i+'"]:checked');
-    if(!checked){
-      alert("Please answer all 7 setup questions before calculating your score.");
-      return;
-    }
+    if(!checked) return;
     values.push(Number(checked.value));
   }
 
@@ -616,7 +644,7 @@ document.getElementById("scoreForm").addEventListener("submit", function(e){
   let label, text;
   if(score >= 85){
     label = "Well-Defined Setup";
-    text = "Most parts of your setup and risk plan are clearly defined. That improves your process—not your certainty.";
+    text = "Most parts of your setup and risk plan are clearly defined. That improves your process, not your certainty.";
   } else if(score >= 70){
     label = "Solid Structure";
     text = "Several important pieces are in place, but review the weaker areas before deciding whether the setup fits your plan.";
@@ -630,13 +658,12 @@ document.getElementById("scoreForm").addEventListener("submit", function(e){
 
   const ticker = document.getElementById("ticker").value.trim().toUpperCase();
   const style = document.querySelector('input[name="style"]:checked')?.value || "Swing Trade";
-
   document.getElementById("score").textContent = score;
   document.getElementById("scoreLabel").textContent = label;
   document.getElementById("scoreText").textContent = text;
+    document.getElementById("executionNextStep").style.display = score >= 70 ? "block" : "none";
   document.getElementById("meter").style.width = score + "%";
-  document.getElementById("resultTicker").textContent =
-    ticker ? ticker + " • Process Score" : "Your Process Score";
+  document.getElementById("resultTicker").textContent = ticker ? ticker + " • Process Score" : "Your Process Score";
   document.getElementById("styleNote").textContent = "Trading style: " + style;
 
   const bd = document.getElementById("breakdown");
@@ -650,15 +677,10 @@ document.getElementById("scoreForm").addEventListener("submit", function(e){
   });
 
   let meaning;
-  if(score >= 85){
-    meaning = "Your answers describe a well-defined plan. " + score + "/100 does not mean a " + score + "% chance of success. Even well-defined setups can fail.";
-  } else if(score >= 70){
-    meaning = "Your plan has solid structure, but some areas deserve another look. " + score + "/100 is a process score—not a probability that the trade will work.";
-  } else if(score >= 50){
-    meaning = "Your answers show meaningful gaps in the plan. Use the areas below as a reminder of what to define more clearly before deciding what to do.";
-  } else {
-    meaning = "Your answers identified several gaps in the trade plan. " + score + "/100 does not mean a " + score + "% chance of success; it means important parts of the setup are not clearly defined yet.";
-  }
+  if(score >= 85) meaning = "Your answers describe a well-defined plan. " + score + "/100 does not mean a " + score + "% chance of success. Even well-defined setups can fail.";
+  else if(score >= 70) meaning = "Your plan has solid structure, but some areas deserve another look. " + score + "/100 is a process score, not a probability that the trade will work.";
+  else if(score >= 50) meaning = "Your answers show meaningful gaps in the plan. Use the areas below as a reminder of what to define more clearly before deciding what to do.";
+  else meaning = "Your answers identified several gaps in the trade plan. " + score + "/100 does not mean a " + score + "% chance of success; it means important parts of the setup are not clearly defined yet.";
   document.getElementById("meaningText").textContent = meaning;
 
   const reviewCopy = [
@@ -670,18 +692,14 @@ document.getElementById("scoreForm").addEventListener("submit", function(e){
     "Ask whether you are near your planned area or reacting to a move that already happened.",
     "Check for earnings, economic data, lockups, news, or other events that could affect the trade."
   ];
-  // Show every area that genuinely needs review instead of arbitrarily
-  // limiting the result to the three weakest categories.
   let reviewAreas = values.map((v,i)=>({v,i})).filter(x=>x.v < 2);
-
   const reviewList = document.getElementById("reviewList");
   reviewList.innerHTML = "";
-
   if(reviewAreas.length === 0){
     reviewList.innerHTML = '<div class="review-row"><strong>No obvious weak areas from your answers.</strong><small>Your plan is clearly defined, but the market can still do something unexpected.</small></div>';
   } else {
-    // Weak (0-point) answers appear first, followed by partial (1-point) answers.
     reviewAreas.sort((a,b)=>a.v-b.v || a.i-b.i);
+    reviewAreas = reviewAreas.slice(0,3);
     reviewAreas.forEach(x=>{
       const row = document.createElement("div");
       row.className = "review-row";
@@ -691,56 +709,81 @@ document.getElementById("scoreForm").addEventListener("submit", function(e){
     });
   }
 
+  document.getElementById("setupProgressBar").style.width = "100%";
+  scoreForm.style.display = "none";
+  document.getElementById("setupStepNav").style.display = "none";
+  document.getElementById("setupProgressWrap").style.display = "none";
+  document.querySelector(".setup-step-note").style.display = "none";
   document.getElementById("result").style.display = "block";
   document.getElementById("result").scrollIntoView({behavior:"smooth",block:"start"});
+}
+
+setupQuestions.forEach((q,index)=>{
+  q.querySelectorAll('input[type="radio"]').forEach(input=>{
+    input.addEventListener("change", function(){
+      window.setTimeout(function(){
+        if(index < setupQuestions.length-1){
+          showSetupStep(index+1);
+          setupQuestions[index+1].scrollIntoView({behavior:"smooth",block:"center"});
+        } else {
+          calculateSetupScore();
+        }
+      }, 130);
+    });
+  });
+
+  // Review mode fix: clicking the label of an answer that is already selected
+  // does not fire a change event, so advance manually.
+  q.querySelectorAll('label').forEach(label=>{
+    label.addEventListener("click", function(){
+      const inputId = label.getAttribute("for");
+      const input = inputId ? document.getElementById(inputId) : null;
+      if(input && input.checked){
+        window.setTimeout(function(){
+          if(index < setupQuestions.length-1){
+            showSetupStep(index+1);
+            setupQuestions[index+1].scrollIntoView({behavior:"smooth",block:"center"});
+          } else {
+            calculateSetupScore();
+          }
+        }, 130);
+      }
+    });
+  });
 });
+
+document.getElementById("setupPrev").addEventListener("click", function(){
+  if(setupStep>0){ showSetupStep(setupStep-1); setupQuestions[setupStep].scrollIntoView({behavior:"smooth",block:"center"}); }
+});
+
+scoreForm.addEventListener("submit", function(e){e.preventDefault();calculateSetupScore();});
+showSetupStep(0);
 
 document.getElementById("reviewBtn").addEventListener("click", function(){
   document.getElementById("result").style.display="none";
-  document.getElementById("scoreForm").scrollIntoView({behavior:"smooth",block:"start"});
+  scoreForm.style.display="block";
+  document.getElementById("setupStepNav").style.display="flex";
+  document.getElementById("setupProgressWrap").style.display="block";
+  document.querySelector(".setup-step-note").style.display="block";
+  showSetupStep(0);
+  scoreForm.scrollIntoView({behavior:"smooth",block:"start"});
 });
 
 document.getElementById("resetBtn").addEventListener("click", function(){
-  document.getElementById("scoreForm").reset();
+  scoreForm.reset();
   document.getElementById("ticker").value="";
   document.getElementById("styleSwing").checked = true;
   updateStyleCopy();
   document.getElementById("result").style.display="none";
+  scoreForm.style.display="block";
+  document.getElementById("setupStepNav").style.display="flex";
+  document.getElementById("setupProgressWrap").style.display="block";
+  document.querySelector(".setup-step-note").style.display="block";
+  showSetupStep(0);
   window.scrollTo({top:0,behavior:"smooth"});
 });
 
 
-(function(){
-  const tools = document.querySelector('.nav-tools');
-  if (!tools) return;
-  const btn = tools.querySelector('.nav-tools-button');
-  btn.addEventListener('click', function(e){
-    e.stopPropagation();
-    const open = tools.classList.toggle('open');
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-  document.addEventListener('click', function(e){
-    if (!tools.contains(e.target)) {
-      tools.classList.remove('open');
-      btn.setAttribute('aria-expanded','false');
-    }
-  });
-})();
-
-(function(){
-  const more = document.querySelector('.nav-more');
-  if (!more) return;
-  const btn = more.querySelector('.nav-more-button');
-  btn.addEventListener('click', function(e){
-    e.stopPropagation();
-    const open = more.classList.toggle('open');
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-  document.addEventListener('click', function(){
-    more.classList.remove('open');
-    btn.setAttribute('aria-expanded','false');
-  });
-})();
 </script>
 
 
