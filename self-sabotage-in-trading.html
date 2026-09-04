@@ -21,6 +21,15 @@
 .warning-box{margin:24px 0;padding:18px 20px;border-left:3px solid #f0b35a;border-radius:10px;background:rgba(240,179,90,.08)}
 .tool-links{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0}
 .article-nav{margin-top:42px;padding-top:22px;border-top:1px solid var(--line)}
+
+/* Market Notes archive submenu */
+.nav-market-archives{position:relative}
+.nav-market-archives-button{width:100%;border:0;background:transparent;color:inherit;font:inherit;font-weight:600;text-align:left;padding:12px 14px;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+.nav-market-archives-button:hover,.nav-market-archives-button:focus{color:#4da3ff;background:rgba(77,163,255,.08)}
+.nav-market-archives-menu{display:none;position:absolute;left:100%;top:0;min-width:210px;background:#0b1625;border:1px solid #24384f;border-radius:10px;padding:6px;box-shadow:0 12px 28px rgba(0,0,0,.28);z-index:1001}
+.nav-market-archives:hover>.nav-market-archives-menu,.nav-market-archives:focus-within>.nav-market-archives-menu{display:block}
+.nav-market-archives-menu a{display:block;white-space:nowrap}
+@media (max-width:800px){.nav-market-archives-menu{position:static;min-width:0;border:0;border-radius:0;box-shadow:none;background:transparent;padding:0 0 0 12px}}
 </style>
 <style>.psych-article-visual{max-width:820px;margin:0 auto 28px;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#09121f}.psych-article-visual img{display:block;width:100%;height:auto}</style><style id="home-nav-style">
 
@@ -329,7 +338,7 @@
         </div>
       </div>
 
-      <div class="nav-market"><button class="nav-market-button" type="button" aria-expanded="false">Market Notes ▾</button><div class="nav-market-menu"><a href="market-notes.html">Market Notes Home</a><a href="market-notes-archive.html">Market Notes Archive</a><a href="week-ahead-august-31-september-4-2026.html">Latest Week Ahead</a><a href="weekly-market-wrap-august-28-2026.html">Latest Market Wrap</a><a href="stock-spotlights.html">Stock Spotlights</a><a href="spotlight-archive.html">Spotlight Archive</a></div></div>
+      <div class="nav-market"><button class="nav-market-button" type="button" aria-expanded="false">Market Notes ▾</button><div class="nav-market-menu"><a href="market-notes.html">Market Notes Home</a><a href="week-ahead-august-31-september-4-2026.html">Latest Week Ahead</a><a href="weekly-market-wrap-august-28-2026.html">Latest Market Wrap</a><a href="stock-spotlights.html">Stock Spotlights</a><div class="nav-market-archives"><button aria-expanded="false" class="nav-market-archives-button" type="button">Archives ›</button><div class="nav-market-archives-menu"><a href="market-notes-archive.html">Market Notes Archive</a><a href="spotlight-archive.html">Spotlight Archive</a></div></div></div></div>
 
       <div class="nav-resources">
   <button class="nav-resources-button" type="button" aria-expanded="false">Trading Resources ▾</button>

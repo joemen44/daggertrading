@@ -53,6 +53,15 @@
   .latest-card{grid-template-columns:1fr}
   .archive-grid{grid-template-columns:1fr}
 }
+
+/* Market Notes archive submenu */
+.nav-market-archives{position:relative}
+.nav-market-archives-button{width:100%;border:0;background:transparent;color:inherit;font:inherit;font-weight:600;text-align:left;padding:12px 14px;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+.nav-market-archives-button:hover,.nav-market-archives-button:focus{color:#4da3ff;background:rgba(77,163,255,.08)}
+.nav-market-archives-menu{display:none;position:absolute;left:100%;top:0;min-width:210px;background:#0b1625;border:1px solid #24384f;border-radius:10px;padding:6px;box-shadow:0 12px 28px rgba(0,0,0,.28);z-index:1001}
+.nav-market-archives:hover>.nav-market-archives-menu,.nav-market-archives:focus-within>.nav-market-archives-menu{display:block}
+.nav-market-archives-menu a{display:block;white-space:nowrap}
+@media (max-width:800px){.nav-market-archives-menu{position:static;min-width:0;border:0;border-radius:0;box-shadow:none;background:transparent;padding:0 0 0 12px}}
 </style>
 <style id="dagger-market-dropdown-nav">
 .nav-market{position:relative}.nav-market-button{border:0;background:transparent;color:inherit;font:inherit;cursor:pointer;padding:0}
@@ -81,7 +90,7 @@
 <div class="nav-tools"><button aria-expanded="false" class="nav-tools-button" type="button">Trader Tools ▾</button><div class="nav-tools-menu"><a href="trader-tools.html">Trader Tools Home</a><a href="dagger-check.html">Dagger Check</a><a href="dagger-setup-score.html">Dagger Setup Score</a>
 <a href="should-i-take-this-trade.html">Should I Take This Trade?</a>
 <a href="dagger-trading-checklist.html">Dagger Trading Checklist</a></div></div>
-<div class="nav-market"><button aria-expanded="false" class="nav-market-button" type="button">Market Notes ▾</button><div class="nav-market-menu"><a href="market-notes.html">Market Notes Home</a><a href="market-notes-archive.html">Market Notes Archive</a><a href="week-ahead-august-24-28-2026.html">Latest Week Ahead</a><a href="weekly-market-wrap-august-21-2026.html">Latest Market Wrap</a><a href="stock-spotlights.html">Stock Spotlights</a><a href="spotlight-archive.html">Spotlight Archive</a></div></div>
+<div class="nav-market"><button aria-expanded="false" class="nav-market-button" type="button">Market Notes ▾</button><div class="nav-market-menu"><a href="market-notes.html">Market Notes Home</a><a href="week-ahead-august-24-28-2026.html">Latest Week Ahead</a><a href="weekly-market-wrap-august-21-2026.html">Latest Market Wrap</a><a href="stock-spotlights.html">Stock Spotlights</a><div class="nav-market-archives"><button aria-expanded="false" class="nav-market-archives-button" type="button">Archives ›</button><div class="nav-market-archives-menu"><a href="market-notes-archive.html">Market Notes Archive</a><a href="spotlight-archive.html">Spotlight Archive</a></div></div></div></div>
 <div class="nav-resources">
 <button aria-expanded="false" class="nav-resources-button" type="button">Trading Resources ▾</button>
 <div class="nav-resources-menu">
