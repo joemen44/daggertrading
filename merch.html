@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="description" content="Dagger Trading merch for traders, misfits, and anyone who has ever taken one more trade."/>
+<title>Dagger Trading Merch | Army of Misfits</title>
+<link href="css/style.css?v=20260821-menu-scroll-v3" rel="stylesheet"/>
+<link href="css/v2.css" rel="stylesheet"/>
+<link href="css/resources-v3.css" rel="stylesheet"/>
+<style>
+  .nav-learn,.nav-tools,.nav-market,.nav-resources,.nav-more{position:relative}
+  .nav-learn-button,.nav-tools-button,.nav-market-button,.nav-resources-button,.nav-more-button{border:0;background:transparent;color:inherit;font:inherit;cursor:pointer;padding:0}
+  .nav-learn-menu,.nav-tools-menu,.nav-market-menu,.nav-resources-menu,.nav-more-menu{display:none;position:absolute;top:calc(100% + 12px);min-width:210px;padding:10px;border:1px solid var(--line);border-radius:12px;background:#0d1118;box-shadow:0 16px 40px rgba(0,0,0,.28);z-index:100}
+  .nav-learn-menu,.nav-tools-menu,.nav-market-menu,.nav-resources-menu{left:0}.nav-more-menu{right:0}
+  .nav-learn.open .nav-learn-menu,.nav-tools.open .nav-tools-menu,.nav-market.open .nav-market-menu,.nav-resources.open .nav-resources-menu,.nav-more.open .nav-more-menu{display:grid;gap:4px}
+  .nav-learn-menu a,.nav-tools-menu a,.nav-market-menu a,.nav-resources-menu a,.nav-more-menu a{display:block;padding:10px 12px;border-radius:8px;white-space:nowrap}
+  .nav-learn-menu a:hover,.nav-tools-menu a:hover,.nav-market-menu a:hover,.nav-resources-menu a:hover,.nav-more-menu a:hover{background:rgba(47,140,255,.10)}
+
+  /* Market Notes archive submenu — matches the rest of the site */
+  .nav-market-archives{position:relative}
+  .nav-market-archives-button{width:100%;border:0;background:transparent;color:inherit;font:inherit;font-weight:600;text-align:left;padding:12px 14px;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+  .nav-market-archives-button:hover,.nav-market-archives-button:focus{color:#4da3ff;background:rgba(77,163,255,.08)}
+  .nav-market-archives-menu{display:none;position:absolute;left:100%;top:0;min-width:210px;background:#0b1625;border:1px solid #24384f;border-radius:10px;padding:6px;box-shadow:0 12px 28px rgba(0,0,0,.28);z-index:1001}
+  .nav-market-archives:hover>.nav-market-archives-menu,.nav-market-archives:focus-within>.nav-market-archives-menu{display:block}
+  .nav-market-archives-menu a{display:block;white-space:nowrap}
+  @media (max-width:800px){
+    .nav-market-archives-menu{position:static;min-width:0;border:0;border-radius:0;box-shadow:none;background:transparent;padding:0 0 0 12px}
+    .nav-market-archives-button{padding-left:14px}
+  }
+
+  .merch-hero{padding:72px 0 38px;overflow:hidden;position:relative}
+  .merch-hero:before{content:"";position:absolute;inset:-120px -20% auto 42%;height:520px;background:radial-gradient(circle,rgba(255,184,0,.19),transparent 65%);pointer-events:none}
+  .merch-hero-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(320px,.75fr);gap:42px;align-items:center}
+  .merch-kicker{display:inline-flex;align-items:center;gap:9px;padding:8px 12px;border:1px solid rgba(255,190,40,.28);border-radius:999px;background:rgba(255,184,0,.07);color:#ffd35a;font-size:.75rem;font-weight:900;letter-spacing:1.3px;text-transform:uppercase}
+  .merch-hero h1{font-size:clamp(3rem,7vw,6.4rem);line-height:.92;letter-spacing:-3px;margin:18px 0 16px;max-width:820px}
+  .merch-hero h1 span{color:#f5b918}
+  .merch-hero-copy{max-width:720px;font-size:1.08rem;line-height:1.7;color:var(--muted)}
+  .merch-hero-joke{margin-top:19px;color:#dfe7f2;font-weight:800}
+  .merch-hero-art{position:relative;min-height:380px;border:1px solid rgba(255,190,40,.24);border-radius:26px;background:radial-gradient(circle at 50% 42%,rgba(255,190,40,.10),transparent 43%),linear-gradient(145deg,#0f141c,#06090e);box-shadow:0 28px 80px rgba(0,0,0,.38);display:grid;place-items:center;padding:26px;overflow:hidden}
+  .merch-hero-art img{max-width:82%;max-height:330px;object-fit:contain;filter:drop-shadow(0 18px 24px rgba(0,0,0,.45))}
+  .merch-hero-stamp{position:absolute;right:16px;bottom:16px;border:1px solid rgba(255,255,255,.14);background:rgba(4,7,11,.78);backdrop-filter:blur(10px);padding:10px 13px;border-radius:12px;font-size:.72rem;color:#c4cfde;text-transform:uppercase;letter-spacing:1px;font-weight:900}
+
+  .merch-section{padding:42px 0 72px}
+  .merch-head{display:flex;align-items:end;justify-content:space-between;gap:22px;margin-bottom:24px}
+  .merch-head h2{font-size:clamp(2.1rem,4vw,3.5rem);margin:4px 0 0}
+  .merch-head p{max-width:580px;color:var(--muted);margin:0;line-height:1.6}
+  .merch-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+  .merch-card{position:relative;display:grid;grid-template-columns:minmax(220px,.88fr) minmax(0,1.12fr);min-height:390px;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:linear-gradient(145deg,rgba(17,24,34,.97),rgba(7,12,20,.99));transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+  .merch-card:hover{transform:translateY(-4px);border-color:rgba(255,190,40,.42);box-shadow:0 24px 54px rgba(0,0,0,.26)}
+  .merch-visual{display:grid;place-items:center;position:relative;min-height:100%;padding:22px;background:radial-gradient(circle at 50% 45%,rgba(255,190,40,.10),transparent 44%),#090d13;border-right:1px solid var(--line)}
+  .merch-visual img{width:100%;height:300px;object-fit:contain;filter:drop-shadow(0 14px 20px rgba(0,0,0,.38))}
+  .merch-visual img.control-card{width:118%;max-width:118%}
+  .merch-card-copy{padding:30px 28px;display:flex;flex-direction:column}
+  .merch-label{color:#f5b918;font-size:.72rem;font-weight:900;letter-spacing:1.25px;text-transform:uppercase}
+  .merch-card h3{font-size:1.65rem;line-height:1.15;margin:10px 0 10px}
+  .merch-card p{color:var(--muted);line-height:1.58;margin:0}
+  .personality{margin-top:14px;padding:10px 12px;border-left:2px solid rgba(245,185,24,.8);background:rgba(245,185,24,.05);border-radius:0 8px 8px 0;color:#dce4ef;font-size:.84rem;line-height:1.45}
+  .personality strong{color:#fff}
+  .merch-price{font-size:1.45rem;font-weight:900;color:#fff;margin-top:auto;padding-top:22px}
+  .merch-meta{font-size:.78rem;color:#8f9db1;margin-top:3px}
+  .merch-button{display:inline-flex;align-items:center;justify-content:center;margin-top:16px;min-height:46px;border-radius:10px;padding:0 18px;background:#f5b918;color:#111;font-weight:950;text-decoration:none;transition:.18s ease}
+  .merch-button:hover{transform:translateY(-1px);filter:brightness(1.04)}
+
+  .misfit-note{padding:0 0 76px}
+  .misfit-panel{display:grid;grid-template-columns:1.2fr .8fr;gap:34px;align-items:center;padding:34px 36px;border:1px solid rgba(255,190,40,.25);border-radius:22px;background:linear-gradient(130deg,rgba(18,25,35,.96),rgba(8,12,19,.98));overflow:hidden;position:relative}
+  .misfit-panel:after{content:"🗡️";position:absolute;right:32px;top:8px;font-size:8rem;opacity:.045;transform:rotate(12deg)}
+  .misfit-panel h2{font-size:clamp(2rem,4vw,3.15rem);margin:5px 0 12px}
+  .misfit-panel p{color:var(--muted);line-height:1.67;margin:0;max-width:760px}
+  .misfit-quote{padding:24px;border-left:3px solid #f5b918;background:rgba(255,184,0,.055);border-radius:0 14px 14px 0;font-size:1.08rem;line-height:1.58;color:#e8edf4;font-weight:800}
+
+  .merch-fineprint{padding:0 0 58px;text-align:center;color:#8693a6;font-size:.82rem;line-height:1.6}
+  .merch-fineprint strong{color:#c8d2df}
+
+  @media(max-width:980px){
+    .merch-hero-grid{grid-template-columns:1fr}.merch-hero-art{min-height:310px}.merch-grid{grid-template-columns:1fr}.merch-card{grid-template-columns:280px 1fr}.misfit-panel{grid-template-columns:1fr}
+  }
+  @media(max-width:700px){
+    .merch-hero{padding-top:46px}.merch-hero h1{letter-spacing:-2px}.merch-head{display:block}.merch-head p{margin-top:10px}.merch-card{grid-template-columns:1fr}.merch-visual{border-right:0;border-bottom:1px solid var(--line);min-height:300px}.merch-visual img{height:260px}.merch-card-copy{padding:25px 22px}.misfit-panel{padding:28px 24px}
+    .nav-learn,.nav-tools,.nav-market,.nav-resources,.nav-more{position:static}.nav-learn-button,.nav-tools-button,.nav-market-button,.nav-resources-button,.nav-more-button{display:none}.nav-learn-menu,.nav-tools-menu,.nav-market-menu,.nav-resources-menu,.nav-more-menu{display:contents;position:static;min-width:0;padding:0;border:0;background:transparent;box-shadow:none}
+  }
+</style>
+</head>
+<body>
+<header class="site-header"><div class="container navbar"><a class="brand" href="index.html"><span class="brand-mark">🗡️</span><span>DAGGER <strong>TRADING</strong></span></a><button class="menu-button">Menu</button><nav class="nav-links">
+<a href="index.html">Home</a>
+<div class="nav-learn"><button aria-expanded="false" class="nav-learn-button" type="button">Learn ▾</button><div class="nav-learn-menu"><a href="learn.html">Learn Home</a><a href="learn-trading-basics.html">Trading Basics</a><a href="learn-trading-psychology.html">Trading Psychology</a></div></div>
+<div class="nav-tools"><button aria-expanded="false" class="nav-tools-button" type="button">Trader Tools ▾</button><div class="nav-tools-menu"><a href="trader-tools.html">Trader Tools Home</a><a href="dagger-check.html">Dagger Check</a><a href="dagger-setup-score.html">Dagger Setup Score</a><a href="should-i-take-this-trade.html">Should I Take This Trade?</a><a href="dagger-trading-checklist.html">Dagger Trading Checklist</a></div></div>
+<div class="nav-market"><button aria-expanded="false" class="nav-market-button" type="button">Market Notes ▾</button><div class="nav-market-menu"><a href="market-notes.html">Market Notes Home</a><a href="week-ahead-september-8-11-2026.html">Latest Week Ahead</a><a href="weekly-market-wrap-september-4-2026.html">Latest Market Wrap</a><a href="stock-spotlights.html">Stock Spotlights</a><div class="nav-market-archives"><button aria-expanded="false" class="nav-market-archives-button" type="button">Archives ›</button><div class="nav-market-archives-menu"><a href="market-notes-archive.html">Market Notes Archive</a><a href="spotlight-archive.html">Spotlight Archive</a></div></div></div></div>
+<div class="nav-resources"><button aria-expanded="false" class="nav-resources-button" type="button">Trading Resources ▾</button><div class="nav-resources-menu"><a href="resources.html">Resources Home</a><a href="resources.html#books">Books &amp; Amazon Picks</a><a href="resources.html#platforms">Trading Platforms</a><a href="resources.html#market-tools">Market Tools &amp; Research</a><a href="resources.html#official-sources">Official Market Sources</a></div></div>
+<div class="nav-more"><button aria-expanded="false" class="nav-more-button" type="button">More ▾</button><div class="nav-more-menu"><a href="comics.html">Comics</a><a href="toolbox.html">Market Center</a><a href="merch.html" aria-current="page">Merch</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="https://x.com/DaggerTrading" rel="noopener noreferrer" target="_blank">X / Twitter</a></div></div>
+</nav></div></header>
+<main>
+<section class="merch-hero"><div class="container"><div class="merch-hero-grid">
+<div>
+<span class="merch-kicker">☕ The first Dagger merch drop</span>
+<h1>Trading is serious.<br/><span>Your mug doesn't have to be.</span></h1>
+<p class="merch-hero-copy">A small collection for traders who know the charts, know the levels, know the plan... and still occasionally have to wrestle their own brain away from the buy button.</p>
+<p class="merch-hero-joke">Four mugs. Zero guaranteed improvement in impulse control.</p>
+</div>
+<div class="merch-hero-art"><img src="images/merch/saboteur-im-in.png" alt="The Saboteur Dagger Trading mug artwork"/></div>
+</div></div></section>
+
+<section class="merch-section"><div class="container">
+<div class="merch-head"><div><p class="eyebrow">The Mug Collection</p><h2>Pick your trading personality.</h2></div><p><strong>Mugs with personality.</strong> No perfect traders required.<br>Same black glossy mug. Four very different personalities for life between entry and exit.</p></div>
+<div class="merch-grid">
+
+<article class="merch-card">
+<div class="merch-visual"><img class="control-card" src="images/merch/control-the-process.png" alt="Control the Process Dagger Trading mug artwork"/></div>
+<div class="merch-card-copy"><span class="merch-label">The Disciplined One</span><h3>Control the Process</h3><p>For the trader trying to remember that discipline is the strategy... especially five seconds before clicking something questionable.</p><div class="personality"><strong>Your trading personality:</strong> You have a plan. You even try to follow it.</div><div class="merch-price">$17.95</div><div class="merch-meta">11 oz black glossy mug</div><a class="merch-button" href="https://dagger-trading-shop.fourthwall.com/products/dagger-trading-control-the-process-mug" rel="noopener noreferrer" target="_blank">View Mug →</a></div>
+</article>
+
+<article class="merch-card">
+<div class="merch-visual"><img src="images/merch/one-more-trade.png" alt="One More Trade Army of Misfits mug artwork"/></div>
+<div class="merch-card-copy"><span class="merch-label">The Repeat Offender</span><h3>One More Trade</h3><p>You said one more trade... and probably should have stopped while you were ahead. The mug gives you the answer: <strong>“I was GREEN when I said that.”</strong></p><div class="personality"><strong>Your trading personality:</strong> You were green. Then you said one more trade.</div><div class="merch-price">$17.95</div><div class="merch-meta">11 oz black glossy mug</div><a class="merch-button" href="https://dagger-trading-shop.fourthwall.com/products/one-more-trade-army-of-misfits-mug" rel="noopener noreferrer" target="_blank">View Mug →</a></div>
+</article>
+
+<article class="merch-card">
+<div class="merch-visual"><img src="images/merch/saboteur-im-in.png" alt="The Saboteur I'm In Dagger Trading mug artwork"/></div>
+<div class="merch-card-copy"><span class="merch-label">The Saboteur</span><h3>“I'm In.”</h3><p>You know it's probably a bad idea. You're in anyway. Every trader knows the moment... some of us know it a little too well.</p><div class="personality"><strong>Your trading personality:</strong> Bad idea identified. Buy button located.</div><div class="merch-price">$17.95</div><div class="merch-meta">11 oz black glossy mug</div><a class="merch-button" href="https://dagger-trading-shop.fourthwall.com/products/the-saboteur-im-in-mug" rel="noopener noreferrer" target="_blank">View Mug →</a></div>
+</article>
+
+<article class="merch-card">
+<div class="merch-visual"><img src="images/merch/strong-levels.png" alt="Strong Levels Weak Impulse Control Army of Misfits mug artwork"/></div>
+<div class="merch-card-copy"><span class="merch-label">The Self-Aware One</span><h3>Strong Levels. Weak Impulse Control.</h3><p>For traders who have the setup, know the levels... and still occasionally have to fight themselves.</p><div class="personality"><strong>Your trading personality:</strong> The levels are strong. The willpower is still under review.</div><div class="merch-price">$17.95</div><div class="merch-meta">11 oz black glossy mug</div><a class="merch-button" href="https://dagger-trading-shop.fourthwall.com/products/strong-levels-weak-impulse-control-army-of-misfits" rel="noopener noreferrer" target="_blank">View Mug →</a></div>
+</article>
+
+</div></div></section>
+
+<section class="misfit-note"><div class="container"><div class="misfit-panel">
+<div><p class="eyebrow">Welcome to the Army of Misfits</p><h2>The merch is part of the Dagger world.</h2><p>Dagger Trading has always been about more than charts. It's about patience, discipline, psychology, bad decisions, good recoveries, frustration, humor... and somehow showing up again tomorrow. The merch is just another piece of that world.</p></div>
+<div class="misfit-quote">“The real battle isn't always on the chart. Sometimes it's the person staring at it.”</div>
+</div></div></section>
+
+<div class="container merch-fineprint"><strong>Important:</strong> Mug ownership does not prevent FOMO, revenge trading, overtrading, chasing, or saying “one more trade.” We checked.</div>
+</main>
+<footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><strong>Dagger Trading</strong><p class="footer-slogan">“Wait for confirmation, not assumption.”</p><p>Market Psychology • Patience • Risk Management</p></div><nav aria-label="Footer navigation" class="footer-links"><a href="index.html">Home</a><a href="comics.html">Comics</a><a href="learn.html">Learn</a><a href="dagger-check.html">Dagger Check</a><a href="market-notes.html">Market Notes</a><a href="toolbox.html">Market Center</a><a href="resources.html">Trading Resources</a><a href="merch.html">Merch</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="https://x.com/DaggerTrading" rel="noopener noreferrer" target="_blank">X / Twitter</a></nav></div><p class="disclaimer">Content is provided for educational and informational purposes only and should not be considered financial advice. Trading and investing involve risk, including the possible loss of principal.</p><p class="copyright">© <span data-year=""></span> Dagger Trading. All Rights Reserved.</p></div></footer>
+<script src="js/script.js"></script>
+<script>(function(){const defs=[['.nav-learn','.nav-learn-button'],['.nav-tools','.nav-tools-button'],['.nav-market','.nav-market-button'],['.nav-resources','.nav-resources-button'],['.nav-more','.nav-more-button']];const items=defs.map(p=>{const root=document.querySelector(p[0]);if(!root)return null;const btn=root.querySelector(p[1]);return btn?{root,btn}:null}).filter(Boolean);function closeAll(except){items.forEach(i=>{if(i.root!==except){i.root.classList.remove('open');i.btn.setAttribute('aria-expanded','false')}})}items.forEach(i=>i.btn.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();const open=i.root.classList.contains('open');closeAll(i.root);i.root.classList.toggle('open',!open);i.btn.setAttribute('aria-expanded',!open?'true':'false')}));document.addEventListener('click',e=>items.forEach(i=>{if(!i.root.contains(e.target)){i.root.classList.remove('open');i.btn.setAttribute('aria-expanded','false')}}));document.addEventListener('keydown',e=>{if(e.key==='Escape')closeAll(null)})})();</script>
+</body>
+</html>
