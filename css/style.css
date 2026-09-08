@@ -92,3 +92,54 @@ section{padding:72px 0}.section-title{max-width:760px;margin-bottom:30px}.sectio
   .content-grid { grid-template-columns: 1fr; }
   .latest-feature-copy { padding: 24px; }
 }
+
+
+/* Stationary Dagger Trading merch easter egg with an occasional blade glint */
+.floating-golden-dagger{
+  position:fixed;
+  right:22px;
+  bottom:22px;
+  width:52px;
+  height:52px;
+  display:grid;
+  place-items:center;
+  z-index:950;
+  text-decoration:none;
+  opacity:.92;
+  filter:drop-shadow(0 5px 10px rgba(0,0,0,.45));
+  transition:transform .2s ease,opacity .2s ease,filter .2s ease;
+}
+.floating-golden-dagger svg{
+  width:46px;
+  height:46px;
+  display:block;
+  transform:rotate(-42deg);
+  overflow:visible;
+}
+.floating-golden-dagger .blade-glint{
+  opacity:0;
+  transform-box:fill-box;
+  transform-origin:center;
+  animation:daggerBladeGlint 14s ease-in-out infinite;
+}
+.floating-golden-dagger:hover,
+.floating-golden-dagger:focus-visible{
+  opacity:1;
+  transform:scale(1.06);
+  filter:drop-shadow(0 0 8px rgba(244,196,48,.32)) drop-shadow(0 5px 10px rgba(0,0,0,.45));
+}
+.floating-golden-dagger:focus-visible{outline:2px solid #f4c430;outline-offset:4px;border-radius:50%}
+@keyframes daggerBladeGlint{
+  0%,72%,100%{opacity:0;transform:scale(.55) rotate(0deg)}
+  76%{opacity:.28;transform:scale(.75) rotate(12deg)}
+  79%{opacity:1;transform:scale(1.15) rotate(35deg)}
+  82%{opacity:.35;transform:scale(.82) rotate(55deg)}
+  85%{opacity:0;transform:scale(.6) rotate(70deg)}
+}
+@media(max-width:720px){
+  .floating-golden-dagger{right:14px;bottom:14px;width:42px;height:42px}
+  .floating-golden-dagger svg{width:36px;height:36px}
+}
+@media(prefers-reduced-motion:reduce){
+  .floating-golden-dagger .blade-glint{animation:none}
+}
