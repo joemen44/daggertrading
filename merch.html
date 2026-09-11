@@ -41,6 +41,11 @@
   .merch-hero-art img{max-width:82%;max-height:330px;object-fit:contain;filter:drop-shadow(0 18px 24px rgba(0,0,0,.45))}
   .merch-hero-stamp{position:absolute;right:16px;bottom:16px;border:1px solid rgba(255,255,255,.14);background:rgba(4,7,11,.78);backdrop-filter:blur(10px);padding:10px 13px;border-radius:12px;font-size:.72rem;color:#c4cfde;text-transform:uppercase;letter-spacing:1px;font-weight:900}
 
+
+  .merch-promo{padding:0 0 8px}
+  .merch-promo-card{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 22px;border:1px solid rgba(255,190,40,.34);border-radius:16px;background:linear-gradient(110deg,rgba(245,185,24,.10),rgba(17,24,34,.96));box-shadow:0 14px 34px rgba(0,0,0,.18)}
+  .merch-promo-copy{display:flex;align-items:center;gap:14px}.merch-promo-icon{font-size:1.65rem}.merch-promo-title{font-weight:950;color:#fff;letter-spacing:.2px}.merch-promo-text{margin-top:3px;color:#b8c3d2;font-size:.9rem}.merch-promo-badge{flex:0 0 auto;padding:9px 12px;border-radius:999px;background:#f5b918;color:#111;font-size:.75rem;font-weight:950;text-transform:uppercase;letter-spacing:.7px;text-decoration:none;transition:transform .18s ease,filter .18s ease}.merch-promo-badge:hover{transform:translateY(-1px);filter:brightness(1.06)}
+
   .merch-section{padding:42px 0 72px}
   .merch-head{display:flex;align-items:end;justify-content:space-between;gap:22px;margin-bottom:24px}
   .merch-head h2{font-size:clamp(2.1rem,4vw,3.5rem);margin:4px 0 0}
@@ -76,6 +81,7 @@
     .merch-hero-grid{grid-template-columns:1fr}.merch-hero-art{min-height:310px}.merch-grid{grid-template-columns:1fr}.merch-card{grid-template-columns:280px 1fr}.misfit-panel{grid-template-columns:1fr}
   }
   @media(max-width:700px){
+    .merch-promo-card{align-items:flex-start;flex-direction:column;gap:12px}.merch-promo-copy{align-items:flex-start}.merch-promo-badge{margin-left:43px}
     .merch-hero{padding-top:46px}.merch-hero h1{letter-spacing:-2px}.merch-head{display:block}.merch-head p{margin-top:10px}.merch-card{grid-template-columns:1fr}.merch-visual{border-right:0;border-bottom:1px solid var(--line);min-height:300px}.merch-visual img{height:260px}.merch-card-copy{padding:25px 22px}.misfit-panel{padding:28px 24px}
     .nav-learn,.nav-tools,.nav-market,.nav-resources,.nav-more{position:static}.nav-learn-button,.nav-tools-button,.nav-market-button,.nav-resources-button,.nav-more-button{display:none}.nav-learn-menu,.nav-tools-menu,.nav-market-menu,.nav-resources-menu,.nav-more-menu{display:contents;position:static;min-width:0;padding:0;border:0;background:transparent;box-shadow:none}
   }
@@ -101,7 +107,12 @@
 <div class="merch-hero-art"><img src="images/merch/saboteur-im-in.png" alt="The Saboteur Dagger Trading mug artwork"/></div>
 </div></div></section>
 
-<section class="merch-section"><div class="container">
+<section class="merch-promo"><div class="container"><div class="merch-promo-card">
+<div class="merch-promo-copy"><span class="merch-promo-icon" aria-hidden="true">🎃</span><div><div class="merch-promo-title">Early Halloween Special: Buy 2 Mugs &amp; Get Free Shipping</div><div class="merch-promo-text">Mix &amp; match any two Dagger Trading mugs. Free shipping is automatically applied at checkout on qualifying mug orders. Tax may still apply.</div></div></div>
+<a class="merch-promo-badge" href="#mug-collection">Shop Mugs →</a>
+</div></div></section>
+
+<section class="merch-section" id="mug-collection"><div class="container">
 <div class="merch-head"><div><p class="eyebrow">The Mug Collection</p><h2>Pick your trading personality.</h2></div><p><strong>Mugs with personality.</strong> No perfect traders required.<br>Same black glossy mug. Four very different personalities for life between entry and exit.</p></div>
 <div class="merch-grid">
 
