@@ -333,7 +333,8 @@
  .nav-tools-group{position:static}
  .nav-tools-group-button{padding:10px 12px;color:#9fcaff}
  .nav-tools-group-button::first-letter{}
- .nav-tools-group-menu{display:grid;gap:2px;position:static;min-width:0;border:0;border-radius:0;box-shadow:none;background:transparent;padding:0 0 4px 14px}
+ .nav-tools-group-menu{display:none;position:static;min-width:0;border:0;border-radius:0;box-shadow:none;background:transparent;padding:0 0 4px 14px}
+ .nav-tools-group.submenu-open>.nav-tools-group-menu{display:grid;gap:2px}
 }
 </style>
 </head>
@@ -634,13 +635,71 @@ You recognize the bad setup. You feel yourself getting emotional. You even think
     printWindow.document.open();
     printWindow.document.write(`<!doctype html><html><head><meta charset="utf-8"><title>My Response Plan | Dagger Trading</title><style>
       @page{size:letter portrait;margin:.55in}*{box-sizing:border-box}html,body{margin:0;padding:0;background:#fff;color:#111;font-family:Arial,Helvetica,sans-serif}.personal-plan{width:100%;margin:0;padding:18px;border:1px solid #333;border-radius:8px;background:#fff}.personal-plan-head{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #d8dee4;padding-bottom:10px;margin-bottom:8px}.personal-plan-kicker{font-size:11px;font-weight:900;letter-spacing:.08em;color:#e33a32}.personal-plan h4{margin:3px 0 0;font-size:20px}.personal-plan-mark{font-size:24px}.personal-plan-item{padding:11px 0;border-bottom:1px solid #e3e7ea;break-inside:avoid;page-break-inside:avoid}.personal-plan-item:last-child{border-bottom:0}.personal-plan-item strong{display:block;color:#b51f19;margin-bottom:4px}.personal-plan-quote{margin:12px 0 0;padding:10px 12px;background:#e8f3e5;border:1px solid #bed8b7;border-radius:7px;font-weight:800;color:#174d1c}.response-plan-actions{display:none!important}
-    </style></head><body>${clone.outerHTML}</body></html>`);
+    </style></head><body>${clone.outerHTML}
+<script id="dagger-tools-mobile-submenu-toggle">
+(function(){
+  function isMobile(){ return window.matchMedia('(max-width: 900px)').matches; }
+
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest('.nav-tools-group-button');
+    if (!btn || !isMobile()) return;
+    e.preventDefault();
+    e.stopPropagation();
+    var group = btn.closest('.nav-tools-group');
+    if (!group) return;
+    var wasOpen = group.classList.contains('submenu-open');
+    group.classList.toggle('submenu-open', !wasOpen);
+    btn.setAttribute('aria-expanded', wasOpen ? 'false' : 'true');
+  });
+
+  document.addEventListener('click', function(e){
+    if (!isMobile()) return;
+    if (!e.target.closest('.nav-tools')) {
+      document.querySelectorAll('.nav-tools-group.submenu-open').forEach(function(group){
+        group.classList.remove('submenu-open');
+        var btn = group.querySelector('.nav-tools-group-button');
+        if (btn) btn.setAttribute('aria-expanded','false');
+      });
+    }
+  });
+})();
+</script>
+</body></html>`);
     printWindow.document.close();
     printWindow.focus();
     setTimeout(()=>{printWindow.print();printWindow.close();},250);
   });
   [...warnings,...responses].forEach(el=>el.addEventListener('input',save));
   load();
+})();
+</script>
+
+<script id="dagger-tools-mobile-submenu-toggle">
+(function(){
+  function isMobile(){ return window.matchMedia('(max-width: 900px)').matches; }
+
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest('.nav-tools-group-button');
+    if (!btn || !isMobile()) return;
+    e.preventDefault();
+    e.stopPropagation();
+    var group = btn.closest('.nav-tools-group');
+    if (!group) return;
+    var wasOpen = group.classList.contains('submenu-open');
+    group.classList.toggle('submenu-open', !wasOpen);
+    btn.setAttribute('aria-expanded', wasOpen ? 'false' : 'true');
+  });
+
+  document.addEventListener('click', function(e){
+    if (!isMobile()) return;
+    if (!e.target.closest('.nav-tools')) {
+      document.querySelectorAll('.nav-tools-group.submenu-open').forEach(function(group){
+        group.classList.remove('submenu-open');
+        var btn = group.querySelector('.nav-tools-group-button');
+        if (btn) btn.setAttribute('aria-expanded','false');
+      });
+    }
+  });
 })();
 </script>
 </body>

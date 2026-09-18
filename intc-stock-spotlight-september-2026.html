@@ -378,7 +378,8 @@
  .nav-tools-group{position:static}
  .nav-tools-group-button{padding:10px 12px;color:#9fcaff}
  .nav-tools-group-button::first-letter{}
- .nav-tools-group-menu{display:grid;gap:2px;position:static;min-width:0;border:0;border-radius:0;box-shadow:none;background:transparent;padding:0 0 4px 14px}
+ .nav-tools-group-menu{display:none;position:static;min-width:0;border:0;border-radius:0;box-shadow:none;background:transparent;padding:0 0 4px 14px}
+ .nav-tools-group.submenu-open>.nav-tools-group-menu{display:grid;gap:2px}
 }
 </style>
 </head><body>
@@ -592,4 +593,33 @@
 })();
 </script>
 <a aria-label="Explore Dagger Trading merch" class="floating-golden-dagger" href="merch.html" title=""><svg aria-hidden="true" role="img" viewbox="0 0 64 64"><defs><lineargradient id="silverBlade" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#ffffff"></stop><stop offset="0.24" stop-color="#dfe5ea"></stop><stop offset="0.52" stop-color="#8f9aa4"></stop><stop offset="0.72" stop-color="#f7f9fa"></stop><stop offset="1" stop-color="#69737d"></stop></lineargradient><lineargradient id="goldHilt" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#fff0a0"></stop><stop offset="0.28" stop-color="#f6c83f"></stop><stop offset="0.68" stop-color="#b8750d"></stop><stop offset="1" stop-color="#ffe06a"></stop></lineargradient><radialgradient id="glintGlow"><stop offset="0" stop-color="#fff"></stop><stop offset=".35" stop-color="#fff8cf"></stop><stop offset="1" stop-color="#ffd45a" stop-opacity="0"></stop></radialgradient></defs><path d="M32 4 38 12 35.5 43 32 51 28.5 43 26 12z" fill="url(#silverBlade)" stroke="#5f6870" stroke-linejoin="round" stroke-width="1.2"></path><path d="M17 11h30l-4.5 5h-21z" fill="url(#goldHilt)" stroke="#81520a" stroke-linejoin="round" stroke-width="1.4"></path><rect fill="url(#goldHilt)" height="11" rx="2.5" stroke="#81520a" stroke-width="1.3" width="6" x="29" y="3"></rect><circle cx="32" cy="3" fill="url(#goldHilt)" r="3.3" stroke="#81520a" stroke-width="1.2"></circle><g class="blade-glint"><circle cx="32" cy="32" fill="url(#glintGlow)" r="10"></circle><path d="M32 20v24M20 32h24M24 24l16 16M40 24 24 40" stroke="#fff9dc" stroke-linecap="round" stroke-width="1.5"></path></g></svg></a>
+
+<script id="dagger-tools-mobile-submenu-toggle">
+(function(){
+  function isMobile(){ return window.matchMedia('(max-width: 900px)').matches; }
+
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest('.nav-tools-group-button');
+    if (!btn || !isMobile()) return;
+    e.preventDefault();
+    e.stopPropagation();
+    var group = btn.closest('.nav-tools-group');
+    if (!group) return;
+    var wasOpen = group.classList.contains('submenu-open');
+    group.classList.toggle('submenu-open', !wasOpen);
+    btn.setAttribute('aria-expanded', wasOpen ? 'false' : 'true');
+  });
+
+  document.addEventListener('click', function(e){
+    if (!isMobile()) return;
+    if (!e.target.closest('.nav-tools')) {
+      document.querySelectorAll('.nav-tools-group.submenu-open').forEach(function(group){
+        group.classList.remove('submenu-open');
+        var btn = group.querySelector('.nav-tools-group-button');
+        if (btn) btn.setAttribute('aria-expanded','false');
+      });
+    }
+  });
+})();
+</script>
 </body></html>

@@ -102,7 +102,8 @@
  .nav-tools-group{position:static}
  .nav-tools-group-button{padding:10px 12px;color:#9fcaff}
  .nav-tools-group-button::first-letter{}
- .nav-tools-group-menu{display:grid;gap:2px;position:static;min-width:0;border:0;border-radius:0;box-shadow:none;background:transparent;padding:0 0 4px 14px}
+ .nav-tools-group-menu{display:none;position:static;min-width:0;border:0;border-radius:0;box-shadow:none;background:transparent;padding:0 0 4px 14px}
+ .nav-tools-group.submenu-open>.nav-tools-group-menu{display:grid;gap:2px}
 }
 </style>
 </head>
@@ -164,5 +165,34 @@
 <footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><strong>Dagger Trading</strong><p class="footer-slogan">“Wait for confirmation, not assumption.”</p><p>Market Psychology • Patience • Risk Management</p></div><nav aria-label="Footer navigation" class="footer-links"><a href="index.html">Home</a><a href="comics.html">Comics</a><a href="learn.html">Learn</a><a href="dagger-check.html">Dagger Check</a><a href="market-notes.html">Market Notes</a><a href="toolbox.html">Market Center</a><a href="resources.html">Trading Resources</a><a href="merch.html">Merch</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="https://x.com/DaggerTrading" rel="noopener noreferrer" target="_blank">X / Twitter</a></nav></div><p class="disclaimer">Content is provided for educational and informational purposes only and should not be considered financial advice. Trading and investing involve risk, including the possible loss of principal.</p><p class="copyright">© <span data-year=""></span> Dagger Trading. All Rights Reserved.</p></div></footer>
 <script src="js/script.js"></script>
 <script>(function(){const defs=[['.nav-learn','.nav-learn-button'],['.nav-tools','.nav-tools-button'],['.nav-market','.nav-market-button'],['.nav-resources','.nav-resources-button'],['.nav-more','.nav-more-button']];const items=defs.map(p=>{const root=document.querySelector(p[0]);if(!root)return null;const btn=root.querySelector(p[1]);return btn?{root,btn}:null}).filter(Boolean);function closeAll(except){items.forEach(i=>{if(i.root!==except){i.root.classList.remove('open');i.btn.setAttribute('aria-expanded','false')}})}items.forEach(i=>i.btn.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();const open=i.root.classList.contains('open');closeAll(i.root);i.root.classList.toggle('open',!open);i.btn.setAttribute('aria-expanded',!open?'true':'false')}));document.addEventListener('click',e=>items.forEach(i=>{if(!i.root.contains(e.target)){i.root.classList.remove('open');i.btn.setAttribute('aria-expanded','false')}}));document.addEventListener('keydown',e=>{if(e.key==='Escape')closeAll(null)})})();</script>
+
+<script id="dagger-tools-mobile-submenu-toggle">
+(function(){
+  function isMobile(){ return window.matchMedia('(max-width: 900px)').matches; }
+
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest('.nav-tools-group-button');
+    if (!btn || !isMobile()) return;
+    e.preventDefault();
+    e.stopPropagation();
+    var group = btn.closest('.nav-tools-group');
+    if (!group) return;
+    var wasOpen = group.classList.contains('submenu-open');
+    group.classList.toggle('submenu-open', !wasOpen);
+    btn.setAttribute('aria-expanded', wasOpen ? 'false' : 'true');
+  });
+
+  document.addEventListener('click', function(e){
+    if (!isMobile()) return;
+    if (!e.target.closest('.nav-tools')) {
+      document.querySelectorAll('.nav-tools-group.submenu-open').forEach(function(group){
+        group.classList.remove('submenu-open');
+        var btn = group.querySelector('.nav-tools-group-button');
+        if (btn) btn.setAttribute('aria-expanded','false');
+      });
+    }
+  });
+})();
+</script>
 </body>
 </html>

@@ -214,7 +214,8 @@
  .nav-tools-group{position:static}
  .nav-tools-group-button{padding:10px 12px;color:#9fcaff}
  .nav-tools-group-button::first-letter{}
- .nav-tools-group-menu{display:grid;gap:2px;position:static;min-width:0;border:0;border-radius:0;box-shadow:none;background:transparent;padding:0 0 4px 14px}
+ .nav-tools-group-menu{display:none;position:static;min-width:0;border:0;border-radius:0;box-shadow:none;background:transparent;padding:0 0 4px 14px}
+ .nav-tools-group.submenu-open>.nav-tools-group-menu{display:grid;gap:2px}
 }
 </style>
 </head><body><header class="site-header"><div class="container navbar"><a class="brand" href="index.html"><span class="brand-mark">🗡️</span><span>DAGGER <strong>TRADING</strong></span></a><button class="menu-button">Menu</button><nav class="nav-links">
@@ -389,6 +390,35 @@
         e.stopPropagation();
       }
     }, true);
+  });
+})();
+</script>
+
+<script id="dagger-tools-mobile-submenu-toggle">
+(function(){
+  function isMobile(){ return window.matchMedia('(max-width: 900px)').matches; }
+
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest('.nav-tools-group-button');
+    if (!btn || !isMobile()) return;
+    e.preventDefault();
+    e.stopPropagation();
+    var group = btn.closest('.nav-tools-group');
+    if (!group) return;
+    var wasOpen = group.classList.contains('submenu-open');
+    group.classList.toggle('submenu-open', !wasOpen);
+    btn.setAttribute('aria-expanded', wasOpen ? 'false' : 'true');
+  });
+
+  document.addEventListener('click', function(e){
+    if (!isMobile()) return;
+    if (!e.target.closest('.nav-tools')) {
+      document.querySelectorAll('.nav-tools-group.submenu-open').forEach(function(group){
+        group.classList.remove('submenu-open');
+        var btn = group.querySelector('.nav-tools-group-button');
+        if (btn) btn.setAttribute('aria-expanded','false');
+      });
+    }
   });
 })();
 </script>
