@@ -121,6 +121,20 @@ body{
   .fine{margin-top:8px}
 }
 </style>
+
+<style id="dagger-tools-submenus">
+.nav-tools-group{position:relative}
+.nav-tools-group-button{width:100%;border:0;background:transparent;color:inherit;font:inherit;font-weight:600;text-align:left;padding:10px 12px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;border-radius:8px;white-space:nowrap}
+.nav-tools-group-button:hover,.nav-tools-group-button:focus{color:#4da3ff;background:rgba(47,140,255,.10)}
+.nav-tools-group-menu{display:none;position:absolute;left:100%;top:0;min-width:230px;background:#0d1118;border:1px solid var(--line);border-radius:12px;padding:8px;box-shadow:0 16px 40px rgba(0,0,0,.28);z-index:1100}
+.nav-tools-group:hover>.nav-tools-group-menu,.nav-tools-group:focus-within>.nav-tools-group-menu{display:grid;gap:4px}
+@media(max-width:900px){
+ .nav-tools-group{position:static}
+ .nav-tools-group-button{padding:10px 12px;color:#9fcaff}
+ .nav-tools-group-button::first-letter{}
+ .nav-tools-group-menu{display:grid;gap:2px;position:static;min-width:0;border:0;border-radius:0;box-shadow:none;background:transparent;padding:0 0 4px 14px}
+}
+</style>
 </head>
 <body>
 <main class="page">
