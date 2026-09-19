@@ -1,0 +1,9 @@
+Learn dropdown updated site-wide.
+
+Standard Learn dropdown:
+- Learn Home -> learn.html
+- Trading Basics -> learn-trading-basics.html
+- Trading Psychology -> learn-trading-psychology.html
+
+HTML pages updated: 26
+Pages still missing Learn Home: 0

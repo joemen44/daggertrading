@@ -1,0 +1,8 @@
+Dagger Trading update - September 8, 2026
+
+Changes:
+- Updated spcx-stock-spotlight-september-2026.html with a new green-bordered September 8 update above the original September 3 Spotlight.
+- Added September 8 close ($153.47), neutral short-term momentum note, and key levels: $152.59, $152.30, $154.42, $155.75-$155.77, and larger $167.34-$169.17 area.
+- Added upcoming staggered SPCX lock-up release table based on SpaceX SEC offering materials.
+- Added floating slowly rotating golden dagger merch Easter egg to index.html and the SPCX September Spotlight page.
+- Added reusable floating dagger styling to css/style.css, including mobile sizing and reduced-motion support.

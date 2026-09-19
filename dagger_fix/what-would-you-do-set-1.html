@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head><link href="/apple-touch-icon.png?v=2" rel="apple-touch-icon"/><link href="/favicon.png?v=2" rel="icon" type="image/png"/><link href="/favicon.ico?v=2" rel="icon" sizes="any"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Dagger Trading trader tools built around preparation, discipline, risk management, and process." name="description"/>
+<title>What Would You Do? Set 1 | Dagger Trading</title>
+<link href="css/style.css?v=20260821-menu-scroll-v3" rel="stylesheet"/>
+<link href="css/v2.css" rel="stylesheet"/>
+<link href="css/resources-v3.css" rel="stylesheet"/>
+<style>
+.tools-hero{padding:88px 0 34px}
+.tools-shell{max-width:980px}
+.tools-hero h1{font-size:clamp(3rem,7vw,5.4rem);margin:0 0 18px}
+.tools-hero-copy{max-width:760px;color:var(--muted);font-size:1.05rem}
+.tools-intro-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px}
+.tools-intro-strip>div{padding:18px;border:1px solid var(--line);border-radius:14px;background:rgba(47,140,255,.05)}
+.tools-intro-strip strong{display:block;margin-bottom:6px}
+.tools-intro-strip span{color:var(--muted);font-size:.9rem}
+.tools-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:28px}
+.tool-feature{min-height:360px;padding:30px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(145deg,rgba(16,27,43,.97),rgba(8,17,29,.96));display:flex;flex-direction:column}
+.tool-feature .tag{align-self:flex-start}
+.tool-feature h2{font-size:clamp(2rem,4vw,3rem);margin:8px 0 12px}
+.tool-feature p{color:var(--muted);line-height:1.7}
+.tool-feature ul{padding-left:20px;color:var(--muted);line-height:1.7}
+.tool-feature .actions{margin-top:auto}
+.tools-coming{margin-top:22px;padding:24px;border:1px dashed var(--line);border-radius:18px;background:rgba(47,140,255,.035)}
+.tools-coming h3{margin:0 0 8px;font-size:1.35rem}
+.tools-coming p{margin:0;color:var(--muted)}
+.tools-closing{margin-top:34px;padding:30px;border-radius:18px;border:1px solid var(--line);background:linear-gradient(135deg,rgba(47,140,255,.12),rgba(12,20,33,.95))}
+.tools-closing h2{margin:0 0 10px}
+.tools-closing p{margin:0;color:var(--muted)}
+@media(max-width:800px){.tools-grid,.tools-intro-strip{grid-template-columns:1fr}}
+</style>
+<style id="dagger-dropdown-nav">
+.nav-learn,.nav-tools,.nav-more{position:relative}
+.nav-learn-button,.nav-tools-button,.nav-more-button{
+  border:0;
+  background:transparent;
+  color:inherit;
+  font:inherit;
+  cursor:pointer;
+  padding:0;
+}
+.nav-learn-menu,.nav-tools-menu,.nav-more-menu{
+  display:none;
+  position:absolute;
+  top:calc(100% + 12px);
+  min-width:210px;
+  padding:10px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:#0d1118;
+  box-shadow:0 16px 40px rgba(0,0,0,.28);
+  z-index:100;
+}
+.nav-learn-menu,.nav-tools-menu{left:0}
+.nav-more-menu{right:0}
+.nav-learn.open .nav-learn-menu,
+.nav-tools.open .nav-tools-menu,
+.nav-more.open .nav-more-menu{
+  display:grid;
+  gap:4px;
+}
+.nav-learn-menu a,
+.nav-tools-menu a,
+.nav-more-menu a{
+  display:block;
+  padding:10px 12px;
+  border-radius:8px;
+  white-space:nowrap;
+}
+.nav-learn-menu a:hover,
+.nav-tools-menu a:hover,
+.nav-more-menu a:hover{
+  background:rgba(47,140,255,.10);
+}
+@media(max-width:900px){
+  .nav-learn,.nav-tools,.nav-more{position:static}
+  .nav-learn-button,.nav-tools-button,.nav-more-button{display:none}
+  .nav-learn-menu,.nav-tools-menu,.nav-more-menu{
+    display:contents;
+    position:static;
+    min-width:0;
+    padding:0;
+    border:0;
+    background:transparent;
+    box-shadow:none;
+  }
+}
+</style>
+<style id="dagger-market-dropdown-nav">
+.nav-market{position:relative}.nav-market-button{border:0;background:transparent;color:inherit;font:inherit;cursor:pointer;padding:0}
+.nav-market-menu{display:none;position:absolute;top:calc(100% + 12px);left:0;min-width:220px;padding:10px;border:1px solid var(--line);border-radius:12px;background:#0d1118;box-shadow:0 16px 40px rgba(0,0,0,.28);z-index:100}
+.nav-market.open .nav-market-menu{display:grid;gap:4px}.nav-market-menu a{display:block;padding:10px 12px;border-radius:8px;white-space:nowrap}.nav-market-menu a:hover{background:rgba(47,140,255,.10)}
+@media(max-width:900px){.nav-market{position:static}.nav-market-button{display:none}.nav-market-menu{display:contents;position:static;min-width:0;padding:0;border:0;background:transparent;box-shadow:none}}
+</style>
+<style id="dagger-resources-dropdown-nav">
+.nav-resources{position:relative}
+.nav-resources-button{border:0;background:transparent;color:inherit;font:inherit;cursor:pointer;padding:0}
+.nav-resources-menu{display:none;position:absolute;top:calc(100% + 12px);right:0;min-width:230px;padding:10px;border:1px solid var(--line);border-radius:12px;background:#0d1118;box-shadow:0 16px 40px rgba(0,0,0,.28);z-index:100}
+.nav-resources.open .nav-resources-menu{display:grid;gap:4px}
+.nav-resources-menu a{display:block;padding:10px 12px;border-radius:8px;white-space:nowrap}
+.nav-resources-menu a:hover{background:rgba(47,140,255,.10)}
+@media(max-width:900px){
+  .nav-resources{position:static}
+  .nav-resources-button{display:none}
+  .nav-resources-menu{display:contents;position:static;min-width:0;padding:0;border:0;background:transparent;box-shadow:none}
+}
+</style>
+<style>
+.checklist-link-button{
+  color:#f4f8ff !important;
+  background:#132235 !important;
+  border-color:#48617d !important;
+  font-weight:800;
+}
+.checklist-link-button:hover{
+  background:#1a3049 !important;
+  border-color:var(--accent) !important;
+}
+</style>
+<style>
+.wwyd-hero{padding:58px 0 28px;text-align:center}
+.wwyd-hero .eyebrow{font-size:.8rem;font-weight:900;letter-spacing:.09em;text-transform:uppercase;color:#72b4ff}
+.wwyd-hero h1{font-size:clamp(2.2rem,5vw,3.7rem);margin:7px 0 10px}
+.wwyd-hero p{max-width:760px;margin:auto;color:var(--muted);line-height:1.65}
+.wwyd-wrap{padding:12px 0 70px}.wwyd-card{max-width:900px;margin:auto;border:1px solid var(--line);border-radius:18px;background:var(--panel);overflow:hidden;box-shadow:0 18px 48px rgba(0,0,0,.18)}
+.wwyd-bar{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px 20px;border-bottom:1px solid var(--line)}
+.wwyd-kind{font-size:.78rem;font-weight:900;letter-spacing:.06em;text-transform:uppercase;color:#9ecbff}.wwyd-num{font-size:.84rem;color:var(--muted)}
+.wwyd-content{padding:25px}.wwyd-title{font-size:1.55rem;margin:0 0 8px}.wwyd-copy{color:#c3d0df;line-height:1.65;margin:0 0 18px}
+.wwyd-visual{margin:18px 0;border:1px solid #25394f;border-radius:14px;overflow:hidden;background:#09121e;height:auto}
+.wwyd-chart{display:block;width:100%;height:auto}.wwyd-chartcap{display:flex;justify-content:space-between;gap:8px;padding:9px 13px;border-bottom:1px solid #1d3044;color:#91a8c0;font-size:.8rem}
+.wwyd-psych-img{display:block;width:100%;max-width:760px;height:auto;object-fit:contain;margin:0 auto}.wwyd-psych{min-height:220px;display:flex;align-items:center;justify-content:center;padding:22px;background:linear-gradient(135deg,#0a1624,#11263b)}
+.wwyd-scene{width:min(620px,100%);display:grid;grid-template-columns:150px 1fr;gap:20px;align-items:center}
+.wwyd-person{width:130px;height:130px;border-radius:50%;border:2px solid #315b83;background:#0c1d2f;position:relative;margin:auto}
+.wwyd-person:before{content:"";position:absolute;width:46px;height:46px;border-radius:50%;background:#d8b59a;left:40px;top:22px}
+.wwyd-person:after{content:"";position:absolute;width:82px;height:52px;border-radius:42px 42px 12px 12px;background:#183d61;left:22px;bottom:10px}
+.wwyd-screen{border:1px solid #2f567d;border-radius:10px;background:#08111b;padding:14px}.wwyd-screen strong{display:block;color:#f2f7fc;margin-bottom:6px}.wwyd-screen p{margin:0;color:#9fb5ca;line-height:1.5;font-size:.92rem}
+.wwyd-q{font-size:1.08rem;font-weight:900;margin:20px 0 11px}.wwyd-options{display:grid;gap:9px}
+.wwyd-option{width:100%;text-align:left;padding:13px 15px;border:1px solid #30465f;border-radius:11px;background:#101c2a;color:#eef5fb;font:inherit;line-height:1.45;cursor:pointer}.wwyd-option:hover{background:#14283e;border-color:#4d8dce}.wwyd-option.chosen{background:#173b5e;border-color:#2f8cff}.wwyd-option:disabled{cursor:default;opacity:.9}
+.wwyd-feedback{display:none;margin-top:20px;padding:17px 18px;border:1px solid #31506e;border-left:4px solid #2f8cff;border-radius:11px;background:#0c1b2b}.wwyd-feedback.show{display:block}.wwyd-feedback h3{margin:0 0 7px;font-size:1.12rem}.wwyd-feedback p{margin:0;color:#b9c9da;line-height:1.58}
+.wwyd-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}.wwyd-btn{border:1px solid #416384;border-radius:9px;background:#173653;color:white;padding:10px 14px;font:inherit;font-weight:850;cursor:pointer}.wwyd-btn.primary{background:#2f8cff;border-color:#2f8cff}.wwyd-reveal{display:none;margin-top:17px}.wwyd-reveal.show{display:block}
+.wwyd-rule{max-width:900px;margin:14px auto 0;padding:13px 15px;border:1px solid var(--line);border-radius:11px;color:var(--muted);font-size:.9rem;line-height:1.5}
+.wwyd-back{text-align:center;margin-top:18px}
+@media(max-width:650px){.wwyd-content{padding:19px 14px}.wwyd-scene{grid-template-columns:1fr}.wwyd-person{width:105px;height:105px}.wwyd-person:before{left:29px;top:17px}.wwyd-person:after{left:11px}.wwyd-chartcap{font-size:.72rem}.wwyd-psych{padding:18px}}
+</style>
+<style id="wwyd-readability-fix">
+/* Readability pass: preserve layout/logic, strengthen text contrast only. */
+.wwyd-card p,
+.wwyd-desc,
+.wwyd-copy,
+.wwyd-scenario-copy {
+  color:#334155 !important;
+  opacity:1 !important;
+}
+.wwyd-q {
+  color:#f2f7fc !important;
+  font-weight:800 !important;
+}
+.wwyd-feedback,
+.wwyd-result {
+  background:#eef6ff !important;
+  border:1px solid #bfdbfe !important;
+  border-left:4px solid #2587f8 !important;
+  color:#172033 !important;
+}
+.wwyd-feedback strong,
+.wwyd-result strong,
+.wwyd-feedback h3,
+.wwyd-result h3 {
+  color:#0f172a !important;
+  opacity:1 !important;
+}
+.wwyd-feedback p,
+.wwyd-result p {
+  color:#27364a !important;
+  opacity:1 !important;
+}
+.wwyd-feedback .muted,
+.wwyd-result .muted {
+  color:#475569 !important;
+  opacity:1 !important;
+}
+/* Generic fallback for the prototype's result box markup. */
+#feedback,
+#result,
+#explain {
+  color:#172033 !important;
+}
+#feedback strong,
+#result strong,
+#explain strong {
+  color:#0f172a !important;
+}
+</style>
+<style id="wwyd-nav-cleanup">
+.wwyd-actions{
+  display:grid !important;
+  grid-template-columns:1fr auto !important;
+  align-items:center !important;
+  gap:14px !important;
+  width:100%;
+}
+#reveal{
+  grid-column:1;
+  justify-self:start;
+  margin-right:0 !important;
+}
+#prev,
+#retry,
+#next{
+  margin:0 !important;
+}
+#prev,
+#retry{
+  background:#f8fafc !important;
+  color:#334155 !important;
+  border:1px solid #cbd5e1 !important;
+}
+#prev:hover,
+#retry:hover{
+  background:#eef2f7 !important;
+}
+#next{
+  background:#2f8cff !important;
+  color:#fff !important;
+  border-color:#2f8cff !important;
+}
+.wwyd-nav-right{
+  grid-column:2;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:10px;
+}
+@media (max-width:700px){
+  .wwyd-actions{
+    grid-template-columns:1fr !important;
+  }
+  #reveal{
+    grid-column:1;
+  }
+  .wwyd-nav-right{
+    grid-column:1;
+    justify-content:flex-end;
+    flex-wrap:wrap;
+  }
+}
+</style>
+<style id="wwyd-decision-feedback-levels">
+/* Decision-quality cues: green = disciplined, amber = caution, red = undisciplined/high-risk. */
+.wwyd-feedback.level-good{
+  background:#edf9f1 !important;
+  border-color:#a7dfb7 !important;
+  border-left-color:#2e9b57 !important;
+}
+.wwyd-feedback.level-caution{
+  background:#fff8e8 !important;
+  border-color:#efd18a !important;
+  border-left-color:#d99a19 !important;
+}
+.wwyd-feedback.level-risk{
+  background:#fff0f0 !important;
+  border-color:#efb0b0 !important;
+  border-left-color:#d84a4a !important;
+}
+.wwyd-feedback.level-good h3::before{content:"✓ ";color:#237a45}
+.wwyd-feedback.level-caution h3::before{content:"! ";color:#a86d00}
+.wwyd-feedback.level-risk h3::before{content:"⚠ ";color:#b92f2f}
+.wwyd-option.chosen.level-good{border-color:#2e9b57 !important}
+.wwyd-option.chosen.level-caution{border-color:#d99a19 !important}
+.wwyd-option.chosen.level-risk{border-color:#d84a4a !important}
+</style>
+<style id="wwyd-start-over-style">
+.wwyd-progress-controls{display:flex;align-items:center;gap:10px}
+.wwyd-startover{appearance:none;background:transparent;border:0;padding:2px 0;color:#64748b;font:inherit;font-size:.76rem;font-weight:700;cursor:pointer}
+.wwyd-startover:hover,.wwyd-startover:focus-visible{color:#2587f8;text-decoration:underline}
+@media(max-width:520px){.wwyd-progress-controls{gap:7px}.wwyd-startover{font-size:.72rem}}
+</style>
+<style id="wwyd-viewport-stability">
+#wwyd-anchor{height:0;position:relative;top:0}
+.wwyd-visual{
+  min-height:310px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.wwyd-visual > img{
+  max-height:310px;
+  object-fit:contain;
+}
+@media(max-width:700px){
+  .wwyd-visual{min-height:240px}
+  .wwyd-visual > img{max-height:240px}
+}
+</style>
+<style id="wwyd-set-results-styles">
+.wwyd-set-intro{max-width:900px;margin:0 auto 22px;padding:18px 20px;border:1px solid #d7e2ee;border-radius:16px;background:#fff;box-shadow:0 12px 30px rgba(15,35,55,.07)}
+.wwyd-set-intro strong{display:block;font-size:1.05rem;margin-bottom:4px}.wwyd-set-intro p{margin:0;color:#526579}
+
+
+.wwyd-result{display:none;padding:28px 24px;text-align:center}.wwyd-result.show{display:block}.wwyd-result-badge{display:inline-block;font-weight:800;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;padding:7px 11px;border-radius:999px;margin-bottom:12px}.wwyd-result h2{font-size:2rem;margin:0 0 10px}.wwyd-result p{max-width:650px;margin:0 auto 14px;line-height:1.6}.wwyd-result-score{font-weight:800;font-size:1.05rem;margin:14px 0 20px}.wwyd-result-art{max-width:680px;margin:20px auto;padding:32px 20px;border-radius:16px;background:#0d2135;color:#bcd4ea;border:1px solid #285274}.wwyd-result-art strong{display:block;color:#fff;font-size:1.1rem;margin-bottom:5px}.wwyd-result-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}.wwyd-result.strong .wwyd-result-badge{background:#e7f7ee;color:#187044}.wwyd-result.mixed .wwyd-result-badge{background:#fff4d9;color:#8a5b00}.wwyd-result.work .wwyd-result-badge{background:#fde9e9;color:#a52b2b}
+.wwyd-sets{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.wwyd-set-card{background:#fff;border:1px solid #d7e2ee;border-radius:18px;padding:24px;box-shadow:0 12px 30px rgba(15,35,55,.07)}.wwyd-set-card .set-num{font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#6ba9ef}.wwyd-set-card h2{margin:8px 0}.wwyd-set-card p{color:#526579;line-height:1.55}.wwyd-set-card .button{display:inline-block;margin-top:8px}.wwyd-landing-note{max-width:900px;margin:20px auto 0;text-align:center;color:#526579}
+@media(max-width:700px){.wwyd-sets{grid-template-columns:1fr}.wwyd-result{padding:22px 14px}.wwyd-result h2{font-size:1.65rem}}
+</style>
+<style id="wwyd-fit-100">
+/* Preserve artwork size; reduce vertical whitespace around the interaction. */
+.wwyd-content{padding-top:14px !important;padding-bottom:14px !important}
+.wwyd-bar{padding-top:8px !important;padding-bottom:8px !important}
+.wwyd-title{margin-top:2px !important;margin-bottom:5px !important;line-height:1.15 !important}
+.wwyd-copy{margin-top:0 !important;margin-bottom:8px !important;line-height:1.35 !important}
+.wwyd-visual{margin-top:8px !important;margin-bottom:8px !important}
+.wwyd-q{margin-top:6px !important;margin-bottom:6px !important}
+.wwyd-options{gap:6px !important}
+.wwyd-option{padding:9px 12px !important;line-height:1.2 !important}
+.wwyd-feedback{margin-top:8px !important;padding:10px 14px !important}
+.wwyd-feedback h3{margin:0 0 4px !important;line-height:1.2 !important}
+.wwyd-feedback p{margin:0 0 8px !important;line-height:1.35 !important}
+.wwyd-actions{margin-top:6px !important;gap:8px !important}
+.wwyd-btn{padding:8px 12px !important;line-height:1.1 !important}
+.wwyd-reveal{margin-top:8px !important}
+.wwyd-back{margin-top:10px !important}
+
+@media(max-height:900px) and (min-width:701px){
+  .wwyd-content{padding-top:10px !important;padding-bottom:10px !important}
+  .wwyd-bar{padding-top:6px !important;padding-bottom:6px !important}
+  .wwyd-title{margin-bottom:4px !important}
+  .wwyd-copy{margin-bottom:6px !important;line-height:1.28 !important}
+  .wwyd-visual{margin-top:6px !important;margin-bottom:6px !important}
+  .wwyd-q{margin-top:4px !important;margin-bottom:5px !important}
+  .wwyd-options{gap:5px !important}
+  .wwyd-option{padding:8px 11px !important}
+  .wwyd-feedback{margin-top:6px !important;padding:9px 12px !important}
+  .wwyd-feedback p{margin-bottom:6px !important}
+  .wwyd-actions{margin-top:5px !important}
+  .wwyd-btn{padding:7px 11px !important}
+}
+</style>
+<style id="wwyd-visual-panel-fix">
+/* Keep the working 100%-zoom layout; fix only the contents of the visual panel. */
+.wwyd-visual{
+  flex-direction:column !important;
+}
+
+/* Cartoon scenes fill the existing 310px panel instead of sitting narrow in the middle. */
+.wwyd-visual > .wwyd-psych-img{
+  width:100% !important;
+  max-width:none !important;
+  height:310px !important;
+  max-height:310px !important;
+  object-fit:cover !important;
+  margin:0 !important;
+}
+
+/* The chart caption was becoming a side column because the panel is flex.
+   Hide it so the candlestick chart gets the entire existing panel. */
+.wwyd-visual > .wwyd-chartcap{
+  display:none !important;
+}
+
+.wwyd-visual > .wwyd-chart{
+  width:100% !important;
+  height:310px !important;
+  max-height:310px !important;
+  flex:0 0 310px !important;
+}
+
+@media(max-width:700px){
+  .wwyd-visual > .wwyd-psych-img{
+    height:240px !important;
+    max-height:240px !important;
+  }
+  .wwyd-visual > .wwyd-chart{
+    height:240px !important;
+    max-height:240px !important;
+    flex-basis:240px !important;
+  }
+}
+</style>
+<style id="wwyd-consistent-scenario-shell">
+/* Shared WWYD scenario shell: Scenario-7 layout */
+.wwyd-options{
+  display:grid !important;
+  grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+  gap:10px !important;
+  width:100% !important;
+}
+.wwyd-option{
+  min-height:66px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:flex-start !important;
+  padding:12px 14px !important;
+  line-height:1.25 !important;
+  text-align:left !important;
+}
+.wwyd-feedback{
+  width:100% !important;
+}
+.wwyd-actions{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:flex-end !important;
+  flex-wrap:wrap !important;
+  gap:10px !important;
+  width:100% !important;
+}
+#reveal{
+  margin-right:auto !important;
+}
+#prev,#retry,#next{
+  margin:0 !important;
+}
+.wwyd-visual{
+  width:100% !important;
+}
+
+/* Artwork scenarios: wide panel, preserve whole artwork instead of zoom/crop. */
+.wwyd-visual > .wwyd-psych-img{
+  width:100% !important;
+  height:310px !important;
+  max-height:310px !important;
+  object-fit:contain !important;
+  background:#081522 !important;
+  display:block !important;
+  margin:0 auto !important;
+}
+
+/* Technical charts use the same footprint. */
+.wwyd-visual > .wwyd-chart{
+  width:100% !important;
+  height:310px !important;
+  max-height:310px !important;
+}
+.wwyd-chartcap{
+  display:none !important;
+}
+
+@media(max-width:1000px){
+  .wwyd-options{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  }
+}
+@media(max-width:700px){
+  .wwyd-options{
+    grid-template-columns:1fr !important;
+  }
+  .wwyd-option{
+    min-height:auto !important;
+  }
+  .wwyd-visual > .wwyd-psych-img,
+  .wwyd-visual > .wwyd-chart{
+    height:240px !important;
+    max-height:240px !important;
+  }
+  .wwyd-actions{
+    justify-content:flex-start !important;
+  }
+  #reveal{
+    margin-right:0 !important;
+  }
+}
+</style>
+<style id="wwyd-set1-final-fixes">
+.wwyd-visual > .wwyd-psych-img{
+  width:100% !important;
+  height:auto !important;
+  max-height:none !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+}
+.wwyd-result-art{
+  width:100%;
+  max-width:860px;
+  aspect-ratio:1734 / 907;
+  height:auto;
+  border-radius:14px;
+  overflow:hidden;
+  background:#081522;
+  margin:18px auto;
+}
+.wwyd-result-art img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center center;
+  display:block;
+}
+</style>
+<style id="wwyd-s1-approved-layout">
+/* Match the approved Scenario 1 presentation without changing logic. */
+.wwyd-card{
+  max-width:920px !important;
+}
+
+.wwyd-visual{
+  width:100% !important;
+  margin-top:8px !important;
+}
+
+.wwyd-visual > .wwyd-psych-img{
+  width:100% !important;
+  height:auto !important;
+  max-height:none !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+  display:block !important;
+  border-radius:12px !important;
+  background:#081522 !important;
+}
+
+.wwyd-q{
+  margin-top:8px !important;
+  margin-bottom:8px !important;
+}
+
+.wwyd-options{
+  display:grid !important;
+  grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+  gap:10px !important;
+  width:100% !important;
+}
+
+.wwyd-option{
+  min-height:86px !important;
+  padding:14px 14px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:flex-start !important;
+  line-height:1.25 !important;
+  text-align:left !important;
+}
+
+@media(max-width:1000px){
+  .wwyd-options{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  }
+}
+@media(max-width:700px){
+  .wwyd-options{
+    grid-template-columns:1fr !important;
+  }
+  .wwyd-option{
+    min-height:auto !important;
+  }
+}
+</style>
+<style id="wwyd-s1-image2-final-sizing">
+/* Scenario 1 final sizing: show the complete artwork exactly as composed. */
+.wwyd-visual{
+  width:100% !important;
+  height:auto !important;
+  overflow:visible !important;
+}
+
+.wwyd-visual > .wwyd-psych-img{
+  width:100% !important;
+  height:auto !important;
+  max-height:none !important;
+  aspect-ratio:auto !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+  display:block !important;
+  margin:0 !important;
+  border-radius:12px !important;
+}
+
+/* Keep the approved four-across answer layout beneath the full artwork. */
+.wwyd-options{
+  display:grid !important;
+  grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+  gap:10px !important;
+  width:100% !important;
+}
+.wwyd-option{
+  min-height:86px !important;
+  padding:14px !important;
+  display:flex !important;
+  align-items:center !important;
+  line-height:1.25 !important;
+}
+
+@media(max-width:1000px){
+  .wwyd-options{grid-template-columns:repeat(2,minmax(0,1fr)) !important;}
+}
+@media(max-width:700px){
+  .wwyd-options{grid-template-columns:1fr !important;}
+}
+</style>
+<style id="wwyd-s7-fill-fix">
+/* Scenario 7 approved artwork: no letterboxing; image defines its own height. */
+.wwyd-visual.wwyd-s7-fill{
+  width:100% !important;
+  height:auto !important;
+  aspect-ratio:2 / 1 !important;
+  overflow:hidden !important;
+  background:transparent !important;
+  border-radius:12px !important;
+}
+.wwyd-visual.wwyd-s7-fill > .wwyd-psych-img{
+  width:100% !important;
+  height:100% !important;
+  max-height:none !important;
+  object-fit:cover !important;
+  object-position:center center !important;
+  display:block !important;
+  margin:0 !important;
+  border-radius:12px !important;
+}
+</style>
+<style id="wwyd-reveal-caption-fix">
+#revealbox .wwyd-copy{
+  color:#e8eef7 !important;
+  opacity:1 !important;
+  font-weight:600;
+}
+</style>
+<style id="wwyd-choice-letter-layout">
+/* Keep the existing four-box layout; give A/B/C/D their own clean top-left position. */
+.wwyd-option{
+  flex-direction:column !important;
+  align-items:flex-start !important;
+  justify-content:flex-start !important;
+  text-align:left !important;
+  gap:5px !important;
+}
+.wwyd-choice-letter{
+  display:block !important;
+  font-weight:900 !important;
+  font-size:1.08em !important;
+  line-height:1 !important;
+}
+.wwyd-choice-text{
+  display:block !important;
+  width:100% !important;
+  text-align:left !important;
+}
+</style>
+
+<style id="wwyd-dark-theme-contrast-final">
+/* Final contrast correction for the live dark-theme integration. */
+.wwyd-set-intro strong{color:#0f172a !important;opacity:1 !important;}
+.wwyd-set-intro p{color:#334155 !important;opacity:1 !important;}
+.wwyd-content > .wwyd-copy{color:#c3d0df !important;opacity:1 !important;}
+.wwyd-bar .wwyd-num{color:#9fb5ca !important;opacity:1 !important;}
+
+.wwyd-leave-modal{position:fixed;inset:0;z-index:9999;background:rgba(2,10,20,.72);display:flex;align-items:center;justify-content:center;padding:20px}.wwyd-leave-modal[hidden]{display:none}.wwyd-leave-dialog{width:min(460px,100%);background:#0d1b2b;border:1px solid #29445f;border-radius:16px;padding:24px;box-shadow:0 20px 60px rgba(0,0,0,.45);color:#fff}.wwyd-leave-dialog h3{margin:0 0 10px;color:#fff;font-size:1.35rem}.wwyd-leave-dialog p{margin:0;color:#b9c9da;line-height:1.55}.wwyd-leave-actions{display:flex;justify-content:flex-end;gap:10px;flex-wrap:wrap;margin-top:20px}.wwyd-leave-actions .wwyd-btn{text-decoration:none}
+</style>
+
+<style id="dagger-tools-submenus">
+.nav-tools-group{position:relative}
+.nav-tools-group-button{width:100%;border:0;background:transparent;color:inherit;font:inherit;font-weight:600;text-align:left;padding:10px 12px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;border-radius:8px;white-space:nowrap}
+.nav-tools-group-button:hover,.nav-tools-group-button:focus{color:#4da3ff;background:rgba(47,140,255,.10)}
+.nav-tools-group-menu{display:none;position:absolute;left:100%;top:0;min-width:230px;background:#0d1118;border:1px solid var(--line);border-radius:12px;padding:8px;box-shadow:0 16px 40px rgba(0,0,0,.28);z-index:1100}
+.nav-tools-group:hover>.nav-tools-group-menu,.nav-tools-group:focus-within>.nav-tools-group-menu{display:grid;gap:4px}
+@media(max-width:900px){
+ .nav-tools-group{position:static}
+ .nav-tools-group-button{padding:10px 12px;color:#9fcaff}
+ .nav-tools-group-button::first-letter{}
+ .nav-tools-group-menu{display:none;position:static;min-width:0;border:0;border-radius:0;box-shadow:none;background:transparent;padding:0 0 4px 14px}
+ .nav-tools-group.submenu-open>.nav-tools-group-menu{display:grid;gap:2px}
+}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="container navbar"><a class="brand" href="index.html"><span class="brand-mark">🗡️</span><span>DAGGER <strong>TRADING</strong></span></a><button class="menu-button">Menu</button><nav class="nav-links">
+<a href="index.html">Home</a>
+<div class="nav-learn">
+<button aria-expanded="false" class="nav-learn-button" type="button">Learn ▾</button>
+<div class="nav-learn-menu">
+<a href="learn.html">Learn Home</a><a href="learn-trading-basics.html">Trading Basics</a>
+<a href="learn-trading-psychology.html">Trading Psychology</a>
+<a href="what-would-you-do.html">What Would You Do? 🎮</a>
+</div>
+</div>
+<div class="nav-tools">
+<button aria-expanded="false" class="nav-tools-button" type="button">Trader Tools ▾</button>
+<div class="nav-tools-menu">
+<a href="trader-tools.html">Trader Tools Home</a>
+<div class="nav-tools-group"><button aria-expanded="false" class="nav-tools-group-button" type="button">Interactive Tools ›</button><div class="nav-tools-group-menu"><a href="dagger-check.html">Dagger Check</a><a href="dagger-setup-score.html">Dagger Setup Score</a><a href="should-i-take-this-trade.html">Should I Take This Trade?</a></div></div>
+<div class="nav-tools-group"><button aria-expanded="false" class="nav-tools-group-button" type="button">Trading Checklists ›</button><div class="nav-tools-group-menu"><a href="dagger-trading-checklist.html">Dagger Trading Checklist</a><a href="dagger-swing-trade-checklist.html">Dagger Swing Trade Checklist</a></div></div>
+</div>
+</div>
+<div class="nav-market"><button aria-expanded="false" class="nav-market-button" type="button">Market Notes ▾</button><div class="nav-market-menu"><a href="market-notes.html">Market Notes Home</a><a href="week-ahead-september-14-18-2026.html">Latest Week Ahead</a><a href="weekly-market-wrap-september-11-2026.html">Latest Market Wrap</a><a href="stock-spotlights.html">Stock Spotlights</a><div class="nav-market-archives"><button aria-expanded="false" class="nav-market-archives-button" type="button">Archives ›</button><div class="nav-market-archives-menu"><a href="market-notes-archive.html">Market Notes Archive</a><a href="spotlight-archive.html">Spotlight Archive</a></div></div></div></div>
+<div class="nav-resources">
+<button aria-expanded="false" class="nav-resources-button" type="button">Trading Resources ▾</button>
+<div class="nav-resources-menu">
+<a href="resources.html">Resources Home</a>
+<a href="resources.html#books">Books &amp; Amazon Picks</a>
+<a href="resources.html#platforms">Trading Platforms</a>
+<a href="resources.html#market-tools">Market Tools &amp; Research</a>
+<a href="resources.html#official-sources">Official Market Sources</a>
+</div>
+</div>
+<div class="nav-more">
+<button aria-expanded="false" class="nav-more-button" type="button">More ▾</button>
+<div class="nav-more-menu">
+<a href="comics.html">Comics</a>
+<a href="toolbox.html">Market Center</a><a href="merch.html">Merch</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+<a href="https://x.com/DaggerTrading" rel="noopener noreferrer" target="_blank">X / Twitter</a>
+</div>
+</div>
+</nav></div></header>
+<main>
+<section class="wwyd-hero"><div class="container">
+<p class="eyebrow">Set 1 • Interactive Trading Situations</p>
+<h1>What Would You Do?</h1>
+<p>Scenarios 1–10. Make the call first, then see what to consider. Your final recap reflects decision discipline, not whether a trade would have won.</p>
+</div></section>
+<section class="wwyd-wrap"><div class="container">
+<div class="wwyd-set-intro"><strong>WWYD Set 1 • 10 scenarios</strong><p>Choose the response you would actually make. Your first choice counts toward your result. You can retry any scenario to explore the other responses. Set 1 includes 10 trading decision scenarios.</p></div>
+<div class="wwyd-card" id="scenario-card">
+<div class="wwyd-bar"><span class="wwyd-kind" id="kind"></span><span class="wwyd-progress-controls"><button class="wwyd-startover" id="startover" title="Clear progress and return to Scenario 1" type="button">↻ Start Over</button><span class="wwyd-num" id="num"></span></span></div>
+<div class="wwyd-content"><div aria-hidden="true" id="wwyd-anchor"></div>
+<h2 class="wwyd-title" id="title"></h2><p class="wwyd-copy" id="copy"></p>
+<div class="wwyd-visual" id="visual"></div>
+<div class="wwyd-q">What would you do?</div><div class="wwyd-options" id="options"></div>
+<div class="wwyd-feedback" id="feedback"><h3 id="fbtitle"></h3><p id="fbcopy"></p>
+<div class="wwyd-actions"><button class="wwyd-btn" id="reveal" style="display:none" type="button">Reveal What Happened →</button><span class="wwyd-nav-right"><button class="wwyd-btn" id="prev" type="button">← Previous</button><button class="wwyd-btn" id="retry" type="button">Try Again</button><button class="wwyd-btn primary" id="next" type="button">Next Scenario →</button></span></div>
+<div class="wwyd-reveal" id="revealbox"></div></div>
+</div></div>
+<div class="wwyd-card wwyd-result" id="result-card">
+<div class="wwyd-result-badge" id="result-badge"></div>
+<h2 id="result-title"></h2>
+<p id="result-copy"></p>
+<div class="wwyd-result-score" id="result-score"></div>
+<div class="wwyd-result-art"><img alt="Dagger Trading discipline recap scene" id="result-art-img" src="wwyd-discipline-oldman.png"/></div>
+<p><strong>Dagger Rule:</strong> <span id="result-rule"></span></p>
+<div class="wwyd-result-actions"><button class="wwyd-btn" id="restart-set" type="button">↻ Restart Set</button><a class="wwyd-btn primary" href="what-would-you-do-set-2.html">Try Set 2 →</a><a class="wwyd-btn" href="what-would-you-do.html">Choose a Set</a></div>
+</div>
+<div class="wwyd-back"><a class="button button-secondary" id="back-to-sets" href="what-would-you-do.html">← Back to WWYD Sets</a></div>
+<div id="leave-set-modal" class="wwyd-leave-modal" hidden><div class="wwyd-leave-dialog" role="dialog" aria-modal="true" aria-labelledby="leave-set-title"><h3 id="leave-set-title">Leave this set?</h3><p>Are you sure you want to return to the WWYD Sets page? Your current Set 1 progress will be reset.</p><div class="wwyd-leave-actions"><button type="button" class="wwyd-btn" id="stay-here">Stay Here</button><a class="wwyd-btn primary" href="what-would-you-do.html">Return to WWYD Sets</a></div></div></div>
+</div></section>
+</main>
+<script>
+(()=>{
+const ALL=[
+{kind:"Psychology • FOMO",title:"You missed the breakout.",copy:"A stock breaks resistance and runs without you. It pulls back a little, but it is still well above where you originally wanted to enter. You can feel yourself getting annoyed that you missed it.",images:{before:"wwyd-set1-scenario1-final-wide.png",states:["wwyd-fomo-after-chase.png","wwyd-fomo-before.png","wwyd-fomo-before.png","wwyd-fomo-after-chase.png"]},psych:["THE MOVE LEFT WITHOUT YOU","Price is still elevated. Your original entry is gone."],opts:[
+["Take a starter position now, but use smaller size because the entry is extended.","Risk is smaller, but the entry still needs a reason.","Reducing size can control damage, but it does not create a setup. If the only reason for entering now is that the stock already ran without you, FOMO is still influencing the decision.","caution"],
+["Wait for price to form a fresh setup with defined risk, even if that means missing it again.","Disciplined response.","You are judging the next opportunity from current structure rather than paying up for the move you missed. A fresh setup may appear, or there may simply be no trade.","good"],
+["Wait for price to return near my original entry and buy there with a defined stop.","A better price is not automatically a new setup.","Returning to the old entry area may improve location, but the original setup has already changed. Price still needs to give you a valid reason to enter now.","caution"],
+["Enter on the next green candle and use the recent pullback low as my stop.","Defined risk helps, but it does not remove FOMO.","A stop makes the risk measurable, but a green candle after an extended move is not automatically a quality entry. The setup still needs to justify the trade.","caution"]
+]},
+{kind:"Technical • Breakout / Retest",title:"Resistance just broke.",copy:"Price spent several candles pressing into resistance, finally closed above it, and is now pulling back toward the breakout area. You are flat.",chart:true,level:104,pre:[100,100.7,100.4,101.2,100.9,101.7,101.4,102.2,101.9,103.0,102.6,103.5,104.5,104.2],post:[104.0,104.6,105.3,106.0,105.7,106.8],opts:[
+["Buy immediately because resistance already broke.","The breakout happened, but the entry still needs confirmation.","Price is already pulling back toward the breakout area. Buying simply because resistance broke assumes the level will hold before buyers have actually defended it.","risk"],
+["Wait to see whether the breakout area holds and buyers respond.","Strong process.","The reveal shows price testing the former resistance area before continuing higher. Waiting for buyers to defend the level gives you new information instead of assuming the breakout must continue.","good"],
+["Short if price slips back below the breakout level, using the recent high as my risk.","A failed breakout is possible, but one slip below is not enough by itself.","A move back under the level can become bearish, and the recent high gives you defined risk. But without rejection or follow-through, you may be shorting normal retest noise rather than a confirmed failure.","caution"],
+["Place a buy order at the breakout level so I don't miss the retest.","Good location, but the entry is still anticipating the hold.","Former resistance can become support, but touching the breakout level does not prove buyers will defend it. Waiting for a response gives the level a chance to confirm before you commit.","caution"]
+],reveal:{level:104,pre:[100,100.7,100.4,101.2,100.9,101.7,101.4,102.2,101.9,103.0,102.6,103.5,104.5,104.2],post:[104.0,104.6,105.3,106.0,105.7,106.8],title:"The breakout area held.",copy:"Price pulled back toward the breakout area, held above the former resistance, and continued higher. Waiting for buyers to defend the level provided confirmation instead of assuming the breakout would hold."}},
+{kind:"Psychology • Revenge Trading",title:"You just took two losses.",copy:"You are down on the day after two trades. Another stock suddenly starts moving fast. Your first thought is: “This could get me back to green.”",images:{before:"wwyd-set1-scenario3-revenge-misfit-saboteur.png",states:["wwyd-set1-scenario3-revenge-misfit-saboteur.png","wwyd-set1-scenario3-revenge-misfit-saboteur.png","wwyd-set1-scenario3-revenge-misfit-saboteur.png","wwyd-set1-scenario3-revenge-misfit-saboteur.png"]},psych:["TWO LOSSES. ONE FAST MOVER.","The next decision is starting to feel like a recovery mission."],opts:[
+["Pause long enough to check whether this trade independently meets my setup and whether I am still inside my daily risk limits.","Strong reset.","This tests both the opportunity and your current state. If the trade still qualifies without needing it to repair the day, it can be judged on its own merits.","good"],
+["Take it at half size if the setup is close enough to my rules.","Smaller size can help, but 'close enough' matters.","Reducing size controls dollars at risk, but loosening your setup after two losses can still be revenge trading in a safer-looking package.","caution"],
+["Skip this trade because after two losses I shouldn't take another trade today.","Cautious, but potentially too rigid.","Stopping after two losses can be sensible if that is part of your plan. But without such a rule, automatically shutting down lets the previous losses dictate the next decision. Check your actual daily risk and trading rules instead.","caution"],
+["Take the trade if the potential reward is large enough to recover today's losses while still using my normal stop.","The recovery target is driving the trade.","Normal stop placement does not fix a decision built around getting back to green. The opportunity should stand on its own without today's P&L setting the objective.","risk"]
+]},
+{kind:"Technical • Failed Breakout",title:"The breakout is losing support.",copy:"Price pushed above resistance, stalled, then fell back below the breakout level. A bounce is now testing that same level from underneath.",chart:true,level:52,pre:[49.8,50.3,50.0,50.7,50.4,51.1,50.9,51.5,52.3,52.7,52.2,51.6,51.9],post:[51.7,51.2,50.7,50.1,49.8,49.4],opts:[
+["Buy because price was above resistance earlier.","The information changed.","The breakout failed to hold. Anchoring to where price was earlier ignores what the chart is showing now.","caution"],
+["Short immediately on the first touch.","Possible, but aggressive.","Some strategies enter the retest directly. Others require rejection or confirmation. The important part is knowing which process you actually trade.","caution"],
+["Watch whether the old breakout level now acts as resistance.","Strong read.","A failed breakout can change the role of the level. The retest can tell you whether sellers are actually defending it.","good"],
+["Ignore the level because it already broke once.","The level may matter even more now.","A failed break can make the same area important again as trapped buyers and sellers react around it.","caution"]
+],reveal:{level:52,pre:[49.8,50.3,50.0,50.7,50.4,51.1,50.9,51.5,52.3,52.7,52.2,51.6,51.9],post:[51.7,51.2,50.7,50.1,49.8,49.4],title:"The failed breakout became resistance.",copy:"Price retested the failed breakout area but could not reclaim it. The old breakout level acted as resistance, and price moved lower. Waiting for the retest showed that sellers were defending the level instead of assuming the failed breakout would continue lower."}},
+{kind:"Mixed • Discipline",title:"You are already having a good day.",copy:"You are up $420 after three trades. Later, a stock on your watchlist reaches a setup you planned before the market opened. The setup still looks valid.",images:{before:"wwyd-green-day-clean.png",states:["wwyd-green-day-clean.png","wwyd-green-day-clean.png","wwyd-green-day-clean.png","wwyd-green-day-clean.png"]},psych:["GREEN DAY. ANOTHER SETUP APPEARS.","Is this planned opportunity different from simply wanting more action?"],opts:[
+["Take the setup at my usual size because today's profit shouldn't change how I trade a valid setup.","Reasonable, but only if your rules support it.","Ignoring P&L can prevent fear from controlling you, but daily risk limits and rules for protecting strong days still matter. 'Valid setup' does not automatically mean normal size.","caution"],
+["Take it according to the size and risk rules I defined before the session.","Strong process.","The trade is being judged by rules that existed before today's profit could make you either fearful or overconfident.","good"],
+["Reduce size because I would be more annoyed losing part of today's profit than missing another winner.","The size change is emotional.","Smaller size may reduce the giveback, but changing it because the money now feels harder to lose lets today's P&L rewrite the plan.","caution"],
+["Stop trading for the day even though this is a planned setup, because protecting green is always more disciplined.","Stopping can be disciplined, but 'always' is the problem.","A daily stop-after-profit rule can be valid if it was defined beforehand. Inventing one only because you are currently green is still a P&L-driven decision.","caution"]
+]},
+{kind:"Technical • Support Test",title:"Price is testing support.",copy:"A stock pulled back into support after a strong move. The first bounce was weak. Price is testing the area again and you are considering a long.",chart:true,level:78,pre:[81.5,81.0,80.6,80.1,79.7,79.1,78.5,78.2,78.7,79.0,78.5,78.1,78.3],post:[78.0,77.6,77.2,76.8,77.0,76.5],opts:[
+["Wait for buyers to show me something before entering.","Confirmation over assumption.","If your strategy requires a hold, reclaim, stronger candle or another trigger, waiting keeps the level from becoming the entire reason for the trade.","good"],
+["Buy because support has to hold on the second test.","Support is not a guarantee.","A level is an area to observe, not a promise. A second test can hold, fail or chop, so treating the level itself as the entry signal is an assumption.","risk"],
+["Put the stop far below support so normal movement cannot stop me out.","More room means more risk.","A wider stop may fit some plans, but widening it mainly to avoid being stopped out can distort the trade and increase risk beyond the original setup.","risk"],
+["Enter small now before buyers confirm the hold, using just below support as my stop.","Defined risk helps, but the entry is still anticipating.","Smaller size and a clear stop control risk, but they don't confirm that buyers are defending the level. With the first bounce already weak, you're entering before the market has shown that support will hold.","caution"]
+],reveal:{level:78,pre:[81.5,81.0,80.6,80.1,79.7,79.1,78.5,78.2,78.7,79.0,78.5,78.1,78.3],post:[78.0,77.6,77.2,76.8,77.0,76.5],title:"Support failed to hold.",copy:"The first bounce from support was weak, and buyers never gave a convincing confirmation on the next test. Price eventually broke below the level and continued lower. Waiting for buyers to prove they were defending support kept the level itself from becoming the reason for the trade."}}
+,
+{kind:"Psychology • Overtrading",title:"Nothing is really setting up.",copy:"You have already taken several trades today. The market has slowed down, but you keep scanning because sitting on your hands feels harder than taking another trade.",images:{before:"wwyd-set1-scenario7-overtrading-approved-wide.png",states:["wwyd-set1-scenario7-overtrading-approved-wide.png","wwyd-set1-scenario7-overtrading-approved-wide.png","wwyd-set1-scenario7-overtrading-approved-wide.png","wwyd-set1-scenario7-overtrading-approved-wide.png"]},psych:["THE MARKET IS QUIET. YOU ARE NOT.","There is no clear setup, but the urge to stay involved keeps getting stronger."],opts:[
+["Take one reduced-size trade only if it is close to my setup, since smaller risk gives me room to stay involved.","Smaller risk does not fix weaker criteria.","Reducing size can be useful when a strategy calls for it, but using smaller size to justify a trade that does not actually qualify is still forcing action.","caution"],
+["Switch to another ticker, but require the same setup criteria before entering anything.","Reasonable, but watch the motive.","Looking at another ticker is fine if your normal process calls for it and your standards stay unchanged. But when you are already searching out of boredom, switching tickers can become another way of forcing action.","caution"],
+["Stop scanning for a while and return at a time when my strategy tends to produce better opportunities.","Strong process.","Removing yourself from a low-quality environment can protect both attention and discipline. You are not required to stare at the market until a trade appears.","good"],
+["Keep watching this market and take the first clean-looking breakout, even if it is not one of my normal setups.","The standard quietly changed.","'Clean-looking' can become an excuse when boredom is high. If the trade falls outside your normal process, the need to participate — not the setup — is driving the decision.","risk"]
+],reveal:{level:100,pre:[100.0,100.35,100.05,100.42,100.12,100.28,99.98,100.31,100.08,100.26,100.02,100.22,99.96],post:[100.18,99.94,100.20,99.92,100.16,99.90,100.08],title:"The market stayed choppy.",copy:"Several small moves looked tempting, but none developed into a clean setup. Walking away did not cost you a trade; it protected you from inventing one."}},
+{kind:"Trade Management • Stop Loss",title:"Price is getting close to your stop.",copy:"You entered with a clear invalidation level. Price is now approaching it, but the trade has not stopped you out yet.",images:{before:"wwyd-set1-scenario8-stop-discipline-female.png",states:["wwyd-set1-scenario8-stop-discipline-female.png","wwyd-set1-scenario8-stop-discipline-female.png","wwyd-set1-scenario8-stop-discipline-female.png","wwyd-set1-scenario8-stop-discipline-female.png"]},psych:["YOUR STOP IS GETTING CLOSE.","The uncomfortable part is happening before the trade has actually invalidated."],opts:[
+["Trim part of the position now and leave the original stop on the rest.","This can be valid, but only if it belongs to your management plan.","Reducing exposure is not inherently undisciplined. If the trim is being invented only because the stop feels uncomfortable, fear is still changing the trade.","caution"],
+["Tighten the stop to reduce the loss if price bounces slightly first.","The new stop needs a technical reason.","Reducing risk can be sensible, but moving the stop simply because the planned loss now feels uncomfortable can get you out before the original setup is invalidated.","caution"],
+["Leave the planned stop where it is unless objective new information changes the setup.","The original plan still has a job.","If nothing material has changed, respecting the predefined invalidation keeps emotion from rewriting risk mid-trade.","good"],
+["Exit the full position early because preserving capital is more important than being right.","The principle is sound, but the trigger matters.","Protecting capital matters. Exiting solely because price is near the stop, however, can turn normal discomfort into a new unplanned exit rule.","caution"]
+]},
+{kind:"Technical • Breakout Retest",title:"The breakout is being tested.",copy:"Price broke above resistance, pushed higher, then pulled back toward the breakout level. The next few candles will tell you whether old resistance can become support.",chart:true,level:100,pre:[94,95,96,97,98,99,101,103,105,104,102,101,100.5],post:[100.2,101.3,102.6,104.1,105.4],opts:[
+["Enter a partial position at the breakout area and add only if buyers confirm the hold.","A valid approach for some plans, but more aggressive.","Scaling around a retest can be disciplined when it is predefined and risk is controlled. It accepts less confirmation in exchange for earlier entry.","caution"],
+["Wait for the breakout area to hold and for buyers to respond before entering.","Strong confirmation-based process.","You are using the retest to test whether old resistance can actually become support instead of assuming the first breakout guarantees continuation.","good"],
+["Skip the trade if confirmation comes too far above the level and ruins my risk-to-reward.","Also disciplined.","Confirmation is useful only if the resulting trade still fits your risk and reward criteria. Letting a trade go can be better than forcing a late entry.","good"],
+["Short the first candle that closes back below the level because the breakout has failed.","Potentially valid, but one close may not be enough for your strategy.","A close below the level is useful information, but a failed-breakout trade still needs its own trigger, risk plan and context.","caution"]
+],reveal:{level:100,pre:[94,95,96,97,98,99,101,103,105,104,102,101,100.5],post:[100.2,101.3,102.6,104.1,105.4],title:"The breakout area held.",copy:"Price briefly tested the breakout area before buyers regained control and pushed higher. The retest provided useful information, but the fact that price moved higher afterward doesn't mean every long entry was a good decision."}},
+{kind:"Technical • Support / Resistance",title:"Support just broke.",copy:"Price had bounced from the same support area several times. This time it breaks below the level and then rallies back toward it from underneath.",chart:true,level:100,pre:[106,105,103,102,101,100,102,103,101,100,102,101,99,97,96,98,99.5],post:[99.8,98.9,97.4,96.1,95.2],opts:[
+["Assume the old support will automatically push price back above it.","Levels can change roles.","Once support breaks, the same area may become resistance.","caution"],
+["Short immediately at the low before the retest.","Chasing works in both directions.","Waiting for structure can offer more information than entering after an extended move.","risk"],
+["Buy because the stock is cheaper than it was before the break.","Cheaper does not mean supported.","Price being lower is not a technical reason by itself.","caution"],
+["Watch how price reacts when it retests the broken level from below.","The retest can reveal a role reversal.","If buyers cannot reclaim the level and it holds as resistance, that provides useful confirmation of weakness.","good"]
+],reveal:{level:100,pre:[106,105,103,102,101,100,102,103,101,100,102,101,99,97,96,98,99.5],post:[99.8,98.9,97.4,96.1,95.2],title:"The broken support became resistance.",copy:"Price retested the broken support area but failed to reclaim it. The old support became resistance, and price moved lower. Waiting for the retest provided confirmation instead of guessing."}},
+{kind:"Psychology • FOMO",title:"The stock you passed on is now ripping.",copy:"You watched a setup earlier but decided it was not clean enough to take. Twenty minutes later the stock explodes higher without you.",psych:["YOU SAID NO. THEN IT RIPPED.","The outcome is making the earlier decision suddenly feel wrong."],opts:[
+["Jump in now because clearly I should have taken it earlier.","The outcome is rewriting the decision.","A stock moving afterward does not automatically mean your earlier decision was bad or that the current entry is good.","caution"],
+["Promise myself I will never pass on a setup like that again.","One outcome can create a bad rule.","Changing your standards because one skipped trade worked can train you to chase future situations that are not the same.","caution"],
+["Recheck the setup from where price is now, not from where I wish I entered.","The current trade needs its own reason.","The missed move is history. A new entry should be judged on current structure, risk and confirmation.","good"],
+["Take extra size on the next setup to make up for missing this one.","A missed profit is not a loss to recover.","Sizing the next trade around money you never made lets frustration affect an unrelated decision.","risk"]
+]},
+{kind:"Risk Management • Position Size",title:"The setup looks great, but the stop is wide.",copy:"You find a setup you really like, but the logical invalidation level is farther away than usual. Taking your normal share size would risk much more than you normally allow.",psych:["GREAT SETUP. WIDER STOP.","The chart may look good, but the dollars at risk have changed."],opts:[
+["Use my normal share size because the setup looks especially strong.","Conviction does not erase risk.","A wider stop with the same share size increases the amount you can lose. The quality of the setup does not make that extra risk disappear.","risk"],
+["Reduce the position size so the wider stop still fits my normal risk.","Risk stays consistent.","Adjusting size to the distance of the stop lets the trade breathe without quietly increasing the amount of money at risk.","good"],
+["Move the stop closer just so I can keep my normal size.","The position size is dictating the chart.","A stop should reflect where the setup is invalidated. Moving it only to preserve share size can create a stop that no longer fits the trade.","caution"],
+["Skip the trade if I cannot structure it within my risk rules.","Also disciplined.","A good-looking setup does not have to be taken. If the trade cannot fit your risk plan, passing is a valid decision.","good"]
+]},
+{kind:"Technical • Resistance Rejection",title:"Price keeps rejecting the same resistance.",copy:"Price has tested the same resistance area several times. Each push into the level has been rejected, and the latest attempt is starting to roll over again.",chart:true,level:110,pre:[104,105,106,107,108,109.4,108.7,109.6,108.9,109.8,109.1,109.7,108.8],post:[108.2,107.5,106.8,106.1,105.6],opts:[
+["Buy because repeated tests mean resistance has to break eventually.","Repeated tests are information, not a guarantee.","Resistance can weaken after multiple tests, but price still has to prove it can break and hold. Anticipating the break is different from seeing it happen.","caution"],
+["Ignore resistance because it has already been tested several times.","Repeated interaction can make the level more important.","Multiple reactions around the same area can show that traders are still responding to it. The level should not be dismissed simply because it is familiar.","caution"],
+["Short only because price touched resistance.","The level alone may not be enough.","Some strategies enter directly at resistance, while others require rejection or another trigger. The important part is following the process you actually trade.","caution"],
+["Watch whether sellers defend the level again before making a decision.","Let the level confirm its role.","Another clear rejection can provide information about whether resistance is still controlling price instead of assuming the next move in advance.","good"]
+]},
+{kind:"Psychology • Hesitation",title:"Your setup appears, but the last one lost.",copy:"A setup that matches your plan appears again. The previous time you traded this same setup, it stopped out. Now you are hesitating even though the current trade still meets your rules.",psych:["SAME SETUP. LAST ONE LOST.","The previous outcome is starting to influence the current decision."],opts:[
+["Judge this setup on its current conditions and take it if it still meets my plan.","Process over the last outcome.","If the setup, risk and market conditions still meet your rules, the previous loss does not automatically invalidate the next opportunity.","good"],
+["Skip it because the last trade proved this setup does not work.","One loss is not a verdict.","A valid setup can lose. Judging the next occurrence only by the previous result can make one trade carry more weight than your actual process.","caution"],
+["Take double size because this one is more likely to work after the last loss.","The market does not owe a recovery.","A previous loss does not make the next occurrence more likely to win. Increasing size for that reason turns frustration into additional risk.","risk"],
+["Change the setup rules right now so I feel more confident taking it.","Confidence is rewriting the process.","Rules should be reviewed with enough data, not changed in the moment because one recent loss made the next trade uncomfortable.","caution"]
+]}
+,
+{kind:"Psychology • Profit Taking",title:"The trade is working... but you want out early.",copy:"Your trade is working and the setup is still valid. It has not reached your target, but you are nervous about giving back the open profit.",psych:["THE TRADE IS WORKING. FEAR IS GETTING LOUD.","Nothing about the setup has changed, but seeing green makes protecting the open profit feel urgent."],opts:[
+["Close the whole position now before the profit disappears.","Fear is changing the plan.","Protecting profit can be valid when it is part of your rules. Exiting only because seeing green makes you nervous lets emotion override the plan.","caution"],
+["Move my target closer every time price pauses.","Normal movement is starting to feel dangerous.","A pause does not automatically mean the trade is failing. Constantly moving the target can turn normal price movement into an emotional exit signal.","caution"],
+["Follow the profit-taking plan I decided on before entering.","The plan still has a job.","If the setup and conditions have not changed, following the original plan keeps fear from managing the trade for you.","good"],
+["Add more shares because the trade is already working.","A winner does not make extra risk automatic.","Adding can be part of a defined strategy, but increasing size simply because you are green changes the original risk decision.","caution"]
+]},
+{kind:"Risk Management • Stop Discipline",title:"Your stop is close... and you really don't want to take the loss.",copy:"Price is approaching your planned stop. Nothing about the setup has changed, but you really do not want to take the loss.",psych:["THE STOP DIDN'T MOVE. YOUR FEELINGS DID.","The planned loss suddenly feels much harder to accept now that price is close to making it real."],opts:[
+["Move the stop farther away and give it more room.","Risk is being changed after entry.","Moving the stop because you do not want to take the planned loss increases risk without improving the setup.","risk"],
+["Add shares near the stop so I can recover faster if it bounces.","More size means more risk at the weakest point.","Adding because the trade is losing increases exposure while the original setup is close to invalidation.","risk"],
+["Remove the stop and watch the trade manually.","The protection disappeared when it became uncomfortable.","Removing a planned stop because it may be hit replaces a defined risk decision with an emotional one.","risk"],
+["Keep the original stop and accept the result if it gets hit.","The original risk decision still matters.","If nothing about the setup has changed, respecting the planned stop keeps one uncomfortable trade from becoming a larger unplanned loss.","good"]
+]},
+{kind:"Risk • Averaging Down",title:"The stock is cheaper now. Should you add?",copy:"Your trade is losing. You did not plan to add, but buying more shares now would lower your average price.",psych:["LOWER PRICE. BIGGER TEMPTATION.","A lower average can feel like progress even though your total exposure and risk are increasing."],opts:[
+["Do not add unless adding was already part of a defined setup and risk plan.","Risk stays consistent.","A planned scale-in can be valid. An emotional average-down after the trade moves against you is a different decision.","good"],
+["Add shares because lowering my average makes it easier to get back to breakeven.","Breakeven is becoming the goal.","Lowering your average does not repair the setup. Adding without a preplanned reason increases exposure because the trade is losing.","risk"],
+["Double the position because the stock is now a better bargain.","Cheaper does not automatically mean better.","Price being lower does not prove the setup improved. Doubling size can turn a manageable loss into a much larger one.","risk"],
+["Move my stop lower first, then add shares.","Two risk changes do not create a better setup.","Widening the stop and increasing size compounds risk when the original trade is already under pressure.","risk"]
+]},
+{kind:"Technical • Choppy Market",title:"The chart keeps breaking levels... then reversing.",copy:"Price has no clean direction. Breakouts and breakdowns keep failing, but you have been waiting and are starting to feel like you should trade something.",chart:true,level:100,pre:[100,102,99,101.5,98.8,101,99.4,102.1,100.2,98.9,101.2,99.7,100.8,99.5,101.1],post:[99.8,100.6,99.4,100.9,100.1],opts:[
+["Trade every break because eventually one has to work.","More attempts do not create cleaner structure.","Repeated failed breaks are evidence that conditions are messy. Taking every signal can turn chop into overtrading.","risk"],
+["Increase size so a small move is still worth trading.","Position size cannot fix poor conditions.","More size increases the consequence of being wrong without making the chart any cleaner.","risk"],
+["Stay out until price shows cleaner structure or my setup actually appears.","Staying flat is valid.","No trade is a valid decision when the market is not offering the conditions your setup needs.","good"],
+["Pick a direction and hold until the market finally chooses it.","Conviction does not create structure.","When price is repeatedly reversing, deciding what the market must do can keep you trapped in a low-quality environment.","risk"]
+]},
+{kind:"Trade Management • New Information",title:"Unexpected news hits while you're already in the trade.",copy:"Your setup was valid when you entered. Then unexpected company news hits, price reacts sharply, and the conditions may have changed.",psych:["THE INFORMATION CHANGED.","Discipline does not mean pretending new information never happened."],opts:[
+["Ignore the news completely because changing the plan is always undisciplined.","Discipline is not blind stubbornness.","A plan is based on information and assumptions. Material new information can justify reassessing whether the original trade still makes sense.","risk"],
+["Panic out without checking what changed or where my risk is.","Urgency is making the decision.","Exiting may ultimately be appropriate, but reacting before understanding the new information turns the decision into panic rather than reassessment.","caution"],
+["Immediately double down because the first reaction is probably an overreaction.","A guess is replacing risk management.","News can create uncertainty and volatility. Assuming the market must reverse is not the same as having a defined setup.","risk"],
+["Reassess the trade using the new information and my risk rules.","Adapting can still be disciplined.","When circumstances materially change, reassessing risk is different from changing a plan simply because you feel uncomfortable.","good"]
+]},
+{kind:"Psychology • Greed",title:"Your planned target hits... but now you want more.",copy:"Price reaches the target you planned before entering, but momentum is still strong. Now taking the profit feels like leaving money on the table.",psych:["THE TARGET HIT. NOW THE PLAN FEELS TOO SMALL.","Greed often arrives after the trade works, when a good outcome starts feeling like it should have been bigger."],opts:[
+["Ignore the target and hold everything because momentum looks strong.","The goalposts moved after success.","Momentum can continue, but abandoning the entire exit plan only because the trade is working lets greed rewrite a decision made when you were calmer.","caution"],
+["Follow my planned exit, or manage a runner only if that was part of my rules.","Process over the last outcome.","A defined runner can leave room for more upside without turning the entire position into an improvised decision.","good"],
+["Raise the target every time price gets close to it.","A finish line that keeps moving is not really a plan.","Constantly moving the target can turn a successful trade into a test of how much profit you are willing to give back.","caution"],
+["Add more shares at the target because the move has proven me right.","Being right does not erase risk.","Adding after an extended move simply because the trade worked changes both your entry quality and your exposure.","risk"]
+]}
+];
+const S=ALL.slice(0,10);
+let i=0,done=false; const scores=new Array(S.length).fill(null); const $=x=>document.getElementById(x);
+function psych(a){return `<div class="wwyd-psych"><div class="wwyd-scene"><div class="wwyd-person"></div><div class="wwyd-screen"><strong>${a[0]}</strong><p>${a[1]}</p></div></div></div>`}
+function candleData(c){return c.map((v,j)=>{let prev=j?c[j-1]:v-.25,o=prev+((j%3)-1)*.1;return{o,h:Math.max(o,v)+.28,l:Math.min(o,v)-.27,c:v}})}
+function chart(c,level){let d=candleData(c),W=860,H=310,L=45,R=20,T=18,B=25,v=d.flatMap(x=>[x.h,x.l]).concat([level]),mn=Math.min(...v)-.4,mx=Math.max(...v)+.4,y=x=>T+(mx-x)/(mx-mn)*(H-T-B),st=(W-L-R)/d.length,bw=Math.max(7,st*.43),s='';for(let k=0;k<5;k++){let yy=T+k*(H-T-B)/4;s+=`<line x1="${L}" y1="${yy}" x2="${W-R}" y2="${yy}" stroke="#17283a"/>`}s+=`<line x1="${L}" y1="${y(level)}" x2="${W-R}" y2="${y(level)}" stroke="#4d9aeb" stroke-width="2" stroke-dasharray="7 6"/><text x="${W-R-4}" y="${y(level)-7}" text-anchor="end" fill="#7ebaff" font-size="13">Key level ${level.toFixed(2)}</text>`;d.forEach((x,j)=>{let xx=L+st*(j+.5),up=x.c>=x.o,col=up?'#5ac68d':'#e36f78',top=Math.min(y(x.o),y(x.c)),bot=Math.max(y(x.o),y(x.c));s+=`<line x1="${xx}" y1="${y(x.h)}" x2="${xx}" y2="${y(x.l)}" stroke="${col}" stroke-width="2"/><rect x="${xx-bw/2}" y="${top}" width="${bw}" height="${Math.max(3,bot-top)}" fill="${col}"/>`});return `<div class="wwyd-chartcap"><span>Candlestick scenario</span><span>Future candles hidden</span></div><svg class="wwyd-chart" viewBox="0 0 860 310">${s}</svg>`}
+function alignScenario(){
+  const el=$("wwyd-anchor");
+  if(!el)return;
+  const y=el.getBoundingClientRect().top + window.scrollY - 118;
+  window.scrollTo({top:y,behavior:"auto"});
+}
+function render(){done=false;let s=S[i];$("prev").style.display=(i===0)?"none":"inline-block";$("kind").textContent=s.kind;$("num").textContent=`${i+1} of 10`;$("title").textContent=s.title;$("copy").textContent=s.copy;$("visual").className="wwyd-visual"+(i===6?" wwyd-s7-fill":"");$("visual").innerHTML=s.chart?chart(s.pre,s.level):(s.images?`<img class="wwyd-psych-img" src="${s.images.before}" alt="Cartoon trading psychology scenario">`:psych(s.psych));$("options").innerHTML="";$("next").textContent=(i===S.length-1)?"See My Result →":"Next Scenario →";$("feedback").classList.remove("show","level-good","level-caution","level-risk");$("revealbox").classList.remove("show");$("reveal").style.display="none";s.opts.forEach((o,n)=>{let b=document.createElement("button");b.className="wwyd-option";b.innerHTML=`<span class="wwyd-choice-letter">${String.fromCharCode(65+n)}.</span><span class="wwyd-choice-text">${o[0]}</span>`;b.onclick=()=>pick(n,b);$("options").appendChild(b)})}
+
+function feedbackLevel(title, explicitLevel){
+  if(explicitLevel) return explicitLevel;
+  const t=title.toLowerCase();
+  const good=[
+    "disciplined response","strong process","also disciplined","strong reset","strong read",
+    "confirmation over assumption","staying flat is valid","reasonable process","also reasonable",
+    "original plan still has a job","retest can provide confirmation","retest can reveal a role reversal",
+    "current trade needs its own reason","risk stays consistent","process over the last outcome",
+    "no setup is also information","let the level confirm its role"
+  ];
+  const risk=[
+    "fomo may be making the decision","emotion is changing the risk","goal has changed",
+    "smaller risk does not fix the reason","high-risk revenge behavior","information changed",
+    "risk changed for the wrong reason","risk is being changed after entry",
+    "lower price is not automatically a better setup","levels can change roles",
+    "cheaper does not mean supported","outcome is rewriting the decision",
+    "one outcome can create a bad rule","missed profit is not a loss to recover",
+    "conviction does not erase risk","position size is dictating the chart",
+    "market does not owe a recovery","confidence is rewriting the process",
+    "activity is becoming the goal","rules are moving with your boredom",
+    "new ticker does not fix the reason for trading","more room means more risk"
+  ];
+  if(good.some(x=>t.includes(x))) return "good";
+  if(risk.some(x=>t.includes(x))) return "risk";
+  return "caution";
+}
+
+
+function keepFeedbackReachable(){
+  requestAnimationFrame(()=>{
+    const fb=document.getElementById("feedback");
+    if(!fb)return;
+    const r=fb.getBoundingClientRect();
+    const vh=window.innerHeight;
+    if(r.bottom>vh-10){
+      window.scrollBy({top:Math.min(r.bottom-(vh-10),120),behavior:"smooth"});
+    }
+  });
+}
+
+function pick(n,b){if(done)return;done=true;let s=S[i],o=s.opts[n],level=feedbackLevel(o[1],o[3]);if(scores[i]===null)scores[i]=level;[...$("options").children].forEach(x=>x.disabled=true);b.classList.add("chosen","level-"+level);$("fbtitle").textContent=o[1];$("fbcopy").textContent=o[2];$("feedback").classList.remove("level-good","level-caution","level-risk");$("feedback").classList.add("show","level-"+level);keepFeedbackReachable();if(s.chart||s.reveal)$("reveal").style.display="inline-block"}
+$("reveal").onclick=()=>{let s=S[i];if(s.reveal){let r=s.reveal;$("revealbox").innerHTML=`<div class="wwyd-visual" style="margin-bottom:0"><div class="wwyd-chartcap"><span>${r.title}</span><span>Outcome ≠ decision quality</span></div>${chart(r.pre.concat(r.post),r.level).replace(/<div class="wwyd-chartcap">.*?<\/div>/,'')}<p class="wwyd-copy" style="margin:10px 4px 0">${r.copy}</p></div>`;}else{$("revealbox").innerHTML=`<div class="wwyd-visual" style="margin-bottom:0"><div class="wwyd-chartcap"><span>What happened next</span><span>Outcome ≠ decision quality</span></div>${chart(s.pre.concat(s.post),s.level).replace(/<div class="wwyd-chartcap">.*?<\/div>/,'')}</div>`;}$("revealbox").classList.add("show");$("reveal").style.display="none"};
+$("prev").onclick=()=>{if(i===0)return;i--;render();requestAnimationFrame(alignScenario);};
+$("retry").onclick=()=>{done=false;let s=S[i];[...$("options").children].forEach(x=>{x.disabled=false;x.classList.remove("chosen","level-good","level-caution","level-risk")});$("feedback").classList.remove("show","level-good","level-caution","level-risk");$("revealbox").classList.remove("show");$("reveal").style.display="none";if(s.images){$("visual").innerHTML=`<img class="wwyd-psych-img" src="${s.images.before}" alt="Cartoon trading psychology scenario">`;}else if(s.chart){$("visual").innerHTML=chart(s.pre,s.level);}else{$("visual").innerHTML=psych(s.psych);}};
+function showResult(){
+  const answered=scores.filter(Boolean).length;
+  const good=scores.filter(x=>x==="good").length, caution=scores.filter(x=>x==="caution").length, risk=scores.filter(x=>x==="risk").length;
+  let cls,title,badge,copy,rule,art;
+  if(good>=7 && risk<=1){cls="strong";badge="Strong Discipline";title="You kept the process in control.";copy="Across this set, you consistently favored patience, defined risk and planned decisions over impulse. That does not guarantee winning trades. It does mean the decision process stayed in charge.";rule="Good trading is not about making the perfect decision. It is about making fewer decisions you will regret.";art="Strong discipline result scene";}
+  else if(risk>=4 || good<=3){cls="work";badge="Discipline Needs Work";title="The Saboteur won this round.";copy="Several choices let urgency, hope or emotion change the plan. That is useful information. The point is not to feel bad about the score. It is to notice which situations keep pulling you away from your process.";rule="A bad habit is easier to work on once you can see when it shows up.";art="Saboteur result scene";}
+  else{cls="mixed";badge="Mixed Discipline";title="Good decisions... with a few leaks.";copy="You showed discipline in several situations, but a few choices still let emotion or uncertainty bend the process. Those middle-ground decisions are often where trading habits hide.";rule="Consistency comes from protecting the process when the decision gets uncomfortable.";art="Trader vs. Saboteur result scene";}
+  const r=$("result-card");r.className="wwyd-card wwyd-result show "+cls;$("result-badge").textContent=badge;$("result-title").textContent=title;$("result-copy").textContent=copy;$("result-score").textContent=`${good} disciplined • ${caution} caution • ${risk} high-risk`;$("result-rule").textContent=rule;
+  const resultImg=$("result-art-img");
+  if(cls==="mixed"){
+    resultImg.src="wwyd-result-mixed-discipline.png";
+    resultImg.alt="Trader reviewing a mixed-discipline trading journal";
+  }else if(cls==="strong"){
+    resultImg.src="wwyd-result-strong-discipline.png";
+    resultImg.alt="Veteran trader reviewing a disciplined trading journal";
+  }else{
+    resultImg.src="wwyd-result-needs-work.png";
+    resultImg.alt="Trader reviewing high-risk decisions while the Saboteur takes over the trading chair";
+  }
+  $("scenario-card").style.display="none";r.scrollIntoView({behavior:"auto",block:"start"});
+}
+$("next").onclick=()=>{if(i===S.length-1){if(!scores[i])return;showResult();return;}i++;render();requestAnimationFrame(alignScenario)};
+$("startover").onclick=()=>{
+  if(i===0 && !done)return;
+  if(!window.confirm("Start over Set 1? This will clear your answers for this set."))return;
+  i=0;done=false;scores.fill(null);render();
+  requestAnimationFrame(alignScenario);
+};
+$("restart-set").onclick=()=>{scores.fill(null);i=0;done=false;$("result-card").className="wwyd-card wwyd-result";$("scenario-card").style.display="block";render();requestAnimationFrame(alignScenario);};
+
+const backToSets=$("back-to-sets");
+const leaveModal=$("leave-set-modal");
+const stayHere=$("stay-here");
+backToSets.addEventListener("click",(e)=>{
+  const hasProgress=scores.some(v=>v!==null);
+  if(!hasProgress)return;
+  e.preventDefault();
+  leaveModal.hidden=false;
+  stayHere.focus();
+});
+stayHere.addEventListener("click",()=>{leaveModal.hidden=true;backToSets.focus();});
+leaveModal.addEventListener("click",(e)=>{if(e.target===leaveModal){leaveModal.hidden=true;backToSets.focus();}});
+document.addEventListener("keydown",(e)=>{if(e.key==="Escape"&&!leaveModal.hidden){leaveModal.hidden=true;backToSets.focus();}});
+render();
+})();
+</script>
+<footer class="site-footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand">
+<strong>Dagger Trading</strong>
+<p class="footer-slogan">“Wait for confirmation, not assumption.”</p>
+<p>Market Psychology • Patience • Risk Management</p>
+</div>
+<nav aria-label="Footer navigation" class="footer-links">
+<a href="index.html">Home</a>
+<a href="comics.html">Comics</a>
+<a href="learn.html">Learn</a>
+<a href="dagger-check.html">Dagger Check</a>
+<a href="market-notes.html">Market Notes</a>
+<a href="toolbox.html">Market Center</a>
+<a href="resources.html">Trading Resources</a><a href="merch.html">Merch</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+<a href="https://x.com/DaggerTrading" rel="noopener noreferrer" target="_blank">X / Twitter</a>
+</nav>
+</div>
+<p class="disclaimer">
+      Content is provided for educational and informational purposes only and should not
+      be considered financial advice. Trading and investing involve risk, including the
+      possible loss of principal.
+    </p>
+<p class="copyright">© <span data-year=""></span> Dagger Trading. All Rights Reserved.</p>
+</div>
+</footer>
+<script src="js/script.js"></script>
+<script id="dagger-unified-dropdown-nav">
+(function(){
+  const defs = [
+    ['.nav-learn', '.nav-learn-button'],
+    ['.nav-tools', '.nav-tools-button'],
+    ['.nav-market', '.nav-market-button'],
+    ['.nav-resources', '.nav-resources-button'],
+    ['.nav-more', '.nav-more-button']
+  ];
+
+  const items = defs.map(function(pair){
+    const root = document.querySelector(pair[0]);
+    if (!root) return null;
+    const btn = root.querySelector(pair[1]);
+    if (!btn) return null;
+    return { root: root, btn: btn };
+  }).filter(Boolean);
+
+  function closeAll(exceptRoot){
+    items.forEach(function(item){
+      if (item.root !== exceptRoot) {
+        item.root.classList.remove('open');
+        item.btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  items.forEach(function(item){
+    item.btn.addEventListener('click', function(e){
+      e.preventDefault();
+      e.stopPropagation();
+
+      const wasOpen = item.root.classList.contains('open');
+      closeAll(item.root);
+
+      item.root.classList.toggle('open', !wasOpen);
+      item.btn.setAttribute('aria-expanded', !wasOpen ? 'true' : 'false');
+    });
+  });
+
+  document.addEventListener('click', function(e){
+    items.forEach(function(item){
+      if (!item.root.contains(e.target)) {
+        item.root.classList.remove('open');
+        item.btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') {
+      closeAll(null);
+    }
+  });
+})();
+</script>
+
+<script id="dagger-tools-mobile-submenu-toggle">
+(function(){
+  function isMobile(){ return window.matchMedia('(max-width: 900px)').matches; }
+
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest('.nav-tools-group-button');
+    if (!btn || !isMobile()) return;
+    e.preventDefault();
+    e.stopPropagation();
+    var group = btn.closest('.nav-tools-group');
+    if (!group) return;
+    var wasOpen = group.classList.contains('submenu-open');
+    group.classList.toggle('submenu-open', !wasOpen);
+    btn.setAttribute('aria-expanded', wasOpen ? 'false' : 'true');
+  });
+
+  document.addEventListener('click', function(e){
+    if (!isMobile()) return;
+    if (!e.target.closest('.nav-tools')) {
+      document.querySelectorAll('.nav-tools-group.submenu-open').forEach(function(group){
+        group.classList.remove('submenu-open');
+        var btn = group.querySelector('.nav-tools-group-button');
+        if (btn) btn.setAttribute('aria-expanded','false');
+      });
+    }
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <link rel="icon" href="/favicon.ico?v=2" sizes="any">
+  <link rel="icon" type="image/png" href="/favicon.png?v=2">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
+
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Browse Dagger Trading Stock Spotlights, including AVGO, DELL, NVDA, MRNA, MU, CSCO and SPCX." name="description"/>
+<title>Spotlight Archive | Dagger Trading</title>
+<link href="css/style.css?v=20260821-menu-scroll-v3" rel="stylesheet"/>
+<link href="css/v2.css" rel="stylesheet"/>
+<link href="css/resources-v3.css" rel="stylesheet"/>
+<style>
+.nav-learn,.nav-tools,.nav-more{position:relative}
+.nav-learn-button,.nav-tools-button,.nav-more-button{border:0;background:transparent;color:inherit;font:inherit;cursor:pointer;padding:0}
+.nav-learn-menu,.nav-tools-menu,.nav-more-menu{display:none;position:absolute;top:calc(100% + 12px);min-width:220px;padding:10px;border:1px solid var(--line);border-radius:12px;background:#0d1118;box-shadow:0 16px 40px rgba(0,0,0,.28);z-index:100}
+.nav-learn-menu,.nav-tools-menu{left:0}.nav-more-menu{right:0}
+.nav-learn.open .nav-learn-menu,.nav-tools.open .nav-tools-menu,.nav-more.open .nav-more-menu{display:grid;gap:4px}
+.nav-learn-menu a,.nav-tools-menu a,.nav-more-menu a{display:block;padding:10px 12px;border-radius:8px;white-space:nowrap}
+.nav-learn-menu a:hover,.nav-tools-menu a:hover,.nav-more-menu a:hover{background:rgba(47,140,255,.10)}
+
+.spotlights-hero{padding:76px 0 34px}
+.spotlights-hero h1{font-size:clamp(3.4rem,7vw,6rem);line-height:.95;margin:10px 0 18px;letter-spacing:-.045em}
+.spotlights-hero h1 span{color:var(--accent)}
+.spotlights-hero p:last-child{max-width:720px;color:var(--muted);font-size:1.05rem;line-height:1.7}
+
+.latest-spotlight{padding-top:26px}
+.latest-card{display:grid;grid-template-columns:.8fr 1.2fr;gap:26px;padding:28px;border:1px solid rgba(76,158,255,.55);border-radius:20px;background:linear-gradient(145deg,rgba(21,57,97,.98),rgba(8,22,39,.98));align-items:center}
+.latest-ticker{font-size:clamp(4.4rem,9vw,7rem);font-weight:900;letter-spacing:-.06em;color:var(--text)}
+.latest-copy .tag{margin-bottom:12px}
+.latest-copy h2{font-size:clamp(2rem,4vw,3rem);margin:0 0 12px}
+.latest-copy p{color:var(--muted);line-height:1.7}
+.latest-copy .actions{margin-top:22px}
+
+.archive-section{padding-top:64px}
+.archive-head h2{font-size:clamp(2.2rem,4vw,3.4rem);margin:6px 0 0}
+.archive-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
+.spotlight-card{display:flex;flex-direction:column;min-height:315px;padding:24px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(150deg,rgba(16,31,51,.98),rgba(7,16,28,.97))}
+.spotlight-card h3{font-size:1.75rem;margin:14px 0 8px}
+.spotlight-card p{color:var(--muted);line-height:1.6}
+.spotlight-card .actions{margin-top:auto;padding-top:18px}
+.spotlight-meta{font-size:.82rem;color:var(--accent2);font-weight:800;letter-spacing:.04em;text-transform:uppercase}
+
+.living-note{margin-top:28px;padding:20px 22px;border:1px solid var(--line);border-radius:16px;background:rgba(47,140,255,.045)}
+.living-note strong{display:block;margin-bottom:6px}
+.living-note p{margin:0;color:var(--muted);line-height:1.65}
+
+.back-link{margin-top:30px}
+
+@media(max-width:900px){
+  .nav-learn,.nav-tools,.nav-more{position:static}
+  .nav-learn-button,.nav-tools-button,.nav-more-button{display:none}
+  .nav-learn-menu,.nav-tools-menu,.nav-more-menu{display:contents;position:static;min-width:0;padding:0;border:0;background:transparent;box-shadow:none}
+  .latest-card{grid-template-columns:1fr}
+  .archive-grid{grid-template-columns:1fr}
+}
+
+/* Market Notes archive submenu */
+.nav-market-archives{position:relative}
+.nav-market-archives-button{width:100%;border:0;background:transparent;color:inherit;font:inherit;font-weight:600;text-align:left;padding:12px 14px;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+.nav-market-archives-button:hover,.nav-market-archives-button:focus{color:#4da3ff;background:rgba(77,163,255,.08)}
+.nav-market-archives-menu{display:none;position:absolute;left:100%;top:0;min-width:210px;background:#0b1625;border:1px solid #24384f;border-radius:10px;padding:6px;box-shadow:0 12px 28px rgba(0,0,0,.28);z-index:1001}
+.nav-market-archives:hover>.nav-market-archives-menu,.nav-market-archives:focus-within>.nav-market-archives-menu{display:block}
+.nav-market-archives-menu a{display:block;white-space:nowrap}
+@media (max-width:800px){.nav-market-archives-menu{position:static;min-width:0;border:0;border-radius:0;box-shadow:none;background:transparent;padding:0 0 0 12px}}
+</style>
+<style id="dagger-market-dropdown-nav">
+.nav-market{position:relative}.nav-market-button{border:0;background:transparent;color:inherit;font:inherit;cursor:pointer;padding:0}
+.nav-market-menu{display:none;position:absolute;top:calc(100% + 12px);left:0;min-width:220px;padding:10px;border:1px solid var(--line);border-radius:12px;background:#0d1118;box-shadow:0 16px 40px rgba(0,0,0,.28);z-index:100}
+.nav-market.open .nav-market-menu{display:grid;gap:4px}.nav-market-menu a{display:block;padding:10px 12px;border-radius:8px;white-space:nowrap}.nav-market-menu a:hover{background:rgba(47,140,255,.10)}
+@media(max-width:900px){.nav-market{position:static}.nav-market-button{display:none}.nav-market-menu{display:contents;position:static;min-width:0;padding:0;border:0;background:transparent;box-shadow:none}}
+</style>
+<style id="dagger-resources-dropdown-nav">
+.nav-resources{position:relative}
+.nav-resources-button{border:0;background:transparent;color:inherit;font:inherit;cursor:pointer;padding:0}
+.nav-resources-menu{display:none;position:absolute;top:calc(100% + 12px);right:0;min-width:230px;padding:10px;border:1px solid var(--line);border-radius:12px;background:#0d1118;box-shadow:0 16px 40px rgba(0,0,0,.28);z-index:100}
+.nav-resources.open .nav-resources-menu{display:grid;gap:4px}
+.nav-resources-menu a{display:block;padding:10px 12px;border-radius:8px;white-space:nowrap}
+.nav-resources-menu a:hover{background:rgba(47,140,255,.10)}
+@media(max-width:900px){
+  .nav-resources{position:static}
+  .nav-resources-button{display:none}
+  .nav-resources-menu{display:contents;position:static;min-width:0;padding:0;border:0;background:transparent;box-shadow:none}
+}
+</style>
+
+<style id="dagger-tools-submenus">
+.nav-tools-group{position:relative}
+.nav-tools-group-button{width:100%;border:0;background:transparent;color:inherit;font:inherit;font-weight:600;text-align:left;padding:10px 12px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;border-radius:8px;white-space:nowrap}
+.nav-tools-group-button:hover,.nav-tools-group-button:focus{color:#4da3ff;background:rgba(47,140,255,.10)}
+.nav-tools-group-menu{display:none;position:absolute;left:100%;top:0;min-width:230px;background:#0d1118;border:1px solid var(--line);border-radius:12px;padding:8px;box-shadow:0 16px 40px rgba(0,0,0,.28);z-index:1100}
+.nav-tools-group:hover>.nav-tools-group-menu,.nav-tools-group:focus-within>.nav-tools-group-menu{display:grid;gap:4px}
+@media(max-width:900px){
+ .nav-tools-group{position:static}
+ .nav-tools-group-button{padding:10px 12px;color:#9fcaff}
+ .nav-tools-group-button::first-letter{}
+ .nav-tools-group-menu{display:none;position:static;min-width:0;border:0;border-radius:0;box-shadow:none;background:transparent;padding:0 0 4px 14px}
+ .nav-tools-group.submenu-open>.nav-tools-group-menu{display:grid;gap:2px}
+}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="container navbar"><a class="brand" href="index.html"><span class="brand-mark">🗡️</span><span>DAGGER <strong>TRADING</strong></span></a><button class="menu-button">Menu</button><nav class="nav-links">
+<a href="index.html">Home</a>
+<div class="nav-learn"><button aria-expanded="false" class="nav-learn-button" type="button">Learn ▾</button><div class="nav-learn-menu"><a href="learn.html">Learn Home</a><a href="learn-trading-basics.html">Trading Basics</a><a href="learn-trading-psychology.html">Trading Psychology</a>
+<a href="what-would-you-do.html">What Would You Do? 🎮</a></div></div>
+<div class="nav-tools"><button aria-expanded="false" class="nav-tools-button" type="button">Trader Tools ▾</button><div class="nav-tools-menu">
+<a href="trader-tools.html">Trader Tools Home</a>
+<div class="nav-tools-group"><button aria-expanded="false" class="nav-tools-group-button" type="button">Interactive Tools ›</button><div class="nav-tools-group-menu"><a href="dagger-check.html">Dagger Check</a><a href="dagger-setup-score.html">Dagger Setup Score</a><a href="should-i-take-this-trade.html">Should I Take This Trade?</a></div></div>
+<div class="nav-tools-group"><button aria-expanded="false" class="nav-tools-group-button" type="button">Trading Checklists ›</button><div class="nav-tools-group-menu"><a href="dagger-trading-checklist.html">Dagger Trading Checklist</a><a href="dagger-swing-trade-checklist.html">Dagger Swing Trade Checklist</a></div></div>
+</div>
+</div>
+<div class="nav-market"><button aria-expanded="false" class="nav-market-button" type="button">Market Notes ▾</button><div class="nav-market-menu"><a href="market-notes.html">Market Notes Home</a><a href="week-ahead-september-14-18-2026.html">Latest Week Ahead</a><a href="weekly-market-wrap-september-11-2026.html">Latest Market Wrap</a><a href="stock-spotlights.html">Stock Spotlights</a><div class="nav-market-archives"><button aria-expanded="false" class="nav-market-archives-button" type="button">Archives ›</button><div class="nav-market-archives-menu"><a href="market-notes-archive.html">Market Notes Archive</a><a href="spotlight-archive.html">Spotlight Archive</a></div></div></div></div>
+<div class="nav-resources">
+<button aria-expanded="false" class="nav-resources-button" type="button">Trading Resources ▾</button>
+<div class="nav-resources-menu">
+<a href="resources.html">Resources Home</a>
+<a href="resources.html#books">Books &amp; Amazon Picks</a>
+<a href="resources.html#platforms">Trading Platforms</a>
+<a href="resources.html#market-tools">Market Tools &amp; Research</a>
+<a href="resources.html#official-sources">Official Market Sources</a>
+</div>
+</div>
+<div class="nav-more"><button aria-expanded="false" class="nav-more-button" type="button">More ▾</button><div class="nav-more-menu"><a href="comics.html">Comics</a><a href="toolbox.html">Market Center</a><a href="merch.html">Merch</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="https://x.com/DaggerTrading" rel="noopener noreferrer" target="_blank">X / Twitter</a></div></div>
+</nav></div></header>
+<main>
+<style>
+.archive-months{display:grid;gap:16px;margin-top:26px}
+.archive-month{border:1px solid rgba(96,165,250,.28);border-radius:16px;background:rgba(15,30,49,.72);overflow:hidden}
+.archive-month summary{cursor:pointer;list-style:none;padding:20px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px;font-weight:800;font-size:1.05rem}
+.archive-month summary::-webkit-details-marker{display:none}
+.archive-month summary:after{content:"＋";font-size:1.35rem;color:#60a5fa}
+.archive-month[open] summary:after{content:"−"}
+.archive-month-meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.archive-count{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:#93c5fd;border:1px solid rgba(96,165,250,.35);padding:5px 9px;border-radius:999px}
+.archive-list{border-top:1px solid rgba(148,163,184,.18);padding:4px 22px 10px}
+.archive-row{display:grid;grid-template-columns:88px 1fr auto;align-items:center;gap:18px;padding:18px 0;border-bottom:1px solid rgba(148,163,184,.15)}
+.archive-row:last-child{border-bottom:0}
+.archive-ticker{font-weight:900;letter-spacing:.12em;color:#60a5fa}
+.archive-title strong{display:block;color:#f8fafc;margin-bottom:5px}
+.archive-title span{color:#9fc4e8;font-size:.9rem}
+.archive-link{white-space:nowrap;text-decoration:none;font-weight:800;border:1px solid rgba(96,165,250,.35);border-radius:10px;padding:9px 13px;color:#f8fafc}
+.archive-link:hover{border-color:#60a5fa}
+.archive-year{margin-top:32px;font-size:1.35rem}
+.archive-empty{margin-top:24px;padding:28px;border:1px dashed rgba(96,165,250,.38);border-radius:16px;background:rgba(15,30,49,.52)}
+.archive-empty h3{margin-top:0}
+@media(max-width:720px){
+ .archive-row{grid-template-columns:1fr;gap:8px}
+ .archive-link{justify-self:start}
+}
+</style>
+<section class="section">
+<div class="container">
+<div class="section-heading">
+<p class="eyebrow">Historical Coverage</p>
+<h2>Spotlight Archive</h2>
+<p>When a Stock Spotlight is replaced by newer analysis on the same ticker, the older Spotlight will move here. Archived coverage will be grouped by the original Spotlight publication month.</p>
+</div>
+<h3 class="archive-year">2026</h3><div class="archive-months"><details class="archive-month"><summary><span class="archive-month-meta"><span>August 2026</span><span class="archive-count">1 archived spotlight</span></span></summary><div class="archive-list"><div class="archive-row"><div class="archive-ticker">SPCX</div><div class="archive-title"><strong>Original SPCX Spotlight &amp; Updates</strong><span>August 6, 2026</span></div><a class="archive-link" href="spcx-stock-spotlight-august-2026.html">View →</a></div></div></details></div>
+</div>
+</section>
+</main>
+<footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><strong>Dagger Trading</strong><p class="footer-slogan">“Wait for confirmation, not assumption.”</p><p>Market Psychology • Patience • Risk Management</p></div><nav aria-label="Footer navigation" class="footer-links"><a href="index.html">Home</a><a href="comics.html">Comics</a><a href="learn.html">Learn</a><a href="trader-tools.html">Trader Tools</a><a href="market-notes.html">Market Notes</a><a href="toolbox.html">Market Center</a><a href="resources.html">Trading Resources</a><a href="merch.html">Merch</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="https://x.com/DaggerTrading" rel="noopener noreferrer" target="_blank">X / Twitter</a></nav></div><p class="disclaimer">Content is provided for educational and informational purposes only and should not be considered financial advice. Trading and investing involve risk, including the possible loss of principal.</p><p class="copyright">© <span data-year=""></span> Dagger Trading. All Rights Reserved.</p></div></footer>
+<script src="js/script.js"></script>
+<script id="dagger-unified-dropdown-nav">
+(function(){
+  const defs = [
+    ['.nav-learn', '.nav-learn-button'],
+    ['.nav-tools', '.nav-tools-button'],
+    ['.nav-market', '.nav-market-button'],
+    ['.nav-resources', '.nav-resources-button'],
+    ['.nav-more', '.nav-more-button']
+  ];
+
+  const items = defs.map(function(pair){
+    const root = document.querySelector(pair[0]);
+    if (!root) return null;
+    const btn = root.querySelector(pair[1]);
+    if (!btn) return null;
+    return { root: root, btn: btn };
+  }).filter(Boolean);
+
+  function closeAll(exceptRoot){
+    items.forEach(function(item){
+      if (item.root !== exceptRoot) {
+        item.root.classList.remove('open');
+        item.btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  items.forEach(function(item){
+    item.btn.addEventListener('click', function(e){
+      e.preventDefault();
+      e.stopPropagation();
+
+      const wasOpen = item.root.classList.contains('open');
+      closeAll(item.root);
+
+      item.root.classList.toggle('open', !wasOpen);
+      item.btn.setAttribute('aria-expanded', !wasOpen ? 'true' : 'false');
+    });
+  });
+
+  document.addEventListener('click', function(e){
+    items.forEach(function(item){
+      if (!item.root.contains(e.target)) {
+        item.root.classList.remove('open');
+        item.btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') {
+      closeAll(null);
+    }
+  });
+})();
+</script>
+
+<script id="dagger-tools-mobile-submenu-toggle">
+(function(){
+  function isMobile(){ return window.matchMedia('(max-width: 900px)').matches; }
+
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest('.nav-tools-group-button');
+    if (!btn || !isMobile()) return;
+    e.preventDefault();
+    e.stopPropagation();
+    var group = btn.closest('.nav-tools-group');
+    if (!group) return;
+    var wasOpen = group.classList.contains('submenu-open');
+    group.classList.toggle('submenu-open', !wasOpen);
+    btn.setAttribute('aria-expanded', wasOpen ? 'false' : 'true');
+  });
+
+  document.addEventListener('click', function(e){
+    if (!isMobile()) return;
+    if (!e.target.closest('.nav-tools')) {
+      document.querySelectorAll('.nav-tools-group.submenu-open').forEach(function(group){
+        group.classList.remove('submenu-open');
+        var btn = group.querySelector('.nav-tools-group-button');
+        if (btn) btn.setAttribute('aria-expanded','false');
+      });
+    }
+  });
+})();
+</script>
+</body>
+</html>

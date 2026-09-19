@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+  <link rel="icon" href="/favicon.ico?v=2" sizes="any">
+  <link rel="icon" type="image/png" href="/favicon.png?v=2">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="Dagger Trading market notes, week-ahead preparation, stock spotlights and weekly market wraps." name="description"/><title>Market Notes Archive | Dagger Trading</title><link href="css/style.css?v=20260821-menu-scroll-v3" rel="stylesheet"/><link href="css/v2.css" rel="stylesheet"/><link href="css/resources-v3.css" rel="stylesheet"/>
+<style>
+.nav-learn,.nav-tools,.nav-more{position:relative}
+.nav-learn-button,.nav-tools-button,.nav-more-button{border:0;background:transparent;color:inherit;font:inherit;cursor:pointer;padding:0}
+.nav-learn-menu,.nav-tools-menu,.nav-more-menu{display:none;position:absolute;top:calc(100% + 12px);min-width:220px;padding:10px;border:1px solid var(--line);border-radius:12px;background:#0d1118;box-shadow:0 16px 40px rgba(0,0,0,.28);z-index:100}
+.nav-learn-menu,.nav-tools-menu{left:0}.nav-more-menu{right:0}
+.nav-learn.open .nav-learn-menu,.nav-tools.open .nav-tools-menu,.nav-more.open .nav-more-menu{display:grid;gap:4px}
+.nav-learn-menu a,.nav-tools-menu a,.nav-more-menu a{display:block;padding:10px 12px;border-radius:8px;white-space:nowrap}
+.nav-learn-menu a:hover,.nav-tools-menu a:hover,.nav-more-menu a:hover{background:rgba(47,140,255,.10)}
+
+.notes-hero{padding:76px 0 38px}
+.notes-hero-inner{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);gap:50px;align-items:end}
+.notes-hero h1{font-size:clamp(3.6rem,7vw,6.3rem);line-height:.93;margin:10px 0 20px;letter-spacing:-.045em}
+.notes-hero h1 span{color:var(--accent)}
+.notes-hero-copy{font-size:1.05rem;color:var(--muted);line-height:1.7;max-width:690px}
+.notes-philosophy{border:1px solid var(--line);border-radius:18px;padding:25px;background:linear-gradient(145deg,rgba(47,140,255,.10),rgba(8,17,29,.94))}
+.notes-philosophy strong{font-size:1.25rem;display:block;margin-bottom:9px}.notes-philosophy p{margin:0;color:var(--muted);line-height:1.6}
+
+.coverage{padding-top:30px}
+.coverage-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:22px}
+.coverage-head h2{font-size:clamp(2.2rem,4vw,3.5rem);margin:6px 0 0}
+.coverage-head p:last-child{max-width:500px;color:var(--muted)}
+.coverage-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.coverage-card{position:relative;min-height:355px;padding:26px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(150deg,rgba(16,31,51,.98),rgba(7,16,28,.97));display:flex;flex-direction:column;overflow:hidden}
+.coverage-card:after{content:"";position:absolute;width:170px;height:170px;border-radius:50%;right:-70px;top:-75px;background:rgba(47,140,255,.10)}
+.coverage-card.featured{border-color:rgba(76,158,255,.55);background:linear-gradient(150deg,rgba(21,57,97,.98),rgba(8,22,39,.98))}
+.coverage-card .tag{align-self:flex-start;position:relative;z-index:1}
+.coverage-card h3{font-size:1.7rem;line-height:1.1;margin:18px 0 10px;position:relative;z-index:1}
+.coverage-card p{color:var(--muted);line-height:1.6;position:relative;z-index:1}
+.coverage-card .actions{margin-top:auto;position:relative;z-index:1}
+
+.spotlight-strip{margin-top:18px;border:1px solid var(--line);border-radius:18px;padding:22px;background:rgba(47,140,255,.035)}
+.spotlight-strip-head{display:flex;justify-content:space-between;gap:20px;align-items:center;margin-bottom:16px}
+.spotlight-strip-head h3{margin:3px 0 0}
+.spotlight-links{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.spotlight-link{display:block;padding:16px;border:1px solid var(--line);border-radius:12px;background:rgba(47,140,255,.035)}
+.spotlight-link strong{color:var(--accent);font-size:1.1rem}.spotlight-link span{color:var(--muted);margin-left:6px;font-size:.9rem}
+
+.archive{padding-top:68px}
+.archive-head{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:end;margin-bottom:24px}
+.archive-head h2{font-size:clamp(2.2rem,4vw,3.4rem);margin:6px 0 0}
+.archive-head p:last-child{color:var(--muted);max-width:520px}
+.notes-filters{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 24px}
+.notes-filter-btn{border:1px solid var(--line);background:rgba(47,140,255,.045);color:var(--text);padding:10px 15px;border-radius:999px;font:inherit;cursor:pointer}
+.notes-filter-btn:hover{background:rgba(47,140,255,.10)}.notes-filter-btn.active{background:var(--accent);color:white;border-color:var(--accent)}
+.notes-list{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.note-card[hidden]{display:none!important}
+.note-card{display:flex;flex-direction:column;min-height:255px}.note-card .actions{margin-top:auto;padding-top:14px}
+
+@media(max-width:900px){
+.nav-learn,.nav-tools,.nav-more{position:static}.nav-learn-button,.nav-tools-button,.nav-more-button{display:none}
+.nav-learn-menu,.nav-tools-menu,.nav-more-menu{display:contents;position:static;min-width:0;padding:0;border:0;background:transparent;box-shadow:none}
+.notes-hero-inner,.archive-head{grid-template-columns:1fr}.coverage-grid{grid-template-columns:1fr}.spotlight-links{grid-template-columns:1fr}.notes-list{grid-template-columns:1fr}
+}
+
+/* Market Notes archive submenu */
+.nav-market-archives{position:relative}
+.nav-market-archives-button{width:100%;border:0;background:transparent;color:inherit;font:inherit;font-weight:600;text-align:left;padding:12px 14px;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+.nav-market-archives-button:hover,.nav-market-archives-button:focus{color:#4da3ff;background:rgba(77,163,255,.08)}
+.nav-market-archives-menu{display:none;position:absolute;left:100%;top:0;min-width:210px;background:#0b1625;border:1px solid #24384f;border-radius:10px;padding:6px;box-shadow:0 12px 28px rgba(0,0,0,.28);z-index:1001}
+.nav-market-archives:hover>.nav-market-archives-menu,.nav-market-archives:focus-within>.nav-market-archives-menu{display:block}
+.nav-market-archives-menu a{display:block;white-space:nowrap}
+@media (max-width:800px){
+  .nav-market-archives-menu{position:static;min-width:0;border:0;border-radius:0;box-shadow:none;background:transparent;padding:0 0 0 12px}
+  .nav-market-archives-button{padding-left:14px}
+}
+
+.archive-month-meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.archive-count{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:#93c5fd;border:1px solid rgba(96,165,250,.35);padding:5px 9px;border-radius:999px}
+</style><style id="dagger-market-dropdown-nav">
+.nav-market{position:relative}.nav-market-button{border:0;background:transparent;color:inherit;font:inherit;cursor:pointer;padding:0}
+.nav-market-menu{display:none;position:absolute;top:calc(100% + 12px);left:0;min-width:220px;padding:10px;border:1px solid var(--line);border-radius:12px;background:#0d1118;box-shadow:0 16px 40px rgba(0,0,0,.28);z-index:100}
+.nav-market.open .nav-market-menu{display:grid;gap:4px}.nav-market-menu a{display:block;padding:10px 12px;border-radius:8px;white-space:nowrap}.nav-market-menu a:hover{background:rgba(47,140,255,.10)}
+@media(max-width:900px){.nav-market{position:static}.nav-market-button{display:none}.nav-market-menu{display:contents;position:static;min-width:0;padding:0;border:0;background:transparent;box-shadow:none}}
+</style>
+<style id="dagger-resources-dropdown-nav">
+.nav-resources{position:relative}
+.nav-resources-button{border:0;background:transparent;color:inherit;font:inherit;cursor:pointer;padding:0}
+.nav-resources-menu{display:none;position:absolute;top:calc(100% + 12px);right:0;min-width:230px;padding:10px;border:1px solid var(--line);border-radius:12px;background:#0d1118;box-shadow:0 16px 40px rgba(0,0,0,.28);z-index:100}
+.nav-resources.open .nav-resources-menu{display:grid;gap:4px}
+.nav-resources-menu a{display:block;padding:10px 12px;border-radius:8px;white-space:nowrap}
+.nav-resources-menu a:hover{background:rgba(47,140,255,.10)}
+@media(max-width:900px){
+  .nav-resources{position:static}
+  .nav-resources-button{display:none}
+  .nav-resources-menu{display:contents;position:static;min-width:0;padding:0;border:0;background:transparent;box-shadow:none}
+}
+</style>
+<style>
+.spotlight-updated{
+  margin:8px 0 12px;
+  color:#4da3ff;
+  font-size:.72rem;
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+</style>
+
+<style id="dagger-tools-submenus">
+.nav-tools-group{position:relative}
+.nav-tools-group-button{width:100%;border:0;background:transparent;color:inherit;font:inherit;font-weight:600;text-align:left;padding:10px 12px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;border-radius:8px;white-space:nowrap}
+.nav-tools-group-button:hover,.nav-tools-group-button:focus{color:#4da3ff;background:rgba(47,140,255,.10)}
+.nav-tools-group-menu{display:none;position:absolute;left:100%;top:0;min-width:230px;background:#0d1118;border:1px solid var(--line);border-radius:12px;padding:8px;box-shadow:0 16px 40px rgba(0,0,0,.28);z-index:1100}
+.nav-tools-group:hover>.nav-tools-group-menu,.nav-tools-group:focus-within>.nav-tools-group-menu{display:grid;gap:4px}
+@media(max-width:900px){
+ .nav-tools-group{position:static}
+ .nav-tools-group-button{padding:10px 12px;color:#9fcaff}
+ .nav-tools-group-button::first-letter{}
+ .nav-tools-group-menu{display:none;position:static;min-width:0;border:0;border-radius:0;box-shadow:none;background:transparent;padding:0 0 4px 14px}
+ .nav-tools-group.submenu-open>.nav-tools-group-menu{display:grid;gap:2px}
+}
+</style>
+</head><body>
+<header class="site-header"><div class="container navbar"><a class="brand" href="index.html"><span class="brand-mark">🗡️</span><span>DAGGER <strong>TRADING</strong></span></a><button class="menu-button">Menu</button><nav class="nav-links">
+<a href="index.html">Home</a>
+<div class="nav-learn"><button aria-expanded="false" class="nav-learn-button" type="button">Learn ▾</button><div class="nav-learn-menu"><a href="learn.html">Learn Home</a><a href="learn-trading-basics.html">Trading Basics</a><a href="learn-trading-psychology.html">Trading Psychology</a>
+<a href="what-would-you-do.html">What Would You Do? 🎮</a></div></div>
+<div class="nav-tools"><button aria-expanded="false" class="nav-tools-button" type="button">Trader Tools ▾</button><div class="nav-tools-menu">
+<a href="trader-tools.html">Trader Tools Home</a>
+<div class="nav-tools-group"><button aria-expanded="false" class="nav-tools-group-button" type="button">Interactive Tools ›</button><div class="nav-tools-group-menu"><a href="dagger-check.html">Dagger Check</a><a href="dagger-setup-score.html">Dagger Setup Score</a><a href="should-i-take-this-trade.html">Should I Take This Trade?</a></div></div>
+<div class="nav-tools-group"><button aria-expanded="false" class="nav-tools-group-button" type="button">Trading Checklists ›</button><div class="nav-tools-group-menu"><a href="dagger-trading-checklist.html">Dagger Trading Checklist</a><a href="dagger-swing-trade-checklist.html">Dagger Swing Trade Checklist</a></div></div>
+</div>
+</div>
+<div class="nav-market"><button aria-expanded="false" class="nav-market-button" type="button">Market Notes ▾</button><div class="nav-market-menu"><a href="market-notes.html">Market Notes Home</a><a href="week-ahead-september-14-18-2026.html">Latest Week Ahead</a><a href="weekly-market-wrap-september-11-2026.html">Latest Market Wrap</a><a href="stock-spotlights.html">Stock Spotlights</a><div class="nav-market-archives"><button aria-expanded="false" class="nav-market-archives-button" type="button">Archives ›</button><div class="nav-market-archives-menu"><a href="market-notes-archive.html">Market Notes Archive</a><a href="spotlight-archive.html">Spotlight Archive</a></div></div></div></div>
+<div class="nav-resources">
+<button aria-expanded="false" class="nav-resources-button" type="button">Trading Resources ▾</button>
+<div class="nav-resources-menu">
+<a href="resources.html">Resources Home</a>
+<a href="resources.html#books">Books &amp; Amazon Picks</a>
+<a href="resources.html#platforms">Trading Platforms</a>
+<a href="resources.html#market-tools">Market Tools &amp; Research</a>
+<a href="resources.html#official-sources">Official Market Sources</a>
+</div>
+</div>
+<div class="nav-more"><button aria-expanded="false" class="nav-more-button" type="button">More ▾</button><div class="nav-more-menu"><a href="comics.html">Comics</a><a href="toolbox.html">Market Center</a><a href="merch.html">Merch</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="https://x.com/DaggerTrading" rel="noopener noreferrer" target="_blank">X / Twitter</a></div></div>
+</nav></div></header>
+<main>
+<style>
+.market-archive-months{display:grid;gap:16px;margin-top:24px}
+.market-archive-month{border:1px solid rgba(96,165,250,.28);border-radius:16px;background:rgba(15,30,49,.72);overflow:hidden}
+.market-archive-month summary{cursor:pointer;list-style:none;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;gap:16px;font-weight:800}
+.market-archive-month summary::-webkit-details-marker{display:none}
+.market-archive-month summary:after{content:"＋";color:#60a5fa;font-size:1.2rem}
+.market-archive-month[open] summary:after{content:"−"}
+.market-archive-list{border-top:1px solid rgba(148,163,184,.16);padding:16px 18px}
+.market-archive-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+@media(max-width:760px){.market-archive-grid{grid-template-columns:1fr}}
+</style>
+<section class="section">
+<div class="container">
+<div class="section-heading">
+<p class="eyebrow">Historical Market Notes</p>
+<h2>Market Notes Archive</h2>
+<p>Older Week Ahead and Weekly Market Wrap articles are organized by month. Current Stock Spotlights have their own Spotlight Archive.</p>
+</div>
+<div class="market-archive-months"><details class="market-archive-month"><summary><span class="archive-month-meta"><span>September 2026</span><span class="archive-count">1 ARCHIVED NOTES</span></span></summary><div class="market-archive-list"><div class="market-archive-grid"><article class="card note-card" data-category="week-ahead">
+<span class="tag">Week Ahead • September 8–11, 2026</span>
+<h3>CPI, PPI, Apple Event, ORCL &amp; ADBE</h3>
+<p>Inflation, Apple's event and major software earnings shaped the shortened week.</p>
+<div class="actions"><a class="button button-secondary" href="week-ahead-september-8-11-2026.html">Read Week Ahead</a></div>
+</article></div></div></details>
+<details class="market-archive-month">
+<summary><span class="archive-month-meta"><span>August 2026</span><span class="archive-count">8 ARCHIVED NOTES</span></span></summary>
+<div class="market-archive-list"><div class="market-archive-grid"><article class="card note-card" data-category="week-ahead">
+<span class="tag">Week Ahead • August 31–September 4, 2026</span>
+<h3>Jobs Report, Broadcom Earnings, Labor Data, SPY &amp; QQQ</h3>
+<p>Jobs data, Broadcom earnings and labor-market catalysts shaped the final trading week before Labor Day.</p>
+<div class="actions">
+<a class="button button-secondary" href="week-ahead-august-31-september-4-2026.html">Read Week Ahead</a>
+</div>
+</article><article class="card note-card" data-category="weekly-wrap">
+<span class="tag">Weekly Wrap • August 31–September 4, 2026</span>
+<h3>Jobs, Rates &amp; a Busy AI Week</h3>
+<p>DELL, AVGO and SPCX stood out while Friday's strong jobs report brought Fed rate expectations back into focus.</p>
+<div class="actions">
+<a class="button button-secondary" href="weekly-market-wrap-september-4-2026.html">Read Weekly Wrap</a>
+</div>
+</article><article class="card note-card" data-category="week-ahead"><span class="tag">Week Ahead • August 24–28, 2026</span><h3>NVDA Earnings, PCE Inflation, Q2 GDP, Jackson Hole, SPY &amp; QQQ</h3><p>A focused look at the week's major catalysts, market setup, key macro data and stocks worth watching.</p><div class="actions"><a class="button button-secondary" href="week-ahead-august-24-28-2026.html">Read Week Ahead</a></div></article>
+<article class="card note-card" data-category="weekly-wrap">
+<span class="tag">Weekly Wrap • August 24–28, 2026</span>
+<h3>NVDA Earnings, Inflation, Jackson Hole &amp; MRVL</h3>
+<p>Tech bounced on strong earnings, but sticky inflation and a hawkish Fed kept rate risk in focus.</p>
+<div class="actions"><a class="button button-secondary" href="weekly-market-wrap-august-28-2026.html">Read Weekly Wrap</a></div>
+</article>
+<article class="card note-card" data-category="week-ahead"><span class="tag">Week Ahead • August 17–21, 2026</span><h3>SPY, QQQ, Fed Minutes, Retail Earnings, NVDA &amp; SPCX</h3><p>A focused look at the week's major catalysts, important market levels and stocks worth watching.</p><div class="actions"><a class="button button-secondary" href="week-ahead-august-17-21-2026.html">Read Week Ahead</a></div></article>
+<article class="card note-card" data-category="weekly-wrap"><span class="tag">Weekly Wrap • August 17–21, 2026</span><h3>Bond Yields, Tech Weakness, MRNA, MU &amp; SPCX</h3><p>The indexes finished lower, but company-specific moves created major opportunities across biotech and AI memory.</p><div class="actions"><a class="button button-secondary" href="weekly-market-wrap-august-21-2026.html">Read Weekly Wrap</a></div></article>
+<article class="card note-card" data-category="weekly-wrap"><span class="tag">Weekly Wrap • August 10–14, 2026</span><h3>Inflation, Record Highs, Retail Sales, CSCO &amp; SPCX</h3><p>The market kept climbing, but Friday offered a reminder not to get comfortable.</p><div class="actions"><a class="button button-secondary" href="weekly-market-wrap-august-14-2026.html">Read Weekly Wrap</a></div></article>
+<article class="card note-card" data-category="weekly-wrap"><span class="tag">Weekly Wrap • August 3–7, 2026</span><h3>Jobs Data, Fed Expectations, AI Earnings &amp; SPCX</h3><p>The week featured a major jobs surprise, shifting Fed expectations, selective AI earnings reactions, and SPCX's first major lockup expiration.</p><div class="actions"><a class="button button-secondary" href="weekly-market-wrap-august-7-2026.html">Read Weekly Wrap</a></div></article></div></div>
+</details>
+</div>
+</div>
+</section>
+</main>
+<footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><strong>Dagger Trading</strong><p class="footer-slogan">“Wait for confirmation, not assumption.”</p><p>Market Psychology • Patience • Risk Management</p></div><nav aria-label="Footer navigation" class="footer-links"><a href="index.html">Home</a><a href="comics.html">Comics</a><a href="learn.html">Learn</a><a href="trader-tools.html">Trader Tools</a><a href="market-notes.html">Market Notes</a><a href="toolbox.html">Market Center</a><a href="resources.html">Trading Resources</a><a href="merch.html">Merch</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="https://x.com/DaggerTrading" rel="noopener noreferrer" target="_blank">X / Twitter</a></nav></div><p class="disclaimer">Content is provided for educational and informational purposes only and should not be considered financial advice. Trading and investing involve risk, including the possible loss of principal.</p><p class="copyright">© <span data-year=""></span> Dagger Trading. All Rights Reserved.</p></div></footer>
+<script src="js/script.js"></script>
+<script id="dagger-unified-dropdown-nav">
+(function(){
+  const defs = [
+    ['.nav-learn', '.nav-learn-button'],
+    ['.nav-tools', '.nav-tools-button'],
+    ['.nav-market', '.nav-market-button'],
+    ['.nav-resources', '.nav-resources-button'],
+    ['.nav-more', '.nav-more-button']
+  ];
+
+  const items = defs.map(function(pair){
+    const root = document.querySelector(pair[0]);
+    if (!root) return null;
+    const btn = root.querySelector(pair[1]);
+    if (!btn) return null;
+    return { root: root, btn: btn };
+  }).filter(Boolean);
+
+  function closeAll(exceptRoot){
+    items.forEach(function(item){
+      if (item.root !== exceptRoot) {
+        item.root.classList.remove('open');
+        item.btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  items.forEach(function(item){
+    item.btn.addEventListener('click', function(e){
+      e.preventDefault();
+      e.stopPropagation();
+
+      const wasOpen = item.root.classList.contains('open');
+      closeAll(item.root);
+
+      item.root.classList.toggle('open', !wasOpen);
+      item.btn.setAttribute('aria-expanded', !wasOpen ? 'true' : 'false');
+    });
+  });
+
+  document.addEventListener('click', function(e){
+    items.forEach(function(item){
+      if (!item.root.contains(e.target)) {
+        item.root.classList.remove('open');
+        item.btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') {
+      closeAll(null);
+    }
+  });
+})();
+</script>
+<script id="market-notes-filter">
+function filterMarketNotes(filter, clickedButton) {
+  var buttons = document.querySelectorAll('.notes-filter-btn');
+  var cards = document.querySelectorAll('#market-notes-list .note-card');
+
+  for (var i = 0; i < buttons.length; i++) {
+    var active = buttons[i] === clickedButton;
+    if (active) buttons[i].classList.add('active');
+    else buttons[i].classList.remove('active');
+    buttons[i].setAttribute('aria-pressed', active ? 'true' : 'false');
+  }
+
+  for (var j = 0; j < cards.length; j++) {
+    var category = cards[j].getAttribute('data-category');
+    cards[j].hidden = !(filter === 'all' || category === filter);
+  }
+}
+</script>
+
+<script id="dagger-tools-mobile-submenu-toggle">
+(function(){
+  function isMobile(){ return window.matchMedia('(max-width: 900px)').matches; }
+
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest('.nav-tools-group-button');
+    if (!btn || !isMobile()) return;
+    e.preventDefault();
+    e.stopPropagation();
+    var group = btn.closest('.nav-tools-group');
+    if (!group) return;
+    var wasOpen = group.classList.contains('submenu-open');
+    group.classList.toggle('submenu-open', !wasOpen);
+    btn.setAttribute('aria-expanded', wasOpen ? 'false' : 'true');
+  });
+
+  document.addEventListener('click', function(e){
+    if (!isMobile()) return;
+    if (!e.target.closest('.nav-tools')) {
+      document.querySelectorAll('.nav-tools-group.submenu-open').forEach(function(group){
+        group.classList.remove('submenu-open');
+        var btn = group.querySelector('.nav-tools-group-button');
+        if (btn) btn.setAttribute('aria-expanded','false');
+      });
+    }
+  });
+})();
+</script>
+</body></html>
