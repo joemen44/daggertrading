@@ -688,6 +688,10 @@
 }
 </style>
 
+<style id="wwyd-result-scroll-offset">
+/* Keep the complete result card below the sticky site header. */
+#result-card{scroll-margin-top:80px;}
+</style>
 <style id="wwyd-post-result-funnel">
 .wwyd-explore{display:none;margin:26px auto 0;max-width:920px;padding:22px;border:1px solid #1d3b58;border-radius:16px;background:#081625}
 .wwyd-explore.show{display:block}
@@ -1094,9 +1098,26 @@ $("startover").onclick=()=>{
   if(i===0 && !done)return;
   if(!window.confirm("Start over Set 1? This will clear your answers for this set."))return;
   i=0;done=false;scores.fill(null);render();
-  requestAnimationFrame(alignScenario);
+  requestAnimationFrame(()=>{
+    const el=$("wwyd-anchor");
+    if(!el)return;
+    const y=el.getBoundingClientRect().top + window.scrollY - 132;
+    window.scrollTo({top:y,behavior:"auto"});
+  });
 };
-$("restart-set").onclick=()=>{scores.fill(null);i=0;done=false;$("result-card").className="wwyd-card wwyd-result";$("wwyd-explore").classList.remove("show");$("scenario-card").style.display="block";render();requestAnimationFrame(alignScenario);};
+$("restart-set").onclick=()=>{
+  scores.fill(null);i=0;done=false;
+  $("result-card").className="wwyd-card wwyd-result";
+  $("wwyd-explore").classList.remove("show");
+  $("scenario-card").style.display="block";
+  render();
+  requestAnimationFrame(()=>{
+    const el=$("wwyd-anchor");
+    if(!el)return;
+    const y=el.getBoundingClientRect().top + window.scrollY - 132;
+    window.scrollTo({top:y,behavior:"auto"});
+  });
+};
 
 const backToSets=$("back-to-sets");
 const leaveModal=$("leave-set-modal");
