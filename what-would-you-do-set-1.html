@@ -687,6 +687,21 @@
   object-fit:contain !important;
 }
 </style>
+
+<style id="wwyd-post-result-funnel">
+.wwyd-explore{display:none;margin:26px auto 0;max-width:920px;padding:22px;border:1px solid #1d3b58;border-radius:16px;background:#081625}
+.wwyd-explore.show{display:block}
+.wwyd-explore-head{text-align:center;margin-bottom:16px}
+.wwyd-explore-kicker{margin:0 0 5px;color:#63adff;font-size:.76rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.wwyd-explore-head h2{margin:0 0 6px;color:#fff;font-size:1.35rem}
+.wwyd-explore-head p{margin:0;color:#9fb5ca;line-height:1.5}
+.wwyd-explore-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.wwyd-explore-card{display:flex;flex-direction:column;min-height:170px;padding:17px;border:1px solid #203d58;border-radius:12px;background:#0b1b2c}
+.wwyd-explore-card h3{margin:0 0 7px;color:#fff;font-size:1.02rem}
+.wwyd-explore-card p{margin:0 0 15px;color:#b8c8d8;line-height:1.48;font-size:.92rem}
+.wwyd-explore-card .button{margin-top:auto;align-self:flex-start;text-decoration:none}
+@media(max-width:760px){.wwyd-explore{padding:17px}.wwyd-explore-grid{grid-template-columns:1fr}.wwyd-explore-card{min-height:0}}
+</style>
 </head>
 <body>
 <header class="site-header"><div class="container navbar"><a class="brand" href="index.html"><span class="brand-mark">🗡️</span><span>DAGGER <strong>TRADING</strong></span></a><button class="menu-button">Menu</button><nav class="nav-links">
@@ -757,6 +772,18 @@
 <div class="wwyd-result-actions"><button class="wwyd-btn" id="restart-set" type="button">↻ Restart Set</button><a class="wwyd-btn primary" href="what-would-you-do-set-2.html">Try Set 2 →</a><a class="wwyd-btn" href="what-would-you-do.html">Choose a Set</a></div>
 </div>
 <div class="wwyd-back"><a class="button button-secondary" id="back-to-sets" href="what-would-you-do.html">← Back to WWYD Sets</a></div>
+<div class="wwyd-explore" id="wwyd-explore">
+  <div class="wwyd-explore-head">
+    <p class="wwyd-explore-kicker">Keep Exploring Dagger Trading</p>
+    <h2>Finished the challenge? Keep going.</h2>
+    <p>Jump back into the markets, work on your trading mindset, or check out the Dagger Trading shop.</p>
+  </div>
+  <div class="wwyd-explore-grid">
+    <div class="wwyd-explore-card"><h3>📈 Latest Stock Spotlights</h3><p>See the stocks I'm watching, current key levels and the latest updates.</p><a class="button button-primary" href="stock-spotlights.html">View Stock Spotlights →</a></div>
+    <div class="wwyd-explore-card"><h3>🧠 Trading Psychology</h3><p>Dig deeper into FOMO, overtrading, revenge trading, discipline and the habits behind your decisions.</p><a class="button button-primary" href="learn-trading-psychology.html">Explore Psychology →</a></div>
+    <div class="wwyd-explore-card"><h3>☕ Dagger Trading Merch</h3><p>Like what we're building? Check out the latest Dagger Trading mugs and gear.</p><a class="button button-primary" href="merch.html">Shop Merch →</a></div>
+  </div>
+</div>
 <div id="leave-set-modal" class="wwyd-leave-modal" hidden><div class="wwyd-leave-dialog" role="dialog" aria-modal="true" aria-labelledby="leave-set-title"><h3 id="leave-set-title">Leave this set?</h3><p>Are you sure you want to return to the WWYD Sets page? Your current Set 1 progress will be reset.</p><div class="wwyd-leave-actions"><button type="button" class="wwyd-btn" id="stay-here">Stay Here</button><a class="wwyd-btn primary" href="what-would-you-do.html">Return to WWYD Sets</a></div></div></div>
 </div></section>
 </main>
@@ -962,7 +989,7 @@ function showResult(){
     resultImg.src="wwyd-result-needs-work.png";
     resultImg.alt="Trader reviewing high-risk decisions while the Saboteur takes over the trading chair";
   }
-  $("scenario-card").style.display="none";r.scrollIntoView({behavior:"auto",block:"start"});
+  $("scenario-card").style.display="none";$("wwyd-explore").classList.add("show");r.scrollIntoView({behavior:"auto",block:"start"});
 }
 $("next").onclick=()=>{if(i===S.length-1){if(!scores[i])return;showResult();return;}i++;render();requestAnimationFrame(alignScenario)};
 $("startover").onclick=()=>{
@@ -971,7 +998,7 @@ $("startover").onclick=()=>{
   i=0;done=false;scores.fill(null);render();
   requestAnimationFrame(alignScenario);
 };
-$("restart-set").onclick=()=>{scores.fill(null);i=0;done=false;$("result-card").className="wwyd-card wwyd-result";$("scenario-card").style.display="block";render();requestAnimationFrame(alignScenario);};
+$("restart-set").onclick=()=>{scores.fill(null);i=0;done=false;$("result-card").className="wwyd-card wwyd-result";$("wwyd-explore").classList.remove("show");$("scenario-card").style.display="block";render();requestAnimationFrame(alignScenario);};
 
 const backToSets=$("back-to-sets");
 const leaveModal=$("leave-set-modal");
