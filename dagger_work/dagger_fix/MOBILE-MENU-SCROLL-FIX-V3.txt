@@ -1,0 +1,5 @@
+Mobile menu fix v3
+
+This version starts from the original daggertrading(8).zip.
+It preserves the original working absolute-positioned mobile menu and only adds vertical scrolling, viewport max-height, touch scrolling, and a CSS cache-buster.
+No JavaScript or navigation structure was changed.

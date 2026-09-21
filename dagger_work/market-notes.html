@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<link href="/favicon.ico?v=2" rel="icon" sizes="any"/>
+<link href="/favicon.png?v=2" rel="icon" type="image/png"/>
+<link href="/apple-touch-icon.png?v=2" rel="apple-touch-icon"/>
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="Dagger Trading market notes, week-ahead preparation, stock spotlights and weekly market wraps." name="description"/><title>Market Notes | Dagger Trading</title><link href="css/style.css?v=20260821-menu-scroll-v3" rel="stylesheet"/><link href="css/v2.css" rel="stylesheet"/><link href="css/resources-v3.css" rel="stylesheet"/>
+<style>
+.nav-learn,.nav-tools,.nav-more{position:relative}
+.nav-learn-button,.nav-tools-button,.nav-more-button{border:0;background:transparent;color:inherit;font:inherit;cursor:pointer;padding:0}
+.nav-learn-menu,.nav-tools-menu,.nav-more-menu{display:none;position:absolute;top:calc(100% + 12px);min-width:220px;padding:10px;border:1px solid var(--line);border-radius:12px;background:#0d1118;box-shadow:0 16px 40px rgba(0,0,0,.28);z-index:100}
+.nav-learn-menu,.nav-tools-menu{left:0}.nav-more-menu{right:0}
+.nav-learn.open .nav-learn-menu,.nav-tools.open .nav-tools-menu,.nav-more.open .nav-more-menu{display:grid;gap:4px}
+.nav-learn-menu a,.nav-tools-menu a,.nav-more-menu a{display:block;padding:10px 12px;border-radius:8px;white-space:nowrap}
+.nav-learn-menu a:hover,.nav-tools-menu a:hover,.nav-more-menu a:hover{background:rgba(47,140,255,.10)}
+
+.notes-hero{padding:76px 0 38px}
+.notes-hero-inner{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);gap:50px;align-items:end}
+.notes-hero h1{font-size:clamp(3.6rem,7vw,6.3rem);line-height:.93;margin:10px 0 20px;letter-spacing:-.045em}
+.notes-hero h1 span{color:var(--accent)}
+.notes-hero-copy{font-size:1.05rem;color:var(--muted);line-height:1.7;max-width:690px}
+.notes-philosophy{border:1px solid var(--line);border-radius:18px;padding:25px;background:linear-gradient(145deg,rgba(47,140,255,.10),rgba(8,17,29,.94))}
+.notes-philosophy strong{font-size:1.25rem;display:block;margin-bottom:9px}.notes-philosophy p{margin:0;color:var(--muted);line-height:1.6}
+
+.coverage{padding-top:30px}
+.coverage-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:22px}
+.coverage-head h2{font-size:clamp(2.2rem,4vw,3.5rem);margin:6px 0 0}
+.coverage-head p:last-child{max-width:500px;color:var(--muted)}
+.coverage-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.coverage-card{position:relative;min-height:355px;padding:26px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(150deg,rgba(16,31,51,.98),rgba(7,16,28,.97));display:flex;flex-direction:column;overflow:hidden}
+.coverage-card:after{content:"";position:absolute;width:170px;height:170px;border-radius:50%;right:-70px;top:-75px;background:rgba(47,140,255,.10)}
+.coverage-card.featured{border-color:rgba(76,158,255,.55);background:linear-gradient(150deg,rgba(21,57,97,.98),rgba(8,22,39,.98))}
+.coverage-card .tag{align-self:flex-start;position:relative;z-index:1}
+.coverage-card h3{font-size:1.7rem;line-height:1.1;margin:18px 0 10px;position:relative;z-index:1}
+.coverage-card p{color:var(--muted);line-height:1.6;position:relative;z-index:1}
+.coverage-card .actions{margin-top:auto;position:relative;z-index:1}
+
+.spotlight-strip{margin-top:18px;border:1px solid var(--line);border-radius:18px;padding:22px;background:rgba(47,140,255,.035)}
+.spotlight-strip-head{display:flex;justify-content:space-between;gap:20px;align-items:center;margin-bottom:16px}
+.spotlight-strip-head h3{margin:3px 0 0}
+.spotlight-links{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.spotlight-link{display:block;padding:16px;border:1px solid var(--line);border-radius:12px;background:rgba(47,140,255,.035)}
+.spotlight-link strong{color:var(--accent);font-size:1.1rem}.spotlight-link span{color:var(--muted);margin-left:6px;font-size:.9rem}
+
+.archive{padding-top:68px}
+.archive-head{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:end;margin-bottom:24px}
+.archive-head h2{font-size:clamp(2.2rem,4vw,3.4rem);margin:6px 0 0}
+.archive-head p:last-child{color:var(--muted);max-width:520px}
+.notes-filters{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 24px}
+.notes-filter-btn{border:1px solid var(--line);background:rgba(47,140,255,.045);color:var(--text);padding:10px 15px;border-radius:999px;font:inherit;cursor:pointer}
+.notes-filter-btn:hover{background:rgba(47,140,255,.10)}.notes-filter-btn.active{background:var(--accent);color:white;border-color:var(--accent)}
+.notes-list{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.note-card[hidden]{display:none!important}
+.note-card{display:flex;flex-direction:column;min-height:255px}.note-card .actions{margin-top:auto;padding-top:14px}
+
+@media(max-width:900px){
+.nav-learn,.nav-tools,.nav-more{position:static}.nav-learn-button,.nav-tools-button,.nav-more-button{display:none}
+.nav-learn-menu,.nav-tools-menu,.nav-more-menu{display:contents;position:static;min-width:0;padding:0;border:0;background:transparent;box-shadow:none}
+.notes-hero-inner,.archive-head{grid-template-columns:1fr}.coverage-grid{grid-template-columns:1fr}.spotlight-links{grid-template-columns:1fr}.notes-list{grid-template-columns:1fr}
+}
+
+/* Market Notes archive submenu */
+.nav-market-archives{position:relative}
+.nav-market-archives-button{width:100%;border:0;background:transparent;color:inherit;font:inherit;font-weight:600;text-align:left;padding:12px 14px;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+.nav-market-archives-button:hover,.nav-market-archives-button:focus{color:#4da3ff;background:rgba(77,163,255,.08)}
+.nav-market-archives-menu{display:none;position:absolute;left:100%;top:0;min-width:210px;background:#0b1625;border:1px solid #24384f;border-radius:10px;padding:6px;box-shadow:0 12px 28px rgba(0,0,0,.28);z-index:1001}
+.nav-market-archives:hover>.nav-market-archives-menu,.nav-market-archives:focus-within>.nav-market-archives-menu{display:block}
+.nav-market-archives-menu a{display:block;white-space:nowrap}
+@media (max-width:800px){
+  .nav-market-archives-menu{position:static;min-width:0;border:0;border-radius:0;box-shadow:none;background:transparent;padding:0 0 0 12px}
+  .nav-market-archives-button{padding-left:14px}
+}
+</style><style id="dagger-market-dropdown-nav">
+.nav-market{position:relative}.nav-market-button{border:0;background:transparent;color:inherit;font:inherit;cursor:pointer;padding:0}
+.nav-market-menu{display:none;position:absolute;top:calc(100% + 12px);left:0;min-width:220px;padding:10px;border:1px solid var(--line);border-radius:12px;background:#0d1118;box-shadow:0 16px 40px rgba(0,0,0,.28);z-index:100}
+.nav-market.open .nav-market-menu{display:grid;gap:4px}.nav-market-menu a{display:block;padding:10px 12px;border-radius:8px;white-space:nowrap}.nav-market-menu a:hover{background:rgba(47,140,255,.10)}
+@media(max-width:900px){.nav-market{position:static}.nav-market-button{display:none}.nav-market-menu{display:contents;position:static;min-width:0;padding:0;border:0;background:transparent;box-shadow:none}}
+</style>
+<style id="dagger-resources-dropdown-nav">
+.nav-resources{position:relative}
+.nav-resources-button{border:0;background:transparent;color:inherit;font:inherit;cursor:pointer;padding:0}
+.nav-resources-menu{display:none;position:absolute;top:calc(100% + 12px);right:0;min-width:230px;padding:10px;border:1px solid var(--line);border-radius:12px;background:#0d1118;box-shadow:0 16px 40px rgba(0,0,0,.28);z-index:100}
+.nav-resources.open .nav-resources-menu{display:grid;gap:4px}
+.nav-resources-menu a{display:block;padding:10px 12px;border-radius:8px;white-space:nowrap}
+.nav-resources-menu a:hover{background:rgba(47,140,255,.10)}
+@media(max-width:900px){
+  .nav-resources{position:static}
+  .nav-resources-button{display:none}
+  .nav-resources-menu{display:contents;position:static;min-width:0;padding:0;border:0;background:transparent;box-shadow:none}
+}
+</style>
+<style>
+.spotlight-updated{
+  margin:8px 0 12px;
+  color:#4da3ff;
+  font-size:.72rem;
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+</style>
+<style id="dagger-tools-submenus">
+.nav-tools-group{position:relative}
+.nav-tools-group-button{width:100%;border:0;background:transparent;color:inherit;font:inherit;font-weight:600;text-align:left;padding:10px 12px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;border-radius:8px;white-space:nowrap}
+.nav-tools-group-button:hover,.nav-tools-group-button:focus{color:#4da3ff;background:rgba(47,140,255,.10)}
+.nav-tools-group-menu{display:none;position:absolute;left:100%;top:0;min-width:230px;background:#0d1118;border:1px solid var(--line);border-radius:12px;padding:8px;box-shadow:0 16px 40px rgba(0,0,0,.28);z-index:1100}
+.nav-tools-group:hover>.nav-tools-group-menu,.nav-tools-group:focus-within>.nav-tools-group-menu{display:grid;gap:4px}
+@media(max-width:900px){
+ .nav-tools-group{position:static}
+ .nav-tools-group-button{padding:10px 12px;color:#9fcaff}
+ .nav-tools-group-button::first-letter{}
+ .nav-tools-group-menu{display:none;position:static;min-width:0;border:0;border-radius:0;box-shadow:none;background:transparent;padding:0 0 4px 14px}
+ .nav-tools-group.submenu-open>.nav-tools-group-menu{display:grid;gap:2px}
+}
+</style>
+</head><body>
+<header class="site-header"><div class="container navbar"><a class="brand" href="index.html"><span class="brand-mark">🗡️</span><span>DAGGER <strong>TRADING</strong></span></a><button class="menu-button">Menu</button><nav class="nav-links">
+<a href="index.html">Home</a>
+<div class="nav-learn"><button aria-expanded="false" class="nav-learn-button" type="button">Learn ▾</button><div class="nav-learn-menu"><a href="learn.html">Learn Home</a><a href="learn-trading-basics.html">Trading Basics</a><a href="learn-trading-psychology.html">Trading Psychology</a>
+<a href="what-would-you-do.html">What Would You Do? 🎮</a></div></div>
+<div class="nav-tools"><button aria-expanded="false" class="nav-tools-button" type="button">Trader Tools ▾</button><div class="nav-tools-menu">
+<a href="trader-tools.html">Trader Tools Home</a>
+<div class="nav-tools-group"><button aria-expanded="false" class="nav-tools-group-button" type="button">Interactive Tools ›</button><div class="nav-tools-group-menu"><a href="dagger-check.html">Dagger Check</a><a href="dagger-setup-score.html">Dagger Setup Score</a><a href="should-i-take-this-trade.html">Should I Take This Trade?</a></div></div>
+<div class="nav-tools-group"><button aria-expanded="false" class="nav-tools-group-button" type="button">Trading Checklists ›</button><div class="nav-tools-group-menu"><a href="dagger-trading-checklist.html">Dagger Trading Checklist</a><a href="dagger-swing-trade-checklist.html">Dagger Swing Trade Checklist</a></div></div>
+</div>
+</div>
+<div class="nav-market"><button aria-expanded="false" class="nav-market-button" type="button">Market Notes ▾</button><div class="nav-market-menu"><a href="market-notes.html">Market Notes Home</a><a href="week-ahead-september-21-25-2026.html">Latest Week Ahead</a><a href="weekly-market-wrap-september-18-2026.html">Latest Market Wrap</a><a href="stock-spotlights.html">Stock Spotlights</a><div class="nav-market-archives"><button aria-expanded="false" class="nav-market-archives-button" type="button">Archives ›</button><div class="nav-market-archives-menu"><a href="market-notes-archive.html">Market Notes Archive</a><a href="spotlight-archive.html">Spotlight Archive</a></div></div></div></div>
+<div class="nav-resources">
+<button aria-expanded="false" class="nav-resources-button" type="button">Trading Resources ▾</button>
+<div class="nav-resources-menu">
+<a href="resources.html">Resources Home</a>
+<a href="resources.html#books">Books &amp; Amazon Picks</a>
+<a href="resources.html#platforms">Trading Platforms</a>
+<a href="resources.html#market-tools">Market Tools &amp; Research</a>
+<a href="resources.html#official-sources">Official Market Sources</a>
+</div>
+</div>
+<div class="nav-more"><button aria-expanded="false" class="nav-more-button" type="button">More ▾</button><div class="nav-more-menu"><a href="comics.html">Comics</a><a href="toolbox.html">Market Center</a><a href="merch.html">Merch</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="https://x.com/DaggerTrading" rel="noopener noreferrer" target="_blank">X / Twitter</a></div></div>
+</nav></div></header>
+<main>
+<section class="notes-hero"><div class="container notes-hero-inner">
+<div><p class="eyebrow">Dagger Trading • Market Notes</p><h1>Market coverage.<br/><span>Without the hype.</span></h1><p class="notes-hero-copy">Week-ahead preparation, weekly market recaps, evolving Stock Spotlights and key levels worth watching. Focused on what matters—not a daily news feed.</p></div>
+<div class="notes-philosophy"><strong>🗡️ Prepare. Watch. Confirm.</strong><p>Know the catalyst. Know the important levels. Then let price and momentum tell you what happens next.</p></div>
+</div></section>
+<section class="coverage"><div class="container">
+<div class="coverage-head"><div><p class="eyebrow">Latest Market Coverage</p><h2>Start with what's current.</h2></div></div>
+<div class="coverage-grid">
+<article class="coverage-card"><span class="tag">Latest • Week Ahead</span><h3>September 21–25, 2026</h3><p>Post-Fed market reaction, PMI data, jobless claims, durable goods, consumer sentiment and key earnings lead the week.</p><div class="actions"><a class="button button-secondary" href="week-ahead-september-21-25-2026.html">Read Week Ahead →</a></div></article>
+<article class="coverage-card"><span class="tag">Latest • Weekly Wrap</span><h3>September 14–18, 2026</h3><p>The Fed raised rates as oil and Treasury yields pressured the market, while DELL, ORCL, SPCX and AVGO produced fresh Spotlight updates.</p><div class="actions"><a class="button button-secondary" href="weekly-market-wrap-september-18-2026.html">Read Market Wrap →</a></div></article>
+<article class="coverage-card featured"><span class="tag">Latest • Stock Spotlight</span><h3>AVGO</h3><p class="spotlight-updated">UPDATED SEPTEMBER 18, 2026</p><p><strong>Recovery Pushes Higher as the Roadmap Shifts Back Toward the $360s</strong></p><p>AVGO reclaimed several levels from the prior roadmap and reached $363.25 Friday. The updated setup starts with the $357.71–$358.78 resistance zone.</p><div class="actions"><a class="button button-secondary" href="avgo-stock-spotlight-september-2026.html">Read AVGO Spotlight →</a></div></article>
+</div>
+<div class="spotlight-strip">
+<div class="spotlight-strip-head"><div><p class="eyebrow">More Stock Spotlights</p><h3>Previous analysis</h3></div><a href="stock-spotlights.html">View All Stock Spotlights →</a></div>
+<div class="spotlight-links"><a class="spotlight-link" href="avgo-stock-spotlight-september-2026.html"><strong>AVGO</strong><span>Broadcom</span></a><a class="spotlight-link" href="spcx-stock-spotlight-september-2026.html"><strong>SPCX</strong><span>SpaceX</span></a><a class="spotlight-link" href="intc-stock-spotlight-september-2026.html"><strong>INTC</strong><span>Intel</span></a><a class="spotlight-link" href="nvda-stock-spotlight-august-2026.html"><strong>NVDA</strong><span>Nvidia</span></a><a class="spotlight-link" href="mrna-stock-spotlight-august-2026.html"><strong>MRNA</strong><span>Moderna</span></a><a class="spotlight-link" href="mu-stock-spotlight-august-2026.html"><strong>MU</strong><span>Micron Technology</span></a><a class="spotlight-link" href="csco-stock-spotlight-august-2026.html"><strong>CSCO</strong><span>Cisco Systems</span></a></div></div>
+</div></section>
+<section class="archive"><div class="container">
+<div class="archive-head"><div><p class="eyebrow">Browse Market Notes</p><h2>Find the analysis you're looking for.</h2></div></div>
+<div aria-label="Filter Market Notes" class="notes-filters" role="group">
+<button class="notes-filter-btn active" data-filter="all" onclick="filterMarketNotes('all', this)" type="button">All</button><button class="notes-filter-btn" data-filter="week-ahead" onclick="filterMarketNotes('week-ahead', this)" type="button">Week Ahead</button><button class="notes-filter-btn" data-filter="weekly-wrap" onclick="filterMarketNotes('weekly-wrap', this)" type="button">Weekly Wrap</button><button class="notes-filter-btn" data-filter="spotlight" onclick="filterMarketNotes('spotlight', this)" type="button">Stock Spotlights</button>
+</div>
+<div class="notes-list" id="market-notes-list"><article class="card note-card" data-category="weekly-wrap"><span class="tag">Weekly Wrap • September 14–18, 2026</span><h3>Fed Hike, Oil, Yields &amp; Four Spotlight Updates</h3><p>The Fed raised rates while oil and yields kept pressure on the broader market. DELL, ORCL, SPCX and AVGO all received fresh Spotlight updates.</p><div class="actions"><a class="button button-secondary" href="weekly-market-wrap-september-18-2026.html">Read Weekly Wrap</a></div></article><article class="card note-card" data-category="week-ahead"><span class="tag">Week Ahead • September 21–25, 2026</span><h3>Post-Fed Reaction, PMI, Durable Goods, Costco, SPY &amp; QQQ</h3><p>The Fed decision is behind us. This week shifts to economic follow-through, Treasury yields, a lighter earnings calendar and whether tech can keep its momentum.</p><div class="actions"><a class="button button-secondary" href="week-ahead-september-21-25-2026.html">Read Week Ahead</a></div></article><article class="card note-card" data-category="week-ahead">
+<span class="tag">Week Ahead • September 14–18, 2026</span>
+<h3>Fed Decision, Retail Sales &amp; Housing</h3>
+<p>The Fed takes center stage Wednesday, with retail sales, housing data and key earnings also on the calendar.</p>
+<div class="actions"><a class="button button-secondary" href="week-ahead-september-14-18-2026.html">Read Week Ahead</a></div>
+</article><article class="card note-card" data-category="spotlight"><span class="tag">Stock Spotlight • AVGO • Updated September 18, 2026</span><h3>AVGO: Recovery Pushes Higher as the Roadmap Shifts Back Toward the $360s</h3><p>AVGO reclaimed several levels from the prior roadmap and reached $363.25 Friday. The updated setup starts with the $357.71–$358.78 resistance zone and maps the next tests above and below.</p><div class="actions"><a class="button button-secondary" href="avgo-stock-spotlight-september-2026.html">Read AVGO Spotlight</a></div></article><article class="card note-card" data-category="spotlight"><span class="tag">Stock Spotlight • ORCL • Updated September 18, 2026</span><h3>ORCL: Rebound Runs Into a Key $149–$151 Test</h3><p>ORCL rebounded from major support near $140.86, but the recovery has now run into a crowded $149–$151 resistance area. The updated roadmap defines the next levels above and below.</p><div class="actions"><a class="button button-secondary" href="orcl-stock-spotlight-september-2026.html">Read ORCL Spotlight</a></div></article><article class="card note-card" data-category="spotlight"><span class="tag">Stock Spotlight • SPCX • Updated September 17, 2026</span><h3>SPCX: $152.59 Breaks as the Roadmap Moves Higher</h3><p>SPCX broke and held above $152.59, cleared the prior $153.45 and $156.03 upside levels, and reached $156.87. The updated roadmap now shifts higher.</p><div class="actions"><a class="button button-secondary" href="spcx-stock-spotlight-september-2026.html">Read SPCX Spotlight</a></div></article><article class="card note-card" data-category="spotlight"><span class="tag">Stock Spotlight • DELL • Updated September 17, 2026</span><h3>DELL: $562.98 Finally Breaks as Shares Reach a New All-Time High</h3><p>DELL finally broke and held above $562.98, then surged to a new all-time high of $593.98. The updated roadmap starts with the breakout high and the first areas above and below.</p><div class="actions"><a class="button button-secondary" href="dell-stock-spotlight-september-2026.html">Read DELL Spotlight</a></div></article><article class="card note-card" data-category="spotlight"><span class="tag">Stock Spotlight • INTC • Updated September 9, 2026</span><h3>INTC: $101.68 Support Tested, Then a Sharp Rebound</h3><p>INTC tested the $101.68 support identified in the original Spotlight, reversed sharply, reclaimed the $104 area and reached a new short-term high near $106.69.</p><div class="actions"><a class="button button-secondary" href="intc-stock-spotlight-september-2026.html">Read INTC Spotlight</a></div></article><article class="card note-card" data-category="spotlight"><span class="tag">Stock Spotlight • AVGO • September 2, 2026</span><h3>AVGO: Huge AI Growth &amp; a Wild Earnings Reaction</h3><p>Broadcom beat expectations and laid out an enormous longer-term AI outlook while shares whipsawed after hours. The Spotlight tracks the earnings story and the simple levels that matter next.</p><div class="actions"><a class="button button-secondary" href="avgo-stock-spotlight-september-2026.html">Read AVGO Spotlight</a></div></article><article class="card note-card" data-category="spotlight"><span class="tag">Stock Spotlight • NVDA • August 26, 2026</span><h3>NVDA: Strong Earnings Put $221 in Focus</h3><p>Nvidia beat earnings expectations, gave a strong long term growth outlook and defended major daily support. The next test is whether $221 can be reclaimed and held.</p><div class="actions"><a class="button button-secondary" href="nvda-stock-spotlight-august-2026.html">Read NVDA Spotlight</a></div></article><article class="card note-card" data-category="weekly-wrap">
+<span class="tag">Weekly Wrap • August 31–September 4, 2026</span>
+<h3>Jobs, Rates &amp; a Busy AI Week</h3>
+<p>DELL, AVGO and SPCX stood out while Friday's strong jobs report brought Fed rate expectations back into focus.</p>
+<div class="actions"><a class="button button-secondary" href="weekly-market-wrap-september-4-2026.html">Read Weekly Wrap</a></div>
+</article><article class="card note-card" data-category="week-ahead">
+<span class="tag">Week Ahead • September 8–11, 2026</span>
+<h3>CPI, PPI, Apple Event, ORCL &amp; ADBE</h3>
+<p>Inflation takes center stage in a shortened Labor Day week, with Apple's event and major software earnings adding more catalysts.</p>
+<div class="actions"><a class="button button-secondary" href="week-ahead-september-8-11-2026.html">Read Week Ahead</a></div>
+</article><article class="card note-card" data-category="weekly-wrap">
+<span class="tag">Weekly Wrap • September 8–11, 2026</span>
+<h3>Inflation, Fed &amp; AI Infrastructure</h3>
+<p>CPI and PPI kept rates in focus while SPCX, DELL and ORCL highlighted continued AI spending.</p>
+<div class="actions"><a class="button button-secondary" href="weekly-market-wrap-september-11-2026.html">Read Weekly Wrap</a></div>
+</article><article class="card note-card" data-category="week-ahead">
+<span class="tag">Week Ahead • August 31–September 4, 2026</span>
+<h3>Jobs Report, Broadcom Earnings, Labor Data, SPY &amp; QQQ</h3>
+<p>Jobs data, Broadcom earnings and labor-market catalysts shaped the final trading week before Labor Day.</p>
+<div class="actions">
+<a class="button button-secondary" href="week-ahead-august-31-september-4-2026.html">Read Week Ahead</a>
+</div>
+</article>
+<article class="card note-card" data-category="week-ahead"><span class="tag">Week Ahead • August 24–28, 2026</span><h3>NVDA Earnings, PCE Inflation, Q2 GDP, Jackson Hole, SPY &amp; QQQ</h3><p>A focused look at the week's major catalysts, market setup, key macro data and stocks worth watching.</p><div class="actions"><a class="button button-secondary" href="week-ahead-august-24-28-2026.html">Read Week Ahead</a></div></article>
+<article class="card note-card" data-category="week-ahead"><span class="tag">Week Ahead • August 17–21, 2026</span><h3>SPY, QQQ, Fed Minutes, Retail Earnings, NVDA &amp; SPCX</h3><p>A focused look at the week's major catalysts, important market levels and stocks worth watching.</p><div class="actions"><a class="button button-secondary" href="week-ahead-august-17-21-2026.html">Read Week Ahead</a></div></article>
+<article class="card note-card" data-category="weekly-wrap">
+<span class="tag">Weekly Wrap • August 24–28, 2026</span>
+<h3>NVDA Earnings, Inflation, Jackson Hole &amp; MRVL</h3>
+<p>Tech bounced on strong earnings, but sticky inflation and a hawkish Fed kept rate risk in focus.</p>
+<div class="actions"><a class="button button-secondary" href="weekly-market-wrap-august-28-2026.html">Read Weekly Wrap</a></div>
+</article>
+<article class="card note-card" data-category="weekly-wrap"><span class="tag">Weekly Wrap • August 17–21, 2026</span><h3>Bond Yields, Tech Weakness, MRNA, MU &amp; SPCX</h3><p>The indexes finished lower, but company-specific moves created major opportunities across biotech and AI memory.</p><div class="actions"><a class="button button-secondary" href="weekly-market-wrap-august-21-2026.html">Read Weekly Wrap</a></div></article>
+<article class="card note-card" data-category="weekly-wrap"><span class="tag">Weekly Wrap • August 10–14, 2026</span><h3>Inflation, Record Highs, Retail Sales, CSCO &amp; SPCX</h3><p>The market kept climbing, but Friday offered a reminder not to get comfortable.</p><div class="actions"><a class="button button-secondary" href="weekly-market-wrap-august-14-2026.html">Read Weekly Wrap</a></div></article>
+<article class="card note-card" data-category="weekly-wrap"><span class="tag">Weekly Wrap • August 3–7, 2026</span><h3>Jobs Data, Fed Expectations, AI Earnings &amp; SPCX</h3><p>The week featured a major jobs surprise, shifting Fed expectations, selective AI earnings reactions, and SPCX's first major lockup expiration.</p><div class="actions"><a class="button button-secondary" href="weekly-market-wrap-august-7-2026.html">Read Weekly Wrap</a></div></article>
+<div class="archive-cta" style="margin-top:28px;padding-top:22px;border-top:1px solid rgba(148,163,184,.18)">
+<a class="button button-secondary" href="market-notes-archive.html">Browse Market Notes Archive →</a>
+</div>
+</div></div></section>
+</main>
+<footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><strong>Dagger Trading</strong><p class="footer-slogan">“Wait for confirmation, not assumption.”</p><p>Market Psychology • Patience • Risk Management</p></div><nav aria-label="Footer navigation" class="footer-links"><a href="index.html">Home</a><a href="comics.html">Comics</a><a href="learn.html">Learn</a><a href="trader-tools.html">Trader Tools</a><a href="market-notes.html">Market Notes</a><a href="toolbox.html">Market Center</a><a href="resources.html">Trading Resources</a><a href="merch.html">Merch</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="https://x.com/DaggerTrading" rel="noopener noreferrer" target="_blank">X / Twitter</a></nav></div><p class="disclaimer">Content is provided for educational and informational purposes only and should not be considered financial advice. Trading and investing involve risk, including the possible loss of principal.</p><p class="copyright">© <span data-year=""></span> Dagger Trading. All Rights Reserved.</p></div></footer>
+<script src="js/script.js"></script>
+<script id="dagger-unified-dropdown-nav">
+(function(){
+  const defs = [
+    ['.nav-learn', '.nav-learn-button'],
+    ['.nav-tools', '.nav-tools-button'],
+    ['.nav-market', '.nav-market-button'],
+    ['.nav-resources', '.nav-resources-button'],
+    ['.nav-more', '.nav-more-button']
+  ];
+
+  const items = defs.map(function(pair){
+    const root = document.querySelector(pair[0]);
+    if (!root) return null;
+    const btn = root.querySelector(pair[1]);
+    if (!btn) return null;
+    return { root: root, btn: btn };
+  }).filter(Boolean);
+
+  function closeAll(exceptRoot){
+    items.forEach(function(item){
+      if (item.root !== exceptRoot) {
+        item.root.classList.remove('open');
+        item.btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  items.forEach(function(item){
+    item.btn.addEventListener('click', function(e){
+      e.preventDefault();
+      e.stopPropagation();
+
+      const wasOpen = item.root.classList.contains('open');
+      closeAll(item.root);
+
+      item.root.classList.toggle('open', !wasOpen);
+      item.btn.setAttribute('aria-expanded', !wasOpen ? 'true' : 'false');
+    });
+  });
+
+  document.addEventListener('click', function(e){
+    items.forEach(function(item){
+      if (!item.root.contains(e.target)) {
+        item.root.classList.remove('open');
+        item.btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') {
+      closeAll(null);
+    }
+  });
+})();
+</script>
+<script id="market-notes-filter">
+function filterMarketNotes(filter, clickedButton) {
+  var buttons = document.querySelectorAll('.notes-filter-btn');
+  var cards = document.querySelectorAll('#market-notes-list .note-card');
+
+  for (var i = 0; i < buttons.length; i++) {
+    var active = buttons[i] === clickedButton;
+    if (active) buttons[i].classList.add('active');
+    else buttons[i].classList.remove('active');
+    buttons[i].setAttribute('aria-pressed', active ? 'true' : 'false');
+  }
+
+  for (var j = 0; j < cards.length; j++) {
+    var category = cards[j].getAttribute('data-category');
+    cards[j].hidden = !(filter === 'all' || category === filter);
+  }
+}
+</script>
+<script id="dagger-tools-mobile-submenu-toggle">
+(function(){
+  function isMobile(){ return window.matchMedia('(max-width: 900px)').matches; }
+
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest('.nav-tools-group-button');
+    if (!btn || !isMobile()) return;
+    e.preventDefault();
+    e.stopPropagation();
+    var group = btn.closest('.nav-tools-group');
+    if (!group) return;
+    var wasOpen = group.classList.contains('submenu-open');
+    group.classList.toggle('submenu-open', !wasOpen);
+    btn.setAttribute('aria-expanded', wasOpen ? 'false' : 'true');
+  });
+
+  document.addEventListener('click', function(e){
+    if (!isMobile()) return;
+    if (!e.target.closest('.nav-tools')) {
+      document.querySelectorAll('.nav-tools-group.submenu-open').forEach(function(group){
+        group.classList.remove('submenu-open');
+        var btn = group.querySelector('.nav-tools-group-button');
+        if (btn) btn.setAttribute('aria-expanded','false');
+      });
+    }
+  });
+})();
+</script>
+</body></html>

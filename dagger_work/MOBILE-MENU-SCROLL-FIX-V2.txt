@@ -1,0 +1,5 @@
+Mobile menu fix v2:
+- Changed mobile nav from absolute/max-height to fixed top+bottom overlay.
+- Forces vertical touch scrolling with overflow-y: scroll and touch-action: pan-y.
+- Added extra bottom padding.
+- Cache-busted css/style.css on all HTML pages so mobile browsers fetch the new CSS.

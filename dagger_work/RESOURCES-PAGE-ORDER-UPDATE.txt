@@ -1,0 +1,11 @@
+Trading Resources page section order updated.
+
+Books & Amazon Picks / 'Books every trader should know' now appears before Trading Platforms.
+All other site files are preserved from the previous master ZIP.
+
+Detected resource-section order:
+- Books every trader should know
+- Brokerages and trading platforms
+- Tools I use to study the market
+- Official sources worth bookmarking
+- 📘 The Dagger Trading Playbook
