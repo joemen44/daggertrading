@@ -921,10 +921,11 @@ function chart(c,level){let d=candleData(c),W=860,H=310,L=45,R=20,T=18,B=25,v=d.
 function alignScenario(){
   const el=$("wwyd-anchor");
   if(!el)return;
-  const y=el.getBoundingClientRect().top + window.scrollY - 118;
+  const offset=(i===1||i===3||i===5||i===8||i===9)?152:((i===2||i===4||i===6||i===7)?136:118);
+  const y=el.getBoundingClientRect().top + window.scrollY - offset;
   window.scrollTo({top:y,behavior:"auto"});
 }
-function render(){done=false;let s=S[i];$("prev").style.display=(i===0)?"none":"inline-block";$("kind").textContent=s.kind;$("num").textContent=`${i+1} of 10`;$("title").textContent=s.title;$("copy").textContent=s.copy;$("visual").className="wwyd-visual"+(i===6?" wwyd-s7-fill":"");$("visual").innerHTML=s.chart?chart(s.pre,s.level):(s.images?`<img class="wwyd-psych-img" src="${s.images.before}" alt="Cartoon trading psychology scenario">`:psych(s.psych));$("options").innerHTML="";$("next").textContent=(i===S.length-1)?"See My Result →":"Next Scenario →";$("feedback").classList.remove("show","level-good","level-caution","level-risk");$("revealbox").classList.remove("show");$("reveal").style.display="none";s.opts.forEach((o,n)=>{let b=document.createElement("button");b.className="wwyd-option";b.innerHTML=`<span class="wwyd-choice-letter">${String.fromCharCode(65+n)}.</span><span class="wwyd-choice-text">${o[0]}</span>`;b.onclick=()=>pick(n,b);$("options").appendChild(b)})}
+function render(){done=false;let s=S[i];const intro=document.querySelector(".wwyd-set-intro");if(intro)intro.style.display=(i===0)?"block":"none";$("prev").style.display=(i===0)?"none":"inline-block";$("kind").textContent=s.kind;$("num").textContent=`${i+1} of 10`;$("title").textContent=s.title;$("copy").textContent=s.copy;$("visual").className="wwyd-visual"+(i===6?" wwyd-s7-fill":"");$("visual").innerHTML=s.chart?chart(s.pre,s.level):(s.images?`<img class="wwyd-psych-img" src="${s.images.before}" alt="Cartoon trading psychology scenario">`:psych(s.psych));$("options").innerHTML="";$("next").textContent=(i===S.length-1)?"See My Result →":"Next Scenario →";$("feedback").classList.remove("show","level-good","level-caution","level-risk");$("revealbox").classList.remove("show");$("reveal").style.display="none";s.opts.forEach((o,n)=>{let b=document.createElement("button");b.className="wwyd-option";b.innerHTML=`<span class="wwyd-choice-letter">${String.fromCharCode(65+n)}.</span><span class="wwyd-choice-text">${o[0]}</span>`;b.onclick=()=>pick(n,b);$("options").appendChild(b)})}
 
 function feedbackLevel(title, explicitLevel){
   if(explicitLevel) return explicitLevel;
@@ -956,19 +957,117 @@ function feedbackLevel(title, explicitLevel){
 
 function keepFeedbackReachable(){
   requestAnimationFrame(()=>{
-    const fb=document.getElementById("feedback");
+    const fb=$("feedback");
     if(!fb)return;
+    const rect=fb.getBoundingClientRect();
+    // Scroll only the minimum amount needed to reveal the explanation.
+    const bottomPadding=18;
+    const overflow=rect.bottom-(window.innerHeight-bottomPadding);
+    if(overflow>0){
+      window.scrollBy({top:overflow,behavior:"smooth"});
+    }
+  });
+}
+function alignQuestionGentle(){
+  requestAnimationFrame(()=>{
+    // Scenario 1: on Try Again, reset to the clean scenario-card position below the fixed navigation.
+    if(i===0){
+      const el=$("wwyd-anchor");
+      if(!el)return;
+      const y=el.getBoundingClientRect().top + window.scrollY - 132;
+      window.scrollTo({top:y,behavior:"smooth"});
+      return;
+    }
+    // Scenario 2: reset to the same clean card position shown when entering the scenario,
+    // with a little extra breathing room below the fixed navigation.
+    if(i===1){
+      const el=$("wwyd-anchor");
+      if(!el)return;
+      const y=el.getBoundingClientRect().top + window.scrollY - 152;
+      window.scrollTo({top:y,behavior:"smooth"});
+      return;
+    }
+    // Scenario 3: Try Again returns to the exact same clean position used when entering Scenario 3.
+    if(i===2){
+      const el=$("wwyd-anchor");
+      if(!el)return;
+      const y=el.getBoundingClientRect().top + window.scrollY - 136;
+      window.scrollTo({top:y,behavior:"smooth"});
+      return;
+    }
+    // Scenario 4: use the same clean reset position as Scenario 2.
+    if(i===3){
+      const el=$("wwyd-anchor");
+      if(!el)return;
+      const y=el.getBoundingClientRect().top + window.scrollY - 152;
+      window.scrollTo({top:y,behavior:"smooth"});
+      return;
+    }
+    // Scenario 5: use the same clean reset position as Scenario 3.
+    if(i===4){
+      const el=$("wwyd-anchor");
+      if(!el)return;
+      const y=el.getBoundingClientRect().top + window.scrollY - 136;
+      window.scrollTo({top:y,behavior:"smooth"});
+      return;
+    }
+    // Scenario 6: use the same clean reset position as Scenario 2.
+    if(i===5){
+      const el=$("wwyd-anchor");
+      if(!el)return;
+      const y=el.getBoundingClientRect().top + window.scrollY - 152;
+      window.scrollTo({top:y,behavior:"smooth"});
+      return;
+    }
+    // Scenario 7: use the same clean reset position as Scenario 5.
+    if(i===6){
+      const el=$("wwyd-anchor");
+      if(!el)return;
+      const y=el.getBoundingClientRect().top + window.scrollY - 136;
+      window.scrollTo({top:y,behavior:"smooth"});
+      return;
+    }
+    // Scenario 8: use the same clean reset position as Scenario 7.
+    if(i===7){
+      const el=$("wwyd-anchor");
+      if(!el)return;
+      const y=el.getBoundingClientRect().top + window.scrollY - 136;
+      window.scrollTo({top:y,behavior:"smooth"});
+      return;
+    }
+    // Scenarios 9 and 10: use the same clean reset position as Scenario 2.
+    if(i===8||i===9){
+      const el=$("wwyd-anchor");
+      if(!el)return;
+      const y=el.getBoundingClientRect().top + window.scrollY - 152;
+      window.scrollTo({top:y,behavior:"smooth"});
+      return;
+    }
+    const q=$("title");
+    if(!q)return;
     const header=document.querySelector("header");
     const headerHeight=header ? header.getBoundingClientRect().height : 0;
-    const top=fb.getBoundingClientRect().top + window.scrollY - headerHeight - 14;
-    window.scrollTo({top:Math.max(0,top),behavior:"smooth"});
+    const target=headerHeight+118;
+    const delta=q.getBoundingClientRect().top-target;
+    if(Math.abs(delta)>8) window.scrollBy({top:delta,behavior:"smooth"});
   });
 }
 
 function pick(n,b){if(done)return;done=true;let s=S[i],o=s.opts[n],level=feedbackLevel(o[1],o[3]);if(scores[i]===null)scores[i]=level;[...$("options").children].forEach(x=>x.disabled=true);b.classList.add("chosen","level-"+level);$("fbtitle").textContent=o[1];$("fbcopy").textContent=o[2];$("feedback").classList.remove("level-good","level-caution","level-risk");$("feedback").classList.add("show","level-"+level);keepFeedbackReachable();if(s.chart||s.reveal)$("reveal").style.display="inline-block"}
-$("reveal").onclick=()=>{let s=S[i];if(s.reveal){let r=s.reveal;$("revealbox").innerHTML=`<div class="wwyd-visual" style="margin-bottom:0"><div class="wwyd-chartcap"><span>${r.title}</span><span>Outcome ≠ decision quality</span></div>${chart(r.pre.concat(r.post),r.level).replace(/<div class="wwyd-chartcap">.*?<\/div>/,'')}<p class="wwyd-copy" style="margin:10px 4px 0">${r.copy}</p></div>`;}else{$("revealbox").innerHTML=`<div class="wwyd-visual" style="margin-bottom:0"><div class="wwyd-chartcap"><span>What happened next</span><span>Outcome ≠ decision quality</span></div>${chart(s.pre.concat(s.post),s.level).replace(/<div class="wwyd-chartcap">.*?<\/div>/,'')}</div>`;}$("revealbox").classList.add("show");$("reveal").style.display="none"};
+$("reveal").onclick=()=>{let s=S[i];if(s.reveal){let r=s.reveal;$("revealbox").innerHTML=`<div class="wwyd-visual" style="margin-bottom:0"><div class="wwyd-chartcap"><span>${r.title}</span><span>Outcome ≠ decision quality</span></div>${chart(r.pre.concat(r.post),r.level).replace(/<div class="wwyd-chartcap">.*?<\/div>/,'')}<p class="wwyd-copy" style="margin:10px 4px 0">${r.copy}</p></div>`;}else{$("revealbox").innerHTML=`<div class="wwyd-visual" style="margin-bottom:0"><div class="wwyd-chartcap"><span>What happened next</span><span>Outcome ≠ decision quality</span></div>${chart(s.pre.concat(s.post),s.level).replace(/<div class="wwyd-chartcap">.*?<\/div>/,'')}</div>`;}$("revealbox").classList.add("show");$("reveal").style.display="none";
+  // Scenarios 2 and 4: after Reveal What Happened, move only enough to show the entire expanded feedback box.
+  if(i===1||i===3||i===5||i===6||i===8||i===9){
+    requestAnimationFrame(()=>{
+      const fb=$("feedback");
+      if(!fb)return;
+      const bottomPadding=18;
+      const overflow=fb.getBoundingClientRect().bottom-(window.innerHeight-bottomPadding);
+      if(overflow>0) window.scrollBy({top:overflow,behavior:"smooth"});
+    });
+  }
+};
 $("prev").onclick=()=>{if(i===0)return;i--;render();requestAnimationFrame(alignScenario);};
-$("retry").onclick=()=>{done=false;let s=S[i];[...$("options").children].forEach(x=>{x.disabled=false;x.classList.remove("chosen","level-good","level-caution","level-risk")});$("feedback").classList.remove("show","level-good","level-caution","level-risk");$("revealbox").classList.remove("show");$("reveal").style.display="none";if(s.images){$("visual").innerHTML=`<img class="wwyd-psych-img" src="${s.images.before}" alt="Cartoon trading psychology scenario">`;}else if(s.chart){$("visual").innerHTML=chart(s.pre,s.level);}else{$("visual").innerHTML=psych(s.psych);}requestAnimationFrame(alignScenario);};
+$("retry").onclick=()=>{done=false;let s=S[i];[...$("options").children].forEach(x=>{x.disabled=false;x.classList.remove("chosen","level-good","level-caution","level-risk")});$("feedback").classList.remove("show","level-good","level-caution","level-risk");$("revealbox").classList.remove("show");$("reveal").style.display="none";if(s.images){$("visual").innerHTML=`<img class="wwyd-psych-img" src="${s.images.before}" alt="Cartoon trading psychology scenario">`;}else if(s.chart){$("visual").innerHTML=chart(s.pre,s.level);}else{$("visual").innerHTML=psych(s.psych);}alignQuestionGentle();};
 function showResult(){
   const answered=scores.filter(Boolean).length;
   const good=scores.filter(x=>x==="good").length, caution=scores.filter(x=>x==="caution").length, risk=scores.filter(x=>x==="risk").length;
