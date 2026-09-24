@@ -294,7 +294,7 @@
   .df-takeaway{display:grid;grid-template-columns:auto 1fr 1fr;gap:18px;align-items:center;background:#111417;color:#fff;border-radius:12px;padding:20px 22px}
   .df-dagger{font-size:2.8rem}.df-takeaway h3{margin:0 0 4px;color:#ef5a50;text-transform:uppercase}.df-takeaway p{margin:0;line-height:1.45;color:#e8e8e8}.df-quote{font-size:1.32rem;font-style:italic;border-left:2px solid #d94135;padding-left:18px}
   .df-deeper{margin-top:22px;border:1px solid #cfd3d6;border-radius:12px;background:#fff;overflow:hidden}.df-deeper summary{cursor:pointer;list-style:none;padding:18px 20px;font-size:1.15rem;font-weight:900;color:#111;display:flex;align-items:center;justify-content:space-between;gap:14px}.df-deeper summary::-webkit-details-marker{display:none}.df-deeper summary:after{content:'+';font-size:1.5rem;color:#c9362f}.df-deeper[open] summary:after{content:'–'}.df-deeper-body{padding:0 20px 20px;color:#34383d;line-height:1.7}.df-deeper-body h3{margin:22px 0 8px;color:#111}.df-deeper-body p{margin:0 0 14px}.df-deeper-body ul{padding-left:1.2rem}
-  .df-exercise{counter-reset:dfn;list-style:none!important;padding-left:0!important}.df-exercise li{counter-increment:dfn;position:relative;padding-left:34px;margin:10px 0}.df-exercise li:before{content:counter(dfn);position:absolute;left:0;top:2px;width:23px;height:23px;border-radius:50%;background:#cf332c;color:#fff;text-align:center;line-height:23px;font-weight:900}.df-green{color:#2e7428;font-weight:900}
+  .df-exercise{counter-reset:dfn;list-style:none!important;padding-left:0!important}.df-exercise li{counter-increment:dfn;position:relative;padding-left:34px;margin:10px 0}.df-exercise li:before{content:counter(dfn);position:absolute;left:0;top:2px;width:23px;height:23px;border-radius:50%;background:#cf332c;color:#fff;text-align:center;line-height:23px;font-weight:900}.exercise-reveal{border:0;background:transparent;color:#287fd1;font:inherit;font-weight:800;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:2px}.exercise-reveal:hover{color:#155b9d}.exercise-answer[hidden]{display:none}.exercise-answer{font-weight:400}.exercise-all{margin:8px 0 4px}.df-green{color:#2e7428;font-weight:900}
   .df-return{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}.df-mobile-title{display:block;margin:0 0 18px;color:#fff}.df-mobile-title .eyebrow{color:#ef655b}.df-mobile-title h1{font-size:clamp(2rem,5vw,3.35rem);line-height:1.04;margin:5px 0 10px}.df-mobile-title p{color:#cdd3da;line-height:1.5;margin:0}
   @media(max-width:1000px){.df-grid3{grid-template-columns:1fr 1fr}.df-battery{grid-template-columns:1fr 1fr}.df-takeaway{grid-template-columns:auto 1fr}.df-quote{grid-column:1/-1}}
   @media(max-width:760px){.df-grid2,.df-grid3{grid-template-columns:1fr}.df-grid3>.df-card>.df-heading{min-height:0}.df-battery{grid-template-columns:1fr 1fr}}
@@ -441,8 +441,15 @@ That uncertainty is part of trading. <strong>Stoic thinking helps separate what 
 <p>Instead of only asking, <strong>“Why did this happen to me?”</strong> ask, <strong>“What is this showing me about how I trade?”</strong></p>
 <div class="df-rednote">You cannot choose every trading outcome. You can choose what you learn from it and what you do next.</div>
 <h3>Stoic Trader Exercise: What Can You Control?</h3>
-<p>Imagine this: <strong>You get stopped out for a $100 loss. Five minutes later, the stock reverses and runs without you.</strong> Sort the situation mentally before deciding what to do next.</p>
-<ul class="df-exercise"><li><strong>Outside my control:</strong> The stock reversing after my stop.</li><li><strong>Inside my control:</strong> The position size I chose before entering.</li><li><strong>Inside my control:</strong> Whether I chase the stock after it reverses.</li><li><strong>Not always under immediate control:</strong> Feeling frustrated.</li><li><strong>Inside my control:</strong> Whether that frustration places another trade.</li></ul>
+<p>Imagine this: <strong>You get stopped out for a $100 loss. Five minutes later, the stock reverses and runs without you.</strong> Before revealing each answer, pause for a moment and decide what belongs in that category.</p>
+<ul class="df-exercise" id="stoicControlExercise">
+<li><strong>Outside my control:</strong> <button type="button" class="exercise-reveal" aria-expanded="false">Reveal answer</button><span class="exercise-answer" hidden> The stock reversing after my stop.</span></li>
+<li><strong>Inside my control:</strong> <button type="button" class="exercise-reveal" aria-expanded="false">Reveal answer</button><span class="exercise-answer" hidden> The position size I chose before entering.</span></li>
+<li><strong>Inside my control:</strong> <button type="button" class="exercise-reveal" aria-expanded="false">Reveal answer</button><span class="exercise-answer" hidden> Whether I chase the stock after it reverses.</span></li>
+<li><strong>Not always under immediate control:</strong> <button type="button" class="exercise-reveal" aria-expanded="false">Reveal answer</button><span class="exercise-answer" hidden> Feeling frustrated.</span></li>
+<li><strong>Inside my control:</strong> <button type="button" class="exercise-reveal" aria-expanded="false">Reveal answer</button><span class="exercise-answer" hidden> Whether that frustration places another trade.</span></li>
+</ul>
+<div class="exercise-all"><button type="button" class="plan-btn plan-btn-secondary" id="revealAllStoicAnswers">Reveal All Answers</button></div>
 <h3>Build Your Stoic Reset</h3>
 <p>Think about something outside your control that regularly affects your trading. Then decide what response remains within your control.</p>
 <div class="response-plan-builder" id="responsePlanBuilder">
@@ -597,6 +604,27 @@ That uncertainty is part of trading. <strong>Stoic thinking helps separate what 
         e.stopPropagation();
       }
     }, true);
+  });
+})();
+</script>
+
+<script id="stoic-exercise-reveal-script">
+(function(){
+  const exercise=document.getElementById('stoicControlExercise');
+  const revealAll=document.getElementById('revealAllStoicAnswers');
+  if(!exercise) return;
+  const buttons=[...exercise.querySelectorAll('.exercise-reveal')];
+  function reveal(button){
+    const answer=button.nextElementSibling;
+    if(!answer) return;
+    answer.hidden=false;
+    button.hidden=true;
+    button.setAttribute('aria-expanded','true');
+  }
+  buttons.forEach(button=>button.addEventListener('click',()=>reveal(button)));
+  if(revealAll) revealAll.addEventListener('click',()=>{
+    buttons.forEach(reveal);
+    revealAll.hidden=true;
   });
 })();
 </script>
