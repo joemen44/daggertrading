@@ -129,6 +129,16 @@
     cursor:pointer;
     padding:0;
   }
+
+  /* Match Trader Tools exactly to the other desktop navigation triggers. */
+  .nav-links .nav-tools-button{
+    color:inherit;
+    font-size:inherit;
+    font-weight:inherit;
+    line-height:inherit;
+    font-family:inherit;
+    letter-spacing:inherit;
+  }
   .nav-learn-menu,.nav-tools-menu,.nav-more-menu{
     display:none;
     position:absolute;
@@ -899,6 +909,7 @@ body{background:#020b14!important}
   .brand{letter-spacing:.015em!important}
   .nav-links{gap:28px!important;font-size:.92rem!important}
   .nav-links a,.nav-links button{font-weight:650!important}
+  .nav-links .nav-tools-button{font-family:inherit!important;color:inherit!important;font-size:.95rem!important;font-weight:650!important;line-height:inherit!important;letter-spacing:inherit!important}
 
   .beta-hero-grid{align-items:stretch!important}
   .beta-hero-copy{padding-top:36px!important;padding-bottom:32px!important}
@@ -1028,6 +1039,17 @@ body{background:#020b14!important}
 @media(max-width:980px){.beta-explore-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:620px){.beta-explore-grid{grid-template-columns:1fr}.beta-explore-card{min-height:0}}
 </style>
+
+<!-- hero quick-link optical match: Trader Tools -->
+<style id="hero-trader-tools-optical-match">
+@media (min-width:621px){
+  .beta-hero-points > a:first-child b{
+    font-size:1.06em!important;
+    font-weight:700!important;
+    line-height:1.25!important;
+  }
+}
+</style>
 </head><body><header class="site-header"><div class="container navbar"><a class="brand" href="index.html"><span class="brand-mark">🗡️</span><span>DAGGER <strong>TRADING</strong></span></a><button class="menu-button">Menu</button><nav class="nav-links">
 <a href="index.html">Home</a>
 <div class="nav-learn">
@@ -1046,7 +1068,7 @@ body{background:#020b14!important}
 <div class="nav-tools-group"><button aria-expanded="false" class="nav-tools-group-button" type="button">Trading Checklists ›</button><div class="nav-tools-group-menu"><a href="dagger-trading-checklist.html">Dagger Trading Checklist</a><a href="dagger-swing-trade-checklist.html">Dagger Swing Trade Checklist</a></div></div>
 </div>
 </div>
-<div class="nav-market"><button aria-expanded="false" class="nav-market-button" type="button">Market Notes ▾</button><div class="nav-market-menu"><a href="market-notes.html">Market Notes Home</a><a href="week-ahead-september-21-25-2026.html">Latest Week Ahead</a><a href="weekly-market-wrap-september-18-2026.html">Latest Market Wrap</a><a href="stock-spotlights.html">Stock Spotlights</a><div class="nav-market-archives"><button aria-expanded="false" class="nav-market-archives-button" type="button">Archives ›</button><div class="nav-market-archives-menu"><a href="market-notes-archive.html">Market Notes Archive</a><a href="spotlight-archive.html">Spotlight Archive</a></div></div></div></div>
+<div class="nav-market"><button aria-expanded="false" class="nav-market-button" type="button">Market Notes ▾</button><div class="nav-market-menu"><a href="market-notes.html">Market Notes Home</a><a href="week-ahead-september-21-25-2026.html">Latest Week Ahead</a><a href="weekly-market-wrap-september-25-2026.html">Latest Market Wrap</a><a href="stock-spotlights.html">Stock Spotlights</a><div class="nav-market-archives"><button aria-expanded="false" class="nav-market-archives-button" type="button">Archives ›</button><div class="nav-market-archives-menu"><a href="market-notes-archive.html">Market Notes Archive</a><a href="spotlight-archive.html">Spotlight Archive</a></div></div></div></div>
 <div class="nav-resources">
 <button aria-expanded="false" class="nav-resources-button" type="button">Trading Resources ▾</button>
 <div class="nav-resources-menu">
@@ -1095,11 +1117,11 @@ body{background:#020b14!important}
       <p>Post-Fed market reaction, PMI data, jobless claims, durable goods, consumer sentiment and key earnings lead the week.</p>
       <span>Read the Week Ahead →</span>
     </a>
-    <a class="coverage-card wrap" href="weekly-market-wrap-september-18-2026.html">
+    <a class="coverage-card wrap" href="weekly-market-wrap-september-25-2026.html">
       <div class="coverage-kicker">LATEST • WEEKLY MARKET WRAP</div>
-      <div class="coverage-date">September 14–18, 2026</div>
+      <div class="coverage-date">September 21–25, 2026</div>
       <h3>Latest Market Wrap</h3>
-      <p>The Fed raised rates as oil and Treasury yields pressured the market, while DELL, ORCL, SPCX and AVGO produced fresh Spotlight updates.</p>
+      <p>AI strength lifted stocks despite surging Treasury yields and elevated oil, while META and SPCX produced fresh Spotlight setups.</p>
       <span>Read the Market Wrap →</span>
     </a>
     <a class="coverage-card latest-spotlight" href="meta-stock-spotlight-september-24-2026.html">
@@ -1826,6 +1848,8 @@ body{background:#020b14!important}
   .beta-hero-copy .button{white-space:normal!important;text-align:center!important}
   .beta-hero-points{display:flex!important;gap:8px 14px!important;max-width:410px!important}
   .beta-hero-points a{font-size:.82rem!important}
+  /* Visually balance the shorter Trader Tools quick link with the two longer hero links. */
+  .beta-hero-points a:first-child{font-size:.88rem!important}
   .beta-hero-grid:after{background:linear-gradient(90deg,rgba(2,9,20,.99) 0%,rgba(2,9,20,.96) 48%,rgba(2,9,20,.72) 74%,rgba(2,9,20,.38) 100%)!important}
 }
 </style>
