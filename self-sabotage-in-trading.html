@@ -697,5 +697,74 @@
  document.addEventListener('click',function(e){var b=e.target.closest('[data-dagger-share]');if(b)doShare(b,b.getAttribute('data-dagger-share'));});
 })();
 </script>
+<style id="dagger-desktop-share-style">
+.dagger-desktop-share-popover{position:fixed;z-index:99999;min-width:220px;padding:10px;background:#071522;border:1px solid #24557b;border-radius:10px;box-shadow:0 14px 38px rgba(0,0,0,.38);display:none}
+.dagger-desktop-share-popover.is-open{display:block}
+.dagger-desktop-share-title{color:#b9cadd;font-size:.78rem;font-weight:700;margin:0 0 7px;padding:0 3px;text-transform:uppercase;letter-spacing:.05em}
+.dagger-desktop-share-option{display:flex;width:100%;align-items:center;gap:9px;box-sizing:border-box;border:0;background:transparent;color:#eef7ff;text-decoration:none;border-radius:7px;padding:9px 10px;font:inherit;font-weight:700;cursor:pointer;text-align:left}
+.dagger-desktop-share-option:hover,.dagger-desktop-share-option:focus{background:#0e2b43;outline:none}
+.dagger-desktop-share-option span{width:20px;text-align:center;color:#63b7f5}
+</style>
+<script id="dagger-desktop-share-menu">
+(function(){
+  'use strict';
+  function desktopShare(){return window.matchMedia('(hover:hover) and (pointer:fine)').matches && window.innerWidth>760;}
+  function liveUrl(){
+    var u=location.protocol==='file:' ? 'https://daggertrading.com/'+(location.pathname.split('/').pop()||'') : location.href;
+    return u.split('#')[0];
+  }
+  function details(btn){
+    var url=liveUrl(), title=document.title, text='Check this out on Dagger Trading.';
+    if(btn.classList.contains('share-comic-button')){
+      var card=btn.closest('[id]'); if(card&&card.id) url+='#'+card.id;
+      title=btn.getAttribute('data-share-title')||title;
+      text='Check out this Dagger Trading comic: '+title;
+    } else {
+      var mode=btn.getAttribute('data-dagger-share')||'';
+      if(mode==='wwyd-result'){
+        var badge=document.getElementById('result-badge'), score=document.getElementById('result-score');
+        var rn=badge?badge.textContent.trim():'', sc=score?score.textContent.trim():'';
+        text=(rn&&sc)?'I got “'+rn+'” on Dagger Trading WWYD Set 1 — '+sc+'. How would you do? Take the challenge:':'Check out my result on Dagger Trading WWYD Set 1:';
+      } else if(mode==='wwyd-game') text='What would you do in these trading situations? Take Dagger Trading WWYD Set 1 and compare your result:';
+      else if(mode==='spotlight') text='Check out this Dagger Trading Stock Spotlight.';
+      else if(/stock-spotlight/.test(location.pathname)) text='Check out this Dagger Trading Stock Spotlight.';
+      else text='Check out this Dagger Trading trading psychology lesson.';
+    }
+    return {url:url,title:title,text:text};
+  }
+  var pop=document.createElement('div'); pop.className='dagger-desktop-share-popover'; pop.setAttribute('role','menu'); pop.setAttribute('aria-label','Share options');
+  pop.innerHTML='<div class="dagger-desktop-share-title">Share with</div><a class="dagger-desktop-share-option" data-ds="x" href="#" role="menuitem"><span>𝕏</span>X</a><a class="dagger-desktop-share-option" data-ds="reddit" href="#" role="menuitem"><span>r/</span>Reddit</a><a class="dagger-desktop-share-option" data-ds="gmail" href="#" role="menuitem"><span>✉</span>Gmail</a><button class="dagger-desktop-share-option" data-ds="copy" type="button" role="menuitem"><span>↗</span>Copy Link</button>';
+  document.body.appendChild(pop);
+  var current=null;
+  function close(){pop.classList.remove('is-open');current=null;}
+  function open(btn){
+    current=details(btn); var r=btn.getBoundingClientRect(); pop.classList.add('is-open');
+    var w=pop.offsetWidth, h=pop.offsetHeight, left=Math.min(r.left,window.innerWidth-w-12), top=r.bottom+8;
+    if(top+h>window.innerHeight-10) top=Math.max(10,r.top-h-8);
+    pop.style.left=Math.max(10,left)+'px'; pop.style.top=top+'px';
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('[data-dagger-share],.share-comic-button');
+    if(btn&&desktopShare()){
+      e.preventDefault(); e.stopImmediatePropagation();
+      if(pop.classList.contains('is-open')) close(); else open(btn); return;
+    }
+    if(!e.target.closest('.dagger-desktop-share-popover')) close();
+  },true);
+  pop.addEventListener('click',async function(e){
+    var item=e.target.closest('[data-ds]'); if(!item||!current)return; e.preventDefault(); e.stopPropagation();
+    var d=current, combined=d.text+' '+d.url, target='';
+    if(item.dataset.ds==='x') target='https://twitter.com/intent/tweet?text='+encodeURIComponent(combined);
+    if(item.dataset.ds==='reddit') target='https://www.reddit.com/submit?url='+encodeURIComponent(d.url)+'&title='+encodeURIComponent(d.title);
+    if(item.dataset.ds==='gmail') target='https://mail.google.com/mail/?view=cm&fs=1&su='+encodeURIComponent(d.title)+'&body='+encodeURIComponent(combined);
+    if(target){window.open(target,'_blank','noopener,noreferrer'); close(); return;}
+    if(item.dataset.ds==='copy'){
+      try{if(navigator.clipboard&&window.isSecureContext) await navigator.clipboard.writeText(d.url); else {var t=document.createElement('textarea');t.value=d.url;t.style.position='fixed';t.style.opacity='0';document.body.appendChild(t);t.select();document.execCommand('copy');t.remove();} item.innerHTML='<span>✓</span>Link Copied'; setTimeout(function(){item.innerHTML='<span>↗</span>Copy Link';close();},900);}catch(err){close();}
+    }
+  });
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+  window.addEventListener('resize',close); window.addEventListener('scroll',close,true);
+})();
+</script>
 </body>
 </html>
