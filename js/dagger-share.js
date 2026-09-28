@@ -2,6 +2,9 @@
   'use strict';
 
   var path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  // The live site serves clean extensionless URLs (for example /stoicism-and-trading),
+  // while local testing uses .html files. Normalize both forms so share controls render in either case.
+  if (path !== 'index.html' && path.indexOf('.') === -1) path += '.html';
   var isWWYD = path === 'what-would-you-do-set-1.html';
 
   var psychologyPages = [
