@@ -1,0 +1,16 @@
+Unified dropdown navigation fix.
+
+All navigation dropdowns now share one handler:
+- Learn
+- Trader Tools
+- Market Notes
+- Trading Resources
+- More
+
+Opening any dropdown closes every other open dropdown.
+Clicking outside closes all dropdowns.
+Escape closes all dropdowns.
+
+HTML pages updated: 26
+HTML pages verified: 26
+Verification issues: 0

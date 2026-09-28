@@ -1,0 +1,12 @@
+Trading Resources dropdown updated site-wide.
+
+Resources Home -> resources.html
+Trading Platforms -> resources.html#platforms
+Market Tools & Research -> resources.html#market-tools
+Official Market Sources -> resources.html#official-sources
+Books & Amazon Picks -> resources.html#books
+
+The old Trading Resources entry was removed from More to avoid duplication.
+HTML pages updated: 26
+Top-nav pages missing Trading Resources dropdown: 0
+Pages still duplicating Trading Resources under More: 0

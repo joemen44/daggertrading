@@ -1,0 +1,14 @@
+SITE-WIDE NAVIGATION AUDIT
+
+about.html: {'status': 'updated', 'header_count': 1, 'trader_tools_count': 1, 'more_count': 1, 'setup_score_link_count': 1}
+comics.html: {'status': 'updated', 'header_count': 1, 'trader_tools_count': 1, 'more_count': 1, 'setup_score_link_count': 1}
+contact.html: {'status': 'updated', 'header_count': 1, 'trader_tools_count': 1, 'more_count': 1, 'setup_score_link_count': 1}
+csco-stock-spotlight-august-2026.html: {'status': 'updated', 'header_count': 1, 'trader_tools_count': 1, 'more_count': 1, 'setup_score_link_count': 1}
+dagger-check.html: {'status': 'updated', 'header_count': 1, 'trader_tools_count': 1, 'more_count': 1, 'setup_score_link_count': 1}
+dagger-setup-score.html: {'status': 'updated', 'header_count': 1, 'trader_tools_count': 1, 'more_count': 1, 'setup_score_link_count': 2}
+index.html: {'status': 'updated', 'header_count': 1, 'trader_tools_count': 1, 'more_count': 1, 'setup_score_link_count': 2}
+learn.html: {'status': 'updated', 'header_count': 1, 'trader_tools_count': 1, 'more_count': 1, 'setup_score_link_count': 1}
+market-notes.html: {'status': 'updated', 'header_count': 1, 'trader_tools_count': 1, 'more_count': 1, 'setup_score_link_count': 2}
+resources.html: {'status': 'updated', 'header_count': 1, 'trader_tools_count': 1, 'more_count': 1, 'setup_score_link_count': 1}
+spcx-stock-spotlight-august-2026.html: {'status': 'updated', 'header_count': 1, 'trader_tools_count': 1, 'more_count': 1, 'setup_score_link_count': 1}
+toolbox.html: {'status': 'updated', 'header_count': 1, 'trader_tools_count': 1, 'more_count': 1, 'setup_score_link_count': 1}

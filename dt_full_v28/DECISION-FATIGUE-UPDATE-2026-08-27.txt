@@ -1,0 +1,16 @@
+Decision Fatigue psychology lesson added to the uploaded live-site copy.
+
+Updated:
+- learn-trading-psychology.html: added Decision Fatigue card (#7) and updated the intro sentence.
+- sitemap.xml: added /decision-fatigue-in-trading.
+
+Added:
+- decision-fatigue-in-trading.html
+- images/learn/decision-fatigue.png
+
+All other files are preserved from the uploaded live-site ZIP.
+
+Additional visual update:
+- Replaced Decision Fatigue artwork with the approved comic/cartoon-style illustration.
+- Psychology lesson #7 card now uses the new illustration.
+- Added the same simple illustration to the top of decision-fatigue-in-trading.html.
