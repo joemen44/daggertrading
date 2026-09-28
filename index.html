@@ -1065,6 +1065,24 @@ body{background:#020b14!important}
   }
 }
 </style>
+
+<style id="mobile-wisdom-trading-fix">
+/* Mobile: keep the Stoic quote's trading interpretation visible. */
+@media (max-width:980px){
+  /* The third child IS .wisdom-take; an older mobile rule hides it via nth-child(3). */
+  .dagger-wisdom > .wisdom-take,
+  .dagger-wisdom > div:nth-child(3){
+    display:grid!important;
+    grid-column:2!important;
+    border-left:0!important;
+    padding-left:0!important;
+    margin-top:10px!important;
+    width:100%!important;
+  }
+  .dagger-wisdom > .wisdom-take strong,
+  .dagger-wisdom > .wisdom-take span{display:block!important;}
+}
+</style>
 </head><body><header class="site-header"><div class="container navbar"><a class="brand" href="index.html"><span class="brand-mark">🗡️</span><span>DAGGER <strong>TRADING</strong></span></a><button class="menu-button">Menu</button><nav class="nav-links">
 <a href="index.html">Home</a>
 <div class="nav-learn">
