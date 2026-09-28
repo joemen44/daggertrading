@@ -216,6 +216,27 @@
  .nav-tools-group.submenu-open>.nav-tools-group-menu{display:grid;gap:2px}
 }
 </style>
+
+<style id="dagger-comic-share-style">
+
+.share-comic-button{
+  font:inherit;
+  cursor:pointer;
+  color:#f4f8ff !important;
+  background:#10233a !important;
+  border:1px solid #315274 !important;
+  box-shadow:none;
+  margin-top:8px;
+}
+.share-comic-button:hover,
+.share-comic-button:focus{
+  color:#ffffff !important;
+  background:#173553 !important;
+  border-color:#4da3ff !important;
+}
+.content-card-actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center;}
+
+</style>
 </head>
 <body>
 <header class="site-header">
@@ -295,7 +316,7 @@
 <div class="content-card-actions">
 <a class="button button-primary" href="images/comics/the-saboteur-self-sabotage.png" rel="noopener noreferrer" target="_blank">View Comic</a>
 <a class="button button-secondary" href="https://x.com/DaggerTrading/status/2095914421860143179" rel="noopener noreferrer" target="_blank">View on X</a>
-</div>
+<button class="button button-secondary share-comic-button" type="button" data-share-title="The Saboteur" data-share-image="images/comics/the-saboteur-self-sabotage.png">↗ Share Comic</button></div>
 <p style="margin-top:16px;color:var(--muted);"><strong>Keep scrolling</strong> to explore more Dagger Trading comics.</p>
 </div>
 </article>
@@ -311,7 +332,7 @@
 <div class="content-card-actions">
 <a class="button button-primary" href="images/comics/one-more-trade.png" rel="noopener noreferrer" target="_blank">View Comic</a>
 <a class="button button-secondary" href="https://x.com/DaggerTrading/status/2093077124663930893" rel="noopener noreferrer" target="_blank">View on X</a>
-</div>
+<button class="button button-secondary share-comic-button" type="button" data-share-title="One More Trade" data-share-image="images/comics/one-more-trade.png">↗ Share Comic</button></div>
 </div>
 </article>
 <article class="card content-card" id="the-secret-strategy">
@@ -325,7 +346,7 @@
 <p>A young trader seeks out a market veteran hoping to finally learn the secret behind decades of trading experience. What could possibly be inside that old notebook?</p>
 <div class="content-card-actions">
 <a class="button button-primary" href="images/comics/the-secret-strategy.png" rel="noopener noreferrer" target="_blank">View Comic</a>
-</div>
+<button class="button button-secondary share-comic-button" type="button" data-share-title="The Secret Strategy" data-share-image="images/comics/the-secret-strategy.png">↗ Share Comic</button></div>
 </div>
 </article>
 <article class="card content-card" id="chess-trading">
@@ -337,10 +358,10 @@
 <h2>Play the Long Game: Chess &amp; Trading</h2>
 <p><strong>Added:</strong> August 20, 2026</p>
 <p>Chess and trading reward many of the same habits: think ahead, consider multiple scenarios, protect your position, stay patient, control emotion, and adapt when conditions change. You don't need to make every move. Just the ones that make sense.</p>
-<div class="content-card-actions"><a class="button button-primary" href="images/comics/chess-trading-play-the-long-game.png" rel="noopener noreferrer" target="_blank">View Comic</a><a class="button button-secondary" href="https://x.com/DaggerTrading/status/2090833752851124391" rel="noopener noreferrer" target="_blank">View on X</a></div>
+<div class="content-card-actions"><a class="button button-primary" href="images/comics/chess-trading-play-the-long-game.png" rel="noopener noreferrer" target="_blank">View Comic</a><a class="button button-secondary" href="https://x.com/DaggerTrading/status/2090833752851124391" rel="noopener noreferrer" target="_blank">View on X</a><button class="button button-secondary share-comic-button" type="button" data-share-title="Play the Long Game: Chess &amp; Trading" data-share-image="images/comics/chess-trading-play-the-long-game.png">↗ Share Comic</button></div>
 </div>
 </article>
-<article class="card content-card">
+<article class="card content-card" id="earnings-beat-stock-down">
 <a class="content-card-image" href="images/comics/earnings-day-reaction.png" rel="noopener noreferrer" target="_blank">
 <img alt="Dagger Trading Earnings Day comic about a stock falling after beating earnings" src="images/comics/earnings-day-reaction.png"/>
 </a>
@@ -352,10 +373,10 @@
 <div class="content-card-actions">
 <a class="button button-primary" href="images/comics/earnings-day-reaction.png" rel="noopener noreferrer" target="_blank">View Comic</a>
 <a class="button button-secondary" href="https://x.com/DaggerTrading/status/2086934498613080337" rel="noopener noreferrer" target="_blank">View on X</a>
-</div>
+<button class="button button-secondary share-comic-button" type="button" data-share-title="Earnings Beat... So Why Is the Stock Down?" data-share-image="images/comics/earnings-day-reaction.png">↗ Share Comic</button></div>
 </div>
 </article>
-<article class="card content-card">
+<article class="card content-card" id="green-today-red-by-end">
 <a class="content-card-image" href="images/comics/green-to-red-overtrading.png" rel="noopener noreferrer" target="_blank">
 <img alt="Dagger Trading comic about turning a green trading day red by overtrading" src="images/comics/green-to-red-overtrading.png"/>
 </a>
@@ -366,10 +387,10 @@
 <div class="content-card-actions">
 <a class="button button-primary" href="images/comics/green-to-red-overtrading.png" rel="noopener noreferrer" target="_blank">View Comic</a>
 <a class="button button-secondary" href="https://x.com/DaggerTrading/status/2084391530043682992" rel="noopener noreferrer" target="_blank">View on X</a>
-</div>
+<button class="button button-secondary share-comic-button" type="button" data-share-title="Green Today, Red by the End" data-share-image="images/comics/green-to-red-overtrading.png">↗ Share Comic</button></div>
 </div>
 </article>
-<article class="card content-card">
+<article class="card content-card" id="every-dip-buyer-has-a-story">
 <a class="content-card-image" href="images/comics/buying-the-dips-dip.png" rel="noopener noreferrer" target="_blank">
 <img alt="Every Dip Buyer Has a Story trading comic" src="images/comics/buying-the-dips-dip.png"/>
 </a>
@@ -380,10 +401,10 @@
 <div class="content-card-actions">
 <a class="button button-primary" href="images/comics/buying-the-dips-dip.png" rel="noopener noreferrer" target="_blank">View Comic</a>
 <a class="button button-secondary" href="https://x.com/DaggerTrading/status/2080715465333014813" rel="noopener noreferrer" target="_blank">View on X</a>
-</div>
+<button class="button button-secondary share-comic-button" type="button" data-share-title="Every Dip Buyer Has a Story" data-share-image="images/comics/buying-the-dips-dip.png">↗ Share Comic</button></div>
 </div>
 </article>
-<article class="card content-card">
+<article class="card content-card" id="buying-the-dip">
 <a class="content-card-image" href="images/comics/buying-the-dip.png" rel="noopener noreferrer" target="_blank">
 <img alt="Buying the Dip comic" src="images/comics/buying-the-dip.png"/>
 </a>
@@ -395,10 +416,10 @@
 <div class="content-card-actions">
 <a class="button button-primary" href="images/comics/buying-the-dip.png" rel="noopener noreferrer" target="_blank">View Comic</a>
 <a class="button button-secondary" href="https://x.com/DaggerTrading/status/1896669327539200457" rel="noopener noreferrer" target="_blank">View on X</a>
-</div>
+<button class="button button-secondary share-comic-button" type="button" data-share-title="Buying the Dip" data-share-image="images/comics/buying-the-dip.png">↗ Share Comic</button></div>
 </div>
 </article>
-<article class="card content-card">
+<article class="card content-card" id="market-crashes-come-and-go">
 <a class="content-card-image" href="images/comics/market-crashes-come-and-go.png" rel="noopener noreferrer" target="_blank">
 <img alt="Dagger Trading comic about market crashes throughout history" src="images/comics/market-crashes-come-and-go.png"/>
 </a>
@@ -409,10 +430,10 @@
 <div class="content-card-actions">
 <a class="button button-primary" href="images/comics/market-crashes-come-and-go.png" rel="noopener noreferrer" target="_blank">View Comic</a>
 <a class="button button-secondary" href="https://x.com/DaggerTrading/status/1914465673373196792" rel="noopener noreferrer" target="_blank">View on X</a>
-</div>
+<button class="button button-secondary share-comic-button" type="button" data-share-title="Market Crashes Come and Go" data-share-image="images/comics/market-crashes-come-and-go.png">↗ Share Comic</button></div>
 </div>
 </article>
-<article class="card content-card">
+<article class="card content-card" id="fomo-at-the-top">
 <a class="content-card-image" href="images/comics/fomo-at-the-top.png" rel="noopener noreferrer" target="_blank">
 <img alt="FOMO at the Top trading comic about chasing a stock at its peak" src="images/comics/fomo-at-the-top.png"/>
 </a>
@@ -423,10 +444,10 @@
 <div class="content-card-actions">
 <a class="button button-primary" href="images/comics/fomo-at-the-top.png" rel="noopener noreferrer" target="_blank">View Comic</a>
 <a class="button button-secondary" href="https://x.com/DaggerTrading/status/1900700411767447701" rel="noopener noreferrer" target="_blank">View on X</a>
-</div>
+<button class="button button-secondary share-comic-button" type="button" data-share-title="FOMO at the Top" data-share-image="images/comics/fomo-at-the-top.png">↗ Share Comic</button></div>
 </div>
 </article>
-<article class="card content-card">
+<article class="card content-card" id="when-the-news-finally-notices">
 <a class="content-card-image" href="images/comics/when-the-news-finally-notices.png" rel="noopener noreferrer" target="_blank">
 <img alt="Trading comic about financial news noticing a stock only after the major move" src="images/comics/when-the-news-finally-notices.png"/>
 </a>
@@ -437,10 +458,10 @@
 <div class="content-card-actions">
 <a class="button button-primary" href="images/comics/when-the-news-finally-notices.png" rel="noopener noreferrer" target="_blank">View Comic</a>
 <a class="button button-secondary" href="https://x.com/DaggerTrading/status/1904667523687071942" rel="noopener noreferrer" target="_blank">View on X</a>
-</div>
+<button class="button button-secondary share-comic-button" type="button" data-share-title="When the News Finally Notices" data-share-image="images/comics/when-the-news-finally-notices.png">↗ Share Comic</button></div>
 </div>
 </article>
-<article class="card content-card">
+<article class="card content-card" id="earnings-season">
 <a class="content-card-image" href="images/comics/earnings-season.png" rel="noopener noreferrer" target="_blank">
 <img alt="Dagger Trading earnings comic about having a plan before the report" src="images/comics/earnings-season.png"/>
 </a>
@@ -451,10 +472,10 @@
 <div class="content-card-actions">
 <a class="button button-primary" href="images/comics/earnings-season.png" rel="noopener noreferrer" target="_blank">View Comic</a>
 <a class="button button-secondary" href="https://x.com/DaggerTrading/status/1885469607370064155" rel="noopener noreferrer" target="_blank">View on X</a>
-</div>
+<button class="button button-secondary share-comic-button" type="button" data-share-title="Earnings Season" data-share-image="images/comics/earnings-season.png">↗ Share Comic</button></div>
 </div>
 </article>
-<article class="card content-card">
+<article class="card content-card" id="buying-the-top">
 <a class="content-card-image" href="images/comics/buying-the-top-greed.png" rel="noopener noreferrer" target="_blank">
 <img alt="Buying the Top comic" src="images/comics/buying-the-top-greed.png"/>
 </a>
@@ -466,7 +487,7 @@
 <div class="content-card-actions">
 <a class="button button-primary" href="images/comics/buying-the-top-greed.png" rel="noopener noreferrer" target="_blank">View Comic</a>
 <a class="button button-secondary" href="https://x.com/DaggerTrading/status/1869191562326057105" rel="noopener noreferrer" target="_blank">View on X</a>
-</div>
+<button class="button button-secondary share-comic-button" type="button" data-share-title="Buying the Top" data-share-image="images/comics/buying-the-top-greed.png">↗ Share Comic</button></div>
 </div>
 </article>
 </div>
@@ -584,6 +605,36 @@
         var btn = group.querySelector('.nav-tools-group-button');
         if (btn) btn.setAttribute('aria-expanded','false');
       });
+    }
+  });
+})();
+</script>
+
+<script src="js/dagger-share.js"></script>
+<script id="dagger-comic-share">
+(function(){
+  document.addEventListener('click', async function(e){
+    const btn=e.target.closest('.share-comic-button');
+    if(!btn) return;
+    const title=btn.dataset.shareTitle || 'Dagger Trading Comic';
+    const card=btn.closest('.content-card');
+    const anchor=card && card.id ? '#' + card.id : '';
+    const url='https://daggertrading.com/comics.html' + anchor;
+    const shareText='Check out “' + title + '” from Dagger Trading.';
+    const original=btn.textContent;
+    try{
+      if(location.protocol !== 'file:' && navigator.share){
+        await navigator.share({title:title + ' | Dagger Trading', text:shareText, url:url});
+      }else if(navigator.clipboard && window.isSecureContext){
+        await navigator.clipboard.writeText(shareText + ' ' + url);
+        btn.textContent='✓ Link Copied!';
+        setTimeout(function(){btn.textContent=original;},1800);
+      }else{
+        window.prompt('Copy this link:',url);
+      }
+    }catch(err){
+      if(err && err.name==='AbortError') return;
+      window.prompt('Copy this link:',url);
     }
   });
 })();
