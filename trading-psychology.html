@@ -398,6 +398,9 @@
  .nav-tools-group.submenu-open>.nav-tools-group-menu{display:grid;gap:2px}
 }
 </style>
+<style id="dagger-hardcoded-share-style">
+.dagger-static-share-btn{appearance:none;border:1px solid #2b9df4;border-radius:8px;background:#0c6fbd;color:#fff;padding:10px 16px;font:inherit;font-weight:800;cursor:pointer}.dagger-static-share-btn:hover{background:#1084df}.dagger-static-share-status{color:#8fcaff;font-size:.82rem;margin-left:8px}.dagger-spotlight-top-share{max-width:920px;margin:18px auto 30px;display:flex;justify-content:flex-end;align-items:center}.dagger-spotlight-bottom-share{max-width:675px;margin:0 auto 10px;display:flex;justify-content:center;align-items:center;transform:translateY(-18px)}.dagger-psych-share{margin-left:auto}.dagger-wwyd-share{margin:16px auto 12px;padding:12px 16px;border:1px solid #1f5279;border-radius:12px;background:#081827;text-align:center}.dagger-wwyd-share strong{display:block;color:#fff;margin-bottom:3px}.dagger-wwyd-share p{color:#b9cadd;margin:0 0 9px}.dagger-wwyd-share-buttons{display:flex;justify-content:center;gap:9px;flex-wrap:wrap}@media(max-width:620px){.dagger-spotlight-top-share{margin:18px 14px 26px}.dagger-static-share-btn{min-height:44px}.dagger-psych-share{margin-left:0}.dagger-spotlight-bottom-share{margin-left:14px;margin-right:14px}}
+</style>
 </head>
 <body>
 <header class="site-header"><div class="container navbar"><a class="brand" href="index.html"><span class="brand-mark">🗡️</span><span>DAGGER <strong>TRADING</strong></span></a><button class="menu-button">Menu</button><nav class="nav-links">
@@ -449,7 +452,7 @@
 <section class="tg-section tg-midgrid"><div><h2 class="tg-heading"><span class="tg-num">4.</span> Outcome ≠ Decision Quality</h2><div class="tg-decision-grid"><div class="tg-decision good"><strong>Good Process + Loss = Acceptable</strong><div class="flow">📋 → 📉 → ✅</div><p>You followed the setup and controlled risk. The outcome does not erase the quality of the decision.</p></div><div class="tg-decision bad"><strong>Emotion + Win = Still a Warning</strong><div class="flow">🔥 → 📈 → ⚠️</div><p>A lucky result can reinforce a bad habit. A win does not make an impulsive decision disciplined.</p></div></div><div class="tg-focus">Grade the decision first. Grade the outcome second.</div></div><div><h2 class="tg-heading"><span class="tg-num">5.</span> Warning Signs</h2><div class="tg-panel tg-warning"><ul><li>Entering because price is moving fast</li><li>Feeling that you must participate</li><li>Changing the plan after entry</li><li>Watching every tick with rising anxiety</li><li>Taking another trade just to feel better</li><li>Letting one outcome define your confidence</li></ul><div class="tg-warning-note">When emotion changes the plan, reduce risk and reset.</div></div></div></section>
 <section class="tg-section tg-takeaway"><div class="tg-dagger">🗡️</div><div><h3>6. Key Takeaway</h3><p>Your edge needs rules around it. The goal is not perfect execution—it is noticing when you drift and returning to the process.</p></div><div class="tg-quote">“Feel the emotion. Follow the process.”</div></section>
 <details class="tg-deeper"><summary><span>7. Go Deeper <small style="font-weight:600;color:#666">(optional reading)</small></span></summary><div class="tg-deeper-body"><h3>The deeper lesson</h3><p>FOMO is dangerous because it can feel logical in the moment. Price is moving, other traders seem to be participating, and waiting can feel like losing an opportunity. But when that urgency changes your entry, size, stop or setup criteria, the trade is no longer being driven by your plan. The goal is not to eliminate FOMO. The goal is to recognize when observation turns into urgency and keep urgency from getting the final vote.</p><h3>A simple practice</h3><p>Before the next order, write down the setup, confirmation, invalidation and risk. If price runs without giving you the entry you planned, practice letting it go. After the trade—or the trade you skipped—review whether you followed the process. Remember: a chased trade that wins can be more dangerous than one that loses because the profit can reinforce the bad habit. Grade the decision first and the outcome second.</p><p><small>Educational content only. This lesson is designed to improve trading process and risk awareness; it does not predict outcomes or provide personalized financial advice.</small></p></div></details>
-<div class="dagger-check-callout"><strong>Feeling pressure to chase?</strong><p>Run Dagger Check before you act. It can help you catch FOMO before it turns into an impulsive entry.</p><a class="dagger-check-link" href="dagger-check.html">Open Dagger Check →</a></div><div class="tg-return"><a class="button button-primary" href="learn-trading-psychology.html">← Back to Psychology Lessons</a><a class="button button-secondary" href="trader-tools.html">Explore Trader Tools →</a></div></section></div></main>
+<div class="dagger-check-callout"><strong>Feeling pressure to chase?</strong><p>Run Dagger Check before you act. It can help you catch FOMO before it turns into an impulsive entry.</p><a class="dagger-check-link" href="dagger-check.html">Open Dagger Check →</a></div><div class="tg-return"><a class="button button-primary" href="learn-trading-psychology.html">← Back to Psychology Lessons</a><a class="button button-secondary" href="trader-tools.html">Explore Trader Tools →</a><button class="dagger-static-share-btn dagger-psych-share" type="button" data-dagger-share="psych">↗ Share</button><span class="dagger-static-share-status" aria-live="polite"></span></div></section></div></main>
 <footer class="site-footer">
 <div class="container">
 <div class="footer-grid">
@@ -606,6 +609,21 @@
   });
 })();
 </script>
-<script src="js/dagger-share.js"></script>
+
+<script id="dagger-hardcoded-share-handler">
+(function(){
+ async function doShare(btn,mode){
+  var url=location.protocol==='file:'?'https://daggertrading.com/'+(location.pathname.split('/').pop()||''):location.href;
+  var text='Check out this Dagger Trading page.';
+  if(mode==='spotlight') text='Check out this Dagger Trading Stock Spotlight.';
+  if(mode==='psych') text='Check out this Dagger Trading trading psychology lesson.';
+  if(mode==='wwyd-game') { text='What would you do in these trading situations? Take Dagger Trading WWYD Set 1 and compare your result:'; url='https://daggertrading.com/what-would-you-do-set-1'; }
+  if(mode==='wwyd-result') { var b=document.getElementById('result-badge'),s=document.getElementById('result-score'); text='I got “'+(b?b.textContent.trim():'my result')+'” on Dagger Trading WWYD Set 1'+(s?' — '+s.textContent.trim():'')+'. How would you do? Take the challenge:'; url='https://daggertrading.com/what-would-you-do-set-1'; }
+  var status=btn.parentElement.querySelector('.dagger-static-share-status');
+  try{if(navigator.share&&location.protocol!=='file:'){await navigator.share({title:document.title,text:text,url:url}); if(status)status.textContent='Shared.';}else{var full=text+' '+url;if(navigator.clipboard&&window.isSecureContext)await navigator.clipboard.writeText(full);else{var t=document.createElement('textarea');t.value=full;t.style.position='fixed';t.style.opacity='0';document.body.appendChild(t);t.select();document.execCommand('copy');t.remove();}if(status)status.textContent='Link copied!';}}catch(e){if(e&&e.name==='AbortError')return;if(status)status.textContent='Copy the page URL from your browser.';}
+ }
+ document.addEventListener('click',function(e){var b=e.target.closest('[data-dagger-share]');if(b)doShare(b,b.getAttribute('data-dagger-share'));});
+})();
+</script>
 </body>
 </html>
