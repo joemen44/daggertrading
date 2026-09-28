@@ -1,0 +1,12 @@
+Dagger Trading Week Ahead update — September 28–October 2, 2026
+
+Upload these files to the site root, preserving filenames.
+
+Changed files:
+- week-ahead-september-28-october-2-2026.html
+- index.html
+- market-notes.html
+- market-notes-archive.html
+- sitemap.xml
+
+Built from the live-site ZIP supplied September 28, 2026.
