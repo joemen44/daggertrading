@@ -1,9 +1,0 @@
-Market Notes dropdown updated site-wide.
-
-Market Notes Home -> market-notes.html
-Latest Week Ahead -> week-ahead-august-17-21-2026.html
-Latest Market Wrap -> weekly-market-wrap-august-14-2026.html
-Stock Spotlights -> stock-spotlights.html
-
-Updated HTML files: 26
-Top-nav pages still missing dropdown: 0
