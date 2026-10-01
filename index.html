@@ -1157,28 +1157,28 @@ body{background:#020b14!important}
       <p>AI strength lifted stocks despite surging Treasury yields and elevated oil, while META and SPCX produced fresh Spotlight setups.</p>
       <span>Read the Market Wrap →</span>
     </a>
-    <a class="coverage-card latest-spotlight" href="intc-stock-spotlight-september-2026.html">
-      <div class="spotlight-visual" aria-hidden="true" style="background-image:linear-gradient(rgba(4,18,31,.10),rgba(4,18,31,.10)),url('intc-spotlight-card.png');background-size:cover;background-position:center;"></div>
+    <a class="coverage-card latest-spotlight" href="mu-stock-spotlight-september-30-2026.html">
+      <div class="spotlight-visual" aria-hidden="true" style="background-image:url('assets/spotlight-mu.webp');background-size:100% auto;background-position:center top;background-repeat:no-repeat;"></div>
       <div class="spotlight-content">
         <div class="coverage-kicker">LATEST • STOCK SPOTLIGHT</div>
-        <div class="spotlight-ticker">INTC</div>
-        <div class="coverage-date">Updated September 29, 2026</div>
-        <h3>INTC: Sharp Reversal After Nearing $130.40 Resistance</h3>
-        <p>INTC rallied to $130.24 early Friday, just 16 cents below major resistance, before reversing sharply into Monday. The latest update maps the recovery and support levels to watch next.</p>
-        <span>Read INTC Spotlight →</span>
+        <div class="spotlight-ticker">MU</div>
+        <div class="coverage-date">September 30, 2026</div>
+        <h3>MU: Record Earnings, a Volatile Reaction &amp; the Levels That Matter Next</h3>
+        <p>Micron beat Q4 expectations and guided above estimates, but the after-hours reaction turned volatile. The updated Spotlight maps the key levels after earnings.</p>
+        <span>Read MU Spotlight →</span>
       </div>
     </a>
   </div>
   <div class="previous-spotlight-box">
     <div class="previous-spotlight-head"><div><small>MORE STOCK SPOTLIGHTS</small><strong>Previous analysis</strong></div><a href="stock-spotlights.html">View All Stock Spotlights →</a></div>
     <div class="previous-spotlight-grid">
+      <a href="intc-stock-spotlight-september-2026.html"><b>INTC</b><em>Intel</em><span>→</span></a>
       <a href="meta-stock-spotlight-september-24-2026.html"><b>META</b><em>Meta Platforms</em><span>→</span></a>
       <a href="spcx-stock-spotlight-september-2026.html"><b>SPCX</b><em>SpaceX</em><span>→</span></a>
-      <a href="amd-stock-spotlight-september-2026.html"><b>AMD</b><em>Advanced Micro Devices</em><span>→</span></a>
     </div>
   </div>
 </div>
-<section class="dagger-wisdom" aria-label="Dagger Wisdom"><div class="wisdom-dagger">🗡️</div><blockquote>“You have power over your mind — not outside events.” <cite>— Marcus Aurelius</cite></blockquote><div class="wisdom-take"><strong>In trading:</strong><span>control the decision, not the next candle.</span></div></section>
+<section class="dagger-wisdom" aria-label="Dagger Wisdom. Click for another Stoic trading thought." role="button" tabindex="0" onclick="daggerWisdomNext()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();daggerWisdomNext();}"><div class="wisdom-dagger">🗡️</div><blockquote>“You have power over your mind — not outside events.” <cite>— Marcus Aurelius</cite></blockquote><div class="wisdom-take"><strong>In trading:</strong><span>control the decision, not the next candle.</span></div></section>
 <div class="beta-tools-head"><h2>🔧 TRADER TOOLS</h2><span>Turn better decisions into better results.</span></div>
 <div class="beta-tools-grid">
 <a href="dagger-check.html"><b>☑</b><div><strong>Dagger Check</strong><span>Check your mindset before you take the trade.</span></div><i>›</i></a>
@@ -1385,504 +1385,63 @@ body{background:#020b14!important}
   });
 })();
 </script>
-<script id="dagger-wisdom-rotation">(function(){const thoughts=[
-["You have power over your mind — not outside events.","Marcus Aurelius","control the decision, not the next candle."],
+<script id="dagger-wisdom-rotation">
+(function(){
+  var thoughts=[
+    ["You have power over your mind — not outside events.","Marcus Aurelius","control the decision, not the next candle."],
+    ["No man is free who is not master of himself.","Epictetus","discipline matters most when impulse wants the mouse."],
+    ["The best revenge is not to be like your enemy.","Marcus Aurelius","don't let one bad trade turn into revenge trading."],
+    ["We suffer more often in imagination than in reality.","Seneca","don't let fear of a possible loss make the decision for you."],
+    ["First say to yourself what you would be; and then do what you have to do.","Epictetus","define the trader you want to be, then follow the process that matches it."],
+    ["If it is not right, do not do it; if it is not true, do not say it.","Marcus Aurelius","if the setup is not there, don't force the trade."],
+    ["It is impossible for a man to learn what he thinks he already knows.","Epictetus","stay teachable, especially after a winning streak."],
+    ["Luck is what happens when preparation meets opportunity.","Seneca","prepare the levels first, then let the market bring the opportunity."],
+    ["Waste no more time arguing what a good man should be. Be one.","Marcus Aurelius","stop planning to be disciplined and make the disciplined decision now."],
+    ["Difficulties strengthen the mind, as labor does the body.","Seneca","a tough trading day can sharpen your process if you review it instead of chasing it."],
+    ["The chief task in life is simply this: to identify and separate matters.","Epictetus","separate what price is doing from what you want it to do."],
+    ["You have power over your mind — not outside events. Realize this, and you will find strength.","Marcus Aurelius","your edge is in your response, not in controlling the market."]
+  ];
 
-["No man is free who is not master of himself.","Epictetus","discipline matters most when impulse wants the mouse."],
-["The best revenge is not to be like your enemy.","Marcus Aurelius","don't let one bad trade turn into revenge trading."]];let i=0;const b=document.querySelector('.dagger-wisdom blockquote'),t=document.querySelector('.wisdom-take span'),n=document.querySelector('.wisdom-next');if(!b||!t||!n)return;n.addEventListener('click',()=>{i=(i+1)%thoughts.length;b.innerHTML='“'+thoughts[i][0]+'” <cite>— '+thoughts[i][1]+'</cite>';t.textContent=thoughts[i][2]})})();</script>
-<style id="beta50-wisdom-spacing">
-/* v50: keep v49 height and bring the trading interpretation closer to the quote. */
-@media (min-width:981px){
-  .dagger-wisdom{
-    grid-template-columns:34px minmax(0,1.85fr) minmax(330px,1fr)!important;
-    column-gap:18px!important;
-  }
-  .wisdom-take{padding-left:20px!important;}
-}
-</style>
+  var deck=[];
+  var last=-1;
 
-<style id="beta72-resize-safe-quick-links">
-/* Resize-safe hero navigation: keep the links inside the copy column.
-   At narrower desktop widths, wrap the row instead of letting it pass
-   underneath the artwork. The 100% desktop layout remains unchanged. */
-@media (min-width:981px) and (max-width:1180px){
-  .beta-hero-copy{
-    overflow:hidden!important;
-  }
-  .beta-hero-points{
-    display:flex!important;
-    width:100%!important;
-    max-width:100%!important;
-    min-width:0!important;
-    flex-wrap:wrap!important;
-    column-gap:14px!important;
-    row-gap:7px!important;
-  }
-  .beta-hero-points a{
-    flex:0 0 auto!important;
-    max-width:100%!important;
-    white-space:nowrap!important;
-  }
-}
-</style>
-
-<!-- v74: 110% desktop-width fix only. 100% desktop remains unchanged. -->
-<style id="beta74-110-percent-hero-fix">
-@media (min-width:981px) and (max-width:1180px){
-  .beta-hero-grid{
-    grid-template-columns:470px minmax(0,1fr)!important;
-  }
-  .beta-hero-copy{
-    width:470px!important;
-    min-width:470px!important;
-    max-width:470px!important;
-  }
-  .beta-hero-points{
-    flex-wrap:nowrap!important;
-    gap:7px!important;
-  }
-}
-</style>
-
-</body></html><script>(()=>{const thoughts=[["You have power over your mind — not outside events.","Marcus Aurelius","control the decision, not the next candle."],["No man is free who is not master of himself.","Epictetus","discipline comes before opportunity."],["The best revenge is not to be like your enemy.","Marcus Aurelius","don't let one bad trade turn into revenge trading."]];const b=document.querySelector('.dagger-wisdom blockquote'),t=document.querySelector('.wisdom-take span');if(!b||!t)return;const i=Math.floor(Math.random()*thoughts.length);b.innerHTML='“'+thoughts[i][0]+'” <cite>— '+thoughts[i][1]+'</cite>';t.textContent=thoughts[i][2]})();</script>E html>
-<style id="beta30-hero-natural-proportions">
-/* v30: preserve the desk artwork's native proportions; do not stretch it to the hero box. */
-@media (min-width:981px){
-  .beta-desk{
-    background-size:cover!important;
-    background-position:center center!important;
-  }
-}
-</style>
-<style id="beta31-hero-no-zoom">
-/* v31: show the hero artwork at its natural aspect ratio with no stretch or cover-zoom. */
-@media (min-width:981px){
-  .beta-desk{
-    background-size:contain!important;
-    background-position:center center!important;
-    background-repeat:no-repeat!important;
-    background-color:#020914!important;
-  }
-}
-</style>
-
-<style id="beta49-wisdom-tighten">
-/* v49: tighten the Words of Wisdom strip without changing its typography or layout. */
-@media (min-width:981px){
-  .dagger-wisdom{
-    min-height:72px!important;
-    padding:13px 22px!important;
-    margin-top:16px!important;
-    margin-bottom:23px!important;
-  }
-}
-</style>
-
-
-<style id="beta53-approved-hero">
-/* v53: approved dual-chart hero artwork. Keep the existing HTML hero copy and layout. */
-@media (min-width:981px){
-  .beta-desk{
-    background-image:url('assets/hero-desk-v53.webp')!important;
-    background-size:cover!important;
-    background-position:center center!important;
-    background-repeat:no-repeat!important;
-    background-color:#020914!important;
-  }
-}
-@media (max-width:980px){
-  .beta-desk{
-    background-image:url('assets/hero-desk-v53.webp')!important;
-    background-size:cover!important;
-    background-position:center center!important;
-    background-repeat:no-repeat!important;
-  }
-}
-</style>
-<style id="beta54-hero-quicklinks-fix">
-/* Keep all three hero quick links fully inside the copy column. */
-@media (min-width:981px){
-  .beta-hero-points{
-    gap:16px!important;
-    font-size:.68rem!important;
-    flex-wrap:nowrap!important;
-    max-width:100%!important;
-    overflow:hidden!important;
-  }
-  .beta-hero-points a{
-    flex:0 1 auto!important;
-    min-width:0!important;
-    white-space:nowrap!important;
-  }
-  .beta-hero-points a b{font-size:1em!important;}
-}
-</style>
-
-
-<style id="beta56-local-hero-fix">
-@media (min-width:981px){
-  .beta-desk{
-    background-image:url('assets/hero-desk-v56.webp')!important;
-    overflow:hidden!important;
-  }
-  /* Remove legacy foreground pieces that sit over the new single-piece hero artwork. */
-  .beta-desk > *{
-    display:none!important;
-  }
-  .beta-desk::before,
-  .beta-desk::after{
-    content:none!important;
-    display:none!important;
-  }
-}
-</style>
-
-
-<style id="beta57-quicklinks-and-overflow-fix">
-@media (min-width:981px){
-  .beta-copy{
-    overflow:hidden!important;
-  }
-  .beta-copy .hero-links,
-  .beta-copy .beta-links,
-  .beta-copy .quick-links,
-  .beta-copy .hero-quick-links{
-    width:100%!important;
-    max-width:100%!important;
-    overflow:hidden!important;
-  }
-  .beta-copy .hero-links a,
-  .beta-copy .beta-links a,
-  .beta-copy .quick-links a,
-  .beta-copy .hero-quick-links a{
-    font-size:14px!important;
-    font-weight:700!important;
-    line-height:1.25!important;
-    white-space:nowrap!important;
-  }
-  .beta-desk{
-    background-image:url('assets/hero-desk-v57.webp')!important;
-  }
-}
-</style>
-
-
-<style id="beta58-exact-hero-fix">
-@media (min-width:981px){
-  .beta-hero{
-    overflow:hidden!important;
-  }
-  .beta-copy{
-    overflow:hidden!important;
-    isolation:isolate!important;
-  }
-  .beta-copy .beta-mini{
-    overflow:hidden!important;
-    flex-wrap:nowrap!important;
-    gap:20px!important;
-  }
-  .beta-copy .beta-mini a{
-    font-size:14px!important;
-    font-weight:800!important;
-    line-height:1.35!important;
-    white-space:nowrap!important;
-  }
-  .beta-desk{
-    background-image:url('assets/hero-desk-v58.webp')!important;
-    overflow:hidden!important;
-  }
-}
-</style>
-
-
-<style id="beta59-hero-final-fix">
-@media (min-width:981px){
-  .beta-hero-points{
-    gap:22px!important;
-    font-size:0.92rem!important;
-    line-height:1.35!important;
-    flex-wrap:nowrap!important;
-  }
-  .beta-hero-points a{
-    font-size:0.92rem!important;
-    font-weight:700!important;
-    white-space:nowrap!important;
-  }
-  .beta-hero-points b{
-    font-size:inherit!important;
-    font-weight:700!important;
-  }
-  .beta-desk{
-    background-image:url('assets/hero-desk-v59.webp')!important;
-    background-size:cover!important;
-    background-position:center center!important;
-  }
-}
-</style>
-
-
-<style id="beta62-links-only-fix">
-@media (min-width:981px){
-  .beta-hero-points{
-    display:flex!important;
-    align-items:center!important;
-    justify-content:flex-start!important;
-    gap:10px!important;
-    width:100%!important;
-    max-width:100%!important;
-    overflow:visible!important;
-    flex-wrap:nowrap!important;
-  }
-  .beta-hero-points a{
-    font-size:13px!important;
-    font-weight:700!important;
-    line-height:1.25!important;
-    letter-spacing:-0.15px!important;
-    white-space:nowrap!important;
-    flex:0 0 auto!important;
-  }
-  .beta-hero-points a + a{
-    margin-left:0!important;
-  }
-  .beta-desk{
-    background-image:url('assets/hero-desk-v62.webp')!important;
-  }
-}
-</style>
-
-
-<style id="beta63-monitor-reveal-only">
-@media (min-width:981px){
-  .beta-desk{
-    background-image:url('assets/hero-desk-v63.webp')!important;
-    background-size:cover!important;
-    background-position:46% center!important;
-  }
-}
-</style>
-
-
-<style id="beta64-two-small-fixes">
-@media (min-width:981px){
-  /* Restore the larger quick-link type without changing the hero columns */
-  .beta-hero-points{
-    gap:6px!important;
-    flex-wrap:nowrap!important;
-  }
-  .beta-hero-points a{
-    font-size:.92rem!important;
-    font-weight:700!important;
-    line-height:1.25!important;
-    letter-spacing:-.2px!important;
-    white-space:nowrap!important;
-    flex:0 0 auto!important;
+  function shuffle(){
+    deck=[];
+    for(var i=0;i<thoughts.length;i++){
+      if(i!==last) deck.push(i);
+    }
+    for(var j=deck.length-1;j>0;j--){
+      var k=Math.floor(Math.random()*(j+1));
+      var temp=deck[j]; deck[j]=deck[k]; deck[k]=temp;
+    }
+    if(last>=0) deck.push(last);
   }
 
-  /* Same existing artwork — simply show a little more of its left edge */
-  .beta-desk{
-    background-image:url('assets/hero-desk-v64.webp')!important;
-    background-size:cover!important;
-    background-position:42% center!important;
-  }
-}
-</style>
+  window.daggerWisdomNext=function(){
+    var card=document.querySelector('.dagger-wisdom');
+    if(!card) return;
+    var quote=card.querySelector('blockquote');
+    var take=card.querySelector('.wisdom-take span');
+    if(!quote || !take) return;
+
+    if(!deck.length) shuffle();
+    var next=deck.shift();
+
+    if(next===last && deck.length){
+      deck.push(next);
+      next=deck.shift();
+    }
+
+    last=next;
+    card.classList.add('wisdom-changing');
+    window.setTimeout(function(){
+      quote.innerHTML='“'+thoughts[next][0]+'” <cite>— '+thoughts[next][1]+'</cite>';
+      take.textContent=thoughts[next][2];
+      card.classList.remove('wisdom-changing');
+    },140);
+  };
+})();
+</script>
 
 
-<style id="beta65-reveal-monitor-only">
-@media (min-width:981px){
-  .beta-desk{
-    background-image:url('assets/hero-desk-v65.webp')!important;
-    background-size:97% auto!important;
-    background-position:center center!important;
-    background-repeat:no-repeat!important;
-    background-color:#020b14!important;
-  }
-}
-</style>
-
-
-<style id="beta66-reveal-monitor-only">
-@media (min-width:981px){
-  .beta-desk{
-    background-image:url('assets/hero-desk-v66.webp')!important;
-    background-size:92% auto!important;
-    background-position:center center!important;
-    background-repeat:no-repeat!important;
-    background-color:#020b14!important;
-  }
-}
-</style>
-
-<style id="beta69-new-fitted-hero">
-@media (min-width:981px){
-  .beta-desk{
-    background-image:url('assets/hero-desk-v69.png')!important;
-    background-size:cover!important;
-    background-position:center center!important;
-    background-repeat:no-repeat!important;
-    background-color:#020b14!important;
-  }
-}
-</style>
-
-
-<style id="beta70-hero-size-only">
-@media (min-width:981px){
-  .beta-desk{
-    background-size:110% auto!important;
-    background-position:center center!important;
-    background-repeat:no-repeat!important;
-  }
-}
-</style>
-
-<style id="beta71-zoom-responsive-hero">
-/* Keep the 100% desktop hero unchanged. At the narrower effective viewport
-   created by browser zoom, give the copy enough room so the CTA and quick
-   links never slide underneath the artwork. */
-@media (min-width:981px) and (max-width:1180px){
-  .beta-hero-grid{
-    grid-template-columns:minmax(430px,38%) minmax(0,62%)!important;
-  }
-  .beta-hero-copy{
-    min-width:0!important;
-    padding-right:20px!important;
-    position:relative!important;
-    z-index:2!important;
-    overflow:hidden!important;
-  }
-  .beta-hero-copy .button{
-    white-space:nowrap!important;
-  }
-  .beta-hero-points{
-    gap:8px!important;
-    flex-wrap:nowrap!important;
-    min-width:0!important;
-  }
-  .beta-hero-points a{
-    font-size:.86rem!important;
-    letter-spacing:-.25px!important;
-    white-space:nowrap!important;
-  }
-  .beta-desk{
-    min-width:0!important;
-  }
-}
-</style>
-
-
-<!-- v73: FINAL responsive hero guard. Intentionally appended last so older beta overrides cannot win. -->
-<style id="beta73-final-responsive-hero-guard">
-@media (min-width:981px) and (max-width:1180px){
-  .beta-hero-grid{
-    grid-template-columns:440px minmax(0,1fr)!important;
-  }
-  .beta-hero-copy{
-    box-sizing:border-box!important;
-    width:440px!important;
-    min-width:440px!important;
-    max-width:440px!important;
-    padding-right:22px!important;
-    overflow:visible!important;
-    position:relative!important;
-    z-index:2!important;
-  }
-  .beta-desk{
-    min-width:0!important;
-    position:relative!important;
-    z-index:1!important;
-  }
-  .beta-hero-points{
-    display:flex!important;
-    width:100%!important;
-    max-width:100%!important;
-    min-width:0!important;
-    flex-wrap:wrap!important;
-    gap:7px 12px!important;
-    box-sizing:border-box!important;
-  }
-  .beta-hero-points a{
-    flex:0 0 auto!important;
-    white-space:nowrap!important;
-    font-size:.92rem!important;
-  }
-}
-</style>
-
-<!-- v76: hero rebuilt as one responsive background canvas, matching live-site behavior -->
-<style id="beta76-overlay-hero-rebuild">
-/* The artwork no longer competes with the copy for grid width. The entire hero is
-   one canvas and the copy overlays it, so browser zoom/resizing changes crop only. */
-.beta-hero-grid{
-  position:relative!important;
-  display:block!important;
-  min-height:540px!important;
-  overflow:hidden!important;
-  background:#020914 url('assets/hero-desk-v69.png') center center/cover no-repeat!important;
-}
-.beta-desk{
-  position:absolute!important;
-  inset:0!important;
-  width:100%!important;
-  height:100%!important;
-  min-height:0!important;
-  z-index:0!important;
-  background:transparent!important;
-  pointer-events:none!important;
-}
-/* The real desk scene is now on the hero itself; suppress all old synthetic layers. */
-.beta-desk .beta-window,.beta-desk .beta-note,.beta-desk .beta-monitor,
-.beta-desk .beta-mug,.beta-desk .beta-keyboard{display:none!important}
-.beta-desk:after{display:none!important}
-.beta-hero-grid:after{
-  content:""!important;
-  position:absolute!important;
-  inset:0!important;
-  z-index:1!important;
-  pointer-events:none!important;
-  background:linear-gradient(90deg,#020914 0%,rgba(2,9,20,.98) 27%,rgba(2,9,20,.76) 39%,rgba(2,9,20,.18) 57%,rgba(2,9,20,0) 76%)!important;
-}
-.beta-hero-copy{
-  position:relative!important;
-  z-index:2!important;
-  box-sizing:border-box!important;
-  width:min(43%,620px)!important;
-  min-width:0!important;
-  max-width:none!important;
-  min-height:540px!important;
-  padding:42px 34px 34px 32px!important;
-  display:flex!important;
-  flex-direction:column!important;
-  justify-content:center!important;
-  background:transparent!important;
-  overflow:visible!important;
-}
-.beta-hero-copy h1{max-width:560px!important}
-.beta-hero-copy>p{max-width:520px!important}
-.beta-hero-points{flex-wrap:wrap!important;gap:10px 18px!important}
-
-@media (max-width:1100px){
-  .beta-hero-grid{min-height:520px!important;background-position:58% center!important}
-  .beta-hero-copy{width:48%!important;min-height:520px!important;padding-left:28px!important;padding-right:24px!important}
-  .beta-hero-copy h1{font-size:clamp(2.75rem,5vw,3.75rem)!important}
-  .beta-hero-grid:after{background:linear-gradient(90deg,#020914 0%,rgba(2,9,20,.99) 31%,rgba(2,9,20,.82) 45%,rgba(2,9,20,.20) 64%,rgba(2,9,20,0) 82%)!important}
-}
-@media (max-width:820px){
-  .beta-hero-grid{min-height:600px!important;background-position:64% center!important}
-  .beta-hero-copy{width:68%!important;min-height:600px!important;padding:38px 24px!important}
-  .beta-hero-grid:after{background:linear-gradient(90deg,#020914 0%,rgba(2,9,20,.98) 44%,rgba(2,9,20,.76) 65%,rgba(2,9,20,.18) 84%,rgba(2,9,20,0) 100%)!important}
-  .beta-hero-points{display:flex!important}
-}
-@media (max-width:620px){
-  .beta-hero-grid{min-height:610px!important;background-position:66% center!important}
-  .beta-hero-copy{width:100%!important;min-height:610px!important;padding:34px 22px!important;justify-content:center!important}
-  .beta-hero-copy h1{font-size:clamp(2.55rem,12vw,3.35rem)!important;max-width:430px!important}
-  .beta-hero-copy>p{font-size:1rem!important;max-width:420px!important}
-  .beta-hero-copy .button{white-space:normal!important;text-align:center!important}
-  .beta-hero-points{display:flex!important;gap:8px 14px!important;max-width:410px!important}
-  .beta-hero-points a{font-size:.82rem!important}
-  /* Visually balance the shorter Trader Tools quick link with the two longer hero links. */
-  .beta-hero-points a:first-child{font-size:.88rem!important}
-  .beta-hero-grid:after{background:linear-gradient(90deg,rgba(2,9,20,.99) 0%,rgba(2,9,20,.96) 48%,rgba(2,9,20,.72) 74%,rgba(2,9,20,.38) 100%)!important}
-}
-</style>
+<style id="dagger-wisdom-direct-click-style">.dagger-wisdom{cursor:pointer}.dagger-wisdom.wisdom-changing{opacity:.48;transition:opacity .14s ease}</style>
