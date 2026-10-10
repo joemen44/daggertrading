@@ -704,17 +704,46 @@ restart=document.getElementById('bwRestart'),review=document.getElementById('bwR
 function scrollToExperiment(){root.scrollIntoView({behavior:'smooth',block:'start'});}
 // On narrow screens, reveal the explanation after a choice and the next stage after advancing.
 // Respect the sticky navigation and reduced-motion preferences.
+// Gentle, consistent mobile scroll. Keep the selected answer and feedback connected,
+// and bring the Next button into view without overshooting the lesson.
+let bwScrollFrame=null;
+function smoothScrollTo(target,duration=550){
+ if(bwScrollFrame!==null)cancelAnimationFrame(bwScrollFrame);
+ if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){window.scrollTo(0,target);return;}
+ const initial=window.scrollY, distance=target-initial, start=performance.now();
+ if(Math.abs(distance)<2)return;
+ function step(now){
+  const t=Math.min(1,(now-start)/duration);
+  const eased=t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+  window.scrollTo(0,initial+distance*eased);
+  bwScrollFrame=t<1?requestAnimationFrame(step):null;
+ }
+ bwScrollFrame=requestAnimationFrame(step);
+}
 function scrollMobileTo(element){
  if(!window.matchMedia('(max-width: 640px)').matches || !element || element.hidden)return;
  requestAnimationFrame(()=>requestAnimationFrame(()=>{
   const nav=document.querySelector('header, .site-header, .df-header');
-  const navBottom=nav && getComputedStyle(nav).position==='fixed' || nav && getComputedStyle(nav).position==='sticky' ? Math.max(0,nav.getBoundingClientRect().bottom) : 0;
-  const offset=Math.max(80,navBottom+14);
-  const rect=element.getBoundingClientRect();
-  // Don't move the page if the feedback and next button are already visible.
-  if(rect.top>=offset && rect.bottom<=window.innerHeight-12)return;
-  const top=window.scrollY+rect.top-offset;
-  window.scrollTo({top:Math.max(0,top),behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
+  const navIsSticky=nav && ['fixed','sticky'].includes(getComputedStyle(nav).position);
+  const navBottom=navIsSticky?Math.max(0,nav.getBoundingClientRect().bottom):0;
+  const topLimit=Math.max(18,navBottom+18);
+  let target;
+  if(element===feedback){
+   const selected=choices.querySelector('.bw-selected');
+   const buttonBottom=next.getBoundingClientRect().bottom;
+   // Scroll only far enough to expose the Next button (with a small bottom margin).
+   const needed=Math.max(0,buttonBottom-(window.innerHeight-24));
+   // When the screen has room, keep the selected answer in view as well.
+   const maxWithoutHidingChoice=selected?Math.max(0,selected.getBoundingClientRect().top-topLimit):needed;
+   target=window.scrollY+Math.min(needed,maxWithoutHidingChoice);
+   // On especially short screens, prioritize feedback and Next over the selected choice.
+   if(needed>maxWithoutHidingChoice && feedback.getBoundingClientRect().top-maxWithoutHidingChoice>window.innerHeight-90){
+    target=window.scrollY+needed;
+   }
+  }else{
+   target=window.scrollY+element.getBoundingClientRect().top-topLimit;
+  }
+  smoothScrollTo(Math.max(0,target),550);
  }));
 }
 
