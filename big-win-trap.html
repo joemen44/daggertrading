@@ -471,6 +471,10 @@
 #bigWinExperiment .bw-review-actions{display:flex;justify-content:flex-end;margin-top:18px}
 #bigWinExperiment .bw-review-actions button{background:#2388f5;color:#fff;border:0;border-radius:7px;padding:12px 18px;font:inherit;font-weight:800;cursor:pointer}
 #bigWinExperiment .bw-review-actions button:hover{background:#1474d5}
+
+@media (max-width:640px){
+ #bigWinExperiment #bwFeedback { font-size: 0.96rem; line-height: 1.55; }
+}
 </style></head>
 <body>
 <header class="site-header"><div class="container navbar"><a class="brand" href="index.html"><span class="brand-mark">🗡️</span><span>DAGGER <strong>TRADING</strong></span></a><button class="menu-button">Menu</button><nav class="nav-links">
@@ -727,19 +731,33 @@ function scrollMobileTo(element){
   const navIsSticky=nav && ['fixed','sticky'].includes(getComputedStyle(nav).position);
   const navBottom=navIsSticky?Math.max(0,nav.getBoundingClientRect().bottom):0;
   const topLimit=Math.max(18,navBottom+18);
+  const bottomLimit=window.innerHeight-22;
   let target;
   if(element===feedback){
    const selected=choices.querySelector('.bw-selected');
-   const buttonBottom=next.getBoundingClientRect().bottom;
-   // Scroll only far enough to expose the Next button (with a small bottom margin).
-   const needed=Math.max(0,buttonBottom-(window.innerHeight-24));
-   // When the screen has room, keep the selected answer in view as well.
-   const maxWithoutHidingChoice=selected?Math.max(0,selected.getBoundingClientRect().top-topLimit):needed;
-   target=window.scrollY+Math.min(needed,maxWithoutHidingChoice);
-   // On especially short screens, prioritize feedback and Next over the selected choice.
-   if(needed>maxWithoutHidingChoice && feedback.getBoundingClientRect().top-maxWithoutHidingChoice>window.innerHeight-90){
-    target=window.scrollY+needed;
+   const feedbackRect=feedback.getBoundingClientRect();
+   const nextRect=next.getBoundingClientRect();
+   const selectedRect=selected?.getBoundingClientRect();
+   const room=bottomLimit-topLimit;
+   const feedbackAndButtonHeight=nextRect.bottom-feedbackRect.top;
+   const feedbackHeight=feedbackRect.height;
+   let scrollBy=0;
+   if(feedbackAndButtonHeight<=room){
+    // Fit the whole explanation AND the action button. Preserve the selected
+    // choice only when doing so does not cut off the action button.
+    scrollBy=Math.max(0,nextRect.bottom-bottomLimit);
+    if(selectedRect && selectedRect.top-scrollBy>=topLimit){
+     // Already keeps the selected answer in view; no extra scrolling needed.
+    }
+   }else if(feedbackHeight<=room){
+    // Longer explanations: show all feedback first, even if Next is below.
+    scrollBy=Math.max(0,feedbackRect.bottom-bottomLimit);
+    scrollBy=Math.min(scrollBy,Math.max(0,feedbackRect.top-topLimit));
+   }else{
+    // Very long explanation: start at its top so the text can be read normally.
+    scrollBy=Math.max(0,feedbackRect.top-topLimit);
    }
+   target=window.scrollY+scrollBy;
   }else{
    target=window.scrollY+element.getBoundingClientRect().top-topLimit;
   }
