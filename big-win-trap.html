@@ -702,6 +702,22 @@ choices=document.getElementById('bwChoices'),feedback=document.getElementById('b
 next=document.getElementById('bwNext'),
 restart=document.getElementById('bwRestart'),review=document.getElementById('bwReview'),reviewActions=document.getElementById('bwReviewActions');
 function scrollToExperiment(){root.scrollIntoView({behavior:'smooth',block:'start'});}
+// On narrow screens, reveal the explanation after a choice and the next stage after advancing.
+// Respect the sticky navigation and reduced-motion preferences.
+function scrollMobileTo(element){
+ if(!window.matchMedia('(max-width: 640px)').matches || !element || element.hidden)return;
+ requestAnimationFrame(()=>requestAnimationFrame(()=>{
+  const nav=document.querySelector('header, .site-header, .df-header');
+  const navBottom=nav && getComputedStyle(nav).position==='fixed' || nav && getComputedStyle(nav).position==='sticky' ? Math.max(0,nav.getBoundingClientRect().bottom) : 0;
+  const offset=Math.max(80,navBottom+14);
+  const rect=element.getBoundingClientRect();
+  // Don't move the page if the feedback and next button are already visible.
+  if(rect.top>=offset && rect.bottom<=window.innerHeight-12)return;
+  const top=window.scrollY+rect.top-offset;
+  window.scrollTo({top:Math.max(0,top),behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
+ }));
+}
+
 function render(){
  welcome.hidden=started;stage.hidden=!started;document.querySelector('#bigWinExperiment .bw-progress').hidden=!started;
  if(!started){question.hidden=true;context.hidden=true;choices.hidden=true;feedback.hidden=true;next.hidden=true;review.hidden=true;reviewActions.hidden=true;review.replaceChildren();return;}
@@ -716,7 +732,7 @@ function render(){
   const button=document.createElement('button');button.type='button';const letter=document.createElement('span');letter.className='bw-choice-letter';letter.textContent=String.fromCharCode(65+choiceIndex);letter.setAttribute('aria-hidden','true');const copy=document.createElement('span');copy.textContent=label;button.append(letter,copy);
   if(answered){button.disabled=true;if(answers[index]===choiceIndex)button.classList.add('bw-selected');}
   button.addEventListener('click',()=>{
-   if(answered)return;answers[index]=choiceIndex;render();
+   if(answered)return;answers[index]=choiceIndex;render();scrollMobileTo(feedback);
   });
   choices.appendChild(button);
  });
@@ -760,7 +776,7 @@ start.addEventListener('click',()=>{started=true;index=0;render();});
 next.addEventListener('click',()=>{
  if(!answered)return;
  if(index===stages.length-1){renderReview();scrollToExperiment();}
- else{index++;render();}
+ else{index++;render();scrollMobileTo(stage);}
 });
 restart.addEventListener('click',()=>{answers.fill(null);index=0;started=false;render();scrollToExperiment();});
 render();
